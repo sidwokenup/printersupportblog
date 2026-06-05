@@ -1,6 +1,7 @@
 export async function sendTelegramNotification(message: string) {
-  const botToken = process.env.TELEGRAM_BOT_TOKEN;
-  const chatId = process.env.TELEGRAM_CHAT_ID;
+  // Safely parse environment variables (in case they were pasted with quotes in Vercel)
+  const botToken = process.env.TELEGRAM_BOT_TOKEN?.replace(/^"|"$/g, '');
+  const chatId = process.env.TELEGRAM_CHAT_ID?.replace(/^"|"$/g, '');
 
   if (!botToken || !chatId) {
     console.warn("Telegram configuration missing. Notification skipped.");
@@ -24,9 +25,13 @@ export async function sendTelegramNotification(message: string) {
 
     if (!response.ok) {
       console.error("Failed to send Telegram notification", await response.text());
+    } else {
+      console.log("Lead successfully sent to Telegram.");
     }
   } catch (error) {
-    console.error("Error sending Telegram notification:", error);
+    // eslint-disable-next-line @typescript-eslint/no-explicit-any
+    const err = error as any;
+    console.error("Error sending Telegram notification:", err?.message || err);
   }
 }
 

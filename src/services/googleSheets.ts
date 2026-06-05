@@ -2,18 +2,22 @@ import { google } from "googleapis";
 
 export async function appendToGoogleSheet(leadData: Record<string, string | undefined>) {
   try {
-    const credentials = {
-      client_email: process.env.GOOGLE_CLIENT_EMAIL,
-      private_key: process.env.GOOGLE_PRIVATE_KEY?.replace(/\\n/g, "\n"),
-      project_id: process.env.GOOGLE_PROJECT_ID,
-    };
-    
-    const spreadsheetId = process.env.GOOGLE_SHEET_ID;
+    // Safely parse environment variables (in case they were pasted with quotes in Vercel)
+    const clientEmail = process.env.GOOGLE_CLIENT_EMAIL?.replace(/^"|"$/g, '');
+    const privateKey = process.env.GOOGLE_PRIVATE_KEY?.replace(/^"|"$/g, '')?.replace(/\\n/g, "\n");
+    const projectId = process.env.GOOGLE_PROJECT_ID?.replace(/^"|"$/g, '');
+    const spreadsheetId = process.env.GOOGLE_SHEET_ID?.replace(/^"|"$/g, '');
 
-    if (!credentials.client_email || !credentials.private_key || !spreadsheetId) {
+    if (!clientEmail || !privateKey || !spreadsheetId) {
       console.warn("Google Sheets configuration missing. Skipped appending lead.");
       return;
     }
+
+    const credentials = {
+      client_email: clientEmail,
+      private_key: privateKey,
+      project_id: projectId,
+    };
 
     const auth = new google.auth.GoogleAuth({
       credentials,
@@ -22,7 +26,11 @@ export async function appendToGoogleSheet(leadData: Record<string, string | unde
 
     const sheets = google.sheets({ version: "v4", auth });
 
-    // Date Time Name Phone Email Page URL UTM Source UTM Campaign Device Status
+    // Dynamically fetch the first sheet's name so it doesn't break if the user renamed "Sheet1"
+    const spreadsheet = await sheets.spreadsheets.get({ spreadsheetId });
+    const firstSheetName = spreadsheet.data.sheets?.[0]?.properties?.title || "Sheet1";
+    const range = `${firstSheetName}!A:J`;
+
     const values = [
       [
         new Date().toLocaleDateString(),
@@ -40,7 +48,7 @@ export async function appendToGoogleSheet(leadData: Record<string, string | unde
 
     await sheets.spreadsheets.values.append({
       spreadsheetId,
-      range: "Sheet1!A:J", // Assuming 'Sheet1' is the name of the first tab
+      range,
       valueInputOption: "USER_ENTERED",
       requestBody: {
         values,
@@ -49,6 +57,8 @@ export async function appendToGoogleSheet(leadData: Record<string, string | unde
 
     console.log("Lead successfully added to Google Sheets.");
   } catch (error) {
-    console.error("Error appending to Google Sheets:", error);
+    // eslint-disable-next-line @typescript-eslint/no-explicit-any
+    const err = error as any;
+    console.error("Error appending to Google Sheets:", err?.message || err);
   }
 }
