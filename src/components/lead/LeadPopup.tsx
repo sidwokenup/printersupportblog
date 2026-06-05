@@ -36,10 +36,8 @@ export function LeadPopup() {
     if (lastClosed) {
       const closedAt = new Date(lastClosed).getTime()
       const now = new Date().getTime()
-      // Don't show if closed within the last 24 hours
-      if (now - closedAt < 24 * 60 * 60 * 1000) {
-        return
-      }
+      // Don't show automatically if closed within the last 24 hours
+      // However, we STILL want the manual click event to work!
     }
 
     let hasShown = false
@@ -54,9 +52,10 @@ export function LeadPopup() {
     const handleOpenEvent = () => setIsOpen(true)
     window.addEventListener("open-lead-popup", handleOpenEvent)
 
-    const timer = setTimeout(showPopup, 15000)
-
-    // Trigger 2: 50% Scroll
+    // Only set up automatic triggers if it hasn't been closed recently
+    const isClosedRecently = lastClosed && (new Date().getTime() - new Date(lastClosed).getTime() < 24 * 60 * 60 * 1000);
+    
+    let timer: NodeJS.Timeout | null = null;
     const handleScroll = () => {
       const scrollHeight = document.documentElement.scrollHeight
       const scrollTop = document.documentElement.scrollTop
@@ -66,20 +65,23 @@ export function LeadPopup() {
         window.removeEventListener("scroll", handleScroll)
       }
     }
-    window.addEventListener("scroll", handleScroll)
-
-    // Trigger 3: Exit Intent (Desktop)
+    
     const handleMouseLeave = (e: MouseEvent) => {
       if (e.clientY <= 0) {
         showPopup()
         document.removeEventListener("mouseleave", handleMouseLeave)
       }
     }
-    document.addEventListener("mouseleave", handleMouseLeave)
+
+    if (!isClosedRecently) {
+      timer = setTimeout(showPopup, 15000)
+      window.addEventListener("scroll", handleScroll)
+      document.addEventListener("mouseleave", handleMouseLeave)
+    }
 
     // Clean up
     return () => {
-      clearTimeout(timer)
+      if (timer) clearTimeout(timer)
       window.removeEventListener("scroll", handleScroll)
       document.removeEventListener("mouseleave", handleMouseLeave)
       window.removeEventListener("open-lead-popup", handleOpenEvent)
