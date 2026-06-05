@@ -12,7 +12,7 @@ const inter = Inter({
 });
 
 export const metadata: Metadata = {
-  title: "HP Printer Support Knowledge Base",
+  title: "Live Free Reviews - Printer Support",
   description: "Find solutions, troubleshooting guides, drivers, and error code fixes for your HP Printer.",
 };
 

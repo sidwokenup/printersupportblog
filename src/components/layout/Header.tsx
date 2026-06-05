@@ -49,7 +49,7 @@ export function Header() {
               <Printer className="h-6 w-6 text-primary" />
             </div>
             <span className="font-bold text-xl hidden lg:inline-block tracking-tight text-slate-900">
-              HP Support Base
+              Live Free Reviews
             </span>
           </Link>
         </div>
@@ -110,7 +110,7 @@ export function Header() {
             <SheetContent side="right" className="w-[300px] sm:w-[400px]">
               <div className="flex items-center gap-2 mb-8">
                 <Printer className="h-6 w-6 text-primary" />
-                <span className="font-bold text-lg tracking-tight">HP Support Base</span>
+                <span className="font-bold text-lg tracking-tight">Live Free Reviews</span>
               </div>
               <div className="relative mb-8">
                 <GlobalSearch />

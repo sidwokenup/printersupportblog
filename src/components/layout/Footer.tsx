@@ -49,7 +49,7 @@ export function Footer() {
                 <Printer className="h-7 w-7 text-primary" />
               </div>
               <span className="font-bold text-2xl tracking-tight text-slate-900">
-                HP Support Base
+                Live Free Reviews
               </span>
             </Link>
             <p className="text-base text-slate-600 leading-relaxed max-w-sm">
@@ -120,7 +120,7 @@ export function Footer() {
         </div>
 
         <div className="mt-12 pt-8 flex flex-col md:flex-row justify-between items-center gap-4 text-sm text-slate-500">
-          <p suppressHydrationWarning>© {new Date().getFullYear()} HP Support Base. All rights reserved.</p>
+          <p suppressHydrationWarning>© {new Date().getFullYear()} Live Free Reviews. All rights reserved.</p>
           <p>Not affiliated with HP Inc.</p>
         </div>
       </div>

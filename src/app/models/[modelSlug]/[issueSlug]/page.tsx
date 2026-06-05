@@ -119,7 +119,7 @@ export default async function IssuePage({ params }: PageProps) {
             <div className="flex flex-wrap items-center gap-6 text-sm text-slate-500 mt-8">
               <div className="flex items-center gap-2">
                 <UserCircle2 className="h-5 w-5 text-slate-400" />
-                <span className="font-medium text-slate-700">HP Support Base Expert</span>
+                <span className="font-medium text-slate-700">Live Free Reviews Expert</span>
               </div>
               <div className="flex items-center gap-2">
                 <Calendar className="h-5 w-5 text-slate-400" />
