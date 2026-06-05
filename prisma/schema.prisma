@@ -1,0 +1,278 @@
+generator client {
+  provider = "prisma-client-js"
+}
+
+datasource db {
+  provider = "postgresql"
+}
+
+model PrinterBrand {
+  id        String          @id @default(cuid())
+  name      String          @unique
+  slug      String          @unique
+  series    PrinterSeries[]
+  createdAt DateTime        @default(now())
+  updatedAt DateTime        @updatedAt
+}
+
+model PrinterSeries {
+  id        String         @id @default(cuid())
+  name      String
+  slug      String         @unique
+  brandId   String
+  brand     PrinterBrand   @relation(fields: [brandId], references: [id])
+  models    PrinterModel[]
+  createdAt DateTime       @default(now())
+  updatedAt DateTime       @updatedAt
+
+  @@index([brandId])
+}
+
+model PrinterModel {
+  id                    String                 @id @default(cuid())
+  name                  String
+  slug                  String                 @unique
+  seriesId              String
+  series                PrinterSeries          @relation(fields: [seriesId], references: [id])
+  category              String?
+  printerType           String?
+  launchInformation     String?
+  supportStatus         String?
+  officialSupportUrl    String?
+  userManualUrl         String?
+  setupGuideUrl         String?
+  releaseStatus         String?
+  countryAvailability   String?
+  issues                PrinterIssue[]
+  errorCodes            ErrorCode[]
+  articles              BlogArticle[]
+  drivers               Driver[]
+  firmwares             Firmware[]
+  faqs                  FAQ[]
+  troubleshootingGuides TroubleshootingGuide[]
+  seoPage               SEOPage?
+  clusters              ContentCluster[]
+  keywords              SearchIntentKeyword[]
+  sourceLinks           InternalLink[]         @relation("SourceLinks")
+  targetLinks           InternalLink[]         @relation("TargetLinks")
+  createdAt             DateTime               @default(now())
+  updatedAt             DateTime               @updatedAt
+
+  @@index([seriesId])
+}
+
+model PrinterIssue {
+  id                   String        @id @default(cuid())
+  title                String
+  slug                 String        @unique
+  category             String?
+  frequency            String?
+  symptoms             String?       @db.Text
+  causes               String?       @db.Text
+  quickFixes           String?       @db.Text
+  advancedFixes        String?       @db.Text
+  preventiveMeasures   String?       @db.Text
+  alternativeSolutions String?       @db.Text
+  severityLevel        String?
+  modelId              String
+  model                PrinterModel  @relation(fields: [modelId], references: [id])
+  articles             BlogArticle[]
+  createdAt            DateTime      @default(now())
+  updatedAt            DateTime      @updatedAt
+
+  @@index([modelId])
+}
+
+model ErrorCode {
+  id                  String       @id @default(cuid())
+  code                String
+  slug                String       @unique
+  description         String?      @db.Text
+  symptoms            String?      @db.Text
+  rootCause           String?      @db.Text
+  fixSteps            String?      @db.Text
+  advancedRepairSteps String?      @db.Text
+  escalationRecs      String?      @db.Text
+  relatedErrors       String?      @db.Text
+  modelId             String
+  model               PrinterModel @relation(fields: [modelId], references: [id])
+  createdAt           DateTime     @default(now())
+  updatedAt           DateTime     @updatedAt
+
+  @@index([modelId])
+}
+
+model TroubleshootingGuide {
+  id        String       @id @default(cuid())
+  title     String
+  content   String       @db.Text
+  modelId   String
+  model     PrinterModel @relation(fields: [modelId], references: [id])
+  createdAt DateTime     @default(now())
+  updatedAt DateTime     @updatedAt
+
+  @@index([modelId])
+}
+
+model Driver {
+  id                String       @id @default(cuid())
+  name              String
+  version           String?
+  url               String
+  os                String?
+  windowsVersions   String?
+  macVersions       String?
+  linuxAvailability Boolean?     @default(false)
+  driverTypes       String?
+  releaseDate       DateTime?
+  installationGuide String?      @db.Text
+  knownIssues       String?      @db.Text
+  modelId           String
+  model             PrinterModel @relation(fields: [modelId], references: [id])
+  createdAt         DateTime     @default(now())
+  updatedAt         DateTime     @updatedAt
+
+  @@index([modelId])
+}
+
+model Firmware {
+  id                       String       @id @default(cuid())
+  name                     String
+  version                  String?
+  url                      String
+  releaseDate              DateTime?
+  bugFixes                 String?      @db.Text
+  securityUpdates          String?      @db.Text
+  installationInstructions String?      @db.Text
+  rollbackAvailability     Boolean?     @default(false)
+  knownProblems            String?      @db.Text
+  recoveryProcedures       String?      @db.Text
+  modelId                  String
+  model                    PrinterModel @relation(fields: [modelId], references: [id])
+  createdAt                DateTime     @default(now())
+  updatedAt                DateTime     @updatedAt
+
+  @@index([modelId])
+}
+
+model FAQ {
+  id                String       @id @default(cuid())
+  question          String
+  answer            String       @db.Text
+  relatedIssues     String?
+  relatedErrorCodes String?
+  modelId           String
+  model             PrinterModel @relation(fields: [modelId], references: [id])
+  createdAt         DateTime     @default(now())
+  updatedAt         DateTime     @updatedAt
+
+  @@index([modelId])
+}
+
+model Category {
+  id          String        @id @default(cuid())
+  name        String
+  slug        String        @unique
+  description String?       @db.Text
+  articles    BlogArticle[]
+  createdAt   DateTime      @default(now())
+  updatedAt   DateTime      @updatedAt
+}
+
+model BlogArticle {
+  id         String        @id @default(cuid())
+  title      String
+  slug       String        @unique
+  content    String        @db.Text
+  modelId    String
+  model      PrinterModel  @relation(fields: [modelId], references: [id])
+  issueId    String?
+  issue      PrinterIssue? @relation(fields: [issueId], references: [id])
+  categoryId String?
+  category   Category?     @relation(fields: [categoryId], references: [id])
+  seoPage    SEOPage?
+  createdAt  DateTime      @default(now())
+  updatedAt  DateTime      @updatedAt
+
+  @@index([modelId])
+  @@index([issueId])
+  @@index([categoryId])
+}
+
+model SEOPage {
+  id           String        @id @default(cuid())
+  path         String        @unique
+  title        String
+  description  String?       @db.Text
+  keywords     String?
+  canonicalUrl String?
+  modelId      String?       @unique
+  model        PrinterModel? @relation(fields: [modelId], references: [id])
+  articleId    String?       @unique
+  article      BlogArticle?  @relation(fields: [articleId], references: [id])
+  createdAt    DateTime      @default(now())
+  updatedAt    DateTime      @updatedAt
+}
+
+model ContentCluster {
+  id        String       @id @default(cuid())
+  name      String
+  slug      String
+  modelId   String
+  model     PrinterModel @relation(fields: [modelId], references: [id])
+  createdAt DateTime     @default(now())
+  updatedAt DateTime     @updatedAt
+
+  @@unique([modelId, slug])
+  @@index([modelId])
+}
+
+model SearchIntentKeyword {
+  id         String       @id @default(cuid())
+  keyword    String
+  intentType String // e.g., Informational, Problem Solving, Setup, Driver, Error, Comparison
+  modelId    String
+  model      PrinterModel @relation(fields: [modelId], references: [id])
+  createdAt  DateTime     @default(now())
+  updatedAt  DateTime     @updatedAt
+
+  @@unique([modelId, keyword])
+  @@index([modelId])
+}
+
+model InternalLink {
+  id            String       @id @default(cuid())
+  sourceModelId String
+  sourceModel   PrinterModel @relation("SourceLinks", fields: [sourceModelId], references: [id])
+  targetModelId String
+  targetModel   PrinterModel @relation("TargetLinks", fields: [targetModelId], references: [id])
+  relationship  String // e.g., "Related Model", "Successor", "Predecessor"
+  createdAt     DateTime     @default(now())
+  updatedAt     DateTime     @updatedAt
+
+  @@index([sourceModelId])
+  @@index([targetModelId])
+}
+
+model Lead {
+  id        String   @id @default(cuid())
+  fullName  String
+  email     String
+  phone     String
+  country   String   @default("US")
+  pageUrl   String?
+  source    String?
+  ipAddress String?
+  userAgent String?
+  status    String   @default("New")
+  createdAt DateTime @default(now())
+  updatedAt DateTime @updatedAt
+}
+
+model LeadAnalytics {
+  id        String   @id @default(cuid())
+  event     String   // view, open, start, abandon, submit
+  pageUrl   String?
+  sessionId String?
+  createdAt DateTime @default(now())
+}

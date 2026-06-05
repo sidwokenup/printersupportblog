@@ -1,0 +1,152 @@
+{
+  "hp-deskjet-1011": {
+    "model": "hp-deskjet-1011",
+    "clusters": [
+      "Offline",
+      "Not Printing",
+      "Driver Setup",
+      "WiFi Setup",
+      "Scanner Issue",
+      "Firmware Update",
+      "Paper Jam",
+      "Error Codes",
+      "Cartridge Error",
+      "Blank Pages"
+    ]
+  },
+  "hp-deskjet-1023": {
+    "model": "hp-deskjet-1023",
+    "clusters": [
+      "Offline",
+      "Not Printing",
+      "Driver Setup",
+      "WiFi Setup",
+      "Scanner Issue",
+      "Firmware Update",
+      "Paper Jam",
+      "Error Codes",
+      "Cartridge Error",
+      "Blank Pages"
+    ]
+  },
+  "hp-deskjet-1030": {
+    "model": "hp-deskjet-1030",
+    "clusters": [
+      "Offline",
+      "Not Printing",
+      "Driver Setup",
+      "WiFi Setup",
+      "Scanner Issue",
+      "Firmware Update",
+      "Paper Jam",
+      "Error Codes",
+      "Cartridge Error",
+      "Blank Pages"
+    ]
+  },
+  "hp-deskjet-1040": {
+    "model": "hp-deskjet-1040",
+    "clusters": [
+      "Offline",
+      "Not Printing",
+      "Driver Setup",
+      "WiFi Setup",
+      "Scanner Issue",
+      "Firmware Update",
+      "Paper Jam",
+      "Error Codes",
+      "Cartridge Error",
+      "Blank Pages"
+    ]
+  },
+  "hp-deskjet-1050": {
+    "model": "hp-deskjet-1050",
+    "clusters": [
+      "Offline",
+      "Not Printing",
+      "Driver Setup",
+      "WiFi Setup",
+      "Scanner Issue",
+      "Firmware Update",
+      "Paper Jam",
+      "Error Codes",
+      "Cartridge Error",
+      "Blank Pages"
+    ]
+  },
+  "hp-deskjet-1064": {
+    "model": "hp-deskjet-1064",
+    "clusters": [
+      "Offline",
+      "Not Printing",
+      "Driver Setup",
+      "WiFi Setup",
+      "Scanner Issue",
+      "Firmware Update",
+      "Paper Jam",
+      "Error Codes",
+      "Cartridge Error",
+      "Blank Pages"
+    ]
+  },
+  "hp-deskjet-1074": {
+    "model": "hp-deskjet-1074",
+    "clusters": [
+      "Offline",
+      "Not Printing",
+      "Driver Setup",
+      "WiFi Setup",
+      "Scanner Issue",
+      "Firmware Update",
+      "Paper Jam",
+      "Error Codes",
+      "Cartridge Error",
+      "Blank Pages"
+    ]
+  },
+  "hp-deskjet-1084": {
+    "model": "hp-deskjet-1084",
+    "clusters": [
+      "Offline",
+      "Not Printing",
+      "Driver Setup",
+      "WiFi Setup",
+      "Scanner Issue",
+      "Firmware Update",
+      "Paper Jam",
+      "Error Codes",
+      "Cartridge Error",
+      "Blank Pages"
+    ]
+  },
+  "hp-deskjet-1093": {
+    "model": "hp-deskjet-1093",
+    "clusters": [
+      "Offline",
+      "Not Printing",
+      "Driver Setup",
+      "WiFi Setup",
+      "Scanner Issue",
+      "Firmware Update",
+      "Paper Jam",
+      "Error Codes",
+      "Cartridge Error",
+      "Blank Pages"
+    ]
+  },
+  "hp-deskjet-1101": {
+    "model": "hp-deskjet-1101",
+    "clusters": [
+      "Offline",
+      "Not Printing",
+      "Driver Setup",
+      "WiFi Setup",
+      "Scanner Issue",
+      "Firmware Update",
+      "Paper Jam",
+      "Error Codes",
+      "Cartridge Error",
+      "Blank Pages"
+    ]
+  }
+}

@@ -1,0 +1,129 @@
+"use client"
+
+import Link from "next/link"
+import { Printer, Send } from "lucide-react"
+import { Button } from "@/components/ui/button"
+import { Input } from "@/components/ui/input"
+
+// Simple SVG icons for social media since lucide-react doesn't have brand icons
+const FacebookIcon = ({ className }: { className?: string }) => (
+  <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round" className={className}>
+    <path d="M18 2h-3a5 5 0 0 0-5 5v3H7v4h3v8h4v-8h3l1-4h-4V7a1 1 0 0 1 1-1h3z"></path>
+  </svg>
+)
+
+const TwitterIcon = ({ className }: { className?: string }) => (
+  <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round" className={className}>
+    <path d="M22 4s-.7 2.1-2 3.4c1.6 10-9.4 17.3-18 11.6 2.2.1 4.4-.6 6-2C3 15.5.5 9.6 3 5c2.2 2.6 5.6 4.1 9 4-.9-4.2 4-6.6 7-3.8 1.1 0 3-1.2 3-1.2z"></path>
+  </svg>
+)
+
+const InstagramIcon = ({ className }: { className?: string }) => (
+  <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round" className={className}>
+    <rect x="2" y="2" width="20" height="20" rx="5" ry="5"></rect>
+    <path d="M16 11.37A4 4 0 1 1 12.63 8 4 4 0 0 1 16 11.37z"></path>
+    <line x1="17.5" y1="6.5" x2="17.51" y2="6.5"></line>
+  </svg>
+)
+
+const YoutubeIcon = ({ className }: { className?: string }) => (
+  <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round" className={className}>
+    <path d="M22.54 6.42a2.78 2.78 0 0 0-1.94-2C18.88 4 12 4 12 4s-6.88 0-8.6.46a2.78 2.78 0 0 0-1.94 2A29 29 0 0 0 1 11.75a29 29 0 0 0 .46 5.33A2.78 2.78 0 0 0 3.4 19c1.72.46 8.6.46 8.6.46s6.88 0 8.6-.46a2.78 2.78 0 0 0 1.94-2 29 29 0 0 0 .46-5.25 29 29 0 0 0-.46-5.33z"></path>
+    <polygon points="9.75 15.02 15.5 11.75 9.75 8.48 9.75 15.02"></polygon>
+  </svg>
+)
+
+export function Footer() {
+  return (
+    <footer className="relative mt-24 bg-white border-t border-slate-200 overflow-hidden">
+      {/* Premium Gradient Top Border */}
+      <div className="absolute top-0 left-0 right-0 h-1 bg-gradient-to-r from-blue-500 via-blue-300 to-blue-500 opacity-50" />
+      
+      <div className="container mx-auto px-4 md:px-6 py-16 lg:py-20">
+        <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-5 gap-12 lg:gap-8">
+          
+          {/* Brand & Description */}
+          <div className="lg:col-span-2 flex flex-col gap-6">
+            <Link href="/" className="flex items-center gap-2 group w-fit">
+              <div className="bg-primary/10 p-2.5 rounded-xl group-hover:bg-primary/20 transition-colors">
+                <Printer className="h-7 w-7 text-primary" />
+              </div>
+              <span className="font-bold text-2xl tracking-tight text-slate-900">
+                HP Support Base
+              </span>
+            </Link>
+            <p className="text-base text-slate-600 leading-relaxed max-w-sm">
+              The ultimate programmatic knowledge base for HP Printer support, troubleshooting, driver downloads, and error codes. We make fixing printers simple.
+            </p>
+            <div className="flex items-center gap-4 mt-2">
+              <Link href="#" className="p-2 bg-slate-50 text-slate-500 hover:text-primary hover:bg-blue-50 rounded-full transition-all">
+                <FacebookIcon className="h-5 w-5" />
+              </Link>
+              <Link href="#" className="p-2 bg-slate-50 text-slate-500 hover:text-primary hover:bg-blue-50 rounded-full transition-all">
+                <TwitterIcon className="h-5 w-5" />
+              </Link>
+              <Link href="#" className="p-2 bg-slate-50 text-slate-500 hover:text-primary hover:bg-blue-50 rounded-full transition-all">
+                <InstagramIcon className="h-5 w-5" />
+              </Link>
+              <Link href="#" className="p-2 bg-slate-50 text-slate-500 hover:text-primary hover:bg-blue-50 rounded-full transition-all">
+                <YoutubeIcon className="h-5 w-5" />
+              </Link>
+            </div>
+          </div>
+
+          {/* Links Sections */}
+          <div className="flex flex-col gap-4">
+            <h3 className="font-semibold text-slate-900 text-base">Categories</h3>
+            <div className="flex flex-col gap-3 mt-2">
+              <Link href="/troubleshooting" className="text-slate-600 hover:text-primary transition-colors">Troubleshooting</Link>
+              <Link href="/error-codes" className="text-slate-600 hover:text-primary transition-colors">Error Codes</Link>
+              <Link href="/drivers" className="text-slate-600 hover:text-primary transition-colors">Drivers & Software</Link>
+            </div>
+          </div>
+
+          <div className="flex flex-col gap-4">
+            <h3 className="font-semibold text-slate-900 text-base">Popular Models</h3>
+            <div className="flex flex-col gap-3 mt-2">
+              <Link href="/models/hp-deskjet-2700" className="text-slate-600 hover:text-primary transition-colors">HP DeskJet 2700</Link>
+              <Link href="/models/hp-envy-6055" className="text-slate-600 hover:text-primary transition-colors">HP ENVY 6055</Link>
+              <Link href="/models/hp-officejet-pro-9015" className="text-slate-600 hover:text-primary transition-colors">HP OfficeJet 9015</Link>
+              <Link href="/models/hp-laserjet-pro-m404n" className="text-slate-600 hover:text-primary transition-colors">HP LaserJet Pro</Link>
+              <Link href="/models" className="text-primary font-medium hover:underline transition-colors mt-1">View All Models &rarr;</Link>
+            </div>
+          </div>
+
+          <div className="flex flex-col gap-4">
+            <h3 className="font-semibold text-slate-900 text-base">Legal & Support</h3>
+            <div className="flex flex-col gap-3 mt-2">
+              <button 
+                onClick={() => window.dispatchEvent(new Event("open-lead-popup"))}
+                className="text-slate-600 hover:text-primary transition-colors text-left"
+              >
+                Contact Support
+              </button>
+            </div>
+          </div>
+        </div>
+
+        {/* Newsletter Section */}
+        <div className="mt-16 pt-10 border-t border-slate-200 grid grid-cols-1 lg:grid-cols-2 gap-8 items-center">
+          <div>
+            <h3 className="text-xl font-bold text-slate-900">Subscribe to our newsletter</h3>
+            <p className="text-slate-600 mt-2">Get the latest troubleshooting tips and firmware updates delivered to your inbox.</p>
+          </div>
+          <form className="flex w-full max-w-md lg:ml-auto gap-2">
+            <Input type="email" placeholder="Enter your email" className="bg-slate-50 border-slate-200 focus-visible:ring-primary" />
+            <Button type="submit" className="gap-2 shrink-0">
+              Subscribe <Send className="h-4 w-4" />
+            </Button>
+          </form>
+        </div>
+
+        <div className="mt-12 pt-8 flex flex-col md:flex-row justify-between items-center gap-4 text-sm text-slate-500">
+          <p suppressHydrationWarning>© {new Date().getFullYear()} HP Support Base. All rights reserved.</p>
+          <p>Not affiliated with HP Inc.</p>
+        </div>
+      </div>
+    </footer>
+  )
+}

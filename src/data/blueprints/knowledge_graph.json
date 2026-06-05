@@ -1,0 +1,522 @@
+{
+  "hp-deskjet-1011": {
+    "model": "hp-deskjet-1011",
+    "relationships": {
+      "issues": [
+        "hp-deskjet-1011-offline",
+        "hp-deskjet-1011-not-printing",
+        "hp-deskjet-1011-driver-setup",
+        "hp-deskjet-1011-wifi-setup",
+        "hp-deskjet-1011-scanner-issue",
+        "hp-deskjet-1011-firmware-update",
+        "hp-deskjet-1011-paper-jam",
+        "hp-deskjet-1011-error-codes",
+        "hp-deskjet-1011-cartridge-error",
+        "hp-deskjet-1011-blank-pages"
+      ],
+      "errors": [
+        "hp-deskjet-1011-error-59-f0",
+        "hp-deskjet-1011-error-79"
+      ],
+      "drivers": [
+        "hp-deskjet-1011-driver-upd",
+        "hp-deskjet-1011-driver-easy-start"
+      ],
+      "firmware": [
+        "hp-deskjet-1011-firmware-update"
+      ],
+      "faqs": [
+        "faq-wifi-hp-deskjet-1011",
+        "faq-offline-hp-deskjet-1011"
+      ],
+      "relatedModels": [
+        "hp-deskjet-1023",
+        "hp-deskjet-1030",
+        "hp-deskjet-1040"
+      ]
+    },
+    "internalLinks": {
+      "fromModelPageTo": [
+        "issues",
+        "errors",
+        "drivers",
+        "firmware",
+        "faqs",
+        "relatedModels"
+      ],
+      "fromIssuePageTo": [
+        "modelPage",
+        "relatedIssues",
+        "drivers"
+      ]
+    }
+  },
+  "hp-deskjet-1023": {
+    "model": "hp-deskjet-1023",
+    "relationships": {
+      "issues": [
+        "hp-deskjet-1023-offline",
+        "hp-deskjet-1023-not-printing",
+        "hp-deskjet-1023-driver-setup",
+        "hp-deskjet-1023-wifi-setup",
+        "hp-deskjet-1023-scanner-issue",
+        "hp-deskjet-1023-firmware-update",
+        "hp-deskjet-1023-paper-jam",
+        "hp-deskjet-1023-error-codes",
+        "hp-deskjet-1023-cartridge-error",
+        "hp-deskjet-1023-blank-pages"
+      ],
+      "errors": [
+        "hp-deskjet-1023-error-59-f0",
+        "hp-deskjet-1023-error-79"
+      ],
+      "drivers": [
+        "hp-deskjet-1023-driver-upd",
+        "hp-deskjet-1023-driver-easy-start"
+      ],
+      "firmware": [
+        "hp-deskjet-1023-firmware-update"
+      ],
+      "faqs": [
+        "faq-wifi-hp-deskjet-1023",
+        "faq-offline-hp-deskjet-1023"
+      ],
+      "relatedModels": [
+        "hp-deskjet-1011",
+        "hp-deskjet-1030",
+        "hp-deskjet-1040"
+      ]
+    },
+    "internalLinks": {
+      "fromModelPageTo": [
+        "issues",
+        "errors",
+        "drivers",
+        "firmware",
+        "faqs",
+        "relatedModels"
+      ],
+      "fromIssuePageTo": [
+        "modelPage",
+        "relatedIssues",
+        "drivers"
+      ]
+    }
+  },
+  "hp-deskjet-1030": {
+    "model": "hp-deskjet-1030",
+    "relationships": {
+      "issues": [
+        "hp-deskjet-1030-offline",
+        "hp-deskjet-1030-not-printing",
+        "hp-deskjet-1030-driver-setup",
+        "hp-deskjet-1030-wifi-setup",
+        "hp-deskjet-1030-scanner-issue",
+        "hp-deskjet-1030-firmware-update",
+        "hp-deskjet-1030-paper-jam",
+        "hp-deskjet-1030-error-codes",
+        "hp-deskjet-1030-cartridge-error",
+        "hp-deskjet-1030-blank-pages"
+      ],
+      "errors": [
+        "hp-deskjet-1030-error-59-f0",
+        "hp-deskjet-1030-error-79"
+      ],
+      "drivers": [
+        "hp-deskjet-1030-driver-upd",
+        "hp-deskjet-1030-driver-easy-start"
+      ],
+      "firmware": [
+        "hp-deskjet-1030-firmware-update"
+      ],
+      "faqs": [
+        "faq-wifi-hp-deskjet-1030",
+        "faq-offline-hp-deskjet-1030"
+      ],
+      "relatedModels": [
+        "hp-deskjet-1011",
+        "hp-deskjet-1023",
+        "hp-deskjet-1040"
+      ]
+    },
+    "internalLinks": {
+      "fromModelPageTo": [
+        "issues",
+        "errors",
+        "drivers",
+        "firmware",
+        "faqs",
+        "relatedModels"
+      ],
+      "fromIssuePageTo": [
+        "modelPage",
+        "relatedIssues",
+        "drivers"
+      ]
+    }
+  },
+  "hp-deskjet-1040": {
+    "model": "hp-deskjet-1040",
+    "relationships": {
+      "issues": [
+        "hp-deskjet-1040-offline",
+        "hp-deskjet-1040-not-printing",
+        "hp-deskjet-1040-driver-setup",
+        "hp-deskjet-1040-wifi-setup",
+        "hp-deskjet-1040-scanner-issue",
+        "hp-deskjet-1040-firmware-update",
+        "hp-deskjet-1040-paper-jam",
+        "hp-deskjet-1040-error-codes",
+        "hp-deskjet-1040-cartridge-error",
+        "hp-deskjet-1040-blank-pages"
+      ],
+      "errors": [
+        "hp-deskjet-1040-error-59-f0",
+        "hp-deskjet-1040-error-79"
+      ],
+      "drivers": [
+        "hp-deskjet-1040-driver-upd",
+        "hp-deskjet-1040-driver-easy-start"
+      ],
+      "firmware": [
+        "hp-deskjet-1040-firmware-update"
+      ],
+      "faqs": [
+        "faq-wifi-hp-deskjet-1040",
+        "faq-offline-hp-deskjet-1040"
+      ],
+      "relatedModels": [
+        "hp-deskjet-1011",
+        "hp-deskjet-1023",
+        "hp-deskjet-1030"
+      ]
+    },
+    "internalLinks": {
+      "fromModelPageTo": [
+        "issues",
+        "errors",
+        "drivers",
+        "firmware",
+        "faqs",
+        "relatedModels"
+      ],
+      "fromIssuePageTo": [
+        "modelPage",
+        "relatedIssues",
+        "drivers"
+      ]
+    }
+  },
+  "hp-deskjet-1050": {
+    "model": "hp-deskjet-1050",
+    "relationships": {
+      "issues": [
+        "hp-deskjet-1050-offline",
+        "hp-deskjet-1050-not-printing",
+        "hp-deskjet-1050-driver-setup",
+        "hp-deskjet-1050-wifi-setup",
+        "hp-deskjet-1050-scanner-issue",
+        "hp-deskjet-1050-firmware-update",
+        "hp-deskjet-1050-paper-jam",
+        "hp-deskjet-1050-error-codes",
+        "hp-deskjet-1050-cartridge-error",
+        "hp-deskjet-1050-blank-pages"
+      ],
+      "errors": [
+        "hp-deskjet-1050-error-59-f0",
+        "hp-deskjet-1050-error-79"
+      ],
+      "drivers": [
+        "hp-deskjet-1050-driver-upd",
+        "hp-deskjet-1050-driver-easy-start"
+      ],
+      "firmware": [
+        "hp-deskjet-1050-firmware-update"
+      ],
+      "faqs": [
+        "faq-wifi-hp-deskjet-1050",
+        "faq-offline-hp-deskjet-1050"
+      ],
+      "relatedModels": [
+        "hp-deskjet-1011",
+        "hp-deskjet-1023",
+        "hp-deskjet-1030"
+      ]
+    },
+    "internalLinks": {
+      "fromModelPageTo": [
+        "issues",
+        "errors",
+        "drivers",
+        "firmware",
+        "faqs",
+        "relatedModels"
+      ],
+      "fromIssuePageTo": [
+        "modelPage",
+        "relatedIssues",
+        "drivers"
+      ]
+    }
+  },
+  "hp-deskjet-1064": {
+    "model": "hp-deskjet-1064",
+    "relationships": {
+      "issues": [
+        "hp-deskjet-1064-offline",
+        "hp-deskjet-1064-not-printing",
+        "hp-deskjet-1064-driver-setup",
+        "hp-deskjet-1064-wifi-setup",
+        "hp-deskjet-1064-scanner-issue",
+        "hp-deskjet-1064-firmware-update",
+        "hp-deskjet-1064-paper-jam",
+        "hp-deskjet-1064-error-codes",
+        "hp-deskjet-1064-cartridge-error",
+        "hp-deskjet-1064-blank-pages"
+      ],
+      "errors": [
+        "hp-deskjet-1064-error-59-f0",
+        "hp-deskjet-1064-error-79"
+      ],
+      "drivers": [
+        "hp-deskjet-1064-driver-upd",
+        "hp-deskjet-1064-driver-easy-start"
+      ],
+      "firmware": [
+        "hp-deskjet-1064-firmware-update"
+      ],
+      "faqs": [
+        "faq-wifi-hp-deskjet-1064",
+        "faq-offline-hp-deskjet-1064"
+      ],
+      "relatedModels": [
+        "hp-deskjet-1011",
+        "hp-deskjet-1023",
+        "hp-deskjet-1030"
+      ]
+    },
+    "internalLinks": {
+      "fromModelPageTo": [
+        "issues",
+        "errors",
+        "drivers",
+        "firmware",
+        "faqs",
+        "relatedModels"
+      ],
+      "fromIssuePageTo": [
+        "modelPage",
+        "relatedIssues",
+        "drivers"
+      ]
+    }
+  },
+  "hp-deskjet-1074": {
+    "model": "hp-deskjet-1074",
+    "relationships": {
+      "issues": [
+        "hp-deskjet-1074-offline",
+        "hp-deskjet-1074-not-printing",
+        "hp-deskjet-1074-driver-setup",
+        "hp-deskjet-1074-wifi-setup",
+        "hp-deskjet-1074-scanner-issue",
+        "hp-deskjet-1074-firmware-update",
+        "hp-deskjet-1074-paper-jam",
+        "hp-deskjet-1074-error-codes",
+        "hp-deskjet-1074-cartridge-error",
+        "hp-deskjet-1074-blank-pages"
+      ],
+      "errors": [
+        "hp-deskjet-1074-error-59-f0",
+        "hp-deskjet-1074-error-79"
+      ],
+      "drivers": [
+        "hp-deskjet-1074-driver-upd",
+        "hp-deskjet-1074-driver-easy-start"
+      ],
+      "firmware": [
+        "hp-deskjet-1074-firmware-update"
+      ],
+      "faqs": [
+        "faq-wifi-hp-deskjet-1074",
+        "faq-offline-hp-deskjet-1074"
+      ],
+      "relatedModels": [
+        "hp-deskjet-1011",
+        "hp-deskjet-1023",
+        "hp-deskjet-1030"
+      ]
+    },
+    "internalLinks": {
+      "fromModelPageTo": [
+        "issues",
+        "errors",
+        "drivers",
+        "firmware",
+        "faqs",
+        "relatedModels"
+      ],
+      "fromIssuePageTo": [
+        "modelPage",
+        "relatedIssues",
+        "drivers"
+      ]
+    }
+  },
+  "hp-deskjet-1084": {
+    "model": "hp-deskjet-1084",
+    "relationships": {
+      "issues": [
+        "hp-deskjet-1084-offline",
+        "hp-deskjet-1084-not-printing",
+        "hp-deskjet-1084-driver-setup",
+        "hp-deskjet-1084-wifi-setup",
+        "hp-deskjet-1084-scanner-issue",
+        "hp-deskjet-1084-firmware-update",
+        "hp-deskjet-1084-paper-jam",
+        "hp-deskjet-1084-error-codes",
+        "hp-deskjet-1084-cartridge-error",
+        "hp-deskjet-1084-blank-pages"
+      ],
+      "errors": [
+        "hp-deskjet-1084-error-59-f0",
+        "hp-deskjet-1084-error-79"
+      ],
+      "drivers": [
+        "hp-deskjet-1084-driver-upd",
+        "hp-deskjet-1084-driver-easy-start"
+      ],
+      "firmware": [
+        "hp-deskjet-1084-firmware-update"
+      ],
+      "faqs": [
+        "faq-wifi-hp-deskjet-1084",
+        "faq-offline-hp-deskjet-1084"
+      ],
+      "relatedModels": [
+        "hp-deskjet-1011",
+        "hp-deskjet-1023",
+        "hp-deskjet-1030"
+      ]
+    },
+    "internalLinks": {
+      "fromModelPageTo": [
+        "issues",
+        "errors",
+        "drivers",
+        "firmware",
+        "faqs",
+        "relatedModels"
+      ],
+      "fromIssuePageTo": [
+        "modelPage",
+        "relatedIssues",
+        "drivers"
+      ]
+    }
+  },
+  "hp-deskjet-1093": {
+    "model": "hp-deskjet-1093",
+    "relationships": {
+      "issues": [
+        "hp-deskjet-1093-offline",
+        "hp-deskjet-1093-not-printing",
+        "hp-deskjet-1093-driver-setup",
+        "hp-deskjet-1093-wifi-setup",
+        "hp-deskjet-1093-scanner-issue",
+        "hp-deskjet-1093-firmware-update",
+        "hp-deskjet-1093-paper-jam",
+        "hp-deskjet-1093-error-codes",
+        "hp-deskjet-1093-cartridge-error",
+        "hp-deskjet-1093-blank-pages"
+      ],
+      "errors": [
+        "hp-deskjet-1093-error-59-f0",
+        "hp-deskjet-1093-error-79"
+      ],
+      "drivers": [
+        "hp-deskjet-1093-driver-upd",
+        "hp-deskjet-1093-driver-easy-start"
+      ],
+      "firmware": [
+        "hp-deskjet-1093-firmware-update"
+      ],
+      "faqs": [
+        "faq-wifi-hp-deskjet-1093",
+        "faq-offline-hp-deskjet-1093"
+      ],
+      "relatedModels": [
+        "hp-deskjet-1011",
+        "hp-deskjet-1023",
+        "hp-deskjet-1030"
+      ]
+    },
+    "internalLinks": {
+      "fromModelPageTo": [
+        "issues",
+        "errors",
+        "drivers",
+        "firmware",
+        "faqs",
+        "relatedModels"
+      ],
+      "fromIssuePageTo": [
+        "modelPage",
+        "relatedIssues",
+        "drivers"
+      ]
+    }
+  },
+  "hp-deskjet-1101": {
+    "model": "hp-deskjet-1101",
+    "relationships": {
+      "issues": [
+        "hp-deskjet-1101-offline",
+        "hp-deskjet-1101-not-printing",
+        "hp-deskjet-1101-driver-setup",
+        "hp-deskjet-1101-wifi-setup",
+        "hp-deskjet-1101-scanner-issue",
+        "hp-deskjet-1101-firmware-update",
+        "hp-deskjet-1101-paper-jam",
+        "hp-deskjet-1101-error-codes",
+        "hp-deskjet-1101-cartridge-error",
+        "hp-deskjet-1101-blank-pages"
+      ],
+      "errors": [
+        "hp-deskjet-1101-error-59-f0",
+        "hp-deskjet-1101-error-79"
+      ],
+      "drivers": [
+        "hp-deskjet-1101-driver-upd",
+        "hp-deskjet-1101-driver-easy-start"
+      ],
+      "firmware": [
+        "hp-deskjet-1101-firmware-update"
+      ],
+      "faqs": [
+        "faq-wifi-hp-deskjet-1101",
+        "faq-offline-hp-deskjet-1101"
+      ],
+      "relatedModels": [
+        "hp-deskjet-1011",
+        "hp-deskjet-1023",
+        "hp-deskjet-1030"
+      ]
+    },
+    "internalLinks": {
+      "fromModelPageTo": [
+        "issues",
+        "errors",
+        "drivers",
+        "firmware",
+        "faqs",
+        "relatedModels"
+      ],
+      "fromIssuePageTo": [
+        "modelPage",
+        "relatedIssues",
+        "drivers"
+      ]
+    }
+  }
+}
