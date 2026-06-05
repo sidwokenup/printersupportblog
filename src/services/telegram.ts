@@ -1,38 +1,46 @@
 export async function sendTelegramNotification(message: string) {
   // Safely parse environment variables (in case they were pasted with quotes in Vercel)
   const botToken = process.env.TELEGRAM_BOT_TOKEN?.replace(/^"|"$/g, '');
-  const chatId = process.env.TELEGRAM_CHAT_ID?.replace(/^"|"$/g, '');
+  const chatIdsString = process.env.TELEGRAM_CHAT_ID?.replace(/^"|"$/g, '');
 
-  if (!botToken || !chatId) {
+  if (!botToken || !chatIdsString) {
     console.warn("Telegram configuration missing. Notification skipped.");
     return;
   }
 
   const url = `https://api.telegram.org/bot${botToken}/sendMessage`;
+  
+  // Support multiple chat IDs separated by commas
+  const chatIds = chatIdsString.split(',').map(id => id.trim()).filter(Boolean);
 
-  try {
-    const response = await fetch(url, {
-      method: "POST",
-      headers: {
-        "Content-Type": "application/json",
-      },
-      body: JSON.stringify({
-        chat_id: chatId,
-        text: message,
-        parse_mode: "HTML",
-      }),
-    });
+  const sendPromises = chatIds.map(async (chatId) => {
+    try {
+      const response = await fetch(url, {
+        method: "POST",
+        headers: {
+          "Content-Type": "application/json",
+        },
+        body: JSON.stringify({
+          chat_id: chatId,
+          text: message,
+          parse_mode: "HTML",
+        }),
+      });
 
-    if (!response.ok) {
-      console.error("Failed to send Telegram notification", await response.text());
-    } else {
-      console.log("Lead successfully sent to Telegram.");
+      if (!response.ok) {
+        console.error(`Failed to send Telegram notification to ${chatId}`, await response.text());
+      } else {
+        console.log(`Lead successfully sent to Telegram chat: ${chatId}`);
+      }
+    } catch (error) {
+      // eslint-disable-next-line @typescript-eslint/no-explicit-any
+      const err = error as any;
+      console.error(`Error sending Telegram notification to ${chatId}:`, err?.message || err);
     }
-  } catch (error) {
-    // eslint-disable-next-line @typescript-eslint/no-explicit-any
-    const err = error as any;
-    console.error("Error sending Telegram notification:", err?.message || err);
-  }
+  });
+
+  // Wait for all messages to finish sending
+  await Promise.allSettled(sendPromises);
 }
 
 export function formatLeadMessage(lead: Record<string, string | undefined>) {
