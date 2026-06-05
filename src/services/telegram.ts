@@ -18,7 +18,7 @@ export async function sendTelegramNotification(message: string) {
       body: JSON.stringify({
         chat_id: chatId,
         text: message,
-        parse_mode: "Markdown",
+        parse_mode: "HTML",
       }),
     });
 
@@ -31,27 +31,26 @@ export async function sendTelegramNotification(message: string) {
 }
 
 export function formatLeadMessage(lead: Record<string, string | undefined>) {
-  return `🚨 *NEW LEAD RECEIVED*
+  return `🚨 <b>NEW LEAD RECEIVED</b>
 
-👤 *Name:*
+👤 <b>Name:</b>
 ${lead.fullName}
 
-📞 *Phone:*
+📞 <b>Phone:</b>
 ${lead.phone}
 
-📧 *Email:*
-[${lead.email}](mailto:${lead.email})
+📧 <b>Email:</b>
+<a href="mailto:${lead.email}">${lead.email}</a>
 
-🌐 *Page:*
+🌐 <b>Page:</b>
 ${lead.pageUrl || 'Direct'}
 
-🕒 *Time:*
+🕒 <b>Time:</b>
 ${new Date().toLocaleString('en-US', { timeZone: 'America/New_York' })} (EST)
 
-📱 *Device:*
+📱 <b>Device:</b>
 ${lead.device || 'Unknown'}
 
-🔍 *Source:*
-${lead.source || 'Organic'}
-  `;
+🔍 <b>Source:</b>
+${lead.source || 'Organic'}`;
 }

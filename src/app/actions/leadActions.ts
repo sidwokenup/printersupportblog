@@ -42,8 +42,8 @@ export async function submitLead(formData: z.infer<typeof leadFormSchema>) {
       device
     };
 
-    // 6. Send to Integrations (Background processing, don't await)
-    Promise.allSettled([
+    // 6. Send to Integrations (Must await in Serverless environments like Vercel)
+    await Promise.allSettled([
       sendTelegramNotification(formatLeadMessage(leadInfo)),
       appendToGoogleSheet(leadInfo)
     ]).catch(console.error);
