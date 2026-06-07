@@ -12,8 +12,31 @@ const inter = Inter({
 });
 
 export const metadata: Metadata = {
+  metadataBase: new URL("https://livefreereviews.com"),
   title: "Live Free Reviews - Printer Support",
   description: "Find solutions, troubleshooting guides, drivers, and error code fixes for your HP Printer.",
+  openGraph: {
+    title: "Live Free Reviews - Printer Support",
+    description: "Find solutions, troubleshooting guides, drivers, and error code fixes for your HP Printer.",
+    url: "https://livefreereviews.com", // You can replace this with your actual domain
+    siteName: "Live Free Reviews",
+    images: [
+      {
+        url: "/logo.png",
+        width: 800,
+        height: 600,
+        alt: "Live Free Reviews Logo",
+      },
+    ],
+    locale: "en_US",
+    type: "website",
+  },
+  twitter: {
+    card: "summary_large_image",
+    title: "Live Free Reviews - Printer Support",
+    description: "Find solutions, troubleshooting guides, drivers, and error code fixes for your HP Printer.",
+    images: ["/logo.png"],
+  },
 };
 
 export default function RootLayout({
