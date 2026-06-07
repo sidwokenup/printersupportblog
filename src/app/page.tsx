@@ -4,6 +4,7 @@ import Link from "next/link"
 import Image from "next/image"
 import { motion } from "framer-motion"
 import { GlobalSearch } from "@/components/search/GlobalSearch"
+import { AnimatedCounter } from "@/components/ui/animated-counter"
 import { 
   Printer, 
   AlertTriangle, 
@@ -120,7 +121,9 @@ export default function Home() {
                       <CheckCircle2 className="h-5 w-5" />
                     </div>
                     <div>
-                      <div className="text-xl font-bold text-slate-900">5,000+</div>
+                      <div className="text-xl font-bold text-slate-900">
+                        <AnimatedCounter end={5000} suffix="+" />
+                      </div>
                       <div className="text-xs font-medium text-slate-500">Solutions Found</div>
                     </div>
                   </motion.div>
@@ -135,7 +138,9 @@ export default function Home() {
                       <BookOpen className="h-5 w-5" />
                     </div>
                     <div>
-                      <div className="text-xl font-bold text-slate-900">1,000+</div>
+                      <div className="text-xl font-bold text-slate-900">
+                        <AnimatedCounter end={1000} suffix="+" />
+                      </div>
                       <div className="text-xs font-medium text-slate-500">Printer Models</div>
                     </div>
                   </motion.div>
@@ -221,14 +226,14 @@ export default function Home() {
         <div className="container mx-auto px-4 md:px-6 relative z-10">
           <div className="grid grid-cols-2 md:grid-cols-4 gap-8 md:gap-12 text-center">
             {[
-              { value: "1,000+", label: "Printer Models" },
-              { value: "5,000+", label: "Troubleshooting Guides" },
-              { value: "10k+", label: "Error Codes Indexed" },
-              { value: "1M+", label: "Searches Served" },
+              { value: 1000, suffix: "+", label: "Printer Models" },
+              { value: 5000, suffix: "+", label: "Troubleshooting Guides" },
+              { value: 10, suffix: "k+", label: "Error Codes Indexed" },
+              { value: 1, suffix: "M+", label: "Searches Served" },
             ].map((stat, i) => (
               <div key={i} className="flex flex-col gap-2">
                 <div className="text-4xl md:text-5xl lg:text-6xl font-extrabold text-transparent bg-clip-text bg-gradient-to-b from-white to-white/70">
-                  {stat.value}
+                  <AnimatedCounter end={stat.value} suffix={stat.suffix} />
                 </div>
                 <div className="text-blue-200 font-medium text-lg">{stat.label}</div>
               </div>
