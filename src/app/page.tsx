@@ -1,22 +1,30 @@
 "use client"
 
+import { useState, useEffect } from "react"
 import Link from "next/link"
-import { motion } from "framer-motion"
+import Image from "next/image"
+import { motion, AnimatePresence } from "framer-motion"
 import { GlobalSearch } from "@/components/search/GlobalSearch"
-import { Card, CardContent, CardDescription, CardHeader, CardTitle } from "@/components/ui/card"
 import { 
   Printer, 
   AlertTriangle, 
-  Download, 
   Wrench, 
-  ChevronRight, 
   CheckCircle2, 
   ShieldCheck, 
   Zap, 
   BookOpen, 
   Users, 
   FileText,
-  Settings
+  Settings,
+  Unplug,
+  X,
+  Minus,
+  Check,
+  Monitor,
+  MessageSquareWarning,
+  WifiOff,
+  Hourglass,
+  MoreHorizontal
 } from "lucide-react"
 
 const FADE_UP = {
@@ -33,12 +41,23 @@ const STAGGER = {
   }
 }
 
+const IMAGES = ["/hp.png", "/images.jpg"];
+
 export default function Home() {
+  const [currentImageIndex, setCurrentImageIndex] = useState(0);
+
+  useEffect(() => {
+    const interval = setInterval(() => {
+      setCurrentImageIndex((prevIndex) => (prevIndex + 1) % IMAGES.length);
+    }, 4000); // Rotate every 4 seconds
+    return () => clearInterval(interval);
+  }, []);
+
   return (
     <div className="flex flex-col min-h-screen bg-slate-50 overflow-hidden">
       
       {/* Premium Hero Section */}
-      <section className="relative pt-12 pb-24 lg:pt-20 lg:pb-32 overflow-hidden">
+      <section className="relative pt-8 pb-16 lg:pt-12 lg:pb-20 overflow-hidden">
         {/* Background Gradients */}
         <div className="absolute inset-0 bg-gradient-to-br from-white via-blue-50/50 to-blue-100/50 -z-10" />
         <div className="absolute top-0 right-0 -translate-y-12 translate-x-1/3 w-[800px] h-[800px] bg-blue-400/10 rounded-full blur-3xl -z-10" />
@@ -56,18 +75,18 @@ export default function Home() {
             >
               <motion.div variants={FADE_UP} className="inline-flex items-center gap-2 px-3 py-1.5 rounded-full bg-blue-100/80 text-blue-700 text-sm font-medium mb-6 w-fit border border-blue-200/50 shadow-sm">
                 <ShieldCheck className="h-4 w-4" />
-                <span>The #1 Unofficial HP Support Resource</span>
+                <span>The Ultimate HP Printer Blog & Support Guide</span>
               </motion.div>
               
               <motion.h1 variants={FADE_UP} className="text-5xl md:text-6xl lg:text-[64px] font-extrabold tracking-tight text-slate-900 leading-[1.1] mb-6">
-                Fix your HP printer <br />
+                Expert solutions for your <br />
                 <span className="text-transparent bg-clip-text bg-gradient-to-r from-blue-600 to-blue-400">
-                  in minutes.
+                  HP Printer.
                 </span>
               </motion.h1>
               
               <motion.p variants={FADE_UP} className="text-lg md:text-xl text-slate-600 mb-10 leading-relaxed">
-                Search our massive database of error codes, troubleshooting guides, drivers, and manuals to instantly find the right solution.
+                Read our in-depth blog posts, troubleshooting guides, and expert advice to resolve your home printer issues instantly.
               </motion.p>
               
               <motion.div variants={FADE_UP} className="w-full max-w-xl relative z-20 mb-6">
@@ -76,9 +95,9 @@ export default function Home() {
               
               <motion.div variants={FADE_UP} className="flex flex-wrap items-center gap-3 text-sm text-slate-500">
                 <span className="font-medium">Popular:</span>
-                <Link href="/models/hp-deskjet-2700" className="px-3 py-1 rounded-full bg-white border border-slate-200 hover:border-blue-300 hover:bg-blue-50 hover:text-blue-700 transition-all shadow-sm">DeskJet 2700</Link>
-                <Link href="/error-codes/hp-error-79" className="px-3 py-1 rounded-full bg-white border border-slate-200 hover:border-blue-300 hover:bg-blue-50 hover:text-blue-700 transition-all shadow-sm">Error 79</Link>
-                <Link href="/troubleshooting?q=offline" className="px-3 py-1 rounded-full bg-white border border-slate-200 hover:border-blue-300 hover:bg-blue-50 hover:text-blue-700 transition-all shadow-sm">Printer Offline</Link>
+                <Link href="/solutions/printer-offline" className="px-3 py-1 rounded-full bg-white border border-slate-200 hover:border-blue-300 hover:bg-blue-50 hover:text-blue-700 transition-all shadow-sm">Printer Offline</Link>
+                <Link href="/solutions/printer-not-printing" className="px-3 py-1 rounded-full bg-white border border-slate-200 hover:border-blue-300 hover:bg-blue-50 hover:text-blue-700 transition-all shadow-sm">Not Printing</Link>
+                <Link href="/solutions/printer-paper-jam" className="px-3 py-1 rounded-full bg-white border border-slate-200 hover:border-blue-300 hover:bg-blue-50 hover:text-blue-700 transition-all shadow-sm">Paper Jam</Link>
               </motion.div>
             </motion.div>
 
@@ -90,15 +109,32 @@ export default function Home() {
               className="relative hidden lg:flex items-center justify-center w-full"
             >
               <div className="relative w-full max-w-[480px] aspect-square">
-                {/* Main Graphic Area */}
-                <div className="absolute inset-0 bg-gradient-to-tr from-blue-100 to-white rounded-3xl border border-white/50 shadow-2xl flex items-center justify-center">
-                  <Printer className="h-48 w-48 text-blue-500/20" />
+                {/* Main Graphic Area with Image Slider */}
+                <div className="absolute inset-0 bg-white rounded-3xl border border-slate-200 shadow-2xl flex items-center justify-center">
+                  <AnimatePresence mode="wait">
+                    <motion.div
+                      key={currentImageIndex}
+                      initial={{ opacity: 0, scale: 1.05 }}
+                      animate={{ opacity: 1, scale: 1 }}
+                      exit={{ opacity: 0, scale: 0.95 }}
+                      transition={{ duration: 0.8, ease: "easeInOut" }}
+                      className="absolute inset-8 w-[calc(100%-4rem)] h-[calc(100%-4rem)]"
+                    >
+                      <Image 
+                        src={IMAGES[currentImageIndex]} 
+                        alt="HP Printer Support" 
+                        fill 
+                        className="object-contain"
+                        priority
+                      />
+                    </motion.div>
+                  </AnimatePresence>
                   
                   {/* Floating Card 1 */}
                   <motion.div 
                     animate={{ y: [0, -10, 0] }}
                     transition={{ repeat: Infinity, duration: 4, ease: "easeInOut" }}
-                    className="absolute top-10 -left-6 bg-white/90 backdrop-blur-md p-4 rounded-2xl shadow-xl border border-slate-100/50 flex items-center gap-3"
+                    className="absolute top-10 -left-6 bg-white/90 backdrop-blur-md p-4 rounded-2xl shadow-xl border border-slate-100/50 flex items-center gap-3 z-20"
                   >
                     <div className="bg-green-100 p-2.5 rounded-full text-green-600">
                       <CheckCircle2 className="h-5 w-5" />
@@ -113,7 +149,7 @@ export default function Home() {
                   <motion.div 
                     animate={{ y: [0, 10, 0] }}
                     transition={{ repeat: Infinity, duration: 5, ease: "easeInOut" }}
-                    className="absolute bottom-10 -right-6 bg-white/90 backdrop-blur-md p-4 rounded-2xl shadow-xl border border-slate-100/50 flex items-center gap-3"
+                    className="absolute bottom-10 -right-6 bg-white/90 backdrop-blur-md p-4 rounded-2xl shadow-xl border border-slate-100/50 flex items-center gap-3 z-20"
                   >
                     <div className="bg-blue-100 p-2.5 rounded-full text-blue-600">
                       <BookOpen className="h-5 w-5" />
@@ -131,78 +167,39 @@ export default function Home() {
       </section>
 
       {/* Category Section */}
-      <section className="py-24 relative z-10 bg-white">
+      <section id="solutions" className="py-16 relative z-10 bg-white">
         <div className="container mx-auto px-4 md:px-6">
           <div className="text-center max-w-2xl mx-auto mb-16">
-            <h2 className="text-3xl md:text-4xl font-bold text-slate-900 tracking-tight mb-4">Everything you need to fix it.</h2>
-            <p className="text-lg text-slate-600">Choose a category below to explore step-by-step guides, downloads, and specific model documentation.</p>
+            <h2 className="text-3xl md:text-4xl font-bold text-slate-900 tracking-tight">Please Select Your Printer Issues!</h2>
           </div>
           
-          <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8">
+          <div className="grid grid-cols-1 sm:grid-cols-2 md:grid-cols-3 lg:grid-cols-4 gap-4 md:gap-6 max-w-6xl mx-auto">
             {[
-              { title: "Troubleshooting", desc: "Step-by-step guides for common printing problems, jams, and connectivity issues.", icon: Wrench, color: "text-blue-600", bg: "bg-blue-100", href: "/troubleshooting" },
-              { title: "Error Codes", desc: "Look up what your printer's blinking lights or alphanumeric screen codes actually mean.", icon: AlertTriangle, color: "text-rose-600", bg: "bg-rose-100", href: "/error-codes" },
-              { title: "Printer Models", desc: "Find specific guides, specs, and manuals tailored exactly to your printer model.", icon: Printer, color: "text-indigo-600", bg: "bg-indigo-100", href: "/models" },
-              { title: "Drivers & Software", desc: "Download the latest official drivers, setup utilities, and firmware updates.", icon: Download, color: "text-emerald-600", bg: "bg-emerald-100", href: "/drivers" },
-              { title: "Setup Guides", desc: "First-time installation, network configuration, and unboxing walk-throughs.", icon: Settings, color: "text-amber-600", bg: "bg-amber-100", href: "/setup-guides" },
-              { title: "Firmware Updates", desc: "Keep your printer secure and functioning with the latest system firmware.", icon: Zap, color: "text-violet-600", bg: "bg-violet-100", href: "/firmware" },
+              { title: "Printer Offline", badge: Unplug, slug: "printer-offline" },
+              { title: "Printer not printing", badge: X, slug: "printer-not-printing" },
+              { title: "Printer Paper Jam", badge: Minus, slug: "printer-paper-jam" },
+              { title: "Printer Setup Issue", badge: Check, slug: "printer-setup-issue" },
+              { title: "Printer Driver", badge: Settings, slug: "printer-driver" },
+              { title: "Printer Issue After Windows Update", badge: Monitor, slug: "printer-issue-after-windows-update" },
+              { title: "Printer code Errors and Messages", badge: MessageSquareWarning, slug: "printer-code-errors-and-messages" },
+              { title: "Printer Troubleshooting", badge: Wrench, slug: "printer-troubleshooting" },
+              { title: "Printer not connecting to WIFI", badge: WifiOff, slug: "printer-not-connecting-to-wifi" },
+              { title: "Printer Job Stuck In Queue", badge: Hourglass, slug: "printer-job-stuck-in-queue" },
+              { title: "Printer in error state", badge: AlertTriangle, slug: "printer-in-error-state" },
+              { title: "Others", badge: MoreHorizontal, slug: "others" },
             ].map((cat, i) => (
-              <Link key={i} href={cat.href} className="group block">
-                <motion.div 
-                  whileHover={{ y: -5 }}
-                  className="h-full p-8 rounded-3xl bg-white border border-slate-200 shadow-sm hover:shadow-xl transition-all duration-300 relative overflow-hidden"
+              <Link key={i} href={`/solutions/${cat.slug}`} className="group block h-full">
+                <div 
+                  className="h-full px-4 py-6 rounded-xl bg-white border border-slate-200 shadow-sm hover:border-blue-300 hover:shadow-md transition-all duration-300 flex items-center gap-4 group-hover:bg-blue-50/50"
                 >
-                  <div className={`absolute top-0 right-0 w-32 h-32 bg-gradient-to-br from-transparent to-${cat.bg.replace('bg-', '')}/30 rounded-bl-full -z-10 transition-transform group-hover:scale-150`} />
-                  <div className={`w-14 h-14 ${cat.bg} ${cat.color} rounded-2xl flex items-center justify-center mb-6 shadow-sm`}>
-                    <cat.icon className="h-7 w-7" />
+                  <div className="relative flex-shrink-0 flex items-center justify-center text-blue-600">
+                    <Printer className="h-10 w-10 stroke-[1.5]" />
+                    <div className="absolute -top-1 -right-2 bg-white rounded-full p-0.5 border border-blue-200">
+                      <cat.badge className="h-3 w-3 stroke-[2.5]" />
+                    </div>
                   </div>
-                  <h3 className="text-xl font-bold text-slate-900 mb-3">{cat.title}</h3>
-                  <p className="text-slate-600 mb-6 leading-relaxed">{cat.desc}</p>
-                  <div className="flex items-center text-primary font-semibold text-sm group-hover:gap-2 transition-all">
-                    Explore <ChevronRight className="h-4 w-4 ml-1" />
-                  </div>
-                </motion.div>
-              </Link>
-            ))}
-          </div>
-        </div>
-      </section>
-
-      {/* Popular Models Section */}
-      <section className="py-24 bg-slate-50 border-t border-slate-200">
-        <div className="container mx-auto px-4 md:px-6">
-          <div className="flex flex-col md:flex-row md:items-end justify-between mb-12 gap-6">
-            <div className="max-w-2xl">
-              <h2 className="text-3xl md:text-4xl font-bold text-slate-900 tracking-tight mb-4">Popular Printer Models</h2>
-              <p className="text-lg text-slate-600">Quickly jump to the most searched HP printers to find targeted solutions.</p>
-            </div>
-            <Link href="/models" className="inline-flex items-center justify-center px-6 py-3 rounded-full bg-white border border-slate-200 text-slate-700 font-medium hover:bg-slate-50 hover:text-primary transition-colors shadow-sm">
-              View All Models <ChevronRight className="h-4 w-4 ml-2" />
-            </Link>
-          </div>
-          
-          <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-6">
-            {[
-              { id: 'hp-deskjet-2700', name: 'HP DeskJet 2700', type: 'Inkjet', status: 'Active' },
-              { id: 'hp-envy-6055', name: 'HP ENVY 6055e', type: 'Inkjet', status: 'Active' },
-              { id: 'hp-officejet-pro-9015', name: 'HP OfficeJet Pro 9015', type: 'Inkjet', status: 'Active' },
-              { id: 'hp-laserjet-pro-m404', name: 'HP LaserJet Pro M404', type: 'Laser', status: 'Active' },
-            ].map((model) => (
-              <Link key={model.id} href={`/models/${model.id}`} className="group">
-                <Card className="h-full border-slate-200 shadow-sm hover:shadow-lg hover:border-primary/30 transition-all duration-300 rounded-2xl overflow-hidden bg-white">
-                  <div className="h-40 bg-gradient-to-br from-slate-100 to-slate-50 flex items-center justify-center border-b border-slate-100 group-hover:bg-blue-50/50 transition-colors">
-                    <Printer className="h-20 w-20 text-slate-300 group-hover:text-blue-300 transition-colors" />
-                  </div>
-                  <CardHeader className="p-6">
-                    <CardTitle className="text-lg font-bold text-slate-900 mb-1 line-clamp-1">{model.name}</CardTitle>
-                    <CardDescription className="text-slate-500 font-medium flex items-center justify-between">
-                      <span>{model.type}</span>
-                      <span className="text-primary text-sm flex items-center opacity-0 group-hover:opacity-100 -translate-x-2 group-hover:translate-x-0 transition-all">
-                        View <ChevronRight className="h-3 w-3 ml-1" />
-                      </span>
-                    </CardDescription>
-                  </CardHeader>
-                </Card>
+                  <h3 className="text-[15px] font-medium text-slate-800 leading-snug flex-1 text-center group-hover:text-blue-700 transition-colors">{cat.title}</h3>
+                </div>
               </Link>
             ))}
           </div>
@@ -210,7 +207,7 @@ export default function Home() {
       </section>
 
       {/* Trust Section */}
-      <section className="py-24 bg-white border-t border-slate-200">
+      <section className="py-16 bg-white border-t border-slate-200">
         <div className="container mx-auto px-4 md:px-6">
           <div className="text-center max-w-3xl mx-auto mb-16">
             <h2 className="text-3xl md:text-4xl font-bold text-slate-900 tracking-tight mb-4">Why users trust our guides</h2>
@@ -237,7 +234,7 @@ export default function Home() {
       </section>
 
       {/* Stats Section */}
-      <section className="py-24 bg-slate-900 text-white relative overflow-hidden">
+      <section className="py-16 bg-slate-900 text-white relative overflow-hidden">
         <div className="absolute inset-0 bg-blue-900/20" />
         <div className="absolute top-0 right-0 w-[500px] h-[500px] bg-blue-500/20 rounded-full blur-[100px] -z-10" />
         

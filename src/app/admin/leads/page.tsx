@@ -11,7 +11,7 @@ export default async function AdminLeadsPage() {
       fullName: "John Smith",
       email: "john@example.com",
       phone: "+1 555-0123",
-      pageUrl: "http://localhost:3002/models/hp-deskjet-2700",
+      pageUrl: "http://localhost:3002/troubleshooting",
       status: "New",
       createdAt: new Date(Date.now() - 1000 * 60 * 5)
     },

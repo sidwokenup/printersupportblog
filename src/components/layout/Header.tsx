@@ -2,21 +2,14 @@
 
 import * as React from "react"
 import Link from "next/link"
+import Image from "next/image"
 import { usePathname } from "next/navigation"
 import { motion } from "framer-motion"
 import { Printer, Menu } from "lucide-react"
 import { Button } from "@/components/ui/button"
-import { Sheet, SheetContent, SheetTrigger } from "@/components/ui/sheet"
+import { Sheet, SheetContent, SheetTrigger, SheetTitle } from "@/components/ui/sheet"
 import { GlobalSearch } from "@/components/search/GlobalSearch"
 import { cn } from "@/lib/utils"
-
-const navItems = [
-  { name: "Troubleshooting", href: "/troubleshooting" },
-  { name: "Models", href: "/models" },
-  { name: "Error Codes", href: "/error-codes" },
-  { name: "Drivers", href: "/drivers" },
-  { name: "Contact", href: "/contact" },
-]
 
 export function Header() {
   const [isScrolled, setIsScrolled] = React.useState(false)
@@ -45,8 +38,8 @@ export function Header() {
       <div className="container mx-auto flex items-center justify-between px-4 md:px-6">
         <div className="flex items-center gap-2 lg:mr-8">
           <Link href="/" className="flex items-center gap-2 group">
-            <div className="bg-primary/10 p-2 rounded-xl group-hover:bg-primary/20 transition-colors">
-              <Printer className="h-6 w-6 text-primary" />
+            <div className="bg-primary/10 p-2 rounded-xl group-hover:bg-primary/20 transition-colors flex items-center justify-center">
+              <Image src="/logo.png" alt="Live Free Reviews" width={40} height={40} className="object-contain" />
             </div>
             <span className="font-bold text-xl hidden lg:inline-block tracking-tight text-slate-900">
               Live Free Reviews
@@ -56,41 +49,42 @@ export function Header() {
 
         {/* Desktop Navigation */}
         <nav className="hidden xl:flex items-center gap-1">
-          {navItems.map((item) => {
-            if (item.name === "Contact") {
-              return (
-                <button
-                  key={item.name}
-                  onClick={() => window.dispatchEvent(new Event("open-lead-popup"))}
-                  className="relative px-3 py-2 text-sm font-medium transition-colors rounded-md text-slate-600 hover:text-primary hover:bg-slate-100"
-                >
-                  {item.name}
-                </button>
-              )
-            }
-            
-            const isActive = pathname === item.href || pathname?.startsWith(`${item.href}/`)
-            return (
-              <Link 
-                key={item.href} 
-                href={item.href}
-                className={cn(
-                  "relative px-3 py-2 text-sm font-medium transition-colors rounded-md hover:text-primary",
-                  isActive ? "text-primary" : "text-slate-600 hover:bg-slate-100"
-                )}
-              >
-                {item.name}
-                {isActive && (
-                  <motion.div
-                    layoutId="active-nav-indicator"
-                    className="absolute bottom-0 left-0 right-0 h-0.5 bg-primary"
-                    initial={false}
-                    transition={{ type: "spring", stiffness: 300, damping: 30 }}
-                  />
-                )}
-              </Link>
-            )
-          })}
+          <Link 
+            href="/"
+            className={cn(
+              "relative px-3 py-2 text-sm font-medium transition-colors rounded-md hover:text-primary",
+              pathname === "/" ? "text-primary" : "text-slate-600 hover:bg-slate-100"
+            )}
+          >
+            Home
+          </Link>
+
+          <Link 
+            href="/#solutions"
+            className={cn(
+              "relative px-3 py-2 text-sm font-medium transition-colors rounded-md hover:text-primary",
+              pathname?.startsWith("/solutions") ? "text-primary" : "text-slate-600 hover:bg-slate-100"
+            )}
+          >
+            Knowledgebase & Blog
+          </Link>
+
+          <Link 
+            href="/privacy-policy"
+            className={cn(
+              "relative px-3 py-2 text-sm font-medium transition-colors rounded-md hover:text-primary",
+              pathname === "/privacy-policy" ? "text-primary" : "text-slate-600 hover:bg-slate-100"
+            )}
+          >
+            Privacy Policy
+          </Link>
+
+          <button
+            onClick={() => window.dispatchEvent(new Event("open-lead-popup"))}
+            className="relative ml-2 px-4 py-2 text-sm font-semibold transition-colors rounded-full bg-primary text-white hover:bg-blue-700 shadow-sm"
+          >
+            Contact Us
+          </button>
         </nav>
 
         <div className="flex items-center justify-end gap-4 flex-1 xl:flex-none">
@@ -107,41 +101,25 @@ export function Header() {
                 <span className="sr-only">Toggle menu</span>
               </Button>
             </SheetTrigger>
-            <SheetContent side="right" className="w-[300px] sm:w-[400px]">
-              <div className="flex items-center gap-2 mb-8">
-                <Printer className="h-6 w-6 text-primary" />
+            <SheetContent side="right" className="w-[300px] sm:w-[400px] overflow-y-auto">
+              <SheetTitle className="sr-only">Navigation Menu</SheetTitle>
+              <div className="flex items-center gap-3 mb-8">
+                <Image src="/logo.png" alt="Live Free Reviews" width={36} height={36} className="object-contain" />
                 <span className="font-bold text-lg tracking-tight">Live Free Reviews</span>
               </div>
               <div className="relative mb-8">
                 <GlobalSearch />
               </div>
-              <nav className="grid gap-2">
-                {navItems.map((item) => {
-                  if (item.name === "Contact") {
-                    return (
-                      <button
-                        key={item.name}
-                        onClick={() => window.dispatchEvent(new Event("open-lead-popup"))}
-                        className="flex items-center px-4 py-3 text-base font-medium rounded-xl transition-colors hover:bg-slate-100 text-slate-700 text-left"
-                      >
-                        {item.name}
-                      </button>
-                    )
-                  }
-                  const isActive = pathname === item.href || pathname?.startsWith(`${item.href}/`)
-                  return (
-                    <Link 
-                      key={item.href} 
-                      href={item.href}
-                      className={cn(
-                        "flex items-center px-4 py-3 text-base font-medium rounded-xl transition-colors",
-                        isActive ? "bg-primary/10 text-primary" : "hover:bg-slate-100 text-slate-700"
-                      )}
-                    >
-                      {item.name}
-                    </Link>
-                  )
-                })}
+              <nav className="flex flex-col gap-1">
+                <Link href="/" className="px-4 py-3 text-base font-medium rounded-xl hover:bg-slate-100 text-slate-700">Home</Link>
+                <Link href="/#solutions" className="px-4 py-3 text-base font-medium rounded-xl hover:bg-slate-100 text-slate-700">Knowledgebase & Blog</Link>
+                <Link href="/privacy-policy" className="px-4 py-3 text-base font-medium rounded-xl hover:bg-slate-100 text-slate-700">Privacy Policy</Link>
+                <button
+                  onClick={() => window.dispatchEvent(new Event("open-lead-popup"))}
+                  className="mt-4 px-4 py-3 text-base font-semibold rounded-xl bg-primary text-white text-center hover:bg-blue-700"
+                >
+                  Contact Us
+                </button>
               </nav>
             </SheetContent>
           </Sheet>

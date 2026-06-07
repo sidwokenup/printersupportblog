@@ -15,7 +15,7 @@ export function GlobalSearch({ size = "default" }: { size?: "default" | "lg" }) 
     e.preventDefault()
     if (query.trim()) {
       setIsSearching(true)
-      router.push(`/troubleshooting?q=${encodeURIComponent(query)}`)
+      router.push(`/search?q=${encodeURIComponent(query)}`)
       // Reset loading state after a small delay to allow navigation
       setTimeout(() => setIsSearching(false), 500)
     }
@@ -26,7 +26,7 @@ export function GlobalSearch({ size = "default" }: { size?: "default" | "lg" }) 
       <Search className={`absolute left-3 text-muted-foreground ${size === "lg" ? "h-6 w-6" : "h-4 w-4"}`} />
       <Input
         type="search"
-        placeholder="Search for models, errors, or issues..."
+        placeholder="Search for errors or issues..."
         className={`w-full pl-10 pr-24 bg-background shadow-sm ${
           size === "lg" ? "h-14 text-lg rounded-full" : "h-10 rounded-md"
         }`}

@@ -1,7 +1,8 @@
 "use client"
 
 import Link from "next/link"
-import { Printer, Send } from "lucide-react"
+import Image from "next/image"
+import { Send } from "lucide-react"
 import { Button } from "@/components/ui/button"
 import { Input } from "@/components/ui/input"
 
@@ -35,18 +36,18 @@ const YoutubeIcon = ({ className }: { className?: string }) => (
 
 export function Footer() {
   return (
-    <footer className="relative mt-24 bg-white border-t border-slate-200 overflow-hidden">
+    <footer className="relative mt-12 bg-white border-t border-slate-200 overflow-hidden">
       {/* Premium Gradient Top Border */}
       <div className="absolute top-0 left-0 right-0 h-1 bg-gradient-to-r from-blue-500 via-blue-300 to-blue-500 opacity-50" />
       
-      <div className="container mx-auto px-4 md:px-6 py-16 lg:py-20">
-        <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-5 gap-12 lg:gap-8">
+      <div className="container mx-auto px-4 md:px-6 py-12 lg:py-16">
+        <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-12 lg:gap-8">
           
           {/* Brand & Description */}
           <div className="lg:col-span-2 flex flex-col gap-6">
-            <Link href="/" className="flex items-center gap-2 group w-fit">
-              <div className="bg-primary/10 p-2.5 rounded-xl group-hover:bg-primary/20 transition-colors">
-                <Printer className="h-7 w-7 text-primary" />
+            <Link href="/" className="flex items-center gap-3 group w-fit">
+              <div className="bg-primary/10 p-2.5 rounded-xl group-hover:bg-primary/20 transition-colors flex items-center justify-center">
+                <Image src="/logo.png" alt="Live Free Reviews" width={48} height={48} className="object-contain" />
               </div>
               <span className="font-bold text-2xl tracking-tight text-slate-900">
                 Live Free Reviews
@@ -75,20 +76,7 @@ export function Footer() {
           <div className="flex flex-col gap-4">
             <h3 className="font-semibold text-slate-900 text-base">Categories</h3>
             <div className="flex flex-col gap-3 mt-2">
-              <Link href="/troubleshooting" className="text-slate-600 hover:text-primary transition-colors">Troubleshooting</Link>
-              <Link href="/error-codes" className="text-slate-600 hover:text-primary transition-colors">Error Codes</Link>
-              <Link href="/drivers" className="text-slate-600 hover:text-primary transition-colors">Drivers & Software</Link>
-            </div>
-          </div>
-
-          <div className="flex flex-col gap-4">
-            <h3 className="font-semibold text-slate-900 text-base">Popular Models</h3>
-            <div className="flex flex-col gap-3 mt-2">
-              <Link href="/models/hp-deskjet-2700" className="text-slate-600 hover:text-primary transition-colors">HP DeskJet 2700</Link>
-              <Link href="/models/hp-envy-6055" className="text-slate-600 hover:text-primary transition-colors">HP ENVY 6055</Link>
-              <Link href="/models/hp-officejet-pro-9015" className="text-slate-600 hover:text-primary transition-colors">HP OfficeJet 9015</Link>
-              <Link href="/models/hp-laserjet-pro-m404n" className="text-slate-600 hover:text-primary transition-colors">HP LaserJet Pro</Link>
-              <Link href="/models" className="text-primary font-medium hover:underline transition-colors mt-1">View All Models &rarr;</Link>
+              <Link href="/#solutions" className="text-slate-600 hover:text-primary transition-colors">Troubleshooting</Link>
             </div>
           </div>
 
@@ -106,7 +94,7 @@ export function Footer() {
         </div>
 
         {/* Newsletter Section */}
-        <div className="mt-16 pt-10 border-t border-slate-200 grid grid-cols-1 lg:grid-cols-2 gap-8 items-center">
+        <div className="mt-12 pt-8 border-t border-slate-200 grid grid-cols-1 lg:grid-cols-2 gap-8 items-center">
           <div>
             <h3 className="text-xl font-bold text-slate-900">Subscribe to our newsletter</h3>
             <p className="text-slate-600 mt-2">Get the latest troubleshooting tips and firmware updates delivered to your inbox.</p>
