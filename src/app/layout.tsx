@@ -1,6 +1,5 @@
 import type { Metadata } from "next";
 import { Inter } from "next/font/google";
-import Script from "next/script";
 import "./globals.css";
 import { Header } from "@/components/layout/Header";
 import { Footer } from "@/components/layout/Footer";
@@ -23,10 +22,10 @@ export default function RootLayout({
   children: React.ReactNode;
 }>) {
   return (
-    <html lang="en" className="h-full" suppressHydrationWarning>
+    <html lang="en" className="h-full" suppressHydrationWarning={true}>
       <body
         className={`${inter.variable} font-sans antialiased min-h-full flex flex-col bg-slate-50`}
-        suppressHydrationWarning
+        suppressHydrationWarning={true}
       >
         <TooltipProvider>
           <Header />
@@ -38,9 +37,8 @@ export default function RootLayout({
         </TooltipProvider>
 
         {/* Start of Tawk.to Script */}
-        <Script 
-          id="tawk-to" 
-          strategy="lazyOnload"
+        <script 
+          type="text/javascript"
           dangerouslySetInnerHTML={{
             __html: `
               var Tawk_API=Tawk_API||{}, Tawk_LoadStart=new Date();

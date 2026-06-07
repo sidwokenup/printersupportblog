@@ -35,9 +35,11 @@ export async function appendToGoogleSheet(leadData: Record<string, string | unde
       [
         new Date().toLocaleDateString(),
         new Date().toLocaleTimeString(),
-        leadData.fullName,
+        leadData.printerSeries || "N/A",
+        leadData.issueFacing || "N/A",
+        leadData.operatingSystem || "N/A",
         leadData.phone,
-        leadData.email,
+        leadData.email || "N/A",
         leadData.pageUrl || "",
         leadData.utmSource || leadData.source || "Organic",
         leadData.utmCampaign || "",

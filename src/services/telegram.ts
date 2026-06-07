@@ -46,14 +46,20 @@ export async function sendTelegramNotification(message: string) {
 export function formatLeadMessage(lead: Record<string, string | undefined>) {
   return `🚨 <b>NEW LEAD RECEIVED</b>
 
-👤 <b>Name:</b>
-${lead.fullName}
+🖨️ <b>Printer Series:</b>
+${lead.printerSeries || 'N/A'}
+
+⚠️ <b>Issue Facing:</b>
+${lead.issueFacing || 'N/A'}
+
+💻 <b>OS:</b>
+${lead.operatingSystem || 'N/A'}
 
 📞 <b>Phone:</b>
 ${lead.phone}
 
 📧 <b>Email:</b>
-<a href="mailto:${lead.email}">${lead.email}</a>
+${lead.email ? `<a href="mailto:${lead.email}">${lead.email}</a>` : 'N/A'}
 
 🌐 <b>Page:</b>
 ${lead.pageUrl || 'Direct'}

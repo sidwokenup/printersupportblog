@@ -1,9 +1,8 @@
 "use client"
 
-import { useState, useEffect } from "react"
 import Link from "next/link"
 import Image from "next/image"
-import { motion, AnimatePresence } from "framer-motion"
+import { motion } from "framer-motion"
 import { GlobalSearch } from "@/components/search/GlobalSearch"
 import { 
   Printer, 
@@ -41,18 +40,7 @@ const STAGGER = {
   }
 }
 
-const IMAGES = ["/hp.png", "/images.jpg"];
-
 export default function Home() {
-  const [currentImageIndex, setCurrentImageIndex] = useState(0);
-
-  useEffect(() => {
-    const interval = setInterval(() => {
-      setCurrentImageIndex((prevIndex) => (prevIndex + 1) % IMAGES.length);
-    }, 4000); // Rotate every 4 seconds
-    return () => clearInterval(interval);
-  }, []);
-
   return (
     <div className="flex flex-col min-h-screen bg-slate-50 overflow-hidden">
       
@@ -109,32 +97,24 @@ export default function Home() {
               className="relative hidden lg:flex items-center justify-center w-full"
             >
               <div className="relative w-full max-w-[480px] aspect-square">
-                {/* Main Graphic Area with Image Slider */}
+                {/* Main Graphic Area with Logo */}
                 <div className="absolute inset-0 bg-white rounded-3xl border border-slate-200 shadow-2xl flex items-center justify-center">
-                  <AnimatePresence mode="wait">
-                    <motion.div
-                      key={currentImageIndex}
-                      initial={{ opacity: 0, scale: 1.05 }}
-                      animate={{ opacity: 1, scale: 1 }}
-                      exit={{ opacity: 0, scale: 0.95 }}
-                      transition={{ duration: 0.8, ease: "easeInOut" }}
-                      className="absolute inset-8 w-[calc(100%-4rem)] h-[calc(100%-4rem)]"
-                    >
-                      <Image 
-                        src={IMAGES[currentImageIndex]} 
-                        alt="HP Printer Support" 
-                        fill 
-                        className="object-contain"
-                        priority
-                      />
-                    </motion.div>
-                  </AnimatePresence>
+                  <div className="absolute inset-8 w-[calc(100%-4rem)] h-[calc(100%-4rem)] flex items-center justify-center bg-primary/5 rounded-2xl">
+                    <Image 
+                      src="/logo.png" 
+                      alt="Live Free Reviews" 
+                      width={300}
+                      height={300}
+                      className="object-contain drop-shadow-xl"
+                      priority
+                    />
+                  </div>
                   
                   {/* Floating Card 1 */}
                   <motion.div 
                     animate={{ y: [0, -10, 0] }}
                     transition={{ repeat: Infinity, duration: 4, ease: "easeInOut" }}
-                    className="absolute top-10 -left-6 bg-white/90 backdrop-blur-md p-4 rounded-2xl shadow-xl border border-slate-100/50 flex items-center gap-3 z-20"
+                    className="absolute -top-6 -left-6 bg-white/90 backdrop-blur-md p-4 rounded-2xl shadow-xl border border-slate-100/50 flex items-center gap-3 z-20"
                   >
                     <div className="bg-green-100 p-2.5 rounded-full text-green-600">
                       <CheckCircle2 className="h-5 w-5" />
@@ -149,7 +129,7 @@ export default function Home() {
                   <motion.div 
                     animate={{ y: [0, 10, 0] }}
                     transition={{ repeat: Infinity, duration: 5, ease: "easeInOut" }}
-                    className="absolute bottom-10 -right-6 bg-white/90 backdrop-blur-md p-4 rounded-2xl shadow-xl border border-slate-100/50 flex items-center gap-3 z-20"
+                    className="absolute -bottom-6 -right-6 bg-white/90 backdrop-blur-md p-4 rounded-2xl shadow-xl border border-slate-100/50 flex items-center gap-3 z-20"
                   >
                     <div className="bg-blue-100 p-2.5 rounded-full text-blue-600">
                       <BookOpen className="h-5 w-5" />

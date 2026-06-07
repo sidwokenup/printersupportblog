@@ -4,13 +4,10 @@ import { z } from "zod";
 const usPhoneRegex = /^(?:\+1\s?)?\(?([2-9][0-8][0-9])\)?[-.\s]?([2-9][0-9]{2})[-.\s]?([0-9]{4})$/;
 
 export const leadFormSchema = z.object({
-  fullName: z
-    .string()
-    .min(2, "Name must be at least 2 characters")
-    .max(80, "Name must be less than 80 characters"),
-  email: z
-    .string()
-    .email("Please enter a valid email address"),
+  printerSeries: z.string().optional(),
+  issueFacing: z.string().optional(),
+  operatingSystem: z.string().optional(),
+  email: z.union([z.literal(""), z.string().email("Please enter a valid email address")]).optional(),
   phone: z
     .string()
     .regex(usPhoneRegex, "Please enter a valid US phone number"),
