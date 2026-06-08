@@ -1,10 +1,12 @@
 import type { Metadata } from "next";
 import { Inter } from "next/font/google";
+import Script from "next/script";
 import "./globals.css";
 import { Header } from "@/components/layout/Header";
 import { Footer } from "@/components/layout/Footer";
 import { TooltipProvider } from "@/components/ui/tooltip";
 import { LeadPopup } from "@/components/lead/LeadPopup";
+import { TawkToChat } from "@/components/layout/TawkToChat";
 
 const inter = Inter({
   variable: "--font-sans",
@@ -12,20 +14,20 @@ const inter = Inter({
 });
 
 export const metadata: Metadata = {
-  metadataBase: new URL("https://livefreereviews.com"),
-  title: "Live Free Reviews - Printer Support",
+  metadataBase: new URL("https://livefeedreviews.com"),
+  title: "Live Feed Reviews - Printer Support",
   description: "Find solutions, troubleshooting guides, drivers, and error code fixes for your HP Printer.",
   openGraph: {
-    title: "Live Free Reviews - Printer Support",
+    title: "Live Feed Reviews - Printer Support",
     description: "Find solutions, troubleshooting guides, drivers, and error code fixes for your HP Printer.",
-    url: "https://livefreereviews.com", // You can replace this with your actual domain
-    siteName: "Live Free Reviews",
+    url: "https://livefeedreviews.com", // You can replace this with your actual domain
+    siteName: "Live Feed Reviews",
     images: [
       {
         url: "/logo.png",
         width: 800,
         height: 600,
-        alt: "Live Free Reviews Logo",
+        alt: "Live Feed Reviews Logo",
       },
     ],
     locale: "en_US",
@@ -33,7 +35,7 @@ export const metadata: Metadata = {
   },
   twitter: {
     card: "summary_large_image",
-    title: "Live Free Reviews - Printer Support",
+    title: "Live Feed Reviews - Printer Support",
     description: "Find solutions, troubleshooting guides, drivers, and error code fixes for your HP Printer.",
     images: ["/logo.png"],
   },
@@ -45,10 +47,10 @@ export default function RootLayout({
   children: React.ReactNode;
 }>) {
   return (
-    <html lang="en" className="h-full" suppressHydrationWarning={true}>
+    <html lang="en" className="h-full" suppressHydrationWarning>
       <body
         className={`${inter.variable} font-sans antialiased min-h-full flex flex-col bg-slate-50`}
-        suppressHydrationWarning={true}
+        suppressHydrationWarning
       >
         <TooltipProvider>
           <Header />
@@ -59,24 +61,22 @@ export default function RootLayout({
           <LeadPopup />
         </TooltipProvider>
 
-        {/* Start of Tawk.to Script */}
-        <script 
-          type="text/javascript"
+        <TawkToChat />
+        
+        {/* Microsoft Clarity Tracking */}
+        <Script
+          id="microsoft-clarity"
+          strategy="afterInteractive"
           dangerouslySetInnerHTML={{
             __html: `
-              var Tawk_API=Tawk_API||{}, Tawk_LoadStart=new Date();
-              (function(){
-              var s1=document.createElement("script"),s0=document.getElementsByTagName("script")[0];
-              s1.async=true;
-              s1.src='https://embed.tawk.to/6a25e667be9ae91c2b2dece4/default';
-              s1.charset='UTF-8';
-              s1.setAttribute('crossorigin','*');
-              s0.parentNode.insertBefore(s1,s0);
-              })();
-            `
+              (function(c,l,a,r,i,t,y){
+                  c[a]=c[a]||function(){(c[a].q=c[a].q||[]).push(arguments)};
+                  t=l.createElement(r);t.async=1;t.src="https://www.clarity.ms/tag/"+i;
+                  y=l.getElementsByTagName(r)[0];y.parentNode.insertBefore(t,y);
+              })(window, document, "clarity", "script", "wmbhx3ni3j");
+            `,
           }}
         />
-        {/* End of Tawk.to Script */}
       </body>
     </html>
   );

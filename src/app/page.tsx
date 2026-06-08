@@ -98,15 +98,14 @@ export default function Home() {
               className="relative hidden lg:flex items-center justify-center w-full"
             >
               <div className="relative w-full max-w-[480px] aspect-square">
-                {/* Main Graphic Area with Logo */}
+                {/* Main Graphic Area */}
                 <div className="absolute inset-0 bg-white rounded-3xl border border-slate-200 shadow-2xl flex items-center justify-center">
-                  <div className="absolute inset-8 w-[calc(100%-4rem)] h-[calc(100%-4rem)] flex items-center justify-center bg-primary/5 rounded-2xl">
+                  <div className="absolute inset-8 w-[calc(100%-4rem)] h-[calc(100%-4rem)] flex items-center justify-center bg-slate-50 rounded-2xl relative overflow-hidden">
                     <Image 
-                      src="/logo.png" 
-                      alt="Live Free Reviews" 
-                      width={300}
-                      height={300}
-                      className="object-contain drop-shadow-xl"
+                      src="/printer.jpg" 
+                      alt="Printer Support" 
+                      fill
+                      className="object-cover"
                       priority
                     />
                   </div>

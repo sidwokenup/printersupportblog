@@ -2,9 +2,6 @@
 
 import Link from "next/link"
 import Image from "next/image"
-import { Send } from "lucide-react"
-import { Button } from "@/components/ui/button"
-import { Input } from "@/components/ui/input"
 
 // Simple SVG icons for social media since lucide-react doesn't have brand icons
 const FacebookIcon = ({ className }: { className?: string }) => (
@@ -47,10 +44,10 @@ export function Footer() {
           <div className="lg:col-span-2 flex flex-col gap-6">
             <Link href="/" className="flex items-center gap-3 group w-fit">
               <div className="bg-primary/10 p-2.5 rounded-xl group-hover:bg-primary/20 transition-colors flex items-center justify-center">
-                <Image src="/logo.png" alt="Live Free Reviews" width={48} height={48} className="object-contain" />
+                <Image src="/logo.png" alt="Live Feed Reviews" width={48} height={48} className="object-contain" />
               </div>
               <span className="font-bold text-2xl tracking-tight text-slate-900">
-                Live Free Reviews
+                Live Feed Reviews
               </span>
             </Link>
             <p className="text-base text-slate-600 leading-relaxed max-w-sm">
@@ -72,14 +69,6 @@ export function Footer() {
             </div>
           </div>
 
-          {/* Links Sections */}
-          <div className="flex flex-col gap-4">
-            <h3 className="font-semibold text-slate-900 text-base">Categories</h3>
-            <div className="flex flex-col gap-3 mt-2">
-              <Link href="/#solutions" className="text-slate-600 hover:text-primary transition-colors">Troubleshooting</Link>
-            </div>
-          </div>
-
           <div className="flex flex-col gap-4">
             <h3 className="font-semibold text-slate-900 text-base">Legal & Support</h3>
             <div className="flex flex-col gap-3 mt-2">
@@ -93,23 +82,8 @@ export function Footer() {
           </div>
         </div>
 
-        {/* Newsletter Section */}
-        <div className="mt-12 pt-8 border-t border-slate-200 grid grid-cols-1 lg:grid-cols-2 gap-8 items-center">
-          <div>
-            <h3 className="text-xl font-bold text-slate-900">Subscribe to our newsletter</h3>
-            <p className="text-slate-600 mt-2">Get the latest troubleshooting tips and firmware updates delivered to your inbox.</p>
-          </div>
-          <form className="flex w-full max-w-md lg:ml-auto gap-2">
-            <Input type="email" placeholder="Enter your email" className="bg-slate-50 border-slate-200 focus-visible:ring-primary" />
-            <Button type="submit" className="gap-2 shrink-0">
-              Subscribe <Send className="h-4 w-4" />
-            </Button>
-          </form>
-        </div>
-
-        <div className="mt-12 pt-8 flex flex-col md:flex-row justify-between items-center gap-4 text-sm text-slate-500">
-          <p suppressHydrationWarning>© {new Date().getFullYear()} Live Free Reviews. All rights reserved.</p>
-          <p>Not affiliated with HP Inc.</p>
+        <div className="mt-12 pt-8 border-t border-slate-200 flex flex-col md:flex-row justify-between items-center gap-4 text-sm text-slate-500">
+          <p suppressHydrationWarning={true}>© {new Date().getFullYear()} Live Feed Reviews. All rights reserved.</p>
         </div>
       </div>
     </footer>

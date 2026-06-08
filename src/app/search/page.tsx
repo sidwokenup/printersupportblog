@@ -4,7 +4,7 @@ import { Search } from "lucide-react";
 import { Metadata } from "next";
 
 export const metadata: Metadata = {
-  title: 'Search Results | Live Free Reviews',
+  title: 'Search Results | Live Feed Reviews',
   description: 'Search for printer troubleshooting solutions.',
 }
 

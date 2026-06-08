@@ -39,10 +39,10 @@ export function Header() {
         <div className="flex items-center gap-2 lg:mr-8">
           <Link href="/" className="flex items-center gap-2 group">
             <div className="bg-primary/10 p-2 rounded-xl group-hover:bg-primary/20 transition-colors flex items-center justify-center">
-              <Image src="/logo.png" alt="Live Free Reviews" width={40} height={40} className="object-contain" />
+              <Image src="/logo.png" alt="Live Feed Reviews" width={40} height={40} className="object-contain" />
             </div>
             <span className="font-bold text-xl hidden lg:inline-block tracking-tight text-slate-900">
-              Live Free Reviews
+              Live Feed Reviews
             </span>
           </Link>
         </div>
@@ -104,8 +104,8 @@ export function Header() {
             <SheetContent side="right" className="w-[300px] sm:w-[400px] overflow-y-auto">
               <SheetTitle className="sr-only">Navigation Menu</SheetTitle>
               <div className="flex items-center gap-3 mb-8">
-                <Image src="/logo.png" alt="Live Free Reviews" width={36} height={36} className="object-contain" />
-                <span className="font-bold text-lg tracking-tight">Live Free Reviews</span>
+                <Image src="/logo.png" alt="Live Feed Reviews" width={36} height={36} className="object-contain" />
+                <span className="font-bold text-lg tracking-tight">Live Feed Reviews</span>
               </div>
               <div className="relative mb-8">
                 <GlobalSearch />

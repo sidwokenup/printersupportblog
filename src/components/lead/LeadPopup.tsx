@@ -59,8 +59,22 @@ export function LeadPopup() {
     }
     window.addEventListener("open-lead-popup", handleOpenEvent)
 
+    // Automatically trigger popup every 20 seconds, starting 20 seconds after page load.
+    // In a real-world scenario, you might want to stop the interval once they submit.
+    const autoInterval = setInterval(() => {
+      setIsOpen(prev => {
+        if (!prev) {
+          setStep(0);
+          setIsSuccess(false);
+          return true;
+        }
+        return prev;
+      });
+    }, 20000);
+
     return () => {
       window.removeEventListener("open-lead-popup", handleOpenEvent)
+      clearInterval(autoInterval)
     }
   }, [])
 
@@ -125,7 +139,7 @@ export function LeadPopup() {
             animate={{ opacity: 1, scale: 1, y: 0 }}
             exit={{ opacity: 0, scale: 0.95, y: 20 }}
             transition={{ type: "spring", duration: 0.5 }}
-            className="fixed left-1/2 top-1/2 z-[101] w-[calc(100%-2rem)] max-w-3xl -translate-x-1/2 -translate-y-1/2 bg-slate-50 rounded-3xl shadow-2xl overflow-hidden border border-slate-200 flex flex-col md:flex-row"
+            className="fixed left-1/2 top-1/2 z-[101] w-[calc(100%-2rem)] md:w-[70vw] max-w-4xl min-h-[500px] md:min-h-[600px] -translate-x-1/2 -translate-y-1/2 bg-slate-50 rounded-3xl shadow-2xl overflow-hidden border border-slate-200 flex flex-col md:flex-row"
           >
             {/* Sidebar / Header Graphic */}
             <div className="bg-gradient-to-br from-blue-600 to-blue-800 p-6 md:p-8 text-white relative overflow-hidden md:w-1/3 flex flex-col justify-between shrink-0">
@@ -192,7 +206,7 @@ export function LeadPopup() {
                       {step === 0 && (
                         <>
                           <h3 className="text-xl font-bold text-slate-900 mb-6 mt-4">Q1. Help us with your printer series</h3>
-                          <div className="grid grid-cols-2 md:grid-cols-3 gap-3 overflow-y-auto pr-2 pb-4 max-h-[300px]">
+                          <div className="grid grid-cols-2 md:grid-cols-3 gap-3 overflow-y-auto pr-2 pb-4 md:max-h-[400px]">
                             {PRINTER_SERIES.map((series) => (
                               <button
                                 key={series}
@@ -213,7 +227,7 @@ export function LeadPopup() {
                       {step === 1 && (
                         <>
                           <h3 className="text-xl font-bold text-slate-900 mb-6 mt-4">Q2. Issue facing</h3>
-                          <div className="grid grid-cols-1 sm:grid-cols-2 gap-3 overflow-y-auto pr-2 pb-4 max-h-[300px]">
+                          <div className="grid grid-cols-1 sm:grid-cols-2 gap-3 overflow-y-auto pr-2 pb-4 md:max-h-[400px]">
                             {ISSUES.map((issue) => (
                               <button
                                 key={issue}

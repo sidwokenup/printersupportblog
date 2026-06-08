@@ -1,8 +1,8 @@
 import { Metadata } from "next";
 
 export const metadata: Metadata = {
-  title: "Privacy Policy | Live Free Reviews",
-  description: "Privacy Policy for Live Free Reviews - Learn how we collect, use, and protect your information.",
+  title: "Privacy Policy | Live Feed Reviews",
+  description: "Privacy Policy for Live Feed Reviews - Learn how we collect, use, and protect your information.",
 };
 
 export default function PrivacyPolicyPage() {
@@ -25,7 +25,7 @@ export default function PrivacyPolicyPage() {
       <div className="container mx-auto px-4 md:px-6 pt-8">
         <div className="max-w-4xl mx-auto bg-white rounded-3xl border border-slate-200 shadow-sm p-8 md:p-12 text-slate-700 leading-relaxed space-y-6">
           <p className="text-lg">
-            At <strong className="text-slate-900">Live Free Reviews</strong>, accessible from our website, one of our main priorities is the privacy of our visitors. This Privacy Policy document contains types of information that is collected and recorded by Live Free Reviews and how we use it.
+            At <strong className="text-slate-900">Live Feed Reviews</strong>, accessible from our website, one of our main priorities is the privacy of our visitors. This Privacy Policy document contains types of information that is collected and recorded by Live Feed Reviews and how we use it.
           </p>
           <p className="text-lg">
             If you have additional questions or require more information about our Privacy Policy, do not hesitate to contact us.
