@@ -15,12 +15,12 @@ const inter = Inter({
 
 export const metadata: Metadata = {
   metadataBase: new URL("https://livefeedreviews.com"),
-  title: "Live Feed Reviews - Printer Support",
-  description: "Find solutions, troubleshooting guides, drivers, and error code fixes for your HP Printer.",
+  title: "Live Feed Reviews - Independent Printer Reviews & Buying Guides (2026)",
+  description: "Comprehensive lab testing, ISO/IEC 19752 yield benchmarks, and buyer's guides for wireless laser printers, ink tanks, and document scanners.",
   openGraph: {
-    title: "Live Feed Reviews - Printer Support",
-    description: "Find solutions, troubleshooting guides, drivers, and error code fixes for your HP Printer.",
-    url: "https://livefeedreviews.com", // You can replace this with your actual domain
+    title: "Live Feed Reviews - Independent Printer Reviews & Buying Guides (2026)",
+    description: "Comprehensive lab testing, ISO/IEC 19752 yield benchmarks, and buyer's guides for wireless laser printers, ink tanks, and document scanners.",
+    url: "https://livefeedreviews.com",
     siteName: "Live Feed Reviews",
     images: [
       {
@@ -35,8 +35,8 @@ export const metadata: Metadata = {
   },
   twitter: {
     card: "summary_large_image",
-    title: "Live Feed Reviews - Printer Support",
-    description: "Find solutions, troubleshooting guides, drivers, and error code fixes for your HP Printer.",
+    title: "Live Feed Reviews - Independent Printer Reviews & Buying Guides (2026)",
+    description: "Comprehensive lab testing, ISO/IEC 19752 yield benchmarks, and buyer's guides for wireless laser printers, ink tanks, and document scanners.",
     images: ["/logo.png"],
   },
 };

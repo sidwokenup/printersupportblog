@@ -51,7 +51,7 @@ export function Footer() {
               </span>
             </Link>
             <p className="text-base text-slate-600 leading-relaxed max-w-sm">
-              The ultimate programmatic knowledge base for HP Printer support, troubleshooting, driver downloads, and error codes. We make fixing printers simple.
+              Independent laboratory benchmarks and buying guides for laser printers, inkjet all-in-ones, and high-speed document scanners. 100% retail-tested with zero manufacturer bias.
             </p>
             <div className="flex items-center gap-4 mt-2">
               <Link href="#" className="p-2 bg-slate-50 text-slate-500 hover:text-primary hover:bg-blue-50 rounded-full transition-all">
