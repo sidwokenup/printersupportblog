@@ -70,8 +70,8 @@ export function Footer() {
           </div>
 
           <div className="flex flex-col gap-4">
-            <h3 className="font-semibold text-slate-900 text-base">Reviews & Buying Guides</h3>
-            <div className="flex flex-col gap-2.5 mt-2 text-sm">
+            <h3 className="font-semibold text-slate-900 text-base">Reviews &amp; Buying Guides</h3>
+            <div className="grid grid-cols-2 gap-x-4 gap-y-2 mt-2 text-sm">
               <Link href="/blog" className="text-slate-600 hover:text-primary transition-colors">
                 All 2026 Reviews
               </Link>
@@ -82,10 +82,19 @@ export function Footer() {
                 All-in-One Inkjets
               </Link>
               <Link href="/scanners" className="text-slate-600 hover:text-primary transition-colors">
-                Duplex Document Scanners
+                Duplex Scanners
               </Link>
-              <Link href="/blog/laser-vs-inkjet-printer-cost-comparison" className="text-slate-600 hover:text-primary transition-colors">
-                Laser vs Inkjet TCO Math
+              <Link href="/wide-format" className="text-slate-600 hover:text-primary transition-colors">
+                Wide-Format 11x17
+              </Link>
+              <Link href="/portable-printers" className="text-slate-600 hover:text-primary transition-colors">
+                Portable &amp; Mobile
+              </Link>
+              <Link href="/shipping-printers" className="text-slate-600 hover:text-primary transition-colors">
+                4x6 Shipping Printers
+              </Link>
+              <Link href="/toner-savings" className="text-slate-600 hover:text-primary transition-colors">
+                Toner Savings Math
               </Link>
             </div>
           </div>

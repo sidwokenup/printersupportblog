@@ -63,12 +63,19 @@ export function Header() {
             href="/blog"
             className={cn(
               "relative px-3 py-2 text-sm font-medium transition-colors rounded-md hover:text-primary",
-              pathname?.startsWith("/blog") || pathname === "/printers" || pathname === "/all-in-one" || pathname === "/scanners"
+              pathname?.startsWith("/blog") || 
+              pathname === "/printers" || 
+              pathname === "/all-in-one" || 
+              pathname === "/scanners" ||
+              pathname === "/wide-format" ||
+              pathname === "/portable-printers" ||
+              pathname === "/shipping-printers" ||
+              pathname === "/toner-savings"
                 ? "text-primary font-semibold"
                 : "text-slate-600 hover:bg-slate-100"
             )}
           >
-            Reviews & Buying Guides
+            Reviews &amp; Buying Guides
           </Link>
 
           <Link 
