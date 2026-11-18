@@ -196,7 +196,7 @@ export default function Home() {
               href="/blog"
               className="inline-flex items-center gap-2 px-4 py-2 rounded-lg bg-white border border-slate-200 text-sm font-semibold text-slate-900 hover:bg-slate-100 transition-colors shadow-xs shrink-0 self-start md:self-auto"
             >
-              <span>View All 5 Reviews</span>
+              <span>View All {blogArticles.length} Reviews</span>
               <ArrowRight className="w-4 h-4 text-slate-600" />
             </Link>
           </div>
