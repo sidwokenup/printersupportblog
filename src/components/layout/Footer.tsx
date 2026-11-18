@@ -41,7 +41,7 @@ export function Footer() {
         <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-12 lg:gap-8">
           
           {/* Brand & Description */}
-          <div className="lg:col-span-2 flex flex-col gap-6">
+          <div className="flex flex-col gap-6">
             <Link href="/" className="flex items-center gap-3 group w-fit">
               <div className="bg-primary/10 p-2.5 rounded-xl group-hover:bg-primary/20 transition-colors flex items-center justify-center">
                 <Image src="/logo.png" alt="Live Feed Reviews" width={48} height={48} className="object-contain" />
@@ -100,16 +100,37 @@ export function Footer() {
           </div>
 
           <div className="flex flex-col gap-4">
-            <h3 className="font-semibold text-slate-900 text-base">Legal & Support</h3>
+            <h3 className="font-semibold text-slate-900 text-base">Troubleshooting Hub</h3>
+            <div className="flex flex-col gap-2.5 mt-2 text-sm">
+              <Link href="/solutions" className="text-slate-600 hover:text-primary transition-colors font-medium text-blue-600">
+                All 13 DIY Diagnostic Guides
+              </Link>
+              <Link href="/solutions/printer-offline" className="text-slate-600 hover:text-primary transition-colors">
+                Fix Printer Offline
+              </Link>
+              <Link href="/solutions/printer-paper-jam" className="text-slate-600 hover:text-primary transition-colors">
+                Clear Paper Jams
+              </Link>
+              <Link href="/solutions/printer-not-connecting-to-wifi" className="text-slate-600 hover:text-primary transition-colors">
+                Wi-Fi &amp; 2.4GHz Drops
+              </Link>
+              <Link href="/solutions/faded-streaky-print-quality" className="text-slate-600 hover:text-primary transition-colors">
+                Faded Prints &amp; Nozzles
+              </Link>
+            </div>
+          </div>
+
+          <div className="flex flex-col gap-4">
+            <h3 className="font-semibold text-slate-900 text-base">Legal &amp; Support</h3>
             <div className="flex flex-col gap-3 mt-2 text-sm">
               <Link href="/privacy-policy" className="text-slate-600 hover:text-primary transition-colors">
-                Privacy Policy & FTC Disclosure
+                Privacy Policy &amp; FTC Disclosure
               </Link>
               <button 
                 onClick={() => window.dispatchEvent(new Event("open-lead-popup"))}
                 className="text-slate-600 hover:text-primary transition-colors text-left"
               >
-                Contact Support
+                Editorial Inquiries
               </button>
             </div>
           </div>

@@ -2,8 +2,20 @@ import { solutions } from "@/data/solutions";
 import { notFound } from "next/navigation";
 import Link from "next/link";
 import Image from "next/image";
-import { ChevronRight, Home, ShieldCheck, CheckCircle2 } from "lucide-react";
-import { SidebarContactButton } from "@/components/lead/SidebarContactButton";
+import { 
+  ChevronRight, 
+  Home, 
+  ShieldCheck, 
+  CheckCircle2, 
+  Wrench, 
+  Clock, 
+  AlertTriangle, 
+  ExternalLink, 
+  ArrowRight,
+  BookOpen,
+  Sparkles,
+  Layers
+} from "lucide-react";
 import type { Metadata } from "next";
 
 interface Props {
@@ -16,16 +28,17 @@ export async function generateMetadata({ params }: Props): Promise<Metadata> {
   
   if (!solution) {
     return {
-      title: "Solution Not Found",
+      title: "Diagnostic Guide Not Found | Live Feed Reviews",
     };
   }
 
   return {
-    title: solution.title,
+    title: `${solution.title} | Live Feed Reviews`,
     description: solution.metaDescription,
     openGraph: {
       title: solution.title,
       description: solution.metaDescription,
+      url: `https://www.livefeedreviews.com/solutions/${solution.slug}`,
       images: [
         {
           url: "/logo.png",
@@ -58,7 +71,6 @@ const getImagesForSlug = (slug: string) => {
   if (slug === 'printer-setup-issue') images.push('/printersetup.jpg');
   if (slug === 'printer-driver') images.push('/download.jpg');
   
-  // Fill the rest with general high-quality printer images
   const fallbacks = ['/printer-1.jpg', '/printer-2.jpg', '/printer.jpg', '/images.jpg'];
   
   for (const img of fallbacks) {
@@ -68,7 +80,7 @@ const getImagesForSlug = (slug: string) => {
   }
   
   return images;
-}
+};
 
 export default async function SolutionPage({ params }: Props) {
   const { slug } = await params;
@@ -80,37 +92,91 @@ export default async function SolutionPage({ params }: Props) {
 
   const images = getImagesForSlug(slug);
   const featuredImage = images[0];
-  const sidebarImages = images.slice(1, 3);
+  const relatedSolutions = solutions.filter((s) => s.slug !== slug).slice(0, 4);
+
+  // Schema.org HowTo structured data for search engines
+  const howToSchema = {
+    "@context": "https://schema.org",
+    "@type": "HowTo",
+    "name": solution.content.title,
+    "description": solution.metaDescription,
+    "totalTime": "PT10M",
+    "step": solution.content.sections.map((section, idx) => ({
+      "@type": "HowToStep",
+      "position": idx + 1,
+      "name": section.heading,
+      "text": section.body || section.heading,
+    })),
+  };
 
   return (
     <div className="min-h-screen bg-slate-50 pt-8 pb-20">
+      {/* Inject Structured Data */}
+      <script
+        type="application/ld+json"
+        dangerouslySetInnerHTML={{ __html: JSON.stringify(howToSchema) }}
+      />
+
       <div className="container mx-auto px-4 md:px-6 max-w-7xl">
         
         {/* Breadcrumbs */}
-        <nav className="flex items-center gap-2 text-sm text-slate-500 mb-8">
+        <nav className="flex items-center gap-2 text-sm text-slate-500 mb-8 overflow-x-auto whitespace-nowrap py-1">
           <Link href="/" className="hover:text-blue-600 transition-colors flex items-center gap-1">
             <Home className="h-4 w-4" />
             Home
           </Link>
-          <ChevronRight className="h-4 w-4" />
-          <span className="text-slate-900 font-medium">Solutions</span>
-          <ChevronRight className="h-4 w-4" />
+          <ChevronRight className="h-4 w-4 shrink-0" />
+          <Link href="/solutions" className="hover:text-blue-600 transition-colors">
+            Printer Troubleshooting Hub
+          </Link>
+          <ChevronRight className="h-4 w-4 shrink-0" />
           <span className="text-slate-900 font-medium truncate">{solution.title}</span>
         </nav>
 
         <div className="grid grid-cols-1 lg:grid-cols-12 gap-12 items-start">
-          {/* Left Content Column */}
+          {/* Main Diagnostic Content */}
           <div className="lg:col-span-8 flex flex-col gap-8">
             
-            {/* Article Header */}
-            <header>
-              <h1 className="text-3xl md:text-4xl lg:text-5xl font-extrabold text-slate-900 tracking-tight leading-tight mb-6">
+            {/* Header */}
+            <header className="space-y-4">
+              <div className="flex flex-wrap items-center gap-2">
+                <span className="px-3 py-1 bg-blue-100 text-blue-700 text-xs font-semibold rounded-full flex items-center gap-1.5">
+                  <Wrench className="w-3.5 h-3.5" />
+                  {solution.category}
+                </span>
+                <span className="px-3 py-1 bg-slate-100 text-slate-700 text-xs font-medium rounded-full flex items-center gap-1.5">
+                  <Clock className="w-3.5 h-3.5 text-slate-500" />
+                  {solution.readTime}
+                </span>
+                <span className="px-3 py-1 bg-emerald-100 text-emerald-700 text-xs font-medium rounded-full flex items-center gap-1.5">
+                  <ShieldCheck className="w-3.5 h-3.5" />
+                  Difficulty: {solution.difficulty}
+                </span>
+                <span className="px-3 py-1 bg-amber-100 text-amber-700 text-xs font-medium rounded-full flex items-center gap-1.5">
+                  <AlertTriangle className="w-3.5 h-3.5" />
+                  Severity: {solution.severity}
+                </span>
+              </div>
+
+              <h1 className="text-3xl md:text-4xl lg:text-5xl font-extrabold text-slate-900 tracking-tight leading-tight">
                 {solution.content.title}
               </h1>
-              <div className="w-20 h-1.5 bg-blue-600 rounded-full mb-8"></div>
-              
+
+              <p className="text-lg text-slate-600 leading-relaxed">
+                {solution.metaDescription}
+              </p>
+
+              {/* Verified Self-Service Disclaimer Banner */}
+              <div className="bg-emerald-50/80 border border-emerald-200/80 rounded-xl p-4 flex items-start gap-3 text-sm text-emerald-900">
+                <ShieldCheck className="w-5 h-5 text-emerald-600 shrink-0 mt-0.5" />
+                <div>
+                  <span className="font-semibold text-emerald-950">Independent Consumer Self-Service Guide:</span>{" "}
+                  This publication provides DIY hardware diagnostics, maintenance procedures, and ISO benchmarks. LiveFeedReviews does not provide phone support, remote access software, or paid third-party repairs. For warranty service, contact your equipment manufacturer directly.
+                </div>
+              </div>
+
               {/* Featured Image */}
-              <div className="relative w-full aspect-[16/9] md:aspect-[21/9] rounded-2xl overflow-hidden shadow-md border border-slate-200">
+              <div className="relative w-full aspect-[16/9] md:aspect-[21/9] rounded-2xl overflow-hidden shadow-sm border border-slate-200">
                 <Image 
                   src={featuredImage} 
                   alt={solution.title} 
@@ -121,41 +187,51 @@ export default async function SolutionPage({ params }: Props) {
               </div>
             </header>
 
-            {/* Article Content */}
-            <article className="bg-white rounded-2xl shadow-sm border border-slate-200 p-6 md:p-10 prose prose-slate max-w-none prose-headings:text-slate-900 prose-a:text-blue-600 hover:prose-a:text-blue-700">
-              <div className="space-y-12">
+            {/* Diagnostic Steps Article */}
+            <article className="bg-white rounded-2xl shadow-sm border border-slate-200 p-6 md:p-10 space-y-10">
+              <div className="border-b border-slate-100 pb-4">
+                <h2 className="text-xl font-bold text-slate-900 flex items-center gap-2">
+                  <Layers className="w-5 h-5 text-blue-600" />
+                  Step-by-Step Diagnostic &amp; Resolution Steps
+                </h2>
+                <p className="text-sm text-slate-500 mt-1">
+                  Follow each procedure in sequence to isolate and resolve the underlying issue safely.
+                </p>
+              </div>
+
+              <div className="space-y-10">
                 {solution.content.sections.map((section, index) => (
-                  <section key={index} className="scroll-mt-24">
-                    <h2 className="text-2xl font-bold text-slate-800 mb-4">{section.heading}</h2>
+                  <section key={index} className="scroll-mt-24 space-y-4">
+                    <div className="flex items-start gap-3">
+                      <span className="flex items-center justify-center w-8 h-8 rounded-full bg-blue-600 text-white font-bold text-sm shrink-0 mt-0.5">
+                        {index + 1}
+                      </span>
+                      <h3 className="text-xl md:text-2xl font-bold text-slate-900 leading-snug">
+                        {section.heading.replace(/^[0-9]+\.\s*/, "")}
+                      </h3>
+                    </div>
                     
                     {section.body && (
-                      <p className="text-slate-600 text-lg leading-relaxed mb-4">
+                      <p className="text-slate-600 text-base md:text-lg leading-relaxed pl-11">
                         {section.body}
                       </p>
                     )}
                     
                     {section.list && section.list.length > 0 && (
-                      <ul className="list-disc pl-6 space-y-3 text-slate-600 text-lg marker:text-blue-500">
-                        {section.list.map((item, i) => (
-                          <li key={i} className="pl-2">{item}</li>
-                        ))}
-                      </ul>
-                    )}
-                    
-                    {/* Inject an image inside the content occasionally to make it feel rich */}
-                    {index === 1 && sidebarImages[1] && (
-                      <div className="my-8 relative w-full aspect-video rounded-xl overflow-hidden shadow-sm border border-slate-100 hidden md:block">
-                        <Image 
-                          src={sidebarImages[1]} 
-                          alt="Troubleshooting step" 
-                          fill 
-                          className="object-cover"
-                        />
+                      <div className="pl-11">
+                        <ul className="space-y-2.5 bg-slate-50/70 p-5 rounded-xl border border-slate-200/60">
+                          {section.list.map((item, i) => (
+                            <li key={i} className="flex items-start gap-2.5 text-slate-700 text-sm md:text-base leading-relaxed">
+                              <CheckCircle2 className="w-5 h-5 text-emerald-600 shrink-0 mt-0.5" />
+                              <span>{item}</span>
+                            </li>
+                          ))}
+                        </ul>
                       </div>
                     )}
 
                     {section.conclusion && (
-                      <p className="text-slate-600 text-lg leading-relaxed mt-4 italic border-l-4 border-blue-200 pl-4 py-1">
+                      <p className="text-slate-600 text-sm md:text-base leading-relaxed pl-11 italic border-l-2 border-blue-400 pl-4 py-1">
                         {section.conclusion}
                       </p>
                     )}
@@ -163,57 +239,151 @@ export default async function SolutionPage({ params }: Props) {
                 ))}
               </div>
 
-              <hr className="my-12 border-slate-200" />
-
-              <div className="bg-blue-50 rounded-xl p-6 md:p-8 border border-blue-100">
-                <h3 className="text-xl font-bold text-slate-900 mb-3 mt-0">Summary</h3>
-                <p className="text-slate-700 text-lg leading-relaxed mb-0">
+              {/* Diagnostic Conclusion Box */}
+              <div className="bg-blue-50/80 rounded-xl p-6 md:p-8 border border-blue-100 space-y-3">
+                <h3 className="text-lg font-bold text-slate-900 flex items-center gap-2">
+                  <Sparkles className="w-5 h-5 text-blue-600" />
+                  Diagnostic Summary &amp; Prevention Advice
+                </h3>
+                <p className="text-slate-700 text-sm md:text-base leading-relaxed">
                   {solution.content.conclusion}
                 </p>
               </div>
+
+              {/* Hardware Upgrade Recommendation Box */}
+              {solution.replacementPicks && solution.replacementPicks.length > 0 && (
+                <div className="bg-slate-900 text-white rounded-xl p-6 md:p-8 space-y-4">
+                  <div className="flex items-center gap-2 text-emerald-400 text-sm font-semibold uppercase tracking-wider">
+                    <ShieldCheck className="w-4 h-4" />
+                    When Repair Exceeds Value: Recommended Replacements
+                  </div>
+                  <h4 className="text-xl font-bold">
+                    TCO-Optimized Hardware Upgrades (2026 Tested)
+                  </h4>
+                  <p className="text-slate-300 text-sm leading-relaxed">
+                    If this hardware issue stems from a dead printhead, degraded laser fuser, or unrepairable mechanical failure, upgrading to a high-reliability model saves hundreds in lifetime operating costs.
+                  </p>
+                  <div className="grid grid-cols-1 sm:grid-cols-2 gap-4 pt-2">
+                    {solution.replacementPicks.map((pick, i) => (
+                      <div key={i} className="bg-slate-800/80 p-4 rounded-xl border border-slate-700 space-y-2">
+                        <div className="font-semibold text-white text-base">{pick.name}</div>
+                        <p className="text-xs text-slate-300">{pick.reason}</p>
+                        <Link 
+                          href={pick.link}
+                          className="inline-flex items-center gap-1.5 text-xs text-emerald-400 hover:text-emerald-300 font-semibold pt-1"
+                        >
+                          Read Verified Review <ArrowRight className="w-3.5 h-3.5" />
+                        </Link>
+                      </div>
+                    ))}
+                  </div>
+                </div>
+              )}
             </article>
           </div>
 
-          {/* Right Sidebar Column */}
-          <aside className="lg:col-span-4 flex flex-col gap-8 sticky top-24">
+          {/* Right Sidebar */}
+          <aside className="lg:col-span-4 flex flex-col gap-6 sticky top-24">
             
-            {/* Need Help Card */}
-            <div className="bg-gradient-to-br from-blue-600 to-blue-800 rounded-2xl p-6 md:p-8 text-white shadow-lg relative overflow-hidden">
-              <div className="absolute top-0 right-0 w-32 h-32 bg-white/10 rounded-full blur-2xl -translate-y-1/2 translate-x-1/3" />
-              <ShieldCheck className="h-10 w-10 text-blue-200 mb-4" />
-              <h3 className="text-2xl font-bold mb-3">Still facing issues?</h3>
-              <p className="text-blue-100 mb-6 text-sm leading-relaxed">
-                Our certified printer technicians can resolve complex software and hardware issues remotely within minutes.
+            {/* Official OEM Support Directory Card */}
+            <div className="bg-white rounded-2xl p-6 border border-slate-200 shadow-sm space-y-4">
+              <div className="flex items-center gap-2 text-blue-600">
+                <BookOpen className="w-5 h-5" />
+                <h3 className="font-bold text-slate-900 text-base">Authorized OEM Support</h3>
+              </div>
+              <p className="text-xs text-slate-600 leading-relaxed">
+                For in-warranty hardware replacements, genuine driver downloads, and factory repair claims, consult your manufacturer’s official support portals:
               </p>
-              <SidebarContactButton />
+              <div className="space-y-2 pt-1">
+                {(solution.oemLinks || [
+                  { name: "HP Customer Support", url: "https://support.hp.com" },
+                  { name: "Brother Solutions Center", url: "https://support.brother.com" },
+                  { name: "Canon USA Consumer Support", url: "https://usa.canon.com/support" },
+                  { name: "Epson Official Support", url: "https://epson.com/support" }
+                ]).map((oem, idx) => (
+                  <a
+                    key={idx}
+                    href={oem.url}
+                    target="_blank"
+                    rel="noopener noreferrer"
+                    className="flex items-center justify-between p-3 rounded-xl bg-slate-50 border border-slate-100 hover:border-blue-200 hover:bg-blue-50/50 transition-all text-xs font-semibold text-slate-700 hover:text-blue-700 group"
+                  >
+                    <span>{oem.name}</span>
+                    <ExternalLink className="w-3.5 h-3.5 text-slate-400 group-hover:text-blue-600" />
+                  </a>
+                ))}
+              </div>
             </div>
 
-            {/* Sidebar Images to make it look fulfilled */}
-            {sidebarImages[0] && (
-              <div className="relative w-full aspect-square rounded-2xl overflow-hidden shadow-sm border border-slate-200 hidden lg:block group">
-                <Image 
-                  src={sidebarImages[0]} 
-                  alt="Printer maintenance" 
-                  fill 
-                  className="object-cover transition-transform duration-700 group-hover:scale-105"
-                />
-                <div className="absolute inset-0 bg-gradient-to-t from-black/60 to-transparent flex items-end p-6">
-                  <div className="flex items-center gap-2 text-white font-medium">
-                    <CheckCircle2 className="h-5 w-5 text-green-400" />
-                    <span>Verified Solutions</span>
-                  </div>
-                </div>
+            {/* Hardware Buying Guides Links */}
+            <div className="bg-gradient-to-br from-slate-900 to-slate-800 rounded-2xl p-6 text-white shadow-md space-y-4">
+              <div className="flex items-center gap-2 text-emerald-400">
+                <Sparkles className="w-5 h-5" />
+                <h3 className="font-bold text-white text-base">2026 Hardware Buying Guides</h3>
               </div>
-            )}
-            
-            {/* Quick Links or Tags */}
-            <div className="bg-white rounded-2xl p-6 border border-slate-200 shadow-sm hidden lg:block">
-              <h3 className="font-bold text-slate-900 mb-4">Popular Topics</h3>
-              <div className="flex flex-wrap gap-2">
-                <Link href="/solutions/printer-offline" className="px-3 py-1.5 bg-slate-50 border border-slate-100 rounded-lg text-sm text-slate-600 hover:text-blue-600 hover:border-blue-200 transition-colors">Offline Fixes</Link>
-                <Link href="/solutions/printer-paper-jam" className="px-3 py-1.5 bg-slate-50 border border-slate-100 rounded-lg text-sm text-slate-600 hover:text-blue-600 hover:border-blue-200 transition-colors">Paper Jam</Link>
-                <Link href="/solutions/printer-driver" className="px-3 py-1.5 bg-slate-50 border border-slate-100 rounded-lg text-sm text-slate-600 hover:text-blue-600 hover:border-blue-200 transition-colors">Driver Updates</Link>
-                <Link href="/solutions/printer-not-printing" className="px-3 py-1.5 bg-slate-50 border border-slate-100 rounded-lg text-sm text-slate-600 hover:text-blue-600 hover:border-blue-200 transition-colors">Blank Pages</Link>
+              <p className="text-xs text-slate-300 leading-relaxed">
+                Compare ISO/IEC 19752 speed benchmarks, cost-per-page testing, and total cost of ownership across our verified reviews:
+              </p>
+              <div className="space-y-2">
+                <Link 
+                  href="/printers"
+                  className="flex items-center justify-between p-2.5 rounded-lg bg-slate-800 hover:bg-slate-700 transition-colors text-xs text-slate-200 hover:text-white"
+                >
+                  <span>Best Wireless Laser Printers</span>
+                  <ArrowRight className="w-3.5 h-3.5 text-emerald-400" />
+                </Link>
+                <Link 
+                  href="/all-in-one"
+                  className="flex items-center justify-between p-2.5 rounded-lg bg-slate-800 hover:bg-slate-700 transition-colors text-xs text-slate-200 hover:text-white"
+                >
+                  <span>Best All-In-One SuperTanks</span>
+                  <ArrowRight className="w-3.5 h-3.5 text-emerald-400" />
+                </Link>
+                <Link 
+                  href="/toner-savings"
+                  className="flex items-center justify-between p-2.5 rounded-lg bg-slate-800 hover:bg-slate-700 transition-colors text-xs text-slate-200 hover:text-white"
+                >
+                  <span>Operating Cost &amp; Toner Calculator</span>
+                  <ArrowRight className="w-3.5 h-3.5 text-emerald-400" />
+                </Link>
+                <Link 
+                  href="/shipping-printers"
+                  className="flex items-center justify-between p-2.5 rounded-lg bg-slate-800 hover:bg-slate-700 transition-colors text-xs text-slate-200 hover:text-white"
+                >
+                  <span>Thermal Shipping Label Printers</span>
+                  <ArrowRight className="w-3.5 h-3.5 text-emerald-400" />
+                </Link>
+              </div>
+            </div>
+
+            {/* Related Troubleshooting Guides */}
+            <div className="bg-white rounded-2xl p-6 border border-slate-200 shadow-sm space-y-4">
+              <h3 className="font-bold text-slate-900 text-base">Related Diagnostic Guides</h3>
+              <div className="space-y-2.5">
+                {relatedSolutions.map((rel) => (
+                  <Link
+                    key={rel.slug}
+                    href={`/solutions/${rel.slug}`}
+                    className="block p-3 rounded-xl bg-slate-50 border border-slate-100 hover:border-blue-200 hover:bg-blue-50/40 transition-colors group"
+                  >
+                    <div className="text-xs font-semibold text-slate-800 group-hover:text-blue-600 line-clamp-1">
+                      {rel.title}
+                    </div>
+                    <div className="text-[11px] text-slate-500 mt-1 flex items-center gap-2">
+                      <span>{rel.category}</span>
+                      <span>•</span>
+                      <span>{rel.readTime}</span>
+                    </div>
+                  </Link>
+                ))}
+              </div>
+              <div className="pt-2 text-center">
+                <Link
+                  href="/solutions"
+                  className="inline-flex items-center gap-1.5 text-xs text-blue-600 hover:text-blue-700 font-semibold"
+                >
+                  View All 13 Diagnostic Guides <ArrowRight className="w-3.5 h-3.5" />
+                </Link>
               </div>
             </div>
 
