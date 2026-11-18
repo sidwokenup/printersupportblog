@@ -60,13 +60,25 @@ export function Header() {
           </Link>
 
           <Link 
+            href="/blog"
+            className={cn(
+              "relative px-3 py-2 text-sm font-medium transition-colors rounded-md hover:text-primary",
+              pathname?.startsWith("/blog") || pathname === "/printers" || pathname === "/all-in-one" || pathname === "/scanners"
+                ? "text-primary font-semibold"
+                : "text-slate-600 hover:bg-slate-100"
+            )}
+          >
+            Reviews & Buying Guides
+          </Link>
+
+          <Link 
             href="/#solutions"
             className={cn(
               "relative px-3 py-2 text-sm font-medium transition-colors rounded-md hover:text-primary",
               pathname?.startsWith("/solutions") ? "text-primary" : "text-slate-600 hover:bg-slate-100"
             )}
           >
-            Knowledgebase & Blog
+            Knowledgebase
           </Link>
 
           <Link 
@@ -112,7 +124,8 @@ export function Header() {
               </div>
               <nav className="flex flex-col gap-1">
                 <Link href="/" className="px-4 py-3 text-base font-medium rounded-xl hover:bg-slate-100 text-slate-700">Home</Link>
-                <Link href="/#solutions" className="px-4 py-3 text-base font-medium rounded-xl hover:bg-slate-100 text-slate-700">Knowledgebase & Blog</Link>
+                <Link href="/blog" className="px-4 py-3 text-base font-medium rounded-xl hover:bg-slate-100 text-slate-700 font-semibold text-primary">Reviews & Buying Guides</Link>
+                <Link href="/#solutions" className="px-4 py-3 text-base font-medium rounded-xl hover:bg-slate-100 text-slate-700">Knowledgebase</Link>
                 <Link href="/privacy-policy" className="px-4 py-3 text-base font-medium rounded-xl hover:bg-slate-100 text-slate-700">Privacy Policy</Link>
                 <button
                   onClick={() => window.dispatchEvent(new Event("open-lead-popup"))}

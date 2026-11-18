@@ -70,8 +70,32 @@ export function Footer() {
           </div>
 
           <div className="flex flex-col gap-4">
+            <h3 className="font-semibold text-slate-900 text-base">Reviews & Buying Guides</h3>
+            <div className="flex flex-col gap-2.5 mt-2 text-sm">
+              <Link href="/blog" className="text-slate-600 hover:text-primary transition-colors">
+                All 2026 Reviews
+              </Link>
+              <Link href="/printers" className="text-slate-600 hover:text-primary transition-colors">
+                Wireless Laser Printers
+              </Link>
+              <Link href="/all-in-one" className="text-slate-600 hover:text-primary transition-colors">
+                All-in-One Inkjets
+              </Link>
+              <Link href="/scanners" className="text-slate-600 hover:text-primary transition-colors">
+                Duplex Document Scanners
+              </Link>
+              <Link href="/blog/laser-vs-inkjet-printer-cost-comparison" className="text-slate-600 hover:text-primary transition-colors">
+                Laser vs Inkjet TCO Math
+              </Link>
+            </div>
+          </div>
+
+          <div className="flex flex-col gap-4">
             <h3 className="font-semibold text-slate-900 text-base">Legal & Support</h3>
-            <div className="flex flex-col gap-3 mt-2">
+            <div className="flex flex-col gap-3 mt-2 text-sm">
+              <Link href="/privacy-policy" className="text-slate-600 hover:text-primary transition-colors">
+                Privacy Policy & FTC Disclosure
+              </Link>
               <button 
                 onClick={() => window.dispatchEvent(new Event("open-lead-popup"))}
                 className="text-slate-600 hover:text-primary transition-colors text-left"
