@@ -4,7 +4,21 @@ import React, { useState, useEffect } from "react"
 import { useForm } from "react-hook-form"
 import { zodResolver } from "@hookform/resolvers/zod"
 import { motion, AnimatePresence } from "framer-motion"
-import { X, CheckCircle2, HeadphonesIcon, Loader2, ChevronRight, ChevronLeft } from "lucide-react"
+import { 
+  X, 
+  CheckCircle2, 
+  PhoneCall, 
+  Tag, 
+  ShieldCheck, 
+  Clock, 
+  Lock, 
+  Loader2, 
+  Send, 
+  Sparkles,
+  ArrowRight,
+  Headphones,
+  Check
+} from "lucide-react"
 import { usePathname } from "next/navigation"
 
 import { leadFormSchema, LeadFormValues } from "@/lib/validations/lead"
@@ -12,69 +26,58 @@ import { submitLead } from "@/app/actions/leadActions"
 import { Input } from "@/components/ui/input"
 import { Button } from "@/components/ui/button"
 
-const PRINTER_SERIES = [
-  "HP Envy", "HP Deskjet", "HP Laserjet", "HP Designjet", 
-  "HP SmartTank", "HP PhotoSmart", "HP Tango", "HP Latex", 
-  "HP Indigo", "HP Sprocket", "Others"
+const CATEGORIES = [
+  "Wireless Laser Printers",
+  "All-in-One SuperTanks",
+  "11x17 Wide-Format Printers",
+  "4x6 Thermal Shipping Printers",
+  "High-Yield Toner & Cartridges",
+  "General Advice / Bulk Quote"
 ]
 
-const ISSUES = [
-  "Printer Offline", "Printer not printing", "Printer Paper Jam", 
-  "Printer Setup Issue", "Printer Driver", "Printer Issue After Windows Update", 
-  "Printer code Errors and Messages", "Printer Troubleshooting", 
-  "Printer not connecting to WIFI", "Printer Job Stuck In Queue", 
-  "Printer in error state", "Others"
-]
-
-const OS_OPTIONS = [
-  "Windows", "macOS", "Linux", "ChromeOS", "iOS", "Android", "Other"
+const CALLBACK_WINDOWS = [
+  "As soon as possible",
+  "Morning (9:00 AM – 12:00 PM EST)",
+  "Afternoon (12:00 PM – 5:00 PM EST)",
+  "Evening (5:00 PM – 8:00 PM EST)"
 ]
 
 export function LeadPopup() {
   const [isOpen, setIsOpen] = useState(false)
+  const [activeTab, setActiveTab] = useState<"callback" | "promotions">("callback")
   const [isSuccess, setIsSuccess] = useState(false)
   const [isSubmitting, setIsSubmitting] = useState(false)
   const [errorMsg, setErrorMsg] = useState("")
-  const [step, setStep] = useState(0)
-  
+
   const pathname = usePathname()
 
-  const { register, handleSubmit, watch, setValue, formState: { errors } } = useForm<LeadFormValues>({
-    resolver: zodResolver(leadFormSchema),
+  const { register, handleSubmit, watch, setValue, reset, formState: { errors } } = useForm<LeadFormValues>({
+    resolver: zodResolver(leadFormSchema) as any,
     defaultValues: {
-      printerSeries: "",
-      issueFacing: "",
-      operatingSystem: "",
+      fullName: "",
       email: "",
-      phone: "+1 ",
+      phone: "",
+      leadType: "callback",
+      printerSeries: "Wireless Laser Printers",
+      interestCategory: "Wireless Laser Printers",
+      issueFacing: "",
+      preferredTime: "As soon as possible",
+      promotionalOptIn: true,
+      operatingSystem: "Web",
       honeypot: "",
     }
   })
 
   useEffect(() => {
     const handleOpenEvent = () => {
-      setStep(0)
       setIsSuccess(false)
+      setErrorMsg("")
       setIsOpen(true)
     }
     window.addEventListener("open-lead-popup", handleOpenEvent)
 
-    // Automatically trigger popup every 20 seconds, starting 20 seconds after page load.
-    // In a real-world scenario, you might want to stop the interval once they submit.
-    const autoInterval = setInterval(() => {
-      setIsOpen(prev => {
-        if (!prev) {
-          setStep(0);
-          setIsSuccess(false);
-          return true;
-        }
-        return prev;
-      });
-    }, 20000);
-
     return () => {
       window.removeEventListener("open-lead-popup", handleOpenEvent)
-      clearInterval(autoInterval)
     }
   }, [])
 
@@ -82,42 +85,38 @@ export function LeadPopup() {
     setIsOpen(false)
   }
 
-  const nextStep = () => setStep((s) => Math.min(s + 1, 3))
-  const prevStep = () => setStep((s) => Math.max(s - 1, 0))
+  const handleTabChange = (tab: "callback" | "promotions") => {
+    setActiveTab(tab)
+    setValue("leadType", tab)
+    setErrorMsg("")
+  }
 
   const onSubmit = async (data: LeadFormValues) => {
     setIsSubmitting(true)
     setErrorMsg("")
     
-    // Add hidden tracking data
+    // Add page attribution metadata
     data.pageUrl = typeof window !== "undefined" ? window.location.href : pathname
-    data.source = "Website Popup"
+    data.source = activeTab === "callback" ? "VIP Callback Modal" : "VIP Promotional Deals Modal"
 
     try {
       const result = await submitLead(data)
       
       if (result.success) {
         setIsSuccess(true)
-        // Auto close after 3 seconds of success
         setTimeout(() => {
           handleClose()
+          reset()
         }, 4000)
       } else {
-        setErrorMsg(result.error || "Something went wrong. Please try again.")
+        setErrorMsg(result.error || "Unable to submit request. Please verify your phone number and try again.")
       }
     } catch (err) {
       console.error(err)
-      setErrorMsg("Failed to submit request. Please try again.")
+      setErrorMsg("Connection error. Please try again.")
     } finally {
       setIsSubmitting(false)
     }
-  }
-
-  // Animation variants for sliding content
-  const variants = {
-    enter: { x: 50, opacity: 0 },
-    center: { x: 0, opacity: 1 },
-    exit: { x: -50, opacity: 0 }
   }
 
   return (
@@ -130,228 +129,279 @@ export function LeadPopup() {
             animate={{ opacity: 1 }}
             exit={{ opacity: 0 }}
             onClick={handleClose}
-            className="fixed inset-0 z-[100] bg-slate-900/40 backdrop-blur-sm"
+            className="fixed inset-0 z-[100] bg-slate-900/60 backdrop-blur-sm"
           />
 
-          {/* Modal */}
+          {/* Modal Container */}
           <motion.div
             initial={{ opacity: 0, scale: 0.95, y: 20 }}
             animate={{ opacity: 1, scale: 1, y: 0 }}
             exit={{ opacity: 0, scale: 0.95, y: 20 }}
-            transition={{ type: "spring", duration: 0.5 }}
-            className="fixed left-1/2 top-1/2 z-[101] w-[calc(100%-2rem)] md:w-[70vw] max-w-4xl min-h-[500px] md:min-h-[600px] -translate-x-1/2 -translate-y-1/2 bg-slate-50 rounded-3xl shadow-2xl overflow-hidden border border-slate-200 flex flex-col md:flex-row"
+            transition={{ type: "spring", duration: 0.4 }}
+            className="fixed left-1/2 top-1/2 z-[101] w-[calc(100%-2rem)] max-w-2xl -translate-x-1/2 -translate-y-1/2 bg-white rounded-3xl shadow-2xl overflow-hidden border border-slate-200 flex flex-col max-h-[92vh] overflow-y-auto"
           >
-            {/* Sidebar / Header Graphic */}
-            <div className="bg-gradient-to-br from-blue-600 to-blue-800 p-6 md:p-8 text-white relative overflow-hidden md:w-1/3 flex flex-col justify-between shrink-0">
-              <div className="absolute top-0 right-0 w-40 h-40 bg-white/10 rounded-full blur-2xl -translate-y-1/2 translate-x-1/3" />
-              
-              <div className="relative z-10 mb-8 md:mb-0">
-                <div className="bg-white/20 p-3 rounded-2xl backdrop-blur-sm w-fit mb-6 hidden md:block">
-                  <HeadphonesIcon className="h-8 w-8 text-white" />
-                </div>
-                <h2 className="text-2xl md:text-3xl font-bold tracking-tight mb-2">Let us help you with your printer issue.</h2>
-                <p className="text-blue-100 text-sm md:text-base">Fill in the details or answer a few questions to get started.</p>
-              </div>
-
-              {!isSuccess && (
-                <div className="hidden md:block relative z-10">
-                  <div className="text-xs font-semibold text-blue-200 uppercase tracking-wider mb-3">Steps:</div>
-                  <div className="flex flex-col gap-4">
-                    {["Printer Brand & Series", "Issue Facing", "Operating System", "Contact Details"].map((label, i) => (
-                      <div key={i} className={`flex items-center gap-3 ${step === i ? "opacity-100" : "opacity-40"}`}>
-                        <div className={`w-2.5 h-2.5 rounded-full ${step >= i ? "bg-white" : "bg-blue-300"}`} />
-                        <span className="text-sm font-medium">{label}</span>
-                      </div>
-                    ))}
-                  </div>
-                </div>
-              )}
-            </div>
-
-            {/* Content Area */}
-            <div className="p-6 md:p-8 bg-white md:w-2/3 flex flex-col relative min-h-[400px]">
+            {/* Header Banner */}
+            <div className="bg-gradient-to-r from-slate-900 via-blue-950 to-slate-900 p-6 md:p-8 text-white relative shrink-0">
               <button 
                 onClick={handleClose}
-                className="absolute top-4 right-4 p-2 bg-slate-100 hover:bg-slate-200 rounded-full transition-colors text-slate-500 hover:text-slate-700 z-50"
+                className="absolute top-5 right-5 p-2 bg-slate-800/80 hover:bg-slate-700 rounded-full transition-colors text-slate-300 hover:text-white"
+                aria-label="Close modal"
               >
                 <X className="h-5 w-5" />
               </button>
 
-              {isSuccess ? (
-                <motion.div 
-                  initial={{ opacity: 0, scale: 0.9 }}
-                  animate={{ opacity: 1, scale: 1 }}
-                  className="flex flex-col items-center justify-center text-center py-12 flex-1"
+              <div className="flex items-center gap-2 text-emerald-400 text-xs font-semibold uppercase tracking-wider mb-2">
+                <ShieldCheck className="w-4 h-4" />
+                Live Feed Reviews — Consumer Hardware Advisory
+              </div>
+
+              <h2 className="text-2xl md:text-3xl font-extrabold tracking-tight">
+                {activeTab === "callback" ? "Request a Free Advisor Callback" : "Join VIP Hardware Deals & Alerts"}
+              </h2>
+
+              <p className="text-slate-300 text-xs md:text-sm mt-1.5 leading-relaxed max-w-lg">
+                {activeTab === "callback" 
+                  ? "Connect with an independent printer specialist for hardware recommendations, TCO calculations, or business quotes."
+                  : "Receive instant SMS notifications on manufacturer price drops, exclusive rebate codes, and holiday deals."}
+              </p>
+
+              {/* Mode Toggle Tabs */}
+              <div className="flex items-center gap-2 mt-6 p-1 bg-slate-800/80 rounded-2xl border border-slate-700/80 max-w-md">
+                <button
+                  type="button"
+                  onClick={() => handleTabChange("callback")}
+                  className={`flex-1 flex items-center justify-center gap-2 py-2 px-3 rounded-xl text-xs md:text-sm font-semibold transition-all ${
+                    activeTab === "callback"
+                      ? "bg-blue-600 text-white shadow-md"
+                      : "text-slate-300 hover:text-white hover:bg-slate-700/50"
+                  }`}
                 >
-                  <div className="w-24 h-24 bg-green-100 rounded-full flex items-center justify-center mb-6">
-                    <CheckCircle2 className="h-12 w-12 text-green-600" />
+                  <PhoneCall className="w-3.5 h-3.5" />
+                  Priority Callback
+                </button>
+
+                <button
+                  type="button"
+                  onClick={() => handleTabChange("promotions")}
+                  className={`flex-1 flex items-center justify-center gap-2 py-2 px-3 rounded-xl text-xs md:text-sm font-semibold transition-all ${
+                    activeTab === "promotions"
+                      ? "bg-emerald-600 text-white shadow-md"
+                      : "text-slate-300 hover:text-white hover:bg-slate-700/50"
+                  }`}
+                >
+                  <Tag className="w-3.5 h-3.5" />
+                  Deals &amp; Promo Alerts
+                </button>
+              </div>
+            </div>
+
+            {/* Modal Body */}
+            <div className="p-6 md:p-8 flex-1">
+              {isSuccess ? (
+                <div className="flex flex-col items-center justify-center text-center py-10 space-y-4">
+                  <div className="w-20 h-20 bg-emerald-100 rounded-full flex items-center justify-center">
+                    <CheckCircle2 className="h-10 w-10 text-emerald-600" />
                   </div>
-                  <h3 className="text-2xl md:text-3xl font-bold text-slate-900 mb-3">Your ticket is raised!</h3>
-                  <p className="text-slate-600 text-lg">
-                    We will connect with you immediately.
+                  <h3 className="text-2xl font-bold text-slate-900">
+                    {activeTab === "callback" ? "Callback Request Confirmed!" : "You're on the VIP Deals List!"}
+                  </h3>
+                  <p className="text-slate-600 text-sm max-w-md leading-relaxed">
+                    {activeTab === "callback"
+                      ? "Thank you! Our independent hardware team will call you back during your preferred window."
+                      : "Look out for exclusive price drop alerts, manufacturer rebates, and discount codes sent directly to your phone and email."}
                   </p>
-                </motion.div>
+                  <div className="pt-2 text-xs text-slate-500 font-mono">
+                    Reference ID: #{Math.floor(100000 + Math.random() * 900000)}
+                  </div>
+                </div>
               ) : (
-                <div className="flex flex-col h-full flex-1">
-                  <AnimatePresence mode="wait">
-                    <motion.div
-                      key={step}
-                      variants={variants}
-                      initial="enter"
-                      animate="center"
-                      exit="exit"
-                      transition={{ duration: 0.2 }}
-                      className="flex-1 flex flex-col"
-                    >
-                      {step === 0 && (
-                        <>
-                          <h3 className="text-xl font-bold text-slate-900 mb-6 mt-4">Q1. Help us with your printer series</h3>
-                          <div className="grid grid-cols-2 md:grid-cols-3 gap-3 overflow-y-auto pr-2 pb-4 md:max-h-[400px]">
-                            {PRINTER_SERIES.map((series) => (
-                              <button
-                                key={series}
-                                type="button"
-                                onClick={() => {
-                                  setValue("printerSeries", series)
-                                  nextStep()
-                                }}
-                                className={`p-3 md:p-4 text-sm font-medium border rounded-xl transition-all text-center ${watch("printerSeries") === series ? "border-blue-600 bg-blue-50 text-blue-700" : "border-slate-200 hover:border-blue-300 hover:bg-slate-50"}`}
-                              >
-                                {series}
-                              </button>
-                            ))}
-                          </div>
-                        </>
+                <form onSubmit={handleSubmit(onSubmit)} className="space-y-4">
+                  
+                  {/* Name & Phone Row */}
+                  <div className="grid grid-cols-1 sm:grid-cols-2 gap-4">
+                    <div>
+                      <label className="block text-xs font-bold text-slate-700 uppercase tracking-wider mb-1.5">
+                        Your Full Name
+                      </label>
+                      <Input
+                        type="text"
+                        placeholder="e.g. Michael Scott"
+                        {...register("fullName")}
+                        className="h-11 bg-slate-50 border-slate-200 rounded-xl text-sm"
+                      />
+                    </div>
+
+                    <div>
+                      <label className="block text-xs font-bold text-slate-700 uppercase tracking-wider mb-1.5">
+                        US Phone Number <span className="text-red-500">*</span>
+                      </label>
+                      <Input
+                        type="tel"
+                        placeholder="+1 (555) 123-4567"
+                        {...register("phone")}
+                        className={`h-11 bg-slate-50 border-slate-200 rounded-xl text-sm ${
+                          errors.phone ? "border-red-500 focus-visible:ring-red-500" : ""
+                        }`}
+                      />
+                      {errors.phone ? (
+                        <p className="text-red-500 text-xs mt-1">{errors.phone.message}</p>
+                      ) : (
+                        <p className="text-slate-400 text-[11px] mt-1">For priority callback &amp; SMS deal alerts</p>
                       )}
+                    </div>
+                  </div>
 
-                      {step === 1 && (
-                        <>
-                          <h3 className="text-xl font-bold text-slate-900 mb-6 mt-4">Q2. Issue facing</h3>
-                          <div className="grid grid-cols-1 sm:grid-cols-2 gap-3 overflow-y-auto pr-2 pb-4 md:max-h-[400px]">
-                            {ISSUES.map((issue) => (
-                              <button
-                                key={issue}
-                                type="button"
-                                onClick={() => {
-                                  setValue("issueFacing", issue)
-                                  nextStep()
-                                }}
-                                className={`p-3 text-sm font-medium border rounded-xl transition-all text-left ${watch("issueFacing") === issue ? "border-blue-600 bg-blue-50 text-blue-700" : "border-slate-200 hover:border-blue-300 hover:bg-slate-50"}`}
-                              >
-                                {issue}
-                              </button>
-                            ))}
-                          </div>
-                        </>
+                  {/* Email & Category Row */}
+                  <div className="grid grid-cols-1 sm:grid-cols-2 gap-4">
+                    <div>
+                      <label className="block text-xs font-bold text-slate-700 uppercase tracking-wider mb-1.5">
+                        Email Address {activeTab === "promotions" && <span className="text-red-500">*</span>}
+                      </label>
+                      <Input
+                        type="email"
+                        placeholder="you@company.com"
+                        {...register("email")}
+                        className="h-11 bg-slate-50 border-slate-200 rounded-xl text-sm"
+                      />
+                      {errors.email && (
+                        <p className="text-red-500 text-xs mt-1">{errors.email.message}</p>
                       )}
+                    </div>
 
-                      {step === 2 && (
-                        <>
-                          <h3 className="text-xl font-bold text-slate-900 mb-6 mt-4">Q3. What is your operating system?</h3>
-                          <div className="grid grid-cols-2 gap-3">
-                            {OS_OPTIONS.map((os) => (
-                              <button
-                                key={os}
-                                type="button"
-                                onClick={() => {
-                                  setValue("operatingSystem", os)
-                                  nextStep()
-                                }}
-                                className={`p-3 text-sm font-medium border rounded-xl transition-all text-center ${watch("operatingSystem") === os ? "border-blue-600 bg-blue-50 text-blue-700" : "border-slate-200 hover:border-blue-300 hover:bg-slate-50"}`}
-                              >
-                                {os}
-                              </button>
-                            ))}
-                          </div>
-                        </>
-                      )}
+                    <div>
+                      <label className="block text-xs font-bold text-slate-700 uppercase tracking-wider mb-1.5">
+                        Interested Hardware Category
+                      </label>
+                      <select
+                        {...register("printerSeries")}
+                        className="w-full h-11 px-3 bg-slate-50 border border-slate-200 rounded-xl text-sm text-slate-900 focus:outline-none focus:ring-2 focus:ring-blue-500 transition-all"
+                      >
+                        {CATEGORIES.map((cat) => (
+                          <option key={cat} value={cat}>{cat}</option>
+                        ))}
+                      </select>
+                    </div>
+                  </div>
 
-                      {step === 3 && (
-                        <div className="flex flex-col flex-1 mt-4">
-                          <h3 className="text-xl font-bold text-slate-900 mb-6">Contact Details</h3>
-                          
-                          <form id="lead-form" onSubmit={handleSubmit(onSubmit)} className="space-y-5 flex-1">
-                            <div className="hidden">
-                              <input type="text" {...register("honeypot")} tabIndex={-1} autoComplete="off" />
-                            </div>
-
-                            <div className="space-y-1.5">
-                              <label className="text-sm font-medium text-slate-700">Q4. Your Email Address (Optional)</label>
-                              <Input 
-                                {...register("email")} 
-                                type="email"
-                                placeholder="john@example.com"
-                                className={`bg-slate-50 border-slate-200 h-12 rounded-xl focus-visible:ring-primary ${errors.email ? 'border-red-500 focus-visible:ring-red-500' : ''}`}
-                              />
-                              {errors.email && <p className="text-xs text-red-500 mt-1">{errors.email.message}</p>}
-                            </div>
-
-                            <div className="space-y-1.5">
-                              <label className="text-sm font-medium text-slate-700">Q5. Your Contact No. <span className="text-red-500">*</span></label>
-                              <Input 
-                                {...register("phone")} 
-                                type="tel"
-                                placeholder="+1 (555) 123-4567"
-                                className={`bg-slate-50 border-slate-200 h-12 rounded-xl focus-visible:ring-primary ${errors.phone ? 'border-red-500 focus-visible:ring-red-500' : ''}`}
-                              />
-                              <p className="text-xs text-slate-500 mt-1">US numbers only</p>
-                              {errors.phone && <p className="text-xs text-red-500 mt-1">{errors.phone.message}</p>}
-                            </div>
-
-                            {errorMsg && (
-                              <div className="p-3 bg-red-50 text-red-600 rounded-lg text-sm text-center border border-red-100">
-                                {errorMsg}
-                              </div>
+                  {/* Callback Window (Only in Callback mode) */}
+                  {activeTab === "callback" && (
+                    <div>
+                      <label className="block text-xs font-bold text-slate-700 uppercase tracking-wider mb-1.5">
+                        Preferred Callback Window
+                      </label>
+                      <div className="grid grid-cols-1 sm:grid-cols-2 gap-2">
+                        {CALLBACK_WINDOWS.map((win) => (
+                          <button
+                            key={win}
+                            type="button"
+                            onClick={() => setValue("preferredTime", win)}
+                            className={`p-2.5 text-xs font-semibold rounded-xl border text-left flex items-center justify-between transition-all ${
+                              watch("preferredTime") === win
+                                ? "border-blue-600 bg-blue-50 text-blue-700"
+                                : "border-slate-200 hover:border-slate-300 text-slate-700"
+                            }`}
+                          >
+                            <span>{win}</span>
+                            {watch("preferredTime") === win && (
+                              <Check className="w-3.5 h-3.5 text-blue-600" />
                             )}
-                          </form>
-                        </div>
-                      )}
-                    </motion.div>
-                  </AnimatePresence>
+                          </button>
+                        ))}
+                      </div>
+                    </div>
+                  )}
 
-                  {/* Navigation Footer */}
-                  <div className="mt-auto pt-6 flex items-center justify-between border-t border-slate-100">
-                    <Button
-                      type="button"
-                      variant="ghost"
-                      onClick={prevStep}
-                      disabled={step === 0 || isSubmitting}
-                      className={`text-slate-500 hover:text-slate-900 ${step === 0 ? 'invisible' : ''}`}
-                    >
-                      <ChevronLeft className="mr-2 h-4 w-4" />
-                      Back
-                    </Button>
+                  {/* Notes / Questions */}
+                  <div>
+                    <label className="block text-xs font-bold text-slate-700 uppercase tracking-wider mb-1.5">
+                      {activeTab === "callback" ? "Specific Model or Requirements (Optional)" : "Special Requests (Optional)"}
+                    </label>
+                    <textarea
+                      placeholder={activeTab === "callback" ? "e.g., Looking for a laser printer under $300 with auto-duplex..." : "e.g., Notify me when Epson EcoTank goes on sale..."}
+                      {...register("issueFacing")}
+                      rows={2}
+                      className="w-full px-3 py-2 bg-slate-50 border border-slate-200 rounded-xl text-sm text-slate-900 focus:outline-none focus:ring-2 focus:ring-blue-500 transition-all resize-none"
+                    />
+                  </div>
 
-                    {step < 3 ? (
+                  {/* Honeypot field for spam prevention */}
+                  <input type="text" {...register("honeypot")} className="hidden" tabIndex={-1} autoComplete="off" />
+
+                  {/* Mandatory TCPA / Marketing Consent Checkbox */}
+                  <div className="bg-slate-50 p-3.5 rounded-xl border border-slate-200/80 space-y-2">
+                    <label className="flex items-start gap-2.5 cursor-pointer text-xs text-slate-600 leading-relaxed">
+                      <input
+                        type="checkbox"
+                        {...register("promotionalOptIn")}
+                        className="mt-0.5 rounded border-slate-300 text-blue-600 focus:ring-blue-500 h-4 w-4 shrink-0"
+                      />
+                      <span>
+                        <strong>Consent for Communications:</strong> I consent to receive phone calls, promotional SMS text messages, and email deal notifications from Live Feed Reviews at the contact details provided. Message &amp; data rates may apply. Reply STOP anytime to unsubscribe.
+                      </span>
+                    </label>
+                  </div>
+
+                  {errorMsg && (
+                    <div className="p-3 bg-red-50 border border-red-200 rounded-xl text-xs text-red-600 font-medium">
+                      {errorMsg}
+                    </div>
+                  )}
+
+                  {/* Trust Footer & Submit Action */}
+                  <div className="pt-2 flex flex-col sm:flex-row sm:items-center justify-between gap-4 border-t border-slate-100">
+                    <div className="flex items-center gap-4 text-[11px] text-slate-500">
+                      <span className="flex items-center gap-1">
+                        <Lock className="w-3.5 h-3.5 text-slate-400" />
+                        256-Bit SSL Encrypted
+                      </span>
+                      <span className="flex items-center gap-1">
+                        <Clock className="w-3.5 h-3.5 text-slate-400" />
+                        Fast Response
+                      </span>
+                    </div>
+
+                    <div className="flex items-center gap-2">
                       <Button
                         type="button"
-                        onClick={nextStep}
-                        className="bg-slate-900 hover:bg-slate-800 text-white rounded-xl px-6"
+                        variant="ghost"
+                        onClick={handleClose}
+                        className="rounded-xl text-xs text-slate-500"
                       >
-                        Next
-                        <ChevronRight className="ml-2 h-4 w-4" />
+                        Cancel
                       </Button>
-                    ) : (
-                      <Button 
-                        type="submit" 
-                        form="lead-form"
+                      <Button
+                        type="submit"
                         disabled={isSubmitting}
-                        className="bg-blue-600 hover:bg-blue-700 text-white rounded-xl px-8"
+                        className={`rounded-xl text-sm font-bold text-white px-6 shadow-sm flex items-center gap-2 ${
+                          activeTab === "callback"
+                            ? "bg-blue-600 hover:bg-blue-700"
+                            : "bg-emerald-600 hover:bg-emerald-700"
+                        }`}
                       >
                         {isSubmitting ? (
                           <>
-                            <Loader2 className="mr-2 h-4 w-4 animate-spin" />
+                            <Loader2 className="w-4 h-4 animate-spin" />
                             Submitting...
                           </>
+                        ) : activeTab === "callback" ? (
+                          <>
+                            <PhoneCall className="w-4 h-4" />
+                            Request Free Callback
+                          </>
                         ) : (
-                          "Submit"
+                          <>
+                            <Sparkles className="w-4 h-4" />
+                            Get VIP Deals
+                          </>
                         )}
                       </Button>
-                    )}
+                    </div>
                   </div>
-                </div>
+
+                </form>
               )}
             </div>
+
           </motion.div>
         </>
       )}

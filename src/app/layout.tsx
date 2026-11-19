@@ -24,6 +24,9 @@ export const metadata: Metadata = {
     google: process.env.GOOGLE_SEARCH_CONSOLE_VERIFICATION || undefined,
     other: {
       "tellepsis-reach-verify": "rtjsylOFy1nINF13jg3y4imhLMAkLL3VDKZbXlGTDl0",
+      ...(process.env.BING_WEBMASTER_VERIFICATION
+        ? { "msvalidate.01": process.env.BING_WEBMASTER_VERIFICATION }
+        : {}),
     },
   },
   openGraph: {

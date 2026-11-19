@@ -89,6 +89,16 @@ export function Header() {
           </Link>
 
           <Link 
+            href="/contact"
+            className={cn(
+              "relative px-3 py-2 text-sm font-medium transition-colors rounded-md hover:text-primary",
+              pathname === "/contact" ? "text-primary font-semibold" : "text-slate-600 hover:bg-slate-100"
+            )}
+          >
+            Advisory &amp; Deals
+          </Link>
+
+          <Link 
             href="/privacy-policy"
             className={cn(
               "relative px-3 py-2 text-sm font-medium transition-colors rounded-md hover:text-primary",
@@ -134,6 +144,7 @@ export function Header() {
                 <Link href="/blog" className="px-4 py-3 text-base font-medium rounded-xl hover:bg-slate-100 text-slate-700 font-semibold text-primary">Reviews & Buying Guides</Link>
                 <Link href="/solutions" className="px-4 py-3 text-base font-medium rounded-xl hover:bg-slate-100 text-slate-700">Troubleshooting Hub</Link>
                 <Link href="/privacy-policy" className="px-4 py-3 text-base font-medium rounded-xl hover:bg-slate-100 text-slate-700">Privacy Policy</Link>
+                <Link href="/contact" className="px-4 py-3 text-base font-medium rounded-xl hover:bg-slate-100 text-slate-700 font-semibold text-blue-600">Advisory &amp; VIP Deals</Link>
                 <button
                   onClick={() => window.dispatchEvent(new Event("open-lead-popup"))}
                   className="mt-4 px-4 py-3 text-base font-semibold rounded-xl bg-primary text-white text-center hover:bg-blue-700"

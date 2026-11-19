@@ -121,17 +121,17 @@ export function Footer() {
           </div>
 
           <div className="flex flex-col gap-4">
-            <h3 className="font-semibold text-slate-900 text-base">Legal &amp; Support</h3>
+            <h3 className="font-semibold text-slate-900 text-base">Advisory &amp; Support</h3>
             <div className="flex flex-col gap-3 mt-2 text-sm">
+              <Link href="/contact" className="text-slate-600 hover:text-primary transition-colors font-semibold text-blue-600">
+                Request Priority Callback
+              </Link>
+              <Link href="/contact" className="text-slate-600 hover:text-primary transition-colors">
+                Join VIP Deals List
+              </Link>
               <Link href="/privacy-policy" className="text-slate-600 hover:text-primary transition-colors">
                 Privacy Policy &amp; FTC Disclosure
               </Link>
-              <button 
-                onClick={() => window.dispatchEvent(new Event("open-lead-popup"))}
-                className="text-slate-600 hover:text-primary transition-colors text-left"
-              >
-                Editorial Inquiries
-              </button>
             </div>
           </div>
         </div>
