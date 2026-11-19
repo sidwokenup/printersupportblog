@@ -22,6 +22,12 @@ export const metadata: Metadata = {
       "en-GB": "https://www.livefeedreviews.com/",
       "en-CA": "https://www.livefeedreviews.com/",
       "en-AU": "https://www.livefeedreviews.com/",
+      "en-IN": "https://www.livefeedreviews.com/",
+      "en-IE": "https://www.livefeedreviews.com/",
+      "en-SG": "https://www.livefeedreviews.com/",
+      "en-NZ": "https://www.livefeedreviews.com/",
+      "en-ZA": "https://www.livefeedreviews.com/",
+      "en-PH": "https://www.livefeedreviews.com/",
       "x-default": "https://www.livefeedreviews.com/",
     },
   },
@@ -33,6 +39,12 @@ export const metadata: Metadata = {
       "tellepsis-reach-verify": "rtjsylOFy1nINF13jg3y4imhLMAkLL3VDKZbXlGTDl0",
       ...(process.env.BING_WEBMASTER_VERIFICATION
         ? { "msvalidate.01": process.env.BING_WEBMASTER_VERIFICATION }
+        : {}),
+      ...(process.env.YANDEX_VERIFICATION
+        ? { "yandex-verification": process.env.YANDEX_VERIFICATION }
+        : {}),
+      ...(process.env.BAIDU_VERIFICATION
+        ? { "baidu-site-verification": process.env.BAIDU_VERIFICATION }
         : {}),
     },
   },
@@ -50,10 +62,13 @@ export const metadata: Metadata = {
       },
     ],
     locale: "en_US",
+    alternateLocale: ["en_GB", "en_CA", "en_AU", "en_IN", "en_IE", "en_SG", "en_NZ", "en_ZA", "en_PH"],
     type: "website",
   },
   twitter: {
     card: "summary_large_image",
+    site: "@livefeedreviews",
+    creator: "@livefeedreviews",
     title: "Live Feed Reviews - Independent Printer Reviews & Buying Guides (2026)",
     description: "Comprehensive lab testing, ISO/IEC 19752 yield benchmarks, and buyer's guides for wireless laser printers, ink tanks, and document scanners.",
     images: ["/logo.png"],
@@ -114,6 +129,24 @@ export default function RootLayout({
           type="text/markdown"
           title="LLM Context Manifest"
           href="/llms.txt"
+        />
+        <link
+          rel="alternate"
+          type="application/rss+xml"
+          title="Live Feed Reviews RSS Feed"
+          href="/feed.xml"
+        />
+        <link
+          rel="alternate"
+          type="application/atom+xml"
+          title="Live Feed Reviews Atom Feed"
+          href="/atom.xml"
+        />
+        <link
+          rel="alternate"
+          type="application/feed+json"
+          title="Live Feed Reviews JSON Feed"
+          href="/feed.json"
         />
         <script
           type="application/ld+json"
