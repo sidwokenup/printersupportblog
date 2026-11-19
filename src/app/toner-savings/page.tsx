@@ -1,6 +1,7 @@
 import type { Metadata } from "next";
 import Link from "next/link";
 import { blogArticles } from "@/data/blogs";
+import TonerSavingsCalculator from "@/components/TonerSavingsCalculator";
 import {
   Sparkles,
   ShieldCheck,
@@ -106,6 +107,9 @@ export default function TonerSavingsLandingPage() {
             ))}
           </div>
         </div>
+
+        {/* Interactive Dynamic TCO & Toner Savings Calculator */}
+        <TonerSavingsCalculator />
 
         {/* 3-Year TCO Comparison Matrix */}
         <div className="bg-white p-6 rounded-2xl border border-slate-200 shadow-xs space-y-4">

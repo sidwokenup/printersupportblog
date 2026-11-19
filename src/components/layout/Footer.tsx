@@ -96,6 +96,9 @@ export function Footer() {
               <Link href="/toner-savings" className="text-slate-600 hover:text-primary transition-colors">
                 Toner Savings Math
               </Link>
+              <Link href="/compare" className="text-blue-600 hover:text-primary transition-colors font-semibold">
+                Compare Engine ★
+              </Link>
             </div>
           </div>
 
@@ -104,6 +107,9 @@ export function Footer() {
             <div className="flex flex-col gap-2.5 mt-2 text-sm">
               <Link href="/solutions" className="text-slate-600 hover:text-primary transition-colors font-medium text-blue-600">
                 All 13 DIY Diagnostic Guides
+              </Link>
+              <Link href="/solutions/error-codes" className="text-blue-600 hover:text-primary transition-colors font-semibold">
+                Error Code Lookup (2,240 Codes)
               </Link>
               <Link href="/solutions/printer-offline" className="text-slate-600 hover:text-primary transition-colors">
                 Fix Printer Offline

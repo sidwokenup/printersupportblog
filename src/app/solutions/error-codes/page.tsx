@@ -1,4 +1,5 @@
 import { curatedErrorCodes, ErrorCodeDetail } from "@/data/curatedErrorCodes";
+import ErrorCodeSearchMatrix from "@/components/ErrorCodeSearchMatrix";
 import Link from "next/link";
 import { 
   AlertTriangle, 
@@ -191,6 +192,9 @@ export default function ErrorCodesHubPage() {
             </div>
           </div>
         </div>
+
+        {/* 2,240 Raw Error Code Search Matrix */}
+        <ErrorCodeSearchMatrix />
 
         {/* Brand Grouped Sections */}
         <div className="space-y-12">
