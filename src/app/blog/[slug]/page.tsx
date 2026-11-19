@@ -43,10 +43,13 @@ export async function generateMetadata({ params }: Props): Promise<Metadata> {
   return {
     title: `${article.title} | Live Feed Reviews`,
     description: article.metaDescription,
+    alternates: {
+      canonical: `/blog/${article.slug}`,
+    },
     openGraph: {
       title: article.title,
       description: article.metaDescription,
-      url: `https://livefeedreviews.com/blog/${article.slug}`,
+      url: `https://www.livefeedreviews.com/blog/${article.slug}`,
       siteName: "Live Feed Reviews",
       images: [
         {
@@ -77,8 +80,62 @@ export default async function BlogPostPage({ params }: Props) {
 
   const otherArticles = blogArticles.filter((a) => a.slug !== slug).slice(0, 3);
 
+  const articleSchema = {
+    "@context": "https://schema.org",
+    "@graph": [
+      {
+        "@type": "Article",
+        "headline": article.title,
+        "description": article.metaDescription,
+        "author": {
+          "@type": "Organization",
+          "name": "Live Feed Reviews Editorial Lab",
+          "url": "https://www.livefeedreviews.com",
+        },
+        "publisher": {
+          "@type": "Organization",
+          "name": "Live Feed Reviews",
+          "logo": {
+            "@type": "ImageObject",
+            "url": "https://www.livefeedreviews.com/logo.png",
+          },
+        },
+        "datePublished": "2026-06-01",
+        "dateModified": "2026-11-19",
+        "mainEntityOfPage": `https://www.livefeedreviews.com/blog/${article.slug}`,
+      },
+      {
+        "@type": "BreadcrumbList",
+        "itemListElement": [
+          {
+            "@type": "ListItem",
+            "position": 1,
+            "name": "Home",
+            "item": "https://www.livefeedreviews.com/",
+          },
+          {
+            "@type": "ListItem",
+            "position": 2,
+            "name": "Blog & Reviews",
+            "item": "https://www.livefeedreviews.com/blog",
+          },
+          {
+            "@type": "ListItem",
+            "position": 3,
+            "name": article.title,
+            "item": `https://www.livefeedreviews.com/blog/${article.slug}`,
+          },
+        ],
+      },
+    ],
+  };
+
   return (
     <div className="min-h-screen bg-slate-50 py-8">
+      <script
+        type="application/ld+json"
+        dangerouslySetInnerHTML={{ __html: JSON.stringify(articleSchema) }}
+      />
       <div className="container mx-auto px-4 md:px-6 max-w-4xl space-y-8">
         {/* Breadcrumb Navigation */}
         <nav className="flex items-center gap-1.5 text-xs text-slate-500 font-mono">

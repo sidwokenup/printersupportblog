@@ -35,6 +35,9 @@ export async function generateMetadata({ params }: Props): Promise<Metadata> {
   return {
     title: `${solution.title} | Live Feed Reviews`,
     description: solution.metaDescription,
+    alternates: {
+      canonical: `/solutions/${solution.slug}`,
+    },
     openGraph: {
       title: solution.title,
       description: solution.metaDescription,
@@ -94,19 +97,67 @@ export default async function SolutionPage({ params }: Props) {
   const featuredImage = images[0];
   const relatedSolutions = solutions.filter((s) => s.slug !== slug).slice(0, 4);
 
-  // Schema.org HowTo structured data for search engines
-  const howToSchema = {
+  // Schema.org Structured Data (HowTo, BreadcrumbList, FAQPage) for Google & Bing rich snippets
+  const structuredData = {
     "@context": "https://schema.org",
-    "@type": "HowTo",
-    "name": solution.content.title,
-    "description": solution.metaDescription,
-    "totalTime": "PT10M",
-    "step": solution.content.sections.map((section, idx) => ({
-      "@type": "HowToStep",
-      "position": idx + 1,
-      "name": section.heading,
-      "text": section.body || section.heading,
-    })),
+    "@graph": [
+      {
+        "@type": "HowTo",
+        "name": solution.content.title,
+        "description": solution.metaDescription,
+        "totalTime": "PT10M",
+        "step": solution.content.sections.map((section, idx) => ({
+          "@type": "HowToStep",
+          "position": idx + 1,
+          "name": section.heading,
+          "text": (section.body || "") + (section.list ? " " + section.list.join(". ") : ""),
+        })),
+      },
+      {
+        "@type": "BreadcrumbList",
+        "itemListElement": [
+          {
+            "@type": "ListItem",
+            "position": 1,
+            "name": "Home",
+            "item": "https://www.livefeedreviews.com/",
+          },
+          {
+            "@type": "ListItem",
+            "position": 2,
+            "name": "Solutions",
+            "item": "https://www.livefeedreviews.com/solutions",
+          },
+          {
+            "@type": "ListItem",
+            "position": 3,
+            "name": solution.title,
+            "item": `https://www.livefeedreviews.com/solutions/${solution.slug}`,
+          },
+        ],
+      },
+      {
+        "@type": "FAQPage",
+        "mainEntity": [
+          {
+            "@type": "Question",
+            "name": `Why is my printer experiencing: ${solution.title}?`,
+            "acceptedAnswer": {
+              "@type": "Answer",
+              "text": solution.metaDescription,
+            },
+          },
+          {
+            "@type": "Question",
+            "name": `How do I prevent ${solution.category} errors from happening again?`,
+            "acceptedAnswer": {
+              "@type": "Answer",
+              "text": solution.content.conclusion,
+            },
+          },
+        ],
+      },
+    ],
   };
 
   return (
@@ -114,7 +165,7 @@ export default async function SolutionPage({ params }: Props) {
       {/* Inject Structured Data */}
       <script
         type="application/ld+json"
-        dangerouslySetInnerHTML={{ __html: JSON.stringify(howToSchema) }}
+        dangerouslySetInnerHTML={{ __html: JSON.stringify(structuredData) }}
       />
 
       <div className="container mx-auto px-4 md:px-6 max-w-7xl">

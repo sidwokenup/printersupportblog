@@ -14,13 +14,22 @@ const inter = Inter({
 });
 
 export const metadata: Metadata = {
-  metadataBase: new URL("https://livefeedreviews.com"),
+  metadataBase: new URL("https://www.livefeedreviews.com"),
+  alternates: {
+    canonical: "/",
+  },
   title: "Live Feed Reviews - Independent Printer Reviews & Buying Guides (2026)",
   description: "Comprehensive lab testing, ISO/IEC 19752 yield benchmarks, and buyer's guides for wireless laser printers, ink tanks, and document scanners.",
+  verification: {
+    google: process.env.GOOGLE_SEARCH_CONSOLE_VERIFICATION || undefined,
+    other: {
+      "tellepsis-reach-verify": "rtjsylOFy1nINF13jg3y4imhLMAkLL3VDKZbXlGTDl0",
+    },
+  },
   openGraph: {
     title: "Live Feed Reviews - Independent Printer Reviews & Buying Guides (2026)",
     description: "Comprehensive lab testing, ISO/IEC 19752 yield benchmarks, and buyer's guides for wireless laser printers, ink tanks, and document scanners.",
-    url: "https://livefeedreviews.com",
+    url: "https://www.livefeedreviews.com",
     siteName: "Live Feed Reviews",
     images: [
       {
