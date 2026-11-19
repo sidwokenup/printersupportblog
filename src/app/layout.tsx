@@ -65,8 +65,61 @@ export default function RootLayout({
 }: Readonly<{
   children: React.ReactNode;
 }>) {
+  const globalSchema = {
+    "@context": "https://schema.org",
+    "@graph": [
+      {
+        "@type": "Organization",
+        "@id": "https://www.livefeedreviews.com/#organization",
+        "name": "Live Feed Reviews",
+        "url": "https://www.livefeedreviews.com",
+        "logo": {
+          "@type": "ImageObject",
+          "url": "https://www.livefeedreviews.com/logo.png",
+          "caption": "Live Feed Reviews"
+        },
+        "description": "Independent consumer printer hardware testing laboratory, ISO/IEC 19752 yield benchmarking, and verified self-service diagnostic troubleshooting knowledge base.",
+        "sameAs": [
+          "https://twitter.com/livefeedreviews",
+          "https://github.com/livefeedreviews"
+        ],
+        "knowsAbout": [
+          "Laser Printers",
+          "Inkjet Printers",
+          "Supertank Printers",
+          "Thermal Shipping Printers",
+          "Print Spooler Diagnostics",
+          "ISO/IEC 19752 Standards",
+          "Windows 11 Print Architecture"
+        ]
+      },
+      {
+        "@type": "WebSite",
+        "@id": "https://www.livefeedreviews.com/#website",
+        "url": "https://www.livefeedreviews.com",
+        "name": "Live Feed Reviews",
+        "publisher": {
+          "@id": "https://www.livefeedreviews.com/#organization"
+        },
+        "inLanguage": "en-US"
+      }
+    ]
+  };
+
   return (
     <html lang="en" className="h-full" suppressHydrationWarning>
+      <head>
+        <link
+          rel="alternate"
+          type="text/markdown"
+          title="LLM Context Manifest"
+          href="/llms.txt"
+        />
+        <script
+          type="application/ld+json"
+          dangerouslySetInnerHTML={{ __html: JSON.stringify(globalSchema) }}
+        />
+      </head>
       <body
         className={`${inter.variable} font-sans antialiased min-h-full flex flex-col bg-slate-50`}
         suppressHydrationWarning

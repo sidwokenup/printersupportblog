@@ -104,15 +104,38 @@ export default async function SolutionPage({ params }: Props) {
   const featuredImage = images[0];
   const relatedSolutions = solutions.filter((s) => s.slug !== slug).slice(0, 4);
 
-  // Schema.org Structured Data (HowTo, BreadcrumbList, FAQPage) for Google & Bing rich snippets
+  // Schema.org Structured Data (WebPage with Speakable, HowTo, BreadcrumbList, FAQPage) for AI & Search Engines
   const structuredData = {
     "@context": "https://schema.org",
     "@graph": [
+      {
+        "@type": "WebPage",
+        "@id": `https://www.livefeedreviews.com/solutions/${solution.slug}#webpage`,
+        "url": `https://www.livefeedreviews.com/solutions/${solution.slug}`,
+        "name": solution.content.title,
+        "description": solution.metaDescription,
+        "inLanguage": "en-US",
+        "isPartOf": {
+          "@id": "https://www.livefeedreviews.com/#website"
+        },
+        "speakable": {
+          "@type": "SpeakableSpecification",
+          "cssSelector": [
+            ".direct-diagnostic-snapshot",
+            "h1",
+            ".solution-meta-desc"
+          ]
+        }
+      },
       {
         "@type": "HowTo",
         "name": solution.content.title,
         "description": solution.metaDescription,
         "totalTime": "PT10M",
+        "inLanguage": "en-US",
+        "publisher": {
+          "@id": "https://www.livefeedreviews.com/#organization"
+        },
         "step": solution.content.sections.map((section, idx) => ({
           "@type": "HowToStep",
           "position": idx + 1,
@@ -220,7 +243,7 @@ export default async function SolutionPage({ params }: Props) {
                 {solution.content.title}
               </h1>
 
-              <p className="text-lg text-slate-600 leading-relaxed">
+              <p className="solution-meta-desc text-lg text-slate-600 leading-relaxed">
                 {solution.metaDescription}
               </p>
 
@@ -234,7 +257,7 @@ export default async function SolutionPage({ params }: Props) {
               </div>
 
               {/* Direct Solution Snapshot (Featured Snippet / AI Overview Target) */}
-              <div className="bg-gradient-to-r from-blue-50 to-indigo-50/60 border border-blue-200/80 rounded-xl p-5 space-y-2">
+              <div className="direct-diagnostic-snapshot bg-gradient-to-r from-blue-50 to-indigo-50/60 border border-blue-200/80 rounded-xl p-5 space-y-2">
                 <div className="flex items-center gap-2 text-blue-700 font-bold text-xs uppercase tracking-wider">
                   <Sparkles className="w-4 h-4 text-blue-600" />
                   Direct Diagnostic Snapshot

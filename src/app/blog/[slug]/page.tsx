@@ -91,6 +91,25 @@ export default async function BlogPostPage({ params }: Props) {
     "@context": "https://schema.org",
     "@graph": [
       {
+        "@type": "WebPage",
+        "@id": `https://www.livefeedreviews.com/blog/${article.slug}#webpage`,
+        "url": `https://www.livefeedreviews.com/blog/${article.slug}`,
+        "name": article.title,
+        "description": article.metaDescription,
+        "inLanguage": "en-US",
+        "isPartOf": {
+          "@id": "https://www.livefeedreviews.com/#website"
+        },
+        "speakable": {
+          "@type": "SpeakableSpecification",
+          "cssSelector": [
+            ".blog-verdict-summary",
+            "h1",
+            ".bottom-line-text"
+          ]
+        }
+      },
+      {
         "@type": "Article",
         "headline": article.title,
         "description": article.metaDescription,
@@ -194,12 +213,12 @@ export default async function BlogPostPage({ params }: Props) {
         </header>
 
         {/* Quick Summary Card */}
-        <div className="bg-white p-5 md:p-6 rounded-2xl border border-slate-200 shadow-xs space-y-2">
+        <div className="blog-verdict-summary bg-white p-5 md:p-6 rounded-2xl border border-slate-200 shadow-xs space-y-2">
           <div className="text-xs font-bold text-slate-900 uppercase tracking-wider flex items-center gap-1.5 text-primary">
             <Sparkles className="w-4 h-4" />
             <span>The Bottom Line (30-Second Verdict)</span>
           </div>
-          <p className="text-sm md:text-base text-slate-700 leading-relaxed">
+          <p className="bottom-line-text text-sm md:text-base text-slate-700 leading-relaxed">
             {article.quickSummary}
           </p>
         </div>
