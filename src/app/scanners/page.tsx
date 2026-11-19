@@ -17,21 +17,54 @@ export const metadata: Metadata = {
   title: "Best Desktop Document Scanners 2026 | Duplex Sheetfed Reviews | Live Feed Reviews",
   description:
     "Digitize contracts and receipts at up to 60 pages per minute. Lab test ratings for ultrasonic double-feed prevention and searchable OCR accuracy.",
+  alternates: {
+    canonical: "/scanners",
+      languages: {
+        "en-US": "https://www.livefeedreviews.com/scanners",
+        "en-GB": "https://www.livefeedreviews.com/scanners",
+        "en-CA": "https://www.livefeedreviews.com/scanners",
+        "en-AU": "https://www.livefeedreviews.com/scanners",
+        "en-IN": "https://www.livefeedreviews.com/scanners",
+        "en-IE": "https://www.livefeedreviews.com/scanners",
+        "en-SG": "https://www.livefeedreviews.com/scanners",
+        "en-NZ": "https://www.livefeedreviews.com/scanners",
+        "en-ZA": "https://www.livefeedreviews.com/scanners",
+        "en-PH": "https://www.livefeedreviews.com/scanners",
+        "x-default": "https://www.livefeedreviews.com/scanners",
+      },
+  },
   openGraph: {
     title: "Best Desktop Document Scanners 2026 | Duplex Sheetfed Reviews",
     description:
       "Digitize contracts and receipts at up to 60 pages per minute. Lab test ratings for ultrasonic double-feed prevention and searchable OCR accuracy.",
-    url: "https://livefeedreviews.com/scanners",
+    url: "https://www.livefeedreviews.com/scanners",
     siteName: "Live Feed Reviews",
     type: "website",
   },
 };
 
 export default function ScannersLandingPage() {
+  const collectionSchema = {
+    "@context": "https://schema.org",
+    "@graph": [
+      {
+        "@type": "CollectionPage",
+        "@id": "https://www.livefeedreviews.com/scanners#webpage",
+        "url": "https://www.livefeedreviews.com/scanners",
+        "name": "Best Desktop Document Scanners (2026)",
+        "description": "Duplex sheetfed document scanners and OCR accuracy",
+        "isPartOf": {
+          "@id": "https://www.livefeedreviews.com/#website"
+        }
+      }
+    ]
+  };
+
   const scannerArticle = blogArticles.find((a) => a.slug === "best-document-scanner-reviews-duplex")!;
 
   return (
     <div className="min-h-screen bg-slate-50 py-8">
+      <script type="application/ld+json" dangerouslySetInnerHTML={{ __html: JSON.stringify(collectionSchema) }} />
       <div className="container mx-auto px-4 md:px-6 max-w-5xl space-y-8">
         <nav className="flex items-center gap-1.5 text-xs text-slate-500 font-mono">
           <Link href="/" className="hover:text-primary flex items-center gap-1">

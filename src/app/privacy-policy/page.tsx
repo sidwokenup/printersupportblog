@@ -3,6 +3,29 @@ import { Metadata } from "next";
 export const metadata: Metadata = {
   title: "Privacy Policy | Live Feed Reviews",
   description: "Privacy Policy for Live Feed Reviews - Learn how we collect, use, and protect your information.",
+  alternates: {
+    canonical: "/privacy-policy",
+      languages: {
+        "en-US": "https://www.livefeedreviews.com/privacy-policy",
+        "en-GB": "https://www.livefeedreviews.com/privacy-policy",
+        "en-CA": "https://www.livefeedreviews.com/privacy-policy",
+        "en-AU": "https://www.livefeedreviews.com/privacy-policy",
+        "en-IN": "https://www.livefeedreviews.com/privacy-policy",
+        "en-IE": "https://www.livefeedreviews.com/privacy-policy",
+        "en-SG": "https://www.livefeedreviews.com/privacy-policy",
+        "en-NZ": "https://www.livefeedreviews.com/privacy-policy",
+        "en-ZA": "https://www.livefeedreviews.com/privacy-policy",
+        "en-PH": "https://www.livefeedreviews.com/privacy-policy",
+        "x-default": "https://www.livefeedreviews.com/privacy-policy",
+      },
+  },
+  openGraph: {
+    title: "Privacy Policy | Live Feed Reviews",
+    description: "Privacy Policy for Live Feed Reviews - Learn how we collect, use, and protect your information.",
+    url: "https://www.livefeedreviews.com/privacy-policy",
+    siteName: "Live Feed Reviews",
+    type: "website",
+  },
 };
 
 export default function PrivacyPolicyPage() {

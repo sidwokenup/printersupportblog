@@ -21,22 +21,55 @@ export const metadata: Metadata = {
   title: "Printer Operating Cost & Toner Savings Guide (2026) | Live Feed Reviews",
   description:
     "How much does your printer really cost to run? Discover verified ISO/IEC 19752 cost-per-page benchmarks, standard vs high-yield toner math, and TCO calculations.",
+  alternates: {
+    canonical: "/toner-savings",
+      languages: {
+        "en-US": "https://www.livefeedreviews.com/toner-savings",
+        "en-GB": "https://www.livefeedreviews.com/toner-savings",
+        "en-CA": "https://www.livefeedreviews.com/toner-savings",
+        "en-AU": "https://www.livefeedreviews.com/toner-savings",
+        "en-IN": "https://www.livefeedreviews.com/toner-savings",
+        "en-IE": "https://www.livefeedreviews.com/toner-savings",
+        "en-SG": "https://www.livefeedreviews.com/toner-savings",
+        "en-NZ": "https://www.livefeedreviews.com/toner-savings",
+        "en-ZA": "https://www.livefeedreviews.com/toner-savings",
+        "en-PH": "https://www.livefeedreviews.com/toner-savings",
+        "x-default": "https://www.livefeedreviews.com/toner-savings",
+      },
+  },
   openGraph: {
     title: "Printer Operating Cost & Toner Savings Guide (2026) | Live Feed Reviews",
     description:
       "How much does your printer really cost to run? Discover verified ISO/IEC 19752 cost-per-page benchmarks, standard vs high-yield toner math, and TCO calculations.",
-    url: "https://livefeedreviews.com/toner-savings",
+    url: "https://www.livefeedreviews.com/toner-savings",
     siteName: "Live Feed Reviews",
     type: "website",
   },
 };
 
 export default function TonerSavingsLandingPage() {
+  const collectionSchema = {
+    "@context": "https://schema.org",
+    "@graph": [
+      {
+        "@type": "CollectionPage",
+        "@id": "https://www.livefeedreviews.com/toner-savings#webpage",
+        "url": "https://www.livefeedreviews.com/toner-savings",
+        "name": "Printer Operating Cost & Toner Savings Guide (2026)",
+        "description": "ISO/IEC 19752 cost-per-page benchmarks and TCO calculator",
+        "isPartOf": {
+          "@id": "https://www.livefeedreviews.com/#website"
+        }
+      }
+    ]
+  };
+
   const tonerArticle = blogArticles.find((a) => a.slug === "toner-cartridge-cost-saving-guide")!;
   const costCompareArticle = blogArticles.find((a) => a.slug === "laser-vs-inkjet-printer-cost-comparison")!;
 
   return (
     <div className="min-h-screen bg-slate-50 py-8">
+      <script type="application/ld+json" dangerouslySetInnerHTML={{ __html: JSON.stringify(collectionSchema) }} />
       <div className="container mx-auto px-4 md:px-6 max-w-5xl space-y-8">
         <nav className="flex items-center gap-1.5 text-xs text-slate-500 font-mono">
           <Link href="/" className="hover:text-primary flex items-center gap-1">

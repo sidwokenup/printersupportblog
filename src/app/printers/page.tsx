@@ -18,22 +18,55 @@ export const metadata: Metadata = {
   title: "Best Wireless Laser Printers 2026 | Lab Tested & Ranked | Live Feed Reviews",
   description:
     "Looking for the best wireless laser printer? Read our comprehensive 2026 laboratory testing benchmarks on speed, toner yield, and duty cycles.",
+  alternates: {
+    canonical: "/printers",
+      languages: {
+        "en-US": "https://www.livefeedreviews.com/printers",
+        "en-GB": "https://www.livefeedreviews.com/printers",
+        "en-CA": "https://www.livefeedreviews.com/printers",
+        "en-AU": "https://www.livefeedreviews.com/printers",
+        "en-IN": "https://www.livefeedreviews.com/printers",
+        "en-IE": "https://www.livefeedreviews.com/printers",
+        "en-SG": "https://www.livefeedreviews.com/printers",
+        "en-NZ": "https://www.livefeedreviews.com/printers",
+        "en-ZA": "https://www.livefeedreviews.com/printers",
+        "en-PH": "https://www.livefeedreviews.com/printers",
+        "x-default": "https://www.livefeedreviews.com/printers",
+      },
+  },
   openGraph: {
     title: "Best Wireless Laser Printers 2026 | Lab Tested & Ranked",
     description:
       "Looking for the best wireless laser printer? Read our comprehensive 2026 laboratory testing benchmarks on speed, toner yield, and duty cycles.",
-    url: "https://livefeedreviews.com/printers",
+    url: "https://www.livefeedreviews.com/printers",
     siteName: "Live Feed Reviews",
     type: "website",
   },
 };
 
 export default function PrintersLandingPage() {
+  const collectionSchema = {
+    "@context": "https://schema.org",
+    "@graph": [
+      {
+        "@type": "CollectionPage",
+        "@id": "https://www.livefeedreviews.com/printers#webpage",
+        "url": "https://www.livefeedreviews.com/printers",
+        "name": "Best Wireless Laser Printers (2026)",
+        "description": "Independent benchmarks of wireless laser printers",
+        "isPartOf": {
+          "@id": "https://www.livefeedreviews.com/#website"
+        }
+      }
+    ]
+  };
+
   const laserArticle = blogArticles.find((a) => a.slug === "best-laser-printer-2026-buyers-guide")!;
   const tonerArticle = blogArticles.find((a) => a.slug === "toner-cartridge-cost-saving-guide")!;
 
   return (
     <div className="min-h-screen bg-slate-50 py-8">
+      <script type="application/ld+json" dangerouslySetInnerHTML={{ __html: JSON.stringify(collectionSchema) }} />
       <div className="container mx-auto px-4 md:px-6 max-w-5xl space-y-8">
         <nav className="flex items-center gap-1.5 text-xs text-slate-500 font-mono">
           <Link href="/" className="hover:text-primary flex items-center gap-1">

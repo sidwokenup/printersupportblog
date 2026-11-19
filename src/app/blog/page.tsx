@@ -20,19 +20,66 @@ export const metadata: Metadata = {
   title: "Printer Reviews & Hardware Buying Guides (2026) | Live Feed Reviews",
   description:
     "Independent lab benchmarks, ISO cost-per-page testing, and expert buying guides for laser printers, all-in-one inkjets, and document scanners.",
+  alternates: {
+    canonical: "/blog",
+      languages: {
+        "en-US": "https://www.livefeedreviews.com/blog",
+        "en-GB": "https://www.livefeedreviews.com/blog",
+        "en-CA": "https://www.livefeedreviews.com/blog",
+        "en-AU": "https://www.livefeedreviews.com/blog",
+        "en-IN": "https://www.livefeedreviews.com/blog",
+        "en-IE": "https://www.livefeedreviews.com/blog",
+        "en-SG": "https://www.livefeedreviews.com/blog",
+        "en-NZ": "https://www.livefeedreviews.com/blog",
+        "en-ZA": "https://www.livefeedreviews.com/blog",
+        "en-PH": "https://www.livefeedreviews.com/blog",
+        "x-default": "https://www.livefeedreviews.com/blog",
+      },
+  },
   openGraph: {
     title: "Printer Reviews & Hardware Buying Guides (2026) | Live Feed Reviews",
     description:
       "Independent lab benchmarks, ISO cost-per-page testing, and expert buying guides for laser printers, all-in-one inkjets, and document scanners.",
-    url: "https://livefeedreviews.com/blog",
+    url: "https://www.livefeedreviews.com/blog",
     siteName: "Live Feed Reviews",
+    images: [{ url: "/logo.png", width: 800, height: 600, alt: "Live Feed Reviews" }],
     type: "website",
   },
 };
 
 export default function BlogHubPage() {
+  const collectionSchema = {
+    "@context": "https://schema.org",
+    "@graph": [
+      {
+        "@type": "CollectionPage",
+        "@id": "https://www.livefeedreviews.com/blog#webpage",
+        "url": "https://www.livefeedreviews.com/blog",
+        "name": "Printer Reviews & Comprehensive Buying Guides (2026)",
+        "description": "Independent lab benchmarks and ISO cost-per-page evaluations for top printers and scanners.",
+        "isPartOf": {
+          "@id": "https://www.livefeedreviews.com/#website"
+        }
+      },
+      {
+        "@type": "ItemList",
+        "name": "2026 Hardware Benchmarks & Buying Guides",
+        "itemListElement": blogArticles.map((article, idx) => ({
+          "@type": "ListItem",
+          "position": idx + 1,
+          "name": article.title,
+          "url": `https://www.livefeedreviews.com/blog/${article.slug}`
+        }))
+      }
+    ]
+  };
+
   return (
     <div className="min-h-screen bg-slate-50 py-10">
+      <script
+        type="application/ld+json"
+        dangerouslySetInnerHTML={{ __html: JSON.stringify(collectionSchema) }}
+      />
       <div className="container mx-auto px-4 md:px-6 max-w-6xl space-y-10">
         {/* Hero Header */}
         <div className="text-center space-y-3 max-w-3xl mx-auto">

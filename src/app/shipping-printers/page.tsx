@@ -20,21 +20,54 @@ export const metadata: Metadata = {
   title: "Best 4x6 Thermal Shipping Label Printers (2026) | Live Feed Reviews",
   description:
     "Which shipping label printer is best for Shopify, eBay, and Amazon? We lab-tested 5,000 continuous 4x6 labels for barcode clarity, feed jams, and AirPrint speed.",
+  alternates: {
+    canonical: "/shipping-printers",
+      languages: {
+        "en-US": "https://www.livefeedreviews.com/shipping-printers",
+        "en-GB": "https://www.livefeedreviews.com/shipping-printers",
+        "en-CA": "https://www.livefeedreviews.com/shipping-printers",
+        "en-AU": "https://www.livefeedreviews.com/shipping-printers",
+        "en-IN": "https://www.livefeedreviews.com/shipping-printers",
+        "en-IE": "https://www.livefeedreviews.com/shipping-printers",
+        "en-SG": "https://www.livefeedreviews.com/shipping-printers",
+        "en-NZ": "https://www.livefeedreviews.com/shipping-printers",
+        "en-ZA": "https://www.livefeedreviews.com/shipping-printers",
+        "en-PH": "https://www.livefeedreviews.com/shipping-printers",
+        "x-default": "https://www.livefeedreviews.com/shipping-printers",
+      },
+  },
   openGraph: {
     title: "Best 4x6 Thermal Shipping Label Printers (2026) | Live Feed Reviews",
     description:
       "Which shipping label printer is best for Shopify, eBay, and Amazon? We lab-tested 5,000 continuous 4x6 labels for barcode clarity, feed jams, and AirPrint speed.",
-    url: "https://livefeedreviews.com/shipping-printers",
+    url: "https://www.livefeedreviews.com/shipping-printers",
     siteName: "Live Feed Reviews",
     type: "website",
   },
 };
 
 export default function ShippingPrintersLandingPage() {
+  const collectionSchema = {
+    "@context": "https://schema.org",
+    "@graph": [
+      {
+        "@type": "CollectionPage",
+        "@id": "https://www.livefeedreviews.com/shipping-printers#webpage",
+        "url": "https://www.livefeedreviews.com/shipping-printers",
+        "name": "Best 4x6 Thermal Shipping Label Printers (2026)",
+        "description": "Direct thermal 4x6 barcode shipping printers",
+        "isPartOf": {
+          "@id": "https://www.livefeedreviews.com/#website"
+        }
+      }
+    ]
+  };
+
   const shippingArticle = blogArticles.find((a) => a.slug === "best-shipping-label-printer-ecommerce-reviews")!;
 
   return (
     <div className="min-h-screen bg-slate-50 py-8">
+      <script type="application/ld+json" dangerouslySetInnerHTML={{ __html: JSON.stringify(collectionSchema) }} />
       <div className="container mx-auto px-4 md:px-6 max-w-5xl space-y-8">
         <nav className="flex items-center gap-1.5 text-xs text-slate-500 font-mono">
           <Link href="/" className="hover:text-primary flex items-center gap-1">

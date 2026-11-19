@@ -21,11 +21,28 @@ import type { Metadata } from "next";
 export const metadata: Metadata = {
   title: "Printer Troubleshooting & Self-Service Diagnostic Hub (2026) | Live Feed Reviews",
   description: "Comprehensive DIY troubleshooting guides for offline printers, paper jams, blank pages, Wi-Fi drops, driver errors, and printhead cleaning.",
+  alternates: {
+    canonical: "/solutions",
+      languages: {
+        "en-US": "https://www.livefeedreviews.com/solutions",
+        "en-GB": "https://www.livefeedreviews.com/solutions",
+        "en-CA": "https://www.livefeedreviews.com/solutions",
+        "en-AU": "https://www.livefeedreviews.com/solutions",
+        "en-IN": "https://www.livefeedreviews.com/solutions",
+        "en-IE": "https://www.livefeedreviews.com/solutions",
+        "en-SG": "https://www.livefeedreviews.com/solutions",
+        "en-NZ": "https://www.livefeedreviews.com/solutions",
+        "en-ZA": "https://www.livefeedreviews.com/solutions",
+        "en-PH": "https://www.livefeedreviews.com/solutions",
+        "x-default": "https://www.livefeedreviews.com/solutions",
+      },
+  },
   openGraph: {
     title: "Printer Troubleshooting & Self-Service Diagnostic Hub (2026)",
     description: "Step-by-step DIY diagnostic checklists for Windows 11, macOS, and wireless network printers.",
     url: "https://www.livefeedreviews.com/solutions",
     images: [{ url: "/logo.png", width: 800, height: 600, alt: "Live Feed Reviews" }],
+    type: "website",
   },
 };
 

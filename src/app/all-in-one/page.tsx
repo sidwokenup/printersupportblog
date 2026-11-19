@@ -18,22 +18,55 @@ export const metadata: Metadata = {
   title: "Best All-In-One Inkjet Printers 2026 | Refillable Tank Reviews | Live Feed Reviews",
   description:
     "Compare top multifunction all-in-one printers for remote work and families. In-depth ratings for auto document feeders, borderless photos, and low-cost ink bottles.",
+  alternates: {
+    canonical: "/all-in-one",
+      languages: {
+        "en-US": "https://www.livefeedreviews.com/all-in-one",
+        "en-GB": "https://www.livefeedreviews.com/all-in-one",
+        "en-CA": "https://www.livefeedreviews.com/all-in-one",
+        "en-AU": "https://www.livefeedreviews.com/all-in-one",
+        "en-IN": "https://www.livefeedreviews.com/all-in-one",
+        "en-IE": "https://www.livefeedreviews.com/all-in-one",
+        "en-SG": "https://www.livefeedreviews.com/all-in-one",
+        "en-NZ": "https://www.livefeedreviews.com/all-in-one",
+        "en-ZA": "https://www.livefeedreviews.com/all-in-one",
+        "en-PH": "https://www.livefeedreviews.com/all-in-one",
+        "x-default": "https://www.livefeedreviews.com/all-in-one",
+      },
+  },
   openGraph: {
     title: "Best All-In-One Inkjet Printers 2026 | Refillable Tank Reviews",
     description:
       "Compare top multifunction all-in-one printers for remote work and families. In-depth ratings for auto document feeders, borderless photos, and low-cost ink bottles.",
-    url: "https://livefeedreviews.com/all-in-one",
+    url: "https://www.livefeedreviews.com/all-in-one",
     siteName: "Live Feed Reviews",
     type: "website",
   },
 };
 
 export default function AllInOneLandingPage() {
+  const collectionSchema = {
+    "@context": "https://schema.org",
+    "@graph": [
+      {
+        "@type": "CollectionPage",
+        "@id": "https://www.livefeedreviews.com/all-in-one#webpage",
+        "url": "https://www.livefeedreviews.com/all-in-one",
+        "name": "Best All-In-One Inkjet Printers (2026)",
+        "description": "Multifunction refillable ink tank printers",
+        "isPartOf": {
+          "@id": "https://www.livefeedreviews.com/#website"
+        }
+      }
+    ]
+  };
+
   const inkjetArticle = blogArticles.find((a) => a.slug === "best-inkjet-printer-home-office")!;
   const costArticle = blogArticles.find((a) => a.slug === "laser-vs-inkjet-printer-cost-comparison")!;
 
   return (
     <div className="min-h-screen bg-slate-50 py-8">
+      <script type="application/ld+json" dangerouslySetInnerHTML={{ __html: JSON.stringify(collectionSchema) }} />
       <div className="container mx-auto px-4 md:px-6 max-w-5xl space-y-8">
         <nav className="flex items-center gap-1.5 text-xs text-slate-500 font-mono">
           <Link href="/" className="hover:text-primary flex items-center gap-1">

@@ -20,21 +20,54 @@ export const metadata: Metadata = {
   title: "Best Portable & Mobile Wireless Printers (2026) | Live Feed Reviews",
   description:
     "Looking for the best portable mobile printer? Read our laboratory benchmarks on battery life, travel weight, and USB-C charging across Canon, Epson, and HP.",
+  alternates: {
+    canonical: "/portable-printers",
+      languages: {
+        "en-US": "https://www.livefeedreviews.com/portable-printers",
+        "en-GB": "https://www.livefeedreviews.com/portable-printers",
+        "en-CA": "https://www.livefeedreviews.com/portable-printers",
+        "en-AU": "https://www.livefeedreviews.com/portable-printers",
+        "en-IN": "https://www.livefeedreviews.com/portable-printers",
+        "en-IE": "https://www.livefeedreviews.com/portable-printers",
+        "en-SG": "https://www.livefeedreviews.com/portable-printers",
+        "en-NZ": "https://www.livefeedreviews.com/portable-printers",
+        "en-ZA": "https://www.livefeedreviews.com/portable-printers",
+        "en-PH": "https://www.livefeedreviews.com/portable-printers",
+        "x-default": "https://www.livefeedreviews.com/portable-printers",
+      },
+  },
   openGraph: {
     title: "Best Portable & Mobile Wireless Printers (2026) | Live Feed Reviews",
     description:
       "Looking for the best portable mobile printer? Read our laboratory benchmarks on battery life, travel weight, and USB-C charging across Canon, Epson, and HP.",
-    url: "https://livefeedreviews.com/portable-printers",
+    url: "https://www.livefeedreviews.com/portable-printers",
     siteName: "Live Feed Reviews",
     type: "website",
   },
 };
 
 export default function PortablePrintersLandingPage() {
+  const collectionSchema = {
+    "@context": "https://schema.org",
+    "@graph": [
+      {
+        "@type": "CollectionPage",
+        "@id": "https://www.livefeedreviews.com/portable-printers#webpage",
+        "url": "https://www.livefeedreviews.com/portable-printers",
+        "name": "Best Portable & Mobile Wireless Printers (2026)",
+        "description": "Mobile travel printers and battery endurance benchmarks",
+        "isPartOf": {
+          "@id": "https://www.livefeedreviews.com/#website"
+        }
+      }
+    ]
+  };
+
   const portableArticle = blogArticles.find((a) => a.slug === "best-portable-mobile-printer-travel-guide")!;
 
   return (
     <div className="min-h-screen bg-slate-50 py-8">
+      <script type="application/ld+json" dangerouslySetInnerHTML={{ __html: JSON.stringify(collectionSchema) }} />
       <div className="container mx-auto px-4 md:px-6 max-w-5xl space-y-8">
         <nav className="flex items-center gap-1.5 text-xs text-slate-500 font-mono">
           <Link href="/" className="hover:text-primary flex items-center gap-1">
