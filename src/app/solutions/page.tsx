@@ -92,8 +92,38 @@ const quickMatrix = [
 ];
 
 export default function SolutionsHubPage() {
+  const collectionSchema = {
+    "@context": "https://schema.org",
+    "@graph": [
+      {
+        "@type": "CollectionPage",
+        "@id": "https://www.livefeedreviews.com/solutions#webpage",
+        "url": "https://www.livefeedreviews.com/solutions",
+        "name": "Printer Troubleshooting & Self-Service Diagnostic Hub (2026)",
+        "description": "Comprehensive DIY troubleshooting triage pathways for common printer driver and hardware faults.",
+        "isPartOf": {
+          "@id": "https://www.livefeedreviews.com/#website"
+        }
+      },
+      {
+        "@type": "ItemList",
+        "name": "Self-Service Hardware Diagnostic Hubs",
+        "itemListElement": solutions.map((sol, idx) => ({
+          "@type": "ListItem",
+          "position": idx + 1,
+          "name": sol.title,
+          "url": `https://www.livefeedreviews.com/solutions/${sol.slug}`
+        }))
+      }
+    ]
+  };
+
   return (
     <div className="min-h-screen bg-slate-50 pt-8 pb-24">
+      <script
+        type="application/ld+json"
+        dangerouslySetInnerHTML={{ __html: JSON.stringify(collectionSchema) }}
+      />
       <div className="container mx-auto px-4 md:px-6 max-w-7xl space-y-16">
         
         {/* Hero Section */}
