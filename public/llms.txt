@@ -25,6 +25,25 @@ Step-by-step DIY technical repair, spooler recovery, network configuration, and 
 - [Faded, Streaky, or Light Print Quality](https://www.livefeedreviews.com/solutions/faded-streaky-print-quality): Corona wire cleaning, drum unit exhaustion diagnosis, laser mirror cleaning, and piezoelectric nozzle purge.
 - [When Repair Exceeds Replacement Value](https://www.livefeedreviews.com/solutions/printer-hardware-replacement-guide): Total Cost of Ownership (TCO) calculator comparing printhead replacement cost versus upgrading to modern supertank hardware.
 
+## Programmatic Printer Error Code Directory
+Alphanumeric fault code diagnostic procedures, optical encoder cleaning, and mechanical reset instructions:
+
+- [Error Code Knowledge Base Index](https://www.livefeedreviews.com/solutions/error-codes): Directory index of alphanumeric fault codes for HP, Canon, Epson, and Brother printers.
+- [HP Error 0x6100004a](https://www.livefeedreviews.com/solutions/error-codes/hp-error-0x6100004a): Carriage stall DIY recovery, optical encoder strip cleaning, and service station wiper reset.
+- [HP Error 0xc4eb827f](https://www.livefeedreviews.com/solutions/error-codes/hp-error-oxc4eb827f): Main logic board firmware lockup and power rail capacitor hard reset.
+- [HP 79 Error](https://www.livefeedreviews.com/solutions/error-codes/hp-error-79-error): Embedded JetDirect network firmware lockup and corrupted postscript print job purge.
+- [HP Error 0xc18a0106](https://www.livefeedreviews.com/solutions/error-codes/hp-error-0xc18a0106): Ink delivery system failure and purge pump priming protocol.
+- [HP Error 59.F0](https://www.livefeedreviews.com/solutions/error-codes/hp-error-59-f0): Color LaserJet transfer alienation solenoid stall and ITB gear disengagement.
+- [Canon Support Code B200](https://www.livefeedreviews.com/solutions/error-codes/canon-support-code-b200): Thermal printhead over-temperature protection and electrical pin cleaning.
+- [Canon Support Code 5100](https://www.livefeedreviews.com/solutions/error-codes/canon-support-code-5100): Carriage drive motion error, timing slit film cleaning, and purge unit foreign object removal.
+- [Canon Support Code 1403](https://www.livefeedreviews.com/solutions/error-codes/canon-support-code-1403): Printhead temperature sensor fault and electrical contact oxidation recovery.
+- [Epson Error 0x97](https://www.livefeedreviews.com/solutions/error-codes/epson-error-0x97): Internal motherboard power surge protection and printhead carriage reset.
+- [Epson Error 0xEA](https://www.livefeedreviews.com/solutions/error-codes/epson-error-0xea): Carriage lock mechanism failure and shipping restraint extraction.
+- [Epson Error 0x10](https://www.livefeedreviews.com/solutions/error-codes/epson-error-0x10): Scanner optical CIS carriage lock and transport slider rail lubrication.
+- [Brother Print Unable 32](https://www.livefeedreviews.com/solutions/error-codes/brother-print-unable-32): Internal paper scrap removal and drum unit corona wire cleaning.
+- [Brother Print Unable 0B](https://www.livefeedreviews.com/solutions/error-codes/brother-print-unable-0b): High voltage power supply failure and laser scanner polygon motor reset.
+- [Brother Self-Diagnostic Error](https://www.livefeedreviews.com/solutions/error-codes/brother-self-diagnostic): Fuser unit temperature rise failure and thermal thermistor reset sequence.
+
 ## Independent Hardware Buying Guides & Lab Benchmarks
 Verified reviews based on ISO/IEC 19752 continuous yield testing and cost-per-page (CPP) analysis:
 
