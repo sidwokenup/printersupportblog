@@ -17,6 +17,13 @@ export const metadata: Metadata = {
   metadataBase: new URL("https://www.livefeedreviews.com"),
   alternates: {
     canonical: "/",
+    languages: {
+      "en-US": "https://www.livefeedreviews.com/",
+      "en-GB": "https://www.livefeedreviews.com/",
+      "en-CA": "https://www.livefeedreviews.com/",
+      "en-AU": "https://www.livefeedreviews.com/",
+      "x-default": "https://www.livefeedreviews.com/",
+    },
   },
   title: "Live Feed Reviews - Independent Printer Reviews & Buying Guides (2026)",
   description: "Comprehensive lab testing, ISO/IEC 19752 yield benchmarks, and buyer's guides for wireless laser printers, ink tanks, and document scanners.",

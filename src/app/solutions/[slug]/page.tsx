@@ -37,6 +37,13 @@ export async function generateMetadata({ params }: Props): Promise<Metadata> {
     description: solution.metaDescription,
     alternates: {
       canonical: `/solutions/${solution.slug}`,
+      languages: {
+        "en-US": `https://www.livefeedreviews.com/solutions/${solution.slug}`,
+        "en-GB": `https://www.livefeedreviews.com/solutions/${solution.slug}`,
+        "en-CA": `https://www.livefeedreviews.com/solutions/${solution.slug}`,
+        "en-AU": `https://www.livefeedreviews.com/solutions/${solution.slug}`,
+        "x-default": `https://www.livefeedreviews.com/solutions/${solution.slug}`,
+      },
     },
     openGraph: {
       title: solution.title,
@@ -223,6 +230,20 @@ export default async function SolutionPage({ params }: Props) {
                 <div>
                   <span className="font-semibold text-emerald-950">Independent Consumer Self-Service Guide:</span>{" "}
                   This publication provides DIY hardware diagnostics, maintenance procedures, and ISO benchmarks. LiveFeedReviews does not provide phone support, remote access software, or paid third-party repairs. For warranty service, contact your equipment manufacturer directly.
+                </div>
+              </div>
+
+              {/* Direct Solution Snapshot (Featured Snippet / AI Overview Target) */}
+              <div className="bg-gradient-to-r from-blue-50 to-indigo-50/60 border border-blue-200/80 rounded-xl p-5 space-y-2">
+                <div className="flex items-center gap-2 text-blue-700 font-bold text-xs uppercase tracking-wider">
+                  <Sparkles className="w-4 h-4 text-blue-600" />
+                  Direct Diagnostic Snapshot
+                </div>
+                <p className="text-slate-800 text-sm md:text-base font-medium leading-relaxed">
+                  {solution.content.sections[0]?.body || solution.metaDescription}
+                </p>
+                <div className="text-[11px] text-slate-500 font-mono pt-1">
+                  Verified across Windows 11, Windows 10, macOS Sonoma &amp; Sequoia · ISO/IEC Diagnostic Procedure
                 </div>
               </div>
 

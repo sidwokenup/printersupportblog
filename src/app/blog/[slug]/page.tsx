@@ -45,6 +45,13 @@ export async function generateMetadata({ params }: Props): Promise<Metadata> {
     description: article.metaDescription,
     alternates: {
       canonical: `/blog/${article.slug}`,
+      languages: {
+        "en-US": `https://www.livefeedreviews.com/blog/${article.slug}`,
+        "en-GB": `https://www.livefeedreviews.com/blog/${article.slug}`,
+        "en-CA": `https://www.livefeedreviews.com/blog/${article.slug}`,
+        "en-AU": `https://www.livefeedreviews.com/blog/${article.slug}`,
+        "x-default": `https://www.livefeedreviews.com/blog/${article.slug}`,
+      },
     },
     openGraph: {
       title: article.title,
