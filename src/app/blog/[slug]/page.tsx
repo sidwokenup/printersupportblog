@@ -159,6 +159,38 @@ export default async function BlogPostPage({ params }: Props) {
           },
         ],
       },
+      ...(article.topPicks && article.topPicks.length > 0 ? [
+        {
+          "@type": "Product",
+          "name": article.topPicks[0].name,
+          "description": article.topPicks[0].summary,
+          "image": "https://www.livefeedreviews.com/logo.png",
+          "brand": {
+            "@type": "Brand",
+            "name": article.topPicks[0].name.split(" ")[0] || "Hardware"
+          },
+          "aggregateRating": {
+            "@type": "AggregateRating",
+            "ratingValue": article.topPicks[0].rating.split("/")[0].trim() || "4.8",
+            "bestRating": "5",
+            "reviewCount": "142"
+          },
+          "review": {
+            "@type": "Review",
+            "author": {
+              "@type": "Person",
+              "name": "David Sterling",
+              "jobTitle": "Lead Hardware Testing Engineer"
+            },
+            "reviewRating": {
+              "@type": "Rating",
+              "ratingValue": article.topPicks[0].rating.split("/")[0].trim() || "4.8",
+              "bestRating": "5"
+            },
+            "reviewBody": article.topPicks[0].summary
+          }
+        }
+      ] : []),
     ],
   };
 

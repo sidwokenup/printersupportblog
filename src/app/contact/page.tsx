@@ -28,8 +28,45 @@ export const metadata: Metadata = {
 };
 
 export default function ContactPage() {
+  const contactSchema = {
+    "@context": "https://schema.org",
+    "@graph": [
+      {
+        "@type": "ContactPage",
+        "@id": "https://www.livefeedreviews.com/contact#webpage",
+        "url": "https://www.livefeedreviews.com/contact",
+        "name": "Contact Hardware Advisory Desk & VIP Deals | Live Feed Reviews",
+        "description": "Connect with independent printer hardware advisors for buying recommendations, business quotes, and exclusive promotional price-drop alerts.",
+        "isPartOf": {
+          "@id": "https://www.livefeedreviews.com/#website"
+        }
+      },
+      {
+        "@type": "ProfessionalService",
+        "@id": "https://www.livefeedreviews.com/#service",
+        "name": "Live Feed Reviews Consumer Advisory Desk",
+        "url": "https://www.livefeedreviews.com/contact",
+        "email": "support@livefeedreviews.com",
+        "image": "https://www.livefeedreviews.com/logo.png",
+        "priceRange": "$0 (Free Consumer Diagnostics)",
+        "address": {
+          "@type": "PostalAddress",
+          "addressLocality": "New York",
+          "addressRegion": "NY",
+          "postalCode": "10001",
+          "addressCountry": "US"
+        },
+        "openingHours": "Mo-Fr 08:00-18:00"
+      }
+    ]
+  };
+
   return (
     <div className="min-h-screen bg-slate-50 pt-8 pb-24">
+      <script
+        type="application/ld+json"
+        dangerouslySetInnerHTML={{ __html: JSON.stringify(contactSchema) }}
+      />
       <div className="container mx-auto px-4 md:px-6 max-w-7xl space-y-16">
         
         {/* Header */}

@@ -150,3 +150,9 @@ Sitemap: https://www.livefeedreviews.com/sitemap.xml
 
 # IndexNow Instant Discovery Protocol (Bing, Yandex, Seznam, Naver)
 # IndexNow Key: https://www.livefeedreviews.com/8f2c3a5e1d7b4e9f0a2c5b7d9e1f3a5b.txt
+
+# Machine-Readable Business Profile & Search Integrations
+# Business Profile: https://www.livefeedreviews.com/business.json
+# Web App Manifest: https://www.livefeedreviews.com/manifest.json
+# OpenSearch XML: https://www.livefeedreviews.com/opensearch.xml
+

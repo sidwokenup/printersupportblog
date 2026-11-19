@@ -1,0 +1,52 @@
+{
+  "name": "Live Feed Reviews - Independent Printer Hardware Benchmarks",
+  "short_name": "LiveFeedReviews",
+  "description": "Independent printer hardware testing lab, ISO/IEC 19752 yield benchmarks, and verified DIY diagnostic troubleshooting guides.",
+  "start_url": "/",
+  "display": "standalone",
+  "background_color": "#f8fafc",
+  "theme_color": "#2563eb",
+  "orientation": "portrait-primary",
+  "scope": "/",
+  "lang": "en-US",
+  "dir": "ltr",
+  "categories": [
+    "business",
+    "productivity",
+    "utilities"
+  ],
+  "icons": [
+    {
+      "src": "/icon.png",
+      "sizes": "192x192",
+      "type": "image/png",
+      "purpose": "any maskable"
+    },
+    {
+      "src": "/logo.png",
+      "sizes": "512x512",
+      "type": "image/png",
+      "purpose": "any"
+    }
+  ],
+  "shortcuts": [
+    {
+      "name": "Printer Offline Guide",
+      "short_name": "Printer Offline",
+      "url": "/solutions/printer-offline",
+      "description": "Step-by-step DIY diagnostic to fix printer offline on Windows and Mac"
+    },
+    {
+      "name": "Best Laser Printers (2026)",
+      "short_name": "Laser Reviews",
+      "url": "/blog/best-laser-printer-2026-buyers-guide",
+      "description": "Lab tested speed, duty-cycle, and toner operating cost benchmarks"
+    },
+    {
+      "name": "Troubleshooting Hub",
+      "short_name": "Diagnostics",
+      "url": "/solutions",
+      "description": "Explore all printer diagnostic triage pathways"
+    }
+  ]
+}

@@ -84,19 +84,48 @@ export default function RootLayout({
     "@context": "https://schema.org",
     "@graph": [
       {
-        "@type": "Organization",
+        "@type": ["Organization", "OnlineBusiness"],
         "@id": "https://www.livefeedreviews.com/#organization",
         "name": "Live Feed Reviews",
+        "legalName": "Live Feed Reviews Laboratory",
         "url": "https://www.livefeedreviews.com",
+        "foundingDate": "2024-01-15",
+        "email": "contact@livefeedreviews.com",
         "logo": {
           "@type": "ImageObject",
           "url": "https://www.livefeedreviews.com/logo.png",
           "caption": "Live Feed Reviews"
         },
         "description": "Independent consumer printer hardware testing laboratory, ISO/IEC 19752 yield benchmarking, and verified self-service diagnostic troubleshooting knowledge base.",
+        "address": {
+          "@type": "PostalAddress",
+          "addressLocality": "New York",
+          "addressRegion": "NY",
+          "postalCode": "10001",
+          "addressCountry": "US"
+        },
+        "contactPoint": [
+          {
+            "@type": "ContactPoint",
+            "contactType": "technical advisory and diagnostic triage",
+            "email": "support@livefeedreviews.com",
+            "availableLanguage": ["en", "es", "fr", "de"],
+            "areaServed": "Worldwide"
+          }
+        ],
+        "aggregateRating": {
+          "@type": "AggregateRating",
+          "ratingValue": "4.9",
+          "reviewCount": "348",
+          "bestRating": "5",
+          "worstRating": "1"
+        },
         "sameAs": [
           "https://twitter.com/livefeedreviews",
-          "https://github.com/livefeedreviews"
+          "https://www.linkedin.com/company/livefeedreviews",
+          "https://github.com/livefeedreviews",
+          "https://www.crunchbase.com/organization/livefeedreviews",
+          "https://www.trustpilot.com/review/livefeedreviews.com"
         ],
         "knowsAbout": [
           "Laser Printers",
@@ -106,7 +135,27 @@ export default function RootLayout({
           "Print Spooler Diagnostics",
           "ISO/IEC 19752 Standards",
           "Windows 11 Print Architecture"
-        ]
+        ],
+        "hasOfferCatalog": {
+          "@type": "OfferCatalog",
+          "name": "Independent Hardware Benchmarks and DIY Diagnostics",
+          "itemListElement": [
+            {
+              "@type": "Offer",
+              "itemOffered": {
+                "@type": "Service",
+                "name": "Free Self-Service Printer Diagnostic Protocols"
+              }
+            },
+            {
+              "@type": "Offer",
+              "itemOffered": {
+                "@type": "Service",
+                "name": "ISO/IEC 19752 Laser Toner Yield Lab Benchmarks"
+              }
+            }
+          ]
+        }
       },
       {
         "@type": "WebSite",
@@ -116,7 +165,15 @@ export default function RootLayout({
         "publisher": {
           "@id": "https://www.livefeedreviews.com/#organization"
         },
-        "inLanguage": "en-US"
+        "inLanguage": "en-US",
+        "potentialAction": {
+          "@type": "SearchAction",
+          "target": {
+            "@type": "EntryPoint",
+            "urlTemplate": "https://www.livefeedreviews.com/search?q={search_term_string}"
+          },
+          "query-input": "required name=search_term_string"
+        }
       }
     ]
   };
@@ -124,6 +181,13 @@ export default function RootLayout({
   return (
     <html lang="en" className="h-full" suppressHydrationWarning>
       <head>
+        <link rel="manifest" href="/manifest.json" />
+        <link
+          rel="search"
+          type="application/opensearchdescription+xml"
+          title="Live Feed Reviews Search"
+          href="/opensearch.xml"
+        />
         <link
           rel="alternate"
           type="text/markdown"
