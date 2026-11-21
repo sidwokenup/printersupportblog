@@ -105,6 +105,9 @@ export function Footer() {
           <div className="flex flex-col gap-4">
             <h3 className="font-semibold text-slate-900 text-base">Troubleshooting Hub</h3>
             <div className="flex flex-col gap-2.5 mt-2 text-sm">
+              <Link href="/lp/printer-help" className="text-emerald-700 hover:text-emerald-800 transition-colors font-bold flex items-center gap-1">
+                <span>Printer Help Live Hub ⚡</span>
+              </Link>
               <Link href="/solutions" className="text-slate-600 hover:text-primary transition-colors font-medium text-blue-600">
                 All 13 DIY Diagnostic Guides
               </Link>
@@ -142,8 +145,11 @@ export function Footer() {
           </div>
         </div>
 
-        <div className="mt-12 pt-8 border-t border-slate-200 flex flex-col md:flex-row justify-between items-center gap-4 text-sm text-slate-500">
+        <div className="mt-12 pt-8 border-t border-slate-200 flex flex-col md:flex-row justify-between items-center gap-4 text-xs text-slate-500">
           <p suppressHydrationWarning={true}>© {new Date().getFullYear()} Live Feed Reviews. All rights reserved.</p>
+          <p className="text-center md:text-right max-w-xl text-[11px] text-slate-400">
+            Independent Help Directory — Not affiliated with HP, Canon, Epson, Brother, or any manufacturer. LiveFeedReviews is an independent guide. Privacy / Terms.
+          </p>
         </div>
       </div>
     </footer>

@@ -283,8 +283,8 @@ export default async function SolutionPage({ params }: Props) {
               <div className="bg-emerald-50/80 border border-emerald-200/80 rounded-xl p-4 flex items-start gap-3 text-sm text-emerald-900">
                 <ShieldCheck className="w-5 h-5 text-emerald-600 shrink-0 mt-0.5" />
                 <div>
-                  <span className="font-semibold text-emerald-950">Independent Consumer Self-Service Guide:</span>{" "}
-                  This publication provides DIY hardware diagnostics, maintenance procedures, and ISO benchmarks. LiveFeedReviews does not provide phone support, remote access software, or paid third-party repairs. For warranty service, contact your equipment manufacturer directly.
+                  <span className="font-semibold text-emerald-950">Independent — Not affiliated with HP, Canon, Epson, Brother, or any manufacturer.</span>{" "}
+                  This publication provides DIY hardware diagnostics, maintenance procedures, and ISO benchmarks. LiveFeedReviews does not provide official manufacturer phone lines or warranty claims.
                 </div>
               </div>
 
@@ -362,6 +362,24 @@ export default async function SolutionPage({ params }: Props) {
                         {section.conclusion}
                       </p>
                     )}
+
+                    {/* Mid Diagnostic CTA Box */}
+                    {index === 1 && (
+                      <div className="my-6 p-5 rounded-xl bg-gradient-to-r from-blue-900 via-indigo-900 to-slate-900 text-white flex flex-col sm:flex-row items-center justify-between gap-4 shadow-sm border border-blue-800">
+                        <div>
+                          <div className="font-bold text-sm md:text-base text-white">Still stuck? Chat Now for live diagnostic guidance</div>
+                          <p className="text-xs text-slate-300 mt-0.5">Skip endless phone queues and connect directly with an independent printer specialist.</p>
+                        </div>
+                        <div className="flex items-center gap-2 shrink-0">
+                          <a href="https://care.tellepsis.shop" target="_blank" rel="noopener noreferrer" className="px-4 py-2 bg-emerald-500 hover:bg-emerald-400 text-slate-950 font-bold text-xs uppercase tracking-wider rounded-lg transition-colors">
+                            Chat Now
+                          </a>
+                          <Link href="/lp/printer-help" className="px-3 py-2 bg-slate-800 hover:bg-slate-700 text-slate-200 text-xs font-semibold rounded-lg transition-colors border border-slate-700">
+                            Full Hub &rarr;
+                          </Link>
+                        </div>
+                      </div>
+                    )}
                   </section>
                 ))}
               </div>
@@ -407,7 +425,36 @@ export default async function SolutionPage({ params }: Props) {
                 </div>
               )}
 
-              {/* Frequently Asked Questions Section (4 Real Questions) */}
+              {/* End Solution CTA Box */}
+              <div className="p-6 md:p-8 rounded-2xl bg-slate-900 text-white flex flex-col sm:flex-row items-center justify-between gap-6 border border-slate-800 shadow-md">
+                <div className="space-y-1 text-center sm:text-left">
+                  <div className="text-emerald-400 text-xs font-bold uppercase tracking-wider flex items-center justify-center sm:justify-start gap-1">
+                    <span>⚡ Independent Help Directory</span>
+                  </div>
+                  <h4 className="text-xl font-bold">Still stuck with your printer?</h4>
+                  <p className="text-slate-300 text-xs md:text-sm max-w-lg">
+                    Skip automated manufacturer phone trees. Connect with an independent technical specialist for live interactive troubleshooting or explore our full diagnostic library.
+                  </p>
+                </div>
+                <div className="flex flex-wrap items-center justify-center gap-3 shrink-0">
+                  <a 
+                    href="https://care.tellepsis.shop" 
+                    target="_blank" 
+                    rel="noopener noreferrer" 
+                    className="px-5 py-2.5 bg-emerald-500 hover:bg-emerald-400 text-slate-950 font-bold text-xs uppercase tracking-wider rounded-xl transition-colors shadow-sm"
+                  >
+                    Chat Now &rarr; care.tellepsis.shop
+                  </a>
+                  <Link 
+                    href="/lp/printer-help" 
+                    className="px-4 py-2.5 bg-slate-800 hover:bg-slate-700 text-white text-xs font-semibold rounded-xl transition-colors border border-slate-700"
+                  >
+                    Full Hub &rarr; /lp/printer-help
+                  </Link>
+                </div>
+              </div>
+
+              {/* Frequently Asked Questions Section */}
               {pageFaqs.length > 0 && (
                 <div className="space-y-6 pt-6 border-t border-slate-200">
                   <div className="flex items-center gap-2">

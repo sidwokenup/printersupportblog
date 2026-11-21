@@ -422,6 +422,25 @@ export default async function BlogPostPage({ params }: Props) {
           </div>
         )}
 
+        {/* Troubleshooting Callout Banner */}
+        <div className="bg-gradient-to-r from-blue-900 via-indigo-900 to-slate-900 rounded-2xl p-6 md:p-8 text-white shadow-md flex flex-col sm:flex-row items-center justify-between gap-4">
+          <div className="space-y-1 text-center sm:text-left">
+            <div className="text-emerald-400 font-bold text-xs uppercase tracking-wider flex items-center justify-center sm:justify-start gap-1.5">
+              <span>⚡ Independent Live Diagnostics</span>
+            </div>
+            <h3 className="text-lg md:text-xl font-bold">Having trouble with this printer?</h3>
+            <p className="text-slate-300 text-xs md:text-sm max-w-xl">
+              Skip endless phone queues and unhelpful error menus. Get instant, step-by-step diagnostic guidance through our interactive troubleshooting hub.
+            </p>
+          </div>
+          <Link
+            href="/lp/printer-help"
+            className="px-6 py-3 bg-emerald-500 hover:bg-emerald-400 text-slate-950 font-bold text-sm rounded-xl uppercase tracking-wider transition-all shadow-sm shrink-0 whitespace-nowrap"
+          >
+            Get Live Troubleshooting &rarr;
+          </Link>
+        </div>
+
         {/* Related Guides Section */}
         <div className="space-y-4 pt-4">
           <h2 className="text-lg font-bold text-slate-900">More Buying Guides & Comparisons</h2>

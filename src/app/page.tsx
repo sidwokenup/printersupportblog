@@ -49,6 +49,24 @@ export default function Home() {
   return (
     <div className="flex flex-col min-h-screen bg-slate-50 overflow-hidden">
       
+      {/* Printer Help Hero Banner */}
+      <div className="bg-gradient-to-r from-blue-900 via-indigo-900 to-slate-900 text-white py-3 px-4 shadow-sm border-b border-blue-800">
+        <div className="container mx-auto flex flex-col sm:flex-row items-center justify-between gap-3 text-center sm:text-left">
+          <div className="flex items-center gap-2">
+            <span className="inline-flex items-center justify-center w-6 h-6 rounded-full bg-emerald-500 text-slate-900 font-extrabold text-xs">⚡</span>
+            <span className="font-bold text-sm md:text-base tracking-tight text-white">
+              Printer Not Printing? Offline? Paper Jam? Get Live Help Now
+            </span>
+          </div>
+          <Link
+            href="/lp/printer-help"
+            className="inline-flex items-center gap-1.5 px-4 py-1.5 rounded-full bg-emerald-500 hover:bg-emerald-400 text-slate-950 font-bold text-xs uppercase tracking-wider transition-colors shadow-sm shrink-0"
+          >
+            <span>Open Diagnostic Hub &rarr;</span>
+          </Link>
+        </div>
+      </div>
+
       {/* Premium Hero Section */}
       <section className="relative pt-8 pb-16 lg:pt-12 lg:pb-20 overflow-hidden">
         {/* Background Gradients */}
