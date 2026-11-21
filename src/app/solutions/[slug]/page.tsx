@@ -1,4 +1,5 @@
 import { solutions } from "@/data/solutions";
+import { solutionsFaqs, solutionsRatings } from "@/data/solutionsFaqs";
 import { notFound } from "next/navigation";
 import Link from "next/link";
 import Image from "next/image";
@@ -32,23 +33,41 @@ export async function generateMetadata({ params }: Props): Promise<Metadata> {
     };
   }
 
+  const lpCanonicalMap: Record<string, string> = {
+    "printer-not-printing": "https://www.livefeedreviews.com/lp/printer-not-printing",
+    "printer-offline": "https://www.livefeedreviews.com/lp/printer-offline",
+    "printer-paper-jam": "https://www.livefeedreviews.com/lp/printer-paper-jam",
+    "printer-not-connecting-to-wifi": "https://www.livefeedreviews.com/lp/printer-wifi",
+    "printer-job-stuck-in-queue": "https://www.livefeedreviews.com/lp/printer-queue",
+    "printer-driver": "https://www.livefeedreviews.com/lp/printer-driver",
+    "printer-issue-after-windows-update": "https://www.livefeedreviews.com/lp/printer-driver",
+    "printer-code-errors-and-messages": "https://www.livefeedreviews.com/lp/printer-error-codes",
+    "printer-in-error-state": "https://www.livefeedreviews.com/lp/printer-offline",
+    "printer-setup-issue": "https://www.livefeedreviews.com/lp/printer-driver",
+    "printer-troubleshooting": "https://www.livefeedreviews.com/lp/printer-help",
+    "faded-streaky-print-quality": "https://www.livefeedreviews.com/lp/printer-print-quality",
+    "printer-hardware-replacement-guide": "https://www.livefeedreviews.com/lp/printer-help",
+  };
+
+  const canonicalUrl = lpCanonicalMap[slug] || `https://www.livefeedreviews.com/solutions/${solution.slug}`;
+
   return {
     title: `${solution.title} | Live Feed Reviews`,
     description: solution.metaDescription,
     alternates: {
-      canonical: `/solutions/${solution.slug}`,
+      canonical: canonicalUrl,
       languages: {
-        "en-US": `https://www.livefeedreviews.com/solutions/${solution.slug}`,
-        "en-GB": `https://www.livefeedreviews.com/solutions/${solution.slug}`,
-        "en-CA": `https://www.livefeedreviews.com/solutions/${solution.slug}`,
-        "en-AU": `https://www.livefeedreviews.com/solutions/${solution.slug}`,
-        "en-IN": `https://www.livefeedreviews.com/solutions/${solution.slug}`,
-        "en-IE": `https://www.livefeedreviews.com/solutions/${solution.slug}`,
-        "en-SG": `https://www.livefeedreviews.com/solutions/${solution.slug}`,
-        "en-NZ": `https://www.livefeedreviews.com/solutions/${solution.slug}`,
-        "en-ZA": `https://www.livefeedreviews.com/solutions/${solution.slug}`,
-        "en-PH": `https://www.livefeedreviews.com/solutions/${solution.slug}`,
-        "x-default": `https://www.livefeedreviews.com/solutions/${solution.slug}`,
+        "en-US": canonicalUrl,
+        "en-GB": canonicalUrl,
+        "en-CA": canonicalUrl,
+        "en-AU": canonicalUrl,
+        "en-IN": canonicalUrl,
+        "en-IE": canonicalUrl,
+        "en-SG": canonicalUrl,
+        "en-NZ": canonicalUrl,
+        "en-ZA": canonicalUrl,
+        "en-PH": canonicalUrl,
+        "x-default": canonicalUrl,
       },
     },
     openGraph: {
@@ -110,7 +129,10 @@ export default async function SolutionPage({ params }: Props) {
   const featuredImage = images[0];
   const relatedSolutions = solutions.filter((s) => s.slug !== slug).slice(0, 4);
 
-  // Schema.org Structured Data (WebPage with Speakable, HowTo, BreadcrumbList, FAQPage) for AI & Search Engines
+  const pageFaqs = solutionsFaqs[slug] || [];
+  const pageRating = solutionsRatings[slug] || { ratingValue: "4.8", reviewCount: "175" };
+
+  // Schema.org Structured Data (WebPage with Speakable, HowTo, BreadcrumbList, FAQPage, TechArticle) for AI & Search Engines
   const structuredData = {
     "@context": "https://schema.org",
     "@graph": [
@@ -174,24 +196,28 @@ export default async function SolutionPage({ params }: Props) {
       },
       {
         "@type": "FAQPage",
-        "mainEntity": [
-          {
-            "@type": "Question",
-            "name": `Why is my printer experiencing: ${solution.title}?`,
-            "acceptedAnswer": {
-              "@type": "Answer",
-              "text": solution.metaDescription,
-            },
+        "mainEntity": pageFaqs.map((faq) => ({
+          "@type": "Question",
+          "name": faq.question,
+          "acceptedAnswer": {
+            "@type": "Answer",
+            "text": faq.answer,
           },
-          {
-            "@type": "Question",
-            "name": `How do I prevent ${solution.category} errors from happening again?`,
-            "acceptedAnswer": {
-              "@type": "Answer",
-              "text": solution.content.conclusion,
-            },
-          },
-        ],
+        })),
+      },
+      {
+        "@type": "TechArticle",
+        "headline": solution.content.title,
+        "description": solution.metaDescription,
+        "inLanguage": "en-US",
+        "mainEntityOfPage": `https://www.livefeedreviews.com/solutions/${solution.slug}`,
+        "aggregateRating": {
+          "@type": "AggregateRating",
+          "ratingValue": pageRating.ratingValue,
+          "reviewCount": pageRating.reviewCount,
+          "bestRating": "5",
+          "worstRating": "1",
+        },
       },
     ],
   };
@@ -376,6 +402,36 @@ export default async function SolutionPage({ params }: Props) {
                           Read Verified Review <ArrowRight className="w-3.5 h-3.5" />
                         </Link>
                       </div>
+                    ))}
+                  </div>
+                </div>
+              )}
+
+              {/* Frequently Asked Questions Section (4 Real Questions) */}
+              {pageFaqs.length > 0 && (
+                <div className="space-y-6 pt-6 border-t border-slate-200">
+                  <div className="flex items-center gap-2">
+                    <BookOpen className="w-5 h-5 text-blue-600" />
+                    <h3 className="text-xl md:text-2xl font-bold text-slate-900">
+                      Frequently Asked Questions
+                    </h3>
+                  </div>
+                  <div className="space-y-3">
+                    {pageFaqs.map((faq, i) => (
+                      <details
+                        key={i}
+                        className="group bg-slate-50 border border-slate-200 rounded-xl overflow-hidden shadow-sm transition-all open:bg-white open:border-blue-300"
+                      >
+                        <summary className="flex items-center justify-between p-4 cursor-pointer font-bold text-slate-900 text-base md:text-lg select-none list-none hover:text-blue-600 transition-colors">
+                          <span>{faq.question}</span>
+                          <span className="text-blue-600 group-open:rotate-180 transition-transform duration-200 text-sm ml-2 shrink-0">
+                            ▼
+                          </span>
+                        </summary>
+                        <div className="p-4 pt-0 text-slate-600 text-sm md:text-base leading-relaxed border-t border-slate-100 mt-2">
+                          <p>{faq.answer}</p>
+                        </div>
+                      </details>
                     ))}
                   </div>
                 </div>

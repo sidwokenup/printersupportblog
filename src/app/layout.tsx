@@ -113,13 +113,6 @@ export default function RootLayout({
             "areaServed": "Worldwide"
           }
         ],
-        "aggregateRating": {
-          "@type": "AggregateRating",
-          "ratingValue": "4.9",
-          "reviewCount": "348",
-          "bestRating": "5",
-          "worstRating": "1"
-        },
         "sameAs": [
           "https://twitter.com/livefeedreviews",
           "https://www.linkedin.com/company/livefeedreviews",
