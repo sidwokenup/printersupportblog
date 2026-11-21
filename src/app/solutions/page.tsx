@@ -150,6 +150,27 @@ export default function SolutionsHubPage() {
           </div>
         </header>
 
+        {/* 24/7 Live Diagnostics Hub Banner */}
+        <div className="bg-gradient-to-r from-slate-900 to-blue-950 rounded-2xl p-6 text-white flex flex-col md:flex-row items-center justify-between gap-4 shadow-md border border-slate-800">
+          <div>
+            <div className="text-emerald-400 text-xs font-bold uppercase tracking-wider mb-1">
+              Live Support &amp; Diagnostic Directory
+            </div>
+            <h3 className="text-xl font-extrabold text-white">
+              Complete Printer Diagnostic &amp; Chat Solutions Hub
+            </h3>
+            <p className="text-slate-300 text-sm mt-1">
+              Explore our full directory covering HP, Canon, Epson &amp; Brother error codes, offline states, and driver recovery.
+            </p>
+          </div>
+          <Link
+            href="/lp/printer-help"
+            className="inline-flex items-center gap-2 bg-emerald-500 hover:bg-emerald-600 text-white font-bold text-sm px-6 py-3 rounded-xl transition-all shadow-md whitespace-nowrap"
+          >
+            Open Printer Hub <ArrowRight className="w-4 h-4" />
+          </Link>
+        </div>
+
         {/* Quick-Resolution Matrix Table */}
         <section className="bg-white rounded-3xl p-6 md:p-10 border border-slate-200 shadow-sm space-y-6">
           <div className="flex flex-col md:flex-row md:items-center justify-between gap-4 border-b border-slate-100 pb-6">
