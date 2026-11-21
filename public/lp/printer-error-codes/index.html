@@ -182,7 +182,7 @@
       min-height: 100vh;
       display: flex;
       flex-direction: column;
-      padding-top: 40px;
+      padding-top: 0;
       padding-bottom: 78px;
     }
 
@@ -201,19 +201,21 @@
     }
 
     .sticky-top-bar {
-      position: fixed;
+      position: sticky;
       top: 0;
       left: 0;
       right: 0;
       width: 100%;
-      z-index: 999999;
+      z-index: 9999999;
       background-color: #0F172A;
       color: #FFFFFF;
-      padding: 8px 14px;
-      font-size: 12.5px;
+      padding: 10px 16px;
+      font-size: 13.5px;
+      font-weight: 600;
       line-height: 1.45;
       text-align: center;
-      box-shadow: 0 2px 8px rgba(15, 23, 42, 0.25);
+      box-shadow: 0 2px 8px rgba(15, 23, 42, 0.35);
+      border-bottom: 1px solid rgba(255, 255, 255, 0.15);
     }
 
     .top-bar-inner {
@@ -1254,8 +1256,8 @@
   <!-- Page Footer -->
   <footer class="page-footer" role="contentinfo">
     <div class="footer-container">
-      <div class="footer-disclaimer-box">
-        <strong>Legal Notice &amp; Disclaimer:</strong> Independent Help Directory — Not affiliated with HP, Canon, Epson, Brother, or any manufacturer. All product and service names, logos, and brands are property of their respective owners. LiveFeedReviews is an independent consumer directory offering educational walkthroughs, troubleshooting diagnostics, and resolution pathways. We do not provide official manufacturer phone numbers, warranty claims processing, or remote system access.
+      <div class="footer-disclaimer-box" style="font-size: 15px; font-weight: 700; text-align: center; color: #FFFFFF; background: rgba(255, 255, 255, 0.08); padding: 18px 24px; border-radius: 8px; border: 1px solid rgba(255, 255, 255, 0.2); line-height: 1.5; margin-bottom: 8px;">
+        Independent Help Directory — Not affiliated with HP, Canon, Epson, Brother, or any manufacturer.
       </div>
       <nav class="footer-nav-links" aria-label="Section Navigation">
         <a href="/lp/printer-help">Printer Hub</a>

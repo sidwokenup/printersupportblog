@@ -28,6 +28,8 @@ export async function GET(request: NextRequest, { params }: RouteProps) {
     status: 200,
     headers: {
       "Content-Type": "text/html; charset=utf-8",
+      "Content-Disposition": "inline",
+      "X-Robots-Tag": "index, follow",
       "Cache-Control": "public, max-age=3600, s-maxage=86400, stale-while-revalidate=86400",
     },
   });
