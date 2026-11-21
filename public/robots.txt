@@ -10,6 +10,7 @@ Allow: /
 Disallow: /api/
 Disallow: /_next/
 Disallow: /admin/
+Disallow: /preview/
 
 # Western Search Engines
 User-agent: Googlebot
