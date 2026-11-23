@@ -10,11 +10,11 @@ import {
   TrendingUp,
   BarChart3,
   CheckCircle2,
-  Tag,
   Printer,
   FileText,
 } from "lucide-react";
 import { Badge } from "@/components/ui/badge";
+import { EditorialAttribution } from "@/components/article/EditorialAttribution";
 
 export const metadata: Metadata = {
   title: "Printer Reviews & Hardware Buying Guides (2026) | Live Feed Reviews",
@@ -186,24 +186,6 @@ export default function BlogHubPage() {
                         </div>
                       </div>
                     )}
-
-                    {/* Top-running Keywords Referenced */}
-                    <div className="space-y-1.5 pt-1">
-                      <div className="text-[10px] font-semibold uppercase tracking-wider text-slate-400 flex items-center gap-1">
-                        <Tag className="w-3 h-3 text-slate-400" />
-                        <span>Target Keywords:</span>
-                      </div>
-                      <div className="flex flex-wrap gap-1.5">
-                        {article.keywords.map((kw, kwIdx) => (
-                          <span
-                            key={kwIdx}
-                            className="text-[11px] font-mono bg-slate-100 text-slate-700 px-2 py-0.5 rounded border border-slate-200"
-                          >
-                            &quot;{kw}&quot;
-                          </span>
-                        ))}
-                      </div>
-                    </div>
                   </div>
 
                   <div className="px-6 py-4 bg-slate-50/70 border-t border-slate-100 flex items-center justify-between">
@@ -223,6 +205,9 @@ export default function BlogHubPage() {
             })}
           </div>
         </div>
+
+        {/* E-E-A-T Editorial Attribution */}
+        <EditorialAttribution />
 
         {/* Editorial Standards Card */}
         <div className="bg-white p-6 rounded-2xl border border-slate-200 shadow-xs flex flex-col md:flex-row items-start md:items-center justify-between gap-4">

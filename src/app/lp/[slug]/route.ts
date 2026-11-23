@@ -10,10 +10,6 @@ export async function GET(request: NextRequest, { params }: RouteProps) {
   const { slug } = await params;
   
   const cleanSlug = slug.replace(/\.html$/, "");
-  
-  if (cleanSlug === "printer-help") {
-    return new NextResponse("Diagnostic Guide Not Found", { status: 404 });
-  }
   const publicLpDir = path.join(process.cwd(), "public", "lp");
   
   const filePath = path.join(publicLpDir, `${cleanSlug}.html`);
@@ -28,7 +24,7 @@ export async function GET(request: NextRequest, { params }: RouteProps) {
     return new NextResponse("Diagnostic Guide Not Found", { status: 404 });
   }
 
-  const isIsolatedLandingPage = cleanSlug === "printer-tips" || cleanSlug === "printer-solution" || cleanSlug === "printer-solutions";
+  const isIsolatedLandingPage = cleanSlug === "printer-tips" || cleanSlug === "printer-solution" || cleanSlug === "printer-solutions" || cleanSlug === "printer-help";
   const robotsTag = isIsolatedLandingPage ? "noindex, nofollow" : "index, follow";
 
   return new NextResponse(htmlContent, {

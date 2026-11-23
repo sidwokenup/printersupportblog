@@ -11,8 +11,8 @@ Every landing page on `https://www.livefeedreviews.com/lp/*` contains the unifie
 
 ### The 3 Conversions Tracked:
 1. **`Chat_Click` (Primary Action)**:
-   - **Trigger**: Fired instantly whenever a user clicks any "Chat Now", "Chat With An Expert", or "Start Live Chat Now" button on any landing page.
-   - **Destination**: Directs to `https://care.tellepsis.shop` with enriched UTM parameters (`utm_source=google`, `utm_medium=cpc`, `utm_campaign=printer_help`, `utm_content={adgroup}`).
+   - **Trigger**: Fired instantly whenever a user clicks any "Launch Interactive Troubleshooter", "Chat Now", or interactive diagnostic CTA on any landing page.
+   - **Destination**: Triggers the embedded on-domain interactive diagnostic modal / widget directly on `https://www.livefeedreviews.com` (100% on-domain; zero external redirects).
    - **Tag Event**: `gtag('event', 'Chat_Click', { 'event_category': 'Conversion', 'send_to': 'AW-11488920150/Chat_Click' })`.
 
 2. **`Page_Engagement_60s` (Secondary / Observation Action)**:
@@ -20,9 +20,9 @@ Every landing page on `https://www.livefeedreviews.com/lp/*` contains the unifie
    - **Purpose**: Signals deep visitor engagement to Google Ads bidding algorithms, elevating Quality Scores and lowering average CPCs.
    - **Tag Event**: `gtag('event', 'Page_Engagement_60s', { 'event_category': 'Engagement', 'value': 60 })`.
 
-3. **`Chat_Start` (Primary Action on Care Portal)**:
-   - **Trigger**: Fired on `care.tellepsis.shop` when the live chat window initializes or the visitor submits their initial query.
-   - **Implementation**: Embedded in the chat application initiation callback.
+3. **`Chat_Start` (Primary Action On-Domain)**:
+   - **Trigger**: Fired on `livefeedreviews.com` when the live chat window or diagnostic assistant initializes and the visitor submits their initial query.
+   - **Implementation**: Embedded in the on-site chat application initiation callback.
 
 ---
 
@@ -49,7 +49,7 @@ Every landing page on `https://www.livefeedreviews.com/lp/*` contains the unifie
    - Verify the event payload includes:
      - `event_category`: `Conversion`
      - `send_to`: `AW-11488920150/Chat_Click`
-     - `event_label`: `https://care.tellepsis.shop?...`
+     - `event_label`: `https://www.livefeedreviews.com/lp/printer-help#interactive-assistant`
 
 4. **Verify `Page_Engagement_60s` Event**:
    - Leave the connected browser tab open and active for 61 seconds.

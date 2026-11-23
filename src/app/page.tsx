@@ -4,7 +4,7 @@ import Link from "next/link"
 import Image from "next/image"
 import { motion } from "framer-motion"
 import { GlobalSearch } from "@/components/search/GlobalSearch"
-import { AnimatedCounter } from "@/components/ui/animated-counter"
+import { EditorialAttribution } from "@/components/article/EditorialAttribution"
 import { 
   Printer, 
   AlertTriangle, 
@@ -164,10 +164,8 @@ export default function Home() {
                       <CheckCircle2 className="h-5 w-5" />
                     </div>
                     <div>
-                      <div className="text-xl font-bold text-slate-900">
-                        <AnimatedCounter end={5000} suffix="+" />
-                      </div>
-                      <div className="text-xs font-medium text-slate-500">Solutions Found</div>
+                      <div className="text-xl font-bold text-slate-900">45+</div>
+                      <div className="text-xs font-medium text-slate-500">Retail-Tested Models</div>
                     </div>
                   </motion.div>
 
@@ -181,10 +179,8 @@ export default function Home() {
                       <BookOpen className="h-5 w-5" />
                     </div>
                     <div>
-                      <div className="text-xl font-bold text-slate-900">
-                        <AnimatedCounter end={1000} suffix="+" />
-                      </div>
-                      <div className="text-xs font-medium text-slate-500">Printer Models</div>
+                      <div className="text-xl font-bold text-slate-900">140+</div>
+                      <div className="text-xs font-medium text-slate-500">Testing Hours</div>
                     </div>
                   </motion.div>
                 </div>
@@ -297,6 +293,9 @@ export default function Home() {
               </article>
             ))}
           </div>
+          <div className="mt-12">
+            <EditorialAttribution />
+          </div>
         </div>
       </section>
 
@@ -375,16 +374,16 @@ export default function Home() {
         <div className="container mx-auto px-4 md:px-6 relative z-10">
           <div className="grid grid-cols-2 md:grid-cols-4 gap-8 md:gap-12 text-center">
             {[
-              { value: 1000, suffix: "+", label: "Printer Models" },
-              { value: 5000, suffix: "+", label: "Troubleshooting Guides" },
-              { value: 10, suffix: "k+", label: "Error Codes Indexed" },
-              { value: 1, suffix: "M+", label: "Searches Served" },
+              { value: "45+", label: "Retail-Tested Printer Models" },
+              { value: "140+", label: "Hours of Lab Benchmarking" },
+              { value: "12", label: "Comprehensive DIY Diagnostic Guides" },
+              { value: "100%", label: "Retail-Purchased Units (Zero Sponsors)" },
             ].map((stat, i) => (
               <div key={i} className="flex flex-col gap-2">
                 <div className="text-4xl md:text-5xl lg:text-6xl font-extrabold text-transparent bg-clip-text bg-gradient-to-b from-white to-white/70">
-                  <AnimatedCounter end={stat.value} suffix={stat.suffix} />
+                  {stat.value}
                 </div>
-                <div className="text-blue-200 font-medium text-lg">{stat.label}</div>
+                <div className="text-blue-200 font-medium text-sm md:text-base">{stat.label}</div>
               </div>
             ))}
           </div>

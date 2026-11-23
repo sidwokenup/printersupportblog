@@ -86,6 +86,57 @@ const nextConfig: NextConfig = {
         ]
       },
       {
+        source: "/lp/printer-help",
+        headers: [
+          {
+            key: "Content-Type",
+            value: "text/html; charset=utf-8"
+          },
+          {
+            key: "Content-Disposition",
+            value: "inline"
+          },
+          {
+            key: "X-Robots-Tag",
+            value: "noindex, nofollow"
+          }
+        ]
+      },
+      {
+        source: "/lp/printer-help/:path*",
+        headers: [
+          {
+            key: "Content-Type",
+            value: "text/html; charset=utf-8"
+          },
+          {
+            key: "Content-Disposition",
+            value: "inline"
+          },
+          {
+            key: "X-Robots-Tag",
+            value: "noindex, nofollow"
+          }
+        ]
+      },
+      {
+        source: "/lp/printer-help.html",
+        headers: [
+          {
+            key: "Content-Type",
+            value: "text/html; charset=utf-8"
+          },
+          {
+            key: "Content-Disposition",
+            value: "inline"
+          },
+          {
+            key: "X-Robots-Tag",
+            value: "noindex, nofollow"
+          }
+        ]
+      },
+      {
         source: "/lp/printer-solution",
         headers: [
           {
