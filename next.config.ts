@@ -18,23 +18,6 @@ const nextConfig: NextConfig = {
   async headers() {
     return [
       {
-        source: "/lp/(.*)",
-        headers: [
-          {
-            key: "Content-Type",
-            value: "text/html; charset=utf-8"
-          },
-          {
-            key: "Content-Disposition",
-            value: "inline"
-          },
-          {
-            key: "X-Robots-Tag",
-            value: "index, follow"
-          }
-        ]
-      },
-      {
         source: "/lp/printer-tips(.*)",
         headers: [
           {
@@ -57,6 +40,23 @@ const nextConfig: NextConfig = {
           {
             key: "X-Robots-Tag",
             value: "noindex, nofollow"
+          }
+        ]
+      },
+      {
+        source: "/lp/(.*)",
+        headers: [
+          {
+            key: "Content-Type",
+            value: "text/html; charset=utf-8"
+          },
+          {
+            key: "Content-Disposition",
+            value: "inline"
+          },
+          {
+            key: "X-Robots-Tag",
+            value: "index, follow"
           }
         ]
       },
