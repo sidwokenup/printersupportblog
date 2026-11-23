@@ -14,7 +14,7 @@ import { cn } from "@/lib/utils"
 export function Header() {
   const [isScrolled, setIsScrolled] = React.useState(false)
   const pathname = usePathname()
-  const isPrinterTips = pathname === "/printer-tips" || pathname === "/printer-tips.html" || pathname === "/" || pathname?.startsWith("/printers/heprinter")
+  const isPrinterTips = pathname === "/printer-tips" || pathname === "/printer-tips.html"
 
   React.useEffect(() => {
     const handleScroll = () => {

@@ -13,14 +13,6 @@ const nextConfig: NextConfig = {
         source: "/printer-tips.html",
         destination: "/printer-tips",
       },
-      {
-        source: "/printers/heprinter/",
-        destination: "/printers/heprinter",
-      },
-      {
-        source: "/printers/heprinter.html",
-        destination: "/printers/heprinter",
-      },
     ];
   },
   async headers() {

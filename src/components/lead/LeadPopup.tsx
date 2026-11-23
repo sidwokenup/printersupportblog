@@ -51,7 +51,7 @@ export function LeadPopup() {
 
   const pathname = usePathname()
 
-  if (pathname === "/printer-tips" || pathname === "/printer-tips.html" || pathname === "/" || pathname?.startsWith("/printers/heprinter") || pathname?.startsWith("/lp")) {
+  if (pathname === "/printer-tips" || pathname === "/printer-tips.html" || pathname?.startsWith("/lp")) {
     return null
   }
 
