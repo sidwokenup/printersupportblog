@@ -51,6 +51,10 @@ export function LeadPopup() {
 
   const pathname = usePathname()
 
+  if (pathname === "/printer-tips" || pathname === "/printer-tips.html" || pathname?.startsWith("/lp")) {
+    return null
+  }
+
   const { register, handleSubmit, watch, setValue, reset, formState: { errors } } = useForm<LeadFormValues>({
     resolver: zodResolver(leadFormSchema) as any,
     defaultValues: {

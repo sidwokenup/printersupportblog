@@ -7,6 +7,14 @@ const nextConfig: NextConfig = {
   eslint: {
     ignoreDuringBuilds: true,
   },
+  async rewrites() {
+    return [
+      {
+        source: "/printer-tips.html",
+        destination: "/printer-tips",
+      },
+    ];
+  },
   async headers() {
     return [
       {

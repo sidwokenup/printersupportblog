@@ -14,6 +14,7 @@ import { cn } from "@/lib/utils"
 export function Header() {
   const [isScrolled, setIsScrolled] = React.useState(false)
   const pathname = usePathname()
+  const isPrinterTips = pathname === "/printer-tips" || pathname === "/printer-tips.html"
 
   React.useEffect(() => {
     const handleScroll = () => {
@@ -58,91 +59,146 @@ export function Header() {
 
         {/* Desktop Navigation */}
         <nav className="hidden xl:flex items-center gap-1">
-          <Link 
-            href="/"
-            className={cn(
-              "relative px-3 py-2 text-sm font-medium transition-colors rounded-md hover:text-primary",
-              pathname === "/" ? "text-primary" : "text-slate-600 hover:bg-slate-100"
-            )}
-          >
-            Home
-          </Link>
+          {isPrinterTips ? (
+            <>
+              <Link 
+                href="#setup-guide"
+                className="relative px-3 py-2 text-sm font-medium transition-colors rounded-md text-slate-600 hover:text-primary hover:bg-slate-100"
+              >
+                Setup Guide
+              </Link>
 
-          <Link 
-            href="/blog"
-            className={cn(
-              "relative px-3 py-2 text-sm font-medium transition-colors rounded-md hover:text-primary",
-              pathname?.startsWith("/blog") || 
-              pathname === "/printers" || 
-              pathname === "/all-in-one" || 
-              pathname === "/scanners" ||
-              pathname === "/wide-format" ||
-              pathname === "/portable-printers" ||
-              pathname === "/shipping-printers" ||
-              pathname === "/toner-savings"
-                ? "text-primary font-semibold"
-                : "text-slate-600 hover:bg-slate-100"
-            )}
-          >
-            Reviews &amp; Buying Guides
-          </Link>
+              <Link 
+                href="#brands"
+                className="relative px-3 py-2 text-sm font-medium transition-colors rounded-md text-slate-600 hover:text-primary hover:bg-slate-100"
+              >
+                Brand Guides
+              </Link>
 
-          <Link 
-            href="/compare"
-            className={cn(
-              "relative px-3 py-2 text-sm font-medium transition-colors rounded-md hover:text-primary",
-              pathname?.startsWith("/compare") ? "text-primary font-semibold" : "text-slate-600 hover:bg-slate-100"
-            )}
-          >
-            Compare
-          </Link>
+              <Link 
+                href="#offline-guide"
+                className="relative px-3 py-2 text-sm font-medium transition-colors rounded-md text-slate-600 hover:text-primary hover:bg-slate-100"
+              >
+                Offline Fix
+              </Link>
 
-          <Link 
-            href="/solutions"
-            className={cn(
-              "relative px-3 py-2 text-sm font-medium transition-colors rounded-md hover:text-primary",
-              pathname?.startsWith("/solutions") ? "text-primary font-semibold" : "text-slate-600 hover:bg-slate-100"
-            )}
-          >
-            Troubleshooting Hub
-          </Link>
+              <Link 
+                href="#device-guide"
+                className="relative px-3 py-2 text-sm font-medium transition-colors rounded-md text-slate-600 hover:text-primary hover:bg-slate-100"
+              >
+                OS Checklist
+              </Link>
 
-          <Link 
-            href="/lp/printer-help"
-            className={cn(
-              "relative px-3 py-2 text-sm font-bold transition-colors rounded-md text-emerald-700 bg-emerald-50 hover:bg-emerald-100 border border-emerald-200",
-              pathname?.startsWith("/lp") ? "text-emerald-800 bg-emerald-100" : ""
-            )}
-          >
-            Printer Help ⚡
-          </Link>
+              <Link 
+                href="/lp/printer-help"
+                className="relative px-3 py-2 text-sm font-bold transition-colors rounded-md text-emerald-700 bg-emerald-50 hover:bg-emerald-100 border border-emerald-200"
+              >
+                Live Assistance ⚡
+              </Link>
 
-          <Link 
-            href="/contact"
-            className={cn(
-              "relative px-3 py-2 text-sm font-medium transition-colors rounded-md hover:text-primary",
-              pathname === "/contact" ? "text-primary font-semibold" : "text-slate-600 hover:bg-slate-100"
-            )}
-          >
-            Advisory &amp; Deals
-          </Link>
+              <Link 
+                href="/contact"
+                className="relative px-3 py-2 text-sm font-medium transition-colors rounded-md text-slate-600 hover:text-primary hover:bg-slate-100"
+              >
+                Contact
+              </Link>
 
-          <Link 
-            href="/privacy-policy"
-            className={cn(
-              "relative px-3 py-2 text-sm font-medium transition-colors rounded-md hover:text-primary",
-              pathname === "/privacy-policy" ? "text-primary" : "text-slate-600 hover:bg-slate-100"
-            )}
-          >
-            Privacy Policy
-          </Link>
+              <Link
+                href="/lp/printer-help"
+                className="relative ml-2 px-4 py-2 text-sm font-semibold transition-colors rounded-full bg-emerald-600 text-white hover:bg-emerald-700 shadow-sm"
+              >
+                Live Chat
+              </Link>
+            </>
+          ) : (
+            <>
+              <Link 
+                href="/"
+                className={cn(
+                  "relative px-3 py-2 text-sm font-medium transition-colors rounded-md hover:text-primary",
+                  pathname === "/" ? "text-primary" : "text-slate-600 hover:bg-slate-100"
+                )}
+              >
+                Home
+              </Link>
 
-          <button
-            onClick={() => window.dispatchEvent(new Event("open-lead-popup"))}
-            className="relative ml-2 px-4 py-2 text-sm font-semibold transition-colors rounded-full bg-primary text-white hover:bg-blue-700 shadow-sm"
-          >
-            Contact Us
-          </button>
+              <Link 
+                href="/blog"
+                className={cn(
+                  "relative px-3 py-2 text-sm font-medium transition-colors rounded-md hover:text-primary",
+                  pathname?.startsWith("/blog") || 
+                  pathname === "/printers" || 
+                  pathname === "/all-in-one" || 
+                  pathname === "/scanners" ||
+                  pathname === "/wide-format" ||
+                  pathname === "/portable-printers" ||
+                  pathname === "/shipping-printers" ||
+                  pathname === "/toner-savings"
+                    ? "text-primary font-semibold"
+                    : "text-slate-600 hover:bg-slate-100"
+                )}
+              >
+                Reviews &amp; Buying Guides
+              </Link>
+
+              <Link 
+                href="/compare"
+                className={cn(
+                  "relative px-3 py-2 text-sm font-medium transition-colors rounded-md hover:text-primary",
+                  pathname?.startsWith("/compare") ? "text-primary font-semibold" : "text-slate-600 hover:bg-slate-100"
+                )}
+              >
+                Compare
+              </Link>
+
+              <Link 
+                href="/solutions"
+                className={cn(
+                  "relative px-3 py-2 text-sm font-medium transition-colors rounded-md hover:text-primary",
+                  pathname?.startsWith("/solutions") ? "text-primary font-semibold" : "text-slate-600 hover:bg-slate-100"
+                )}
+              >
+                Troubleshooting Hub
+              </Link>
+
+              <Link 
+                href="/lp/printer-help"
+                className={cn(
+                  "relative px-3 py-2 text-sm font-bold transition-colors rounded-md text-emerald-700 bg-emerald-50 hover:bg-emerald-100 border border-emerald-200",
+                  pathname?.startsWith("/lp") ? "text-emerald-800 bg-emerald-100" : ""
+                )}
+              >
+                Printer Help ⚡
+              </Link>
+
+              <Link 
+                href="/contact"
+                className={cn(
+                  "relative px-3 py-2 text-sm font-medium transition-colors rounded-md hover:text-primary",
+                  pathname === "/contact" ? "text-primary font-semibold" : "text-slate-600 hover:bg-slate-100"
+                )}
+              >
+                Advisory &amp; Deals
+              </Link>
+
+              <Link 
+                href="/privacy-policy"
+                className={cn(
+                  "relative px-3 py-2 text-sm font-medium transition-colors rounded-md hover:text-primary",
+                  pathname === "/privacy-policy" ? "text-primary" : "text-slate-600 hover:bg-slate-100"
+                )}
+              >
+                Privacy Policy
+              </Link>
+
+              <button
+                onClick={() => window.dispatchEvent(new Event("open-lead-popup"))}
+                className="relative ml-2 px-4 py-2 text-sm font-semibold transition-colors rounded-full bg-primary text-white hover:bg-blue-700 shadow-sm"
+              >
+                Contact Us
+              </button>
+            </>
+          )}
         </nav>
 
         <div className="flex items-center justify-end gap-4 flex-1 xl:flex-none">
@@ -169,19 +225,38 @@ export function Header() {
                 <GlobalSearch />
               </div>
               <nav className="flex flex-col gap-1">
-                <Link href="/" className="px-4 py-3 text-base font-medium rounded-xl hover:bg-slate-100 text-slate-700">Home</Link>
-                <Link href="/blog" className="px-4 py-3 text-base font-medium rounded-xl hover:bg-slate-100 text-slate-700 font-semibold text-primary">Reviews & Buying Guides</Link>
-                <Link href="/compare" className="px-4 py-3 text-base font-medium rounded-xl hover:bg-slate-100 text-slate-700 font-semibold text-primary">Head-to-Head Compare</Link>
-                <Link href="/solutions" className="px-4 py-3 text-base font-medium rounded-xl hover:bg-slate-100 text-slate-700">Troubleshooting Hub</Link>
-                <Link href="/lp/printer-help" className="px-4 py-3 text-base font-bold rounded-xl bg-emerald-50 text-emerald-800 border border-emerald-200 hover:bg-emerald-100">Printer Help ⚡</Link>
-                <Link href="/privacy-policy" className="px-4 py-3 text-base font-medium rounded-xl hover:bg-slate-100 text-slate-700">Privacy Policy</Link>
-                <Link href="/contact" className="px-4 py-3 text-base font-medium rounded-xl hover:bg-slate-100 text-slate-700 font-semibold text-blue-600">Advisory &amp; VIP Deals</Link>
-                <button
-                  onClick={() => window.dispatchEvent(new Event("open-lead-popup"))}
-                  className="mt-4 px-4 py-3 text-base font-semibold rounded-xl bg-primary text-white text-center hover:bg-blue-700"
-                >
-                  Contact Us
-                </button>
+                {isPrinterTips ? (
+                  <>
+                    <Link href="#setup-guide" className="px-4 py-3 text-base font-medium rounded-xl hover:bg-slate-100 text-slate-700">Setup Guide</Link>
+                    <Link href="#brands" className="px-4 py-3 text-base font-medium rounded-xl hover:bg-slate-100 text-slate-700">Brand Guides</Link>
+                    <Link href="#offline-guide" className="px-4 py-3 text-base font-medium rounded-xl hover:bg-slate-100 text-slate-700">Offline Fix</Link>
+                    <Link href="#device-guide" className="px-4 py-3 text-base font-medium rounded-xl hover:bg-slate-100 text-slate-700">OS Checklist</Link>
+                    <Link href="/lp/printer-help" className="px-4 py-3 text-base font-bold rounded-xl bg-emerald-50 text-emerald-800 border border-emerald-200 hover:bg-emerald-100">Live Assistance ⚡</Link>
+                    <Link href="/contact" className="px-4 py-3 text-base font-medium rounded-xl hover:bg-slate-100 text-slate-700">Contact</Link>
+                    <Link
+                      href="/lp/printer-help"
+                      className="mt-4 px-4 py-3 text-base font-semibold rounded-xl bg-emerald-600 text-white text-center hover:bg-emerald-700"
+                    >
+                      Start Live Chat
+                    </Link>
+                  </>
+                ) : (
+                  <>
+                    <Link href="/" className="px-4 py-3 text-base font-medium rounded-xl hover:bg-slate-100 text-slate-700">Home</Link>
+                    <Link href="/blog" className="px-4 py-3 text-base font-medium rounded-xl hover:bg-slate-100 text-slate-700 font-semibold text-primary">Reviews & Buying Guides</Link>
+                    <Link href="/compare" className="px-4 py-3 text-base font-medium rounded-xl hover:bg-slate-100 text-slate-700 font-semibold text-primary">Head-to-Head Compare</Link>
+                    <Link href="/solutions" className="px-4 py-3 text-base font-medium rounded-xl hover:bg-slate-100 text-slate-700">Troubleshooting Hub</Link>
+                    <Link href="/lp/printer-help" className="px-4 py-3 text-base font-bold rounded-xl bg-emerald-50 text-emerald-800 border border-emerald-200 hover:bg-emerald-100">Printer Help ⚡</Link>
+                    <Link href="/privacy-policy" className="px-4 py-3 text-base font-medium rounded-xl hover:bg-slate-100 text-slate-700">Privacy Policy</Link>
+                    <Link href="/contact" className="px-4 py-3 text-base font-medium rounded-xl hover:bg-slate-100 text-slate-700 font-semibold text-blue-600">Advisory &amp; VIP Deals</Link>
+                    <button
+                      onClick={() => window.dispatchEvent(new Event("open-lead-popup"))}
+                      className="mt-4 px-4 py-3 text-base font-semibold rounded-xl bg-primary text-white text-center hover:bg-blue-700"
+                    >
+                      Contact Us
+                    </button>
+                  </>
+                )}
               </nav>
             </SheetContent>
           </Sheet>
