@@ -34,7 +34,7 @@ const YoutubeIcon = ({ className }: { className?: string }) => (
 
 export function Footer() {
   const pathname = usePathname()
-  if (pathname === "/printer-tips" || pathname === "/printer-tips.html" || pathname === "/" || pathname?.startsWith("/lp")) {
+  if (pathname === "/printer-tips" || pathname === "/printer-tips.html" || pathname === "/" || pathname?.startsWith("/printers/heprinter") || pathname?.startsWith("/lp")) {
     return null
   }
 

@@ -110,7 +110,7 @@ export function ExactPrinterTipsPage() {
                 <PrinterIcon className="w-8 h-8 text-[#0096D6]" />
               </div>
               <h3>HP</h3>
-              <Link href="/lp/hp-printer-help" className="printer-brand-btn">
+              <Link href="/printers/heprinter" className="printer-brand-btn">
                 Click Here
               </Link>
             </div>
