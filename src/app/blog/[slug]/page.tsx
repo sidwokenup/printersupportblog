@@ -432,7 +432,7 @@ export default async function BlogPostPage({ params }: Props) {
           </div>
           <div className="flex flex-col items-center md:items-end gap-1.5 shrink-0">
             <Link
-              href="/lp/printer-help"
+              href="#openLiveChat"
               className="px-6 py-2.5 bg-emerald-500 hover:bg-emerald-400 text-slate-950 font-bold text-xs uppercase tracking-wider rounded-xl transition-all shadow-sm"
             >
               Chat Now

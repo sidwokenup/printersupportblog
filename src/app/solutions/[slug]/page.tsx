@@ -44,9 +44,7 @@ export async function generateMetadata({ params }: Props): Promise<Metadata> {
     "printer-code-errors-and-messages": "https://www.livefeedreviews.com/lp/printer-error-codes",
     "printer-in-error-state": "https://www.livefeedreviews.com/lp/printer-offline",
     "printer-setup-issue": "https://www.livefeedreviews.com/lp/printer-driver",
-    "printer-troubleshooting": "https://www.livefeedreviews.com/lp/printer-help",
     "faded-streaky-print-quality": "https://www.livefeedreviews.com/lp/printer-print-quality",
-    "printer-hardware-replacement-guide": "https://www.livefeedreviews.com/lp/printer-help",
   };
 
   const canonicalUrl = lpCanonicalMap[slug] || `https://www.livefeedreviews.com/solutions/${solution.slug}`;
@@ -373,7 +371,7 @@ export default async function SolutionPage({ params }: Props) {
                           </p>
                         </div>
                         <div className="flex flex-col items-center sm:items-end gap-1.5 shrink-0">
-                          <Link href="/lp/printer-help" className="px-5 py-2.5 bg-emerald-500 hover:bg-emerald-400 text-slate-950 font-bold text-xs uppercase tracking-wider rounded-xl transition-colors shadow-sm">
+                          <Link href="#openLiveChat" className="px-5 py-2.5 bg-emerald-500 hover:bg-emerald-400 text-slate-950 font-bold text-xs uppercase tracking-wider rounded-xl transition-colors shadow-sm">
                             Chat Now
                           </Link>
                           <span className="text-[10px] text-slate-400 text-center sm:text-right">
@@ -442,7 +440,7 @@ export default async function SolutionPage({ params }: Props) {
                 </div>
                 <div className="flex flex-col items-center md:items-end gap-2 shrink-0">
                   <Link 
-                    href="/lp/printer-help" 
+                    href="#openLiveChat" 
                     className="px-6 py-2.5 bg-emerald-500 hover:bg-emerald-400 text-slate-950 font-bold text-xs uppercase tracking-wider rounded-xl transition-colors shadow-sm"
                   >
                     Chat Now

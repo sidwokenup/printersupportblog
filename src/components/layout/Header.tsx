@@ -99,10 +99,10 @@ export function Header() {
               </Link>
 
               <Link 
-                href="/lp/printer-help"
+                href="/solutions"
                 className="relative px-3 py-2 text-sm font-bold transition-colors rounded-md text-emerald-700 bg-emerald-50 hover:bg-emerald-100 border border-emerald-200"
               >
-                Live Assistance ⚡
+                Solutions Hub ⚡
               </Link>
 
               <Link 
@@ -113,7 +113,7 @@ export function Header() {
               </Link>
 
               <Link
-                href="/lp/printer-help"
+                href="#openLiveChat"
                 className="relative ml-2 px-4 py-2 text-sm font-semibold transition-colors rounded-full bg-emerald-600 text-white hover:bg-emerald-700 shadow-sm"
               >
                 Live Chat
@@ -171,13 +171,13 @@ export function Header() {
               </Link>
 
               <Link 
-                href="/lp/printer-help"
+                href="/solutions"
                 className={cn(
                   "relative px-3 py-2 text-sm font-bold transition-colors rounded-md text-emerald-700 bg-emerald-50 hover:bg-emerald-100 border border-emerald-200",
-                  pathname?.startsWith("/lp") ? "text-emerald-800 bg-emerald-100" : ""
+                  pathname?.startsWith("/solutions") ? "text-emerald-800 bg-emerald-100" : ""
                 )}
               >
-                Printer Help ⚡
+                Printer Solutions ⚡
               </Link>
 
               <Link 
@@ -240,10 +240,10 @@ export function Header() {
                     <Link href="#brands" className="px-4 py-3 text-base font-medium rounded-xl hover:bg-slate-100 text-slate-700">Brand Guides</Link>
                     <Link href="#offline-guide" className="px-4 py-3 text-base font-medium rounded-xl hover:bg-slate-100 text-slate-700">Offline Fix</Link>
                     <Link href="#device-guide" className="px-4 py-3 text-base font-medium rounded-xl hover:bg-slate-100 text-slate-700">OS Checklist</Link>
-                    <Link href="/lp/printer-help" className="px-4 py-3 text-base font-bold rounded-xl bg-emerald-50 text-emerald-800 border border-emerald-200 hover:bg-emerald-100">Live Assistance ⚡</Link>
+                    <Link href="/solutions" className="px-4 py-3 text-base font-bold rounded-xl bg-emerald-50 text-emerald-800 border border-emerald-200 hover:bg-emerald-100">Solutions Hub ⚡</Link>
                     <Link href="/contact" className="px-4 py-3 text-base font-medium rounded-xl hover:bg-slate-100 text-slate-700">Contact</Link>
                     <Link
-                      href="/lp/printer-help"
+                      href="#openLiveChat"
                       className="mt-4 px-4 py-3 text-base font-semibold rounded-xl bg-emerald-600 text-white text-center hover:bg-emerald-700"
                     >
                       Start Live Chat
@@ -255,7 +255,7 @@ export function Header() {
                     <Link href="/blog" className="px-4 py-3 text-base font-medium rounded-xl hover:bg-slate-100 text-slate-700 font-semibold text-primary">Reviews & Buying Guides</Link>
                     <Link href="/compare" className="px-4 py-3 text-base font-medium rounded-xl hover:bg-slate-100 text-slate-700 font-semibold text-primary">Head-to-Head Compare</Link>
                     <Link href="/solutions" className="px-4 py-3 text-base font-medium rounded-xl hover:bg-slate-100 text-slate-700">Troubleshooting Hub</Link>
-                    <Link href="/lp/printer-help" className="px-4 py-3 text-base font-bold rounded-xl bg-emerald-50 text-emerald-800 border border-emerald-200 hover:bg-emerald-100">Printer Help ⚡</Link>
+                    <Link href="/solutions" className="px-4 py-3 text-base font-bold rounded-xl bg-emerald-50 text-emerald-800 border border-emerald-200 hover:bg-emerald-100">Printer Solutions ⚡</Link>
                     <Link href="/privacy-policy" className="px-4 py-3 text-base font-medium rounded-xl hover:bg-slate-100 text-slate-700">Privacy Policy</Link>
                     <Link href="/contact" className="px-4 py-3 text-base font-medium rounded-xl hover:bg-slate-100 text-slate-700 font-semibold text-blue-600">Advisory &amp; VIP Deals</Link>
                     <button

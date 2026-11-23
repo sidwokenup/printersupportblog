@@ -59,7 +59,7 @@ export default function Home() {
             </span>
           </div>
           <Link
-            href="/lp/printer-help"
+            href="/solutions"
             className="inline-flex items-center gap-1.5 px-4 py-1.5 rounded-full bg-emerald-500 hover:bg-emerald-400 text-slate-950 font-bold text-xs uppercase tracking-wider transition-colors shadow-sm shrink-0"
           >
             <span>Open Diagnostic Hub &rarr;</span>

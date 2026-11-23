@@ -164,7 +164,7 @@ export default function SolutionsHubPage() {
             </p>
           </div>
           <Link
-            href="/lp/printer-help"
+            href="#diagnostic-matrix"
             className="inline-flex items-center gap-2 bg-emerald-500 hover:bg-emerald-600 text-white font-bold text-sm px-6 py-3 rounded-xl transition-all shadow-md whitespace-nowrap"
           >
             Open Printer Hub <ArrowRight className="w-4 h-4" />
