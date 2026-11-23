@@ -5,17 +5,25 @@ import { useEffect } from "react";
 
 export function TawkToChat() {
   useEffect(() => {
-    // Tawk.to's internal scripts (twk-chunk-common.js) have a known bug where they occasionally 
-    // call console.error(true). In Next.js development mode, this triggers a full-screen error overlay.
-    // This safely intercepts and ignores that specific sloppy log so it doesn't disrupt development.
     const originalConsoleError = console.error;
     console.error = function (...args) {
       if (args[0] === true) return;
       originalConsoleError.apply(console, args);
     };
 
+    const handleOpenChat = () => {
+      if ((window as any).Tawk_API && typeof (window as any).Tawk_API.maximize === "function") {
+        (window as any).Tawk_API.maximize();
+      } else if ((window as any).Tawk_API && typeof (window as any).Tawk_API.popup === "function") {
+        (window as any).Tawk_API.popup();
+      }
+    };
+
+    window.addEventListener("open-live-chat", handleOpenChat);
+
     return () => {
       console.error = originalConsoleError;
+      window.removeEventListener("open-live-chat", handleOpenChat);
     };
   }, []);
 
@@ -32,7 +40,7 @@ export function TawkToChat() {
       />
       <Script
         id="tawk-script"
-        strategy="lazyOnload"
+        strategy="afterInteractive"
         src="https://embed.tawk.to/6a25e667be9ae91c2b2dece4/default"
         crossOrigin="anonymous"
       />

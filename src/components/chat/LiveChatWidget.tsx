@@ -4,13 +4,57 @@ import React from "react";
 import Script from "next/script";
 
 export function openLiveChat() {
-  if (typeof window !== "undefined") {
-    if ((window as any).LiveChatWidget) {
-      (window as any).LiveChatWidget.call("maximize");
-    } else {
-      window.location.href = "#openLiveChat";
+  if (typeof window === "undefined") return;
+
+  // 1. Try Tawk_API maximize / toggle / popup
+  if ((window as any).Tawk_API) {
+    if (typeof (window as any).Tawk_API.maximize === "function") {
+      (window as any).Tawk_API.maximize();
+      return;
+    }
+    if (typeof (window as any).Tawk_API.toggle === "function") {
+      (window as any).Tawk_API.toggle();
+      return;
+    }
+    if (typeof (window as any).Tawk_API.popup === "function") {
+      (window as any).Tawk_API.popup();
+      return;
     }
   }
+
+  // 2. Try LiveChatWidget
+  if (
+    (window as any).LiveChatWidget &&
+    typeof (window as any).LiveChatWidget.call === "function"
+  ) {
+    (window as any).LiveChatWidget.call("maximize");
+    return;
+  }
+
+  // 3. Dispatch global event
+  window.dispatchEvent(new Event("open-live-chat"));
+
+  // 4. Retry loop in case scripts are still loading
+  let attempts = 0;
+  const timer = setInterval(() => {
+    attempts++;
+    if (
+      (window as any).Tawk_API &&
+      typeof (window as any).Tawk_API.maximize === "function"
+    ) {
+      (window as any).Tawk_API.maximize();
+      clearInterval(timer);
+    } else if (
+      (window as any).LiveChatWidget &&
+      typeof (window as any).LiveChatWidget.call === "function"
+    ) {
+      (window as any).LiveChatWidget.call("maximize");
+      clearInterval(timer);
+    }
+    if (attempts >= 25) {
+      clearInterval(timer);
+    }
+  }, 100);
 }
 
 export function LiveChatWidget() {
