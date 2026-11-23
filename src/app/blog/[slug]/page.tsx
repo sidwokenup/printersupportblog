@@ -223,7 +223,7 @@ export default async function BlogPostPage({ params }: Props) {
             </span>
             <span className="px-2.5 py-0.5 rounded-full text-xs font-semibold bg-emerald-50 text-emerald-700 border border-emerald-200 flex items-center gap-1">
               <ShieldCheck className="w-3 h-3" />
-              100% Independent Lab Tested
+              100% Independent Research
             </span>
           </div>
 
@@ -234,9 +234,9 @@ export default async function BlogPostPage({ params }: Props) {
           <div className="flex flex-wrap items-center gap-4 text-xs text-slate-500 font-mono pt-1 border-b border-slate-200 pb-4">
             <div className="flex items-center gap-1.5">
               <div className="w-6 h-6 rounded-full bg-slate-200 flex items-center justify-center font-bold text-slate-700">
-                DS
+                LFR
               </div>
-              <span className="text-slate-800 font-medium font-sans">David Sterling, Hardware Reviewer</span>
+              <span className="text-slate-800 font-medium font-sans">Live Feed Reviews Editorial Team</span>
             </div>
             <span>•</span>
             <div className="flex items-center gap-1">
@@ -246,7 +246,7 @@ export default async function BlogPostPage({ params }: Props) {
             <span>•</span>
             <span>Published: {article.publishedAt}</span>
             <span>•</span>
-            <span className="text-emerald-600 font-semibold">{article.updatedAt} Verified</span>
+            <span className="text-emerald-600 font-semibold">{article.updatedAt} Researched</span>
           </div>
         </header>
 
@@ -254,22 +254,22 @@ export default async function BlogPostPage({ params }: Props) {
         <div className="blog-verdict-summary bg-white p-5 md:p-6 rounded-2xl border border-slate-200 shadow-xs space-y-2">
           <div className="text-xs font-bold text-slate-900 uppercase tracking-wider flex items-center gap-1.5 text-primary">
             <Sparkles className="w-4 h-4" />
-            <span>The Bottom Line (30-Second Verdict)</span>
+            <span>The Bottom Line (Research Verdict)</span>
           </div>
           <p className="bottom-line-text text-sm md:text-base text-slate-700 leading-relaxed">
             {article.quickSummary}
           </p>
         </div>
 
-        {/* Lab ISO Benchmarks Table */}
+        {/* Specifications & Cost Estimates Matrix */}
         {article.isoBenchmarks && article.isoBenchmarks.length > 0 && (
           <div className="bg-white rounded-2xl border border-slate-200 p-5 md:p-6 shadow-xs space-y-4">
             <div className="flex items-center justify-between border-b border-slate-100 pb-3">
               <div className="flex items-center gap-2">
                 <BarChart3 className="w-5 h-5 text-primary" />
-                <h2 className="text-base font-bold text-slate-900">Lab ISO Measurement Matrix</h2>
+                <h2 className="text-base font-bold text-slate-900">Specifications &amp; Cost Estimates Matrix</h2>
               </div>
-              <span className="text-[11px] font-mono text-slate-400">Standard: ISO/IEC 19752</span>
+              <span className="text-[11px] font-mono text-slate-400">Estimates &bull; See <Link href="/methodology" className="underline text-blue-600">Methodology</Link></span>
             </div>
 
             <div className="overflow-x-auto">
@@ -423,22 +423,24 @@ export default async function BlogPostPage({ params }: Props) {
         )}
 
         {/* Troubleshooting Callout Banner */}
-        <div className="bg-gradient-to-r from-blue-900 via-indigo-900 to-slate-900 rounded-2xl p-6 md:p-8 text-white shadow-md flex flex-col sm:flex-row items-center justify-between gap-4">
-          <div className="space-y-1 text-center sm:text-left">
-            <div className="text-emerald-400 font-bold text-xs uppercase tracking-wider flex items-center justify-center sm:justify-start gap-1.5">
-              <span>⚡ Independent Live Diagnostics</span>
-            </div>
-            <h3 className="text-lg md:text-xl font-bold">Having trouble with this printer?</h3>
-            <p className="text-slate-300 text-xs md:text-sm max-w-xl">
-              Skip endless phone queues and unhelpful error menus. Get instant, step-by-step diagnostic guidance through our interactive troubleshooting hub.
+        <div className="bg-slate-900 rounded-2xl p-6 md:p-8 text-white shadow-md flex flex-col md:flex-row items-center justify-between gap-6 border border-slate-800">
+          <div className="space-y-1 text-center md:text-left">
+            <h3 className="text-lg md:text-xl font-bold">Still stuck? Get Independent Help</h3>
+            <p className="text-slate-300 text-xs md:text-sm max-w-xl leading-relaxed">
+              Independent help directory. Not affiliated with Brother, Canon, Epson, HP, or any manufacturer. Not official manufacturer support.
             </p>
           </div>
-          <Link
-            href="/lp/printer-help"
-            className="px-6 py-3 bg-emerald-500 hover:bg-emerald-400 text-slate-950 font-bold text-sm rounded-xl uppercase tracking-wider transition-all shadow-sm shrink-0 whitespace-nowrap"
-          >
-            Get Live Troubleshooting &rarr;
-          </Link>
+          <div className="flex flex-col items-center md:items-end gap-1.5 shrink-0">
+            <Link
+              href="/lp/printer-help"
+              className="px-6 py-2.5 bg-emerald-500 hover:bg-emerald-400 text-slate-950 font-bold text-xs uppercase tracking-wider rounded-xl transition-all shadow-sm"
+            >
+              Chat Now
+            </Link>
+            <span className="text-[10px] text-slate-400 text-center md:text-right max-w-xs">
+              Chat may be automated or live. [Free / Paid - Confirm Before Deploy]. No guarantee of fix. See <Link href="/terms" className="underline hover:text-white">Terms</Link>.
+            </span>
+          </div>
         </div>
 
         {/* Related Guides Section */}

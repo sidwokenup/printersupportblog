@@ -125,7 +125,7 @@ export default function TonerSavingsCalculator() {
           Calculate Your Real 3-Year Printer Operating Cost
         </h2>
         <p className="text-slate-600 text-sm">
-          Simulate real-world supply consumption using ISO/IEC 19752 continuous yield lab benchmarks.
+          Simulate real-world supply consumption using manufacturer stated yield estimates.
         </p>
       </div>
 

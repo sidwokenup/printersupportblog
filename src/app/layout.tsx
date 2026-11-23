@@ -4,6 +4,7 @@ import Script from "next/script";
 import "./globals.css";
 import { Header } from "@/components/layout/Header";
 import { Footer } from "@/components/layout/Footer";
+import { DisclosureBar } from "@/components/layout/DisclosureBar";
 import { TooltipProvider } from "@/components/ui/tooltip";
 import { LeadPopup } from "@/components/lead/LeadPopup";
 import { TawkToChat } from "@/components/layout/TawkToChat";
@@ -33,7 +34,7 @@ export const metadata: Metadata = {
     },
   },
   title: "Live Feed Reviews - Independent Printer Reviews & Buying Guides (2026)",
-  description: "Comprehensive lab testing, ISO/IEC 19752 yield benchmarks, and buyer's guides for wireless laser printers, ink tanks, and document scanners.",
+  description: "Independent research, comparison guides, and troubleshooting steps for wireless laser printers, ink tanks, and document scanners.",
   verification: {
     google: process.env.GOOGLE_SEARCH_CONSOLE_VERIFICATION || undefined,
     other: {
@@ -51,7 +52,7 @@ export const metadata: Metadata = {
   },
   openGraph: {
     title: "Live Feed Reviews - Independent Printer Reviews & Buying Guides (2026)",
-    description: "Comprehensive lab testing, ISO/IEC 19752 yield benchmarks, and buyer's guides for wireless laser printers, ink tanks, and document scanners.",
+    description: "Independent research, comparison guides, and troubleshooting steps for wireless laser printers, ink tanks, and document scanners.",
     url: "https://www.livefeedreviews.com",
     siteName: "Live Feed Reviews",
     images: [
@@ -71,7 +72,7 @@ export const metadata: Metadata = {
     site: "@livefeedreviews",
     creator: "@livefeedreviews",
     title: "Live Feed Reviews - Independent Printer Reviews & Buying Guides (2026)",
-    description: "Comprehensive lab testing, ISO/IEC 19752 yield benchmarks, and buyer's guides for wireless laser printers, ink tanks, and document scanners.",
+    description: "Independent research, comparison guides, and troubleshooting steps for wireless laser printers, ink tanks, and document scanners.",
     images: ["/logo.png"],
   },
 };
@@ -88,38 +89,19 @@ export default function RootLayout({
         "@type": ["Organization", "OnlineBusiness"],
         "@id": "https://www.livefeedreviews.com/#organization",
         "name": "Live Feed Reviews",
-        "legalName": "Live Feed Reviews Laboratory",
+        "legalName": "Live Feed Reviews",
         "url": "https://www.livefeedreviews.com",
         "foundingDate": "2024-01-15",
-        "email": "contact@livefeedreviews.com",
         "logo": {
           "@type": "ImageObject",
           "url": "https://www.livefeedreviews.com/logo.png",
           "caption": "Live Feed Reviews"
         },
-        "description": "Independent consumer printer hardware testing laboratory, ISO/IEC 19752 yield benchmarking, and verified self-service diagnostic troubleshooting knowledge base.",
-        "address": {
-          "@type": "PostalAddress",
-          "addressLocality": "New York",
-          "addressRegion": "NY",
-          "postalCode": "10001",
-          "addressCountry": "US"
-        },
-        "contactPoint": [
-          {
-            "@type": "ContactPoint",
-            "contactType": "technical advisory and diagnostic triage",
-            "email": "support@livefeedreviews.com",
-            "availableLanguage": ["en", "es", "fr", "de"],
-            "areaServed": "Worldwide"
-          }
-        ],
+        "description": "Independent research and comparison site for printer hardware, toner running costs, and DIY troubleshooting guides.",
         "sameAs": [
           "https://twitter.com/livefeedreviews",
           "https://www.linkedin.com/company/livefeedreviews",
-          "https://github.com/livefeedreviews",
-          "https://www.crunchbase.com/organization/livefeedreviews",
-          "https://www.trustpilot.com/review/livefeedreviews.com"
+          "https://github.com/livefeedreviews"
         ],
         "knowsAbout": [
           "Laser Printers",
@@ -127,29 +109,8 @@ export default function RootLayout({
           "Supertank Printers",
           "Thermal Shipping Printers",
           "Print Spooler Diagnostics",
-          "ISO/IEC 19752 Standards",
-          "Windows 11 Print Architecture"
-        ],
-        "hasOfferCatalog": {
-          "@type": "OfferCatalog",
-          "name": "Independent Hardware Benchmarks and DIY Diagnostics",
-          "itemListElement": [
-            {
-              "@type": "Offer",
-              "itemOffered": {
-                "@type": "Service",
-                "name": "Free Self-Service Printer Diagnostic Protocols"
-              }
-            },
-            {
-              "@type": "Offer",
-              "itemOffered": {
-                "@type": "Service",
-                "name": "ISO/IEC 19752 Laser Toner Yield Lab Benchmarks"
-              }
-            }
-          ]
-        }
+          "Windows Print Architecture"
+        ]
       },
       {
         "@type": "WebSite",
@@ -216,6 +177,7 @@ export default function RootLayout({
         suppressHydrationWarning
       >
         <TooltipProvider>
+          <DisclosureBar />
           <Header />
           <main className="flex-1">
             {children}

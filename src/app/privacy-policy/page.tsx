@@ -1,23 +1,11 @@
 import { Metadata } from "next";
+import Link from "next/link";
 
 export const metadata: Metadata = {
   title: "Privacy Policy | Live Feed Reviews",
-  description: "Privacy Policy for Live Feed Reviews - Learn how we collect, use, and protect your information.",
+  description: "Privacy Policy for Live Feed Reviews - Learn how we collect, use, and protect your information, including Google Ads, Analytics, and affiliate tracking.",
   alternates: {
     canonical: "/privacy-policy",
-      languages: {
-        "en-US": "https://www.livefeedreviews.com/privacy-policy",
-        "en-GB": "https://www.livefeedreviews.com/privacy-policy",
-        "en-CA": "https://www.livefeedreviews.com/privacy-policy",
-        "en-AU": "https://www.livefeedreviews.com/privacy-policy",
-        "en-IN": "https://www.livefeedreviews.com/privacy-policy",
-        "en-IE": "https://www.livefeedreviews.com/privacy-policy",
-        "en-SG": "https://www.livefeedreviews.com/privacy-policy",
-        "en-NZ": "https://www.livefeedreviews.com/privacy-policy",
-        "en-ZA": "https://www.livefeedreviews.com/privacy-policy",
-        "en-PH": "https://www.livefeedreviews.com/privacy-policy",
-        "x-default": "https://www.livefeedreviews.com/privacy-policy",
-      },
   },
   openGraph: {
     title: "Privacy Policy | Live Feed Reviews",
@@ -30,91 +18,115 @@ export const metadata: Metadata = {
 
 export default function PrivacyPolicyPage() {
   return (
-    <div className="min-h-screen bg-slate-50 pb-12">
+    <div className="min-h-screen bg-slate-50 pb-16">
       {/* Header */}
-      <div className="bg-white border-b border-slate-200 pt-10 pb-10 relative overflow-hidden">
-        <div className="absolute inset-0 bg-gradient-to-br from-blue-50/50 to-transparent pointer-events-none" />
-        <div className="container mx-auto px-4 md:px-6 relative z-10 text-center max-w-3xl">
-          <h1 className="text-4xl md:text-5xl font-extrabold text-slate-900 tracking-tight mb-4">
+      <div className="bg-slate-950 text-white border-b border-slate-800 pt-12 pb-12">
+        <div className="container mx-auto px-4 md:px-6 text-center max-w-4xl space-y-3">
+          <span className="text-xs font-semibold text-emerald-400 uppercase tracking-widest">
+            Privacy &amp; Data Transparency
+          </span>
+          <h1 className="text-3xl md:text-5xl font-extrabold text-white tracking-tight">
             Privacy Policy
           </h1>
-          <p className="text-lg text-slate-600">
-            Last Updated: {new Date().toLocaleDateString('en-US', { month: 'long', day: 'numeric', year: 'numeric' })}
+          <p className="text-sm md:text-base text-slate-400">
+            Effective Date: January 15, 2024 &bull; Last Updated: November 24, 2026
           </p>
         </div>
       </div>
 
       {/* Content */}
-      <div className="container mx-auto px-4 md:px-6 pt-8">
-        <div className="max-w-4xl mx-auto bg-white rounded-3xl border border-slate-200 shadow-sm p-8 md:p-12 text-slate-700 leading-relaxed space-y-6">
-          <p className="text-lg">
-            At <strong className="text-slate-900">Live Feed Reviews</strong>, accessible from our website, one of our main priorities is the privacy of our visitors. This Privacy Policy document contains types of information that is collected and recorded by Live Feed Reviews and how we use it.
+      <div className="container mx-auto px-4 md:px-6 pt-10">
+        <div className="max-w-4xl mx-auto bg-white rounded-3xl border border-slate-200 shadow-sm p-8 md:p-12 text-slate-700 leading-relaxed space-y-6 text-sm sm:text-base">
+          <p>
+            At <strong className="text-slate-900">Live Feed Reviews</strong>, accessible from https://www.livefeedreviews.com, the privacy of our visitors is of paramount importance. This Privacy Policy document details the types of information collected and recorded by Live Feed Reviews and how we use it.
           </p>
-          <p className="text-lg">
-            If you have additional questions or require more information about our Privacy Policy, do not hesitate to contact us.
+          <p>
+            If you have questions or require additional information about our Privacy Policy, please reach out via our <Link href="/contact" className="text-blue-600 underline font-semibold">Contact Page</Link>.
           </p>
 
-          <h2 className="text-2xl md:text-3xl font-bold text-slate-900 mt-8 mb-4 tracking-tight">1. Information We Collect</h2>
-          <p className="text-lg">
+          <h2 className="text-xl md:text-2xl font-bold text-slate-900 mt-8 mb-3 tracking-tight">
+            1. Information We Collect
+          </h2>
+          <p>
             We collect several different types of information for various purposes to provide and improve our service to you.
           </p>
           
-          <h3 className="text-xl font-bold text-slate-900 mt-6 mb-3">Personal Data</h3>
-          <p className="text-lg">
-            While using our Service, we may ask you to provide us with certain personally identifiable information that can be used to contact or identify you. Personally identifiable information may include, but is not limited to:
+          <h3 className="text-lg font-bold text-slate-900 mt-4 mb-2">Personal Data</h3>
+          <p>
+            While using our Service (for example, when submitting inquiries on our contact form), you may provide personally identifiable information, including:
           </p>
-          <ul className="list-disc pl-6 text-lg space-y-2 marker:text-blue-500">
+          <ul className="list-disc pl-6 space-y-1.5 marker:text-blue-500">
+            <li>First and last name</li>
             <li>Email address</li>
-            <li>First name and last name</li>
-            <li>Phone number</li>
-            <li>Usage Data</li>
+            <li>Inquiry topic and message details</li>
           </ul>
 
-          <h3 className="text-xl font-bold text-slate-900 mt-6 mb-3">Usage Data</h3>
-          <p className="text-lg">
-            We may also collect information on how the Service is accessed and used (&quot;Usage Data&quot;). This Usage Data may include information such as your device&apos;s Internet Protocol address (e.g., IP address), browser type, browser version, the pages of our Service that you visit, the time and date of your visit, the time spent on those pages, unique device identifiers, and other diagnostic data.
+          <h3 className="text-lg font-bold text-slate-900 mt-4 mb-2">Usage Data</h3>
+          <p>
+            We automatically collect information on how the Service is accessed and used (&quot;Usage Data&quot;). This may include your IP address, browser type, operating system, pages visited, time spent on pages, and diagnostic timestamps.
           </p>
 
-          <h2 className="text-2xl md:text-3xl font-bold text-slate-900 mt-8 mb-4 tracking-tight">2. How We Use Your Information</h2>
-          <p className="text-lg">We use the collected data for various purposes:</p>
-          <ul className="list-disc pl-6 text-lg space-y-2 marker:text-blue-500">
-            <li>To provide and maintain our Service.</li>
-            <li>To notify you about changes to our Service.</li>
-            <li>To allow you to participate in interactive features of our Service when you choose to do so.</li>
-            <li>To provide customer support and personalized troubleshooting assistance.</li>
-            <li>To gather analysis or valuable information so that we can improve our Service.</li>
-            <li>To monitor the usage of our Service.</li>
-            <li>To detect, prevent and address technical issues.</li>
+          <h2 className="text-xl md:text-2xl font-bold text-slate-900 mt-8 mb-3 tracking-tight">
+            2. How We Use Your Information
+          </h2>
+          <ul className="list-disc pl-6 space-y-1.5 marker:text-blue-500">
+            <li>To operate and maintain our website, reviews, and diagnostic tools.</li>
+            <li>To respond to editorial questions, feedback, and user inquiries submitted through our contact form.</li>
+            <li>To analyze traffic patterns, search queries, and article engagement to improve site usability.</li>
+            <li>To monitor system health, prevent spam submissions, and protect site security.</li>
           </ul>
 
-          <h2 className="text-2xl md:text-3xl font-bold text-slate-900 mt-8 mb-4 tracking-tight">3. Cookies and Tracking Technologies</h2>
-          <p className="text-lg">
-            We use cookies and similar tracking technologies to track the activity on our Service and hold certain information. Cookies are files with small amount of data which may include an anonymous unique identifier. You can instruct your browser to refuse all cookies or to indicate when a cookie is being sent. However, if you do not accept cookies, you may not be able to use some portions of our Service.
+          <h2 className="text-xl md:text-2xl font-bold text-slate-900 mt-8 mb-3 tracking-tight">
+            3. Cookies, Analytics &amp; Advertising Technologies
+          </h2>
+          <p>
+            We use cookies, web beacons, and similar tracking technologies to track activity on our Service and store certain information.
+          </p>
+          <div className="space-y-3 pt-2">
+            <div>
+              <strong className="text-slate-900">Google Analytics:</strong> We use Google Analytics to analyze visitor traffic and content engagement. Google Analytics collects anonymous information regarding device types, bounce rates, and session durations using cookies.
+            </div>
+            <div>
+              <strong className="text-slate-900">Google Ads &amp; Advertising Cookies:</strong> Google and authorized third-party vendors may serve ads based on prior visits to our website or other websites. Users may opt out of personalized advertising by visiting Google Ad Settings (https://adssettings.google.com).
+            </div>
+            <div>
+              <strong className="text-slate-900">Affiliate Click Tracking:</strong> When you click outbound retailer links, affiliate tracking cookies may be set by affiliate networks (including Amazon Associates) to attribute qualifying purchases. These cookies do not collect personal identifying information like credit card numbers or passwords.
+            </div>
+          </div>
+
+          <h2 className="text-xl md:text-2xl font-bold text-slate-900 mt-8 mb-3 tracking-tight">
+            4. Affiliate Disclosure Integration
+          </h2>
+          <p>
+            Live Feed Reviews participates in affiliate marketing programs. For full transparency regarding our commercial affiliate relationships, retailer commissions, and editorial guidelines, please review our comprehensive <Link href="/affiliate-disclosure" className="text-blue-600 underline font-semibold">Affiliate Disclosure</Link>.
           </p>
 
-          <h2 className="text-2xl md:text-3xl font-bold text-slate-900 mt-8 mb-4 tracking-tight">4. Third-Party Services</h2>
-          <p className="text-lg">
-            We may employ third-party companies and individuals to facilitate our Service (&quot;Service Providers&quot;), to provide the Service on our behalf, to perform Service-related services, or to assist us in analyzing how our Service is used. These third parties have access to your Personal Data only to perform these tasks on our behalf and are obligated not to disclose or use it for any other purpose.
+          <h2 className="text-xl md:text-2xl font-bold text-slate-900 mt-8 mb-3 tracking-tight">
+            5. Third-Party Services &amp; Links
+          </h2>
+          <p>
+            Our Service may contain links to external third-party sites, retailer pages, diagnostic tools, and chat services. If you click on a third-party link, you will be directed to that third party&apos;s site. We encourage you to review the Privacy Policy of every site you visit.
           </p>
 
-          <h2 className="text-2xl md:text-3xl font-bold text-slate-900 mt-8 mb-4 tracking-tight">5. Data Security</h2>
-          <p className="text-lg">
-            The security of your data is important to us, but remember that no method of transmission over the Internet, or method of electronic storage is 100% secure. While we strive to use commercially acceptable means to protect your Personal Data, we cannot guarantee its absolute security.
+          <h2 className="text-xl md:text-2xl font-bold text-slate-900 mt-8 mb-3 tracking-tight">
+            6. Data Security
+          </h2>
+          <p>
+            The security of your personal information is important to us. We employ standard 256-bit SSL encryption to protect data transmissions. However, no electronic transmission or storage method is 100% secure, and we cannot guarantee absolute security.
           </p>
 
-          <h2 className="text-2xl md:text-3xl font-bold text-slate-900 mt-8 mb-4 tracking-tight">6. Links to Other Sites</h2>
-          <p className="text-lg">
-            Our Service may contain links to other sites that are not operated by us. If you click on a third party link, you will be directed to that third party&apos;s site. We strongly advise you to review the Privacy Policy of every site you visit. We have no control over and assume no responsibility for the content, privacy policies or practices of any third party sites or services.
+          <h2 className="text-xl md:text-2xl font-bold text-slate-900 mt-8 mb-3 tracking-tight">
+            7. Changes to This Privacy Policy
+          </h2>
+          <p>
+            We may update our Privacy Policy periodically. We will post any changes on this page with an updated &quot;Last Updated&quot; date at the top.
           </p>
 
-          <h2 className="text-2xl md:text-3xl font-bold text-slate-900 mt-8 mb-4 tracking-tight">7. Changes to This Privacy Policy</h2>
-          <p className="text-lg">
-            We may update our Privacy Policy from time to time. We will notify you of any changes by posting the new Privacy Policy on this page. You are advised to review this Privacy Policy periodically for any changes. Changes to this Privacy Policy are effective when they are posted on this page.
-          </p>
-
-          <h2 className="text-2xl md:text-3xl font-bold text-slate-900 mt-8 mb-4 tracking-tight">8. Contact Us</h2>
-          <p className="text-lg">
-            If you have any questions about this Privacy Policy, please contact us by submitting a request through our Contact Us form.
+          <h2 className="text-xl md:text-2xl font-bold text-slate-900 mt-8 mb-3 tracking-tight">
+            8. Contact Us
+          </h2>
+          <p>
+            If you have questions about this Privacy Policy, your personal data, or opt-out options, please submit an inquiry through our <Link href="/contact" className="text-blue-600 underline font-semibold">Contact Us Page</Link>.
           </p>
         </div>
       </div>

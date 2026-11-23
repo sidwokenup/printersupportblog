@@ -43,14 +43,6 @@ export function Header() {
 
   return (
     <>
-      {/* Top Sticky Notification Bar */}
-      <div className="bg-slate-900 text-white text-xs py-2 px-4 text-center font-medium border-b border-slate-800 relative z-50">
-        <span>Need Printer Help?</span>{" "}
-        <Link href="/lp/printer-help" className="underline font-bold text-emerald-400 hover:text-emerald-300 ml-1 inline-flex items-center gap-1">
-          Chat Now &rarr; /lp/printer-help
-        </Link>
-      </div>
-
       <motion.header
         initial={{ y: -100 }}
         animate={{ y: 0 }}

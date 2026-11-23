@@ -365,18 +365,20 @@ export default async function SolutionPage({ params }: Props) {
 
                     {/* Mid Diagnostic CTA Box */}
                     {index === 1 && (
-                      <div className="my-6 p-5 rounded-xl bg-gradient-to-r from-blue-900 via-indigo-900 to-slate-900 text-white flex flex-col sm:flex-row items-center justify-between gap-4 shadow-sm border border-blue-800">
-                        <div>
-                          <div className="font-bold text-sm md:text-base text-white">Still stuck? Chat Now for live diagnostic guidance</div>
-                          <p className="text-xs text-slate-300 mt-0.5">Skip endless phone queues and connect directly with an independent printer specialist.</p>
+                      <div className="my-6 p-5 rounded-2xl bg-slate-900 text-white flex flex-col md:flex-row items-center justify-between gap-4 shadow-sm border border-slate-800">
+                        <div className="space-y-1 text-center md:text-left">
+                          <div className="font-bold text-sm md:text-base text-white">Still stuck? Get Independent Help</div>
+                          <p className="text-xs text-slate-300">
+                            Independent help directory. Not affiliated with Brother, Canon, Epson, HP, or any manufacturer. Not official manufacturer support.
+                          </p>
                         </div>
-                        <div className="flex items-center gap-2 shrink-0">
-                          <Link href="/lp/printer-help" className="px-4 py-2 bg-emerald-500 hover:bg-emerald-400 text-slate-950 font-bold text-xs uppercase tracking-wider rounded-lg transition-colors">
+                        <div className="flex flex-col items-center sm:items-end gap-1.5 shrink-0">
+                          <Link href="/lp/printer-help" className="px-5 py-2.5 bg-emerald-500 hover:bg-emerald-400 text-slate-950 font-bold text-xs uppercase tracking-wider rounded-xl transition-colors shadow-sm">
                             Chat Now
                           </Link>
-                          <Link href="/lp/printer-help" className="px-3 py-2 bg-slate-800 hover:bg-slate-700 text-slate-200 text-xs font-semibold rounded-lg transition-colors border border-slate-700">
-                            Full Hub &rarr;
-                          </Link>
+                          <span className="text-[10px] text-slate-400 text-center sm:text-right">
+                            Chat may be automated or live. [Free / Paid - Confirm Before Deploy]. No guarantee of fix. See <Link href="/terms" className="underline hover:text-white">Terms</Link>.
+                          </span>
                         </div>
                       </div>
                     )}
@@ -403,21 +405,26 @@ export default async function SolutionPage({ params }: Props) {
                     When Repair Exceeds Value: Recommended Replacements
                   </div>
                   <h4 className="text-xl font-bold">
-                    TCO-Optimized Hardware Upgrades (2026 Tested)
+                    Research-Based Hardware Alternatives (2026)
                   </h4>
                   <p className="text-slate-300 text-sm leading-relaxed">
-                    If this hardware issue stems from a dead printhead, degraded laser fuser, or unrepairable mechanical failure, upgrading to a high-reliability model saves hundreds in lifetime operating costs.
+                    If this hardware issue stems from a dead printhead, degraded laser fuser, or unrepairable mechanical failure, upgrading to a high-reliability model may lower lifetime running costs depending on print volume - see cost estimate on Methodology page.
                   </p>
                   <div className="grid grid-cols-1 sm:grid-cols-2 gap-4 pt-2">
                     {solution.replacementPicks.map((pick, i) => (
-                      <div key={i} className="bg-slate-800/80 p-4 rounded-xl border border-slate-700 space-y-2">
+                      <div key={i} className="bg-slate-800/80 p-5 rounded-2xl border border-slate-700 space-y-3">
                         <div className="font-semibold text-white text-base">{pick.name}</div>
-                        <p className="text-xs text-slate-300">{pick.reason}</p>
+                        <p className="text-xs text-slate-300 leading-relaxed">{pick.reason}</p>
+                        <div className="text-[11px] text-slate-400 bg-slate-900/60 p-2.5 rounded-lg border border-slate-800 space-y-1">
+                          <div><strong>Pros:</strong> Low running expense • Durable paper handling</div>
+                          <div><strong>Con:</strong> Higher upfront hardware price</div>
+                          <div className="text-amber-400/90 pt-0.5 font-medium">Price checked November 2026 - Check current price on retailer site</div>
+                        </div>
                         <Link 
                           href={pick.link}
                           className="inline-flex items-center gap-1.5 text-xs text-emerald-400 hover:text-emerald-300 font-semibold pt-1"
                         >
-                          Read Verified Review <ArrowRight className="w-3.5 h-3.5" />
+                          Read Full Research Review <ArrowRight className="w-3.5 h-3.5" />
                         </Link>
                       </div>
                     ))}
@@ -426,29 +433,23 @@ export default async function SolutionPage({ params }: Props) {
               )}
 
               {/* End Solution CTA Box */}
-              <div className="p-6 md:p-8 rounded-2xl bg-slate-900 text-white flex flex-col sm:flex-row items-center justify-between gap-6 border border-slate-800 shadow-md">
-                <div className="space-y-1 text-center sm:text-left">
-                  <div className="text-emerald-400 text-xs font-bold uppercase tracking-wider flex items-center justify-center sm:justify-start gap-1">
-                    <span>⚡ Independent Help Directory</span>
-                  </div>
-                  <h4 className="text-xl font-bold">Still stuck with your printer?</h4>
-                  <p className="text-slate-300 text-xs md:text-sm max-w-lg">
-                    Skip automated manufacturer phone trees. Connect with an independent technical specialist for live interactive troubleshooting or explore our full diagnostic library.
+              <div className="p-6 md:p-8 rounded-2xl bg-slate-900 text-white flex flex-col md:flex-row items-center justify-between gap-6 border border-slate-800 shadow-md">
+                <div className="space-y-1 text-center md:text-left">
+                  <h4 className="text-xl font-bold">Still stuck? Get Independent Help</h4>
+                  <p className="text-slate-300 text-xs md:text-sm max-w-lg leading-relaxed">
+                    Independent help directory. Not affiliated with Brother, Canon, Epson, HP, or any manufacturer. Not official manufacturer support.
                   </p>
                 </div>
-                <div className="flex flex-wrap items-center justify-center gap-3 shrink-0">
+                <div className="flex flex-col items-center md:items-end gap-2 shrink-0">
                   <Link 
                     href="/lp/printer-help" 
-                    className="px-5 py-2.5 bg-emerald-500 hover:bg-emerald-400 text-slate-950 font-bold text-xs uppercase tracking-wider rounded-xl transition-colors shadow-sm"
+                    className="px-6 py-2.5 bg-emerald-500 hover:bg-emerald-400 text-slate-950 font-bold text-xs uppercase tracking-wider rounded-xl transition-colors shadow-sm"
                   >
-                    Start Live Chat ⚡
+                    Chat Now
                   </Link>
-                  <Link 
-                    href="/lp/printer-help" 
-                    className="px-4 py-2.5 bg-slate-800 hover:bg-slate-700 text-white text-xs font-semibold rounded-xl transition-colors border border-slate-700"
-                  >
-                    Full Hub &rarr; /lp/printer-help
-                  </Link>
+                  <span className="text-[10px] text-slate-400 text-center md:text-right max-w-xs">
+                    Chat may be automated or live. [Free / Paid - Confirm Before Deploy]. No guarantee of fix. See <Link href="/terms" className="underline hover:text-white">Terms</Link>.
+                  </span>
                 </div>
               </div>
 
@@ -524,7 +525,7 @@ export default async function SolutionPage({ params }: Props) {
                 <h3 className="font-bold text-white text-base">2026 Hardware Buying Guides</h3>
               </div>
               <p className="text-xs text-slate-300 leading-relaxed">
-                Compare ISO/IEC 19752 speed benchmarks, cost-per-page testing, and total cost of ownership across our verified reviews:
+                Compare estimated cost-per-page calculations, manufacturer speed specifications, and total cost of ownership across our research reviews:
               </p>
               <div className="space-y-2">
                 <Link 

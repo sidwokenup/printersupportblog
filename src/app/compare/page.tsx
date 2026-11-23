@@ -179,7 +179,7 @@ export default function CompareHubPage() {
             </div>
             <div>
               <div className="font-bold text-slate-900 text-sm">Zero Brand Bias</div>
-              <p className="text-xs text-slate-600 mt-1">100% self-funded laboratory testing using ISO/IEC 19752 continuous yield standards.</p>
+              <p className="text-xs text-slate-600 mt-1">100% independent research and comparative analysis using manufacturer specifications and yield data.</p>
             </div>
           </div>
         </div>

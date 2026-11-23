@@ -21,7 +21,7 @@ import {
 export const metadata: Metadata = {
   title: "Printer Operating Cost & Toner Savings Guide (2026) | Live Feed Reviews",
   description:
-    "How much does your printer really cost to run? Discover verified ISO/IEC 19752 cost-per-page benchmarks, standard vs high-yield toner math, and TCO calculations.",
+    "How much does your printer really cost to run? Discover cost-per-page estimates based on manufacturer yields, standard vs high-yield toner math, and TCO calculations.",
   alternates: {
     canonical: "/toner-savings",
       languages: {
@@ -41,7 +41,7 @@ export const metadata: Metadata = {
   openGraph: {
     title: "Printer Operating Cost & Toner Savings Guide (2026) | Live Feed Reviews",
     description:
-      "How much does your printer really cost to run? Discover verified ISO/IEC 19752 cost-per-page benchmarks, standard vs high-yield toner math, and TCO calculations.",
+      "How much does your printer really cost to run? Discover cost-per-page estimates based on manufacturer yields, standard vs high-yield toner math, and TCO calculations.",
     url: "https://www.livefeedreviews.com/toner-savings",
     siteName: "Live Feed Reviews",
     type: "website",
@@ -57,7 +57,7 @@ export default function TonerSavingsLandingPage() {
         "@id": "https://www.livefeedreviews.com/toner-savings#webpage",
         "url": "https://www.livefeedreviews.com/toner-savings",
         "name": "Printer Operating Cost & Toner Savings Guide (2026)",
-        "description": "ISO/IEC 19752 cost-per-page benchmarks and TCO calculator",
+        "description": "Cost-per-page estimates and TCO calculator based on manufacturer stated yields",
         "isPartOf": {
           "@id": "https://www.livefeedreviews.com/#website"
         }
@@ -119,7 +119,7 @@ export default function TonerSavingsLandingPage() {
               <p className="text-xs text-slate-500 mt-0.5">Based on 7,800 total printed pages over 36 months.</p>
             </div>
             <span className="text-xs font-mono text-emerald-600 bg-emerald-50 px-2.5 py-1 rounded-md border border-emerald-200 font-bold">
-              ISO/IEC 19752 Tested
+              Estimated Yields (see Methodology)
             </span>
           </div>
 

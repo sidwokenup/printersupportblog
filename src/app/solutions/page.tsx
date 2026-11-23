@@ -369,7 +369,7 @@ export default function SolutionsHubPage() {
               <div className="text-white font-semibold text-base group-hover:text-emerald-300">
                 Best All-in-One SuperTanks
               </div>
-              <p className="text-xs text-slate-400 mt-2">2 years of ink in the box, 90% savings per color page.</p>
+              <p className="text-xs text-slate-400 mt-2">2 years of ink in the box, substantial savings per color page.</p>
             </Link>
 
             <Link

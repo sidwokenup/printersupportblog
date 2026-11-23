@@ -1,14 +1,15 @@
 import { Metadata } from "next";
+import Link from "next/link";
 
 export const metadata: Metadata = {
   title: "Terms of Service | Live Feed Reviews",
-  description: "Terms of Service for Live Feed Reviews - Review our independent directory terms and conditions.",
+  description: "Terms of Service for Live Feed Reviews - Review our terms and conditions for research guides and troubleshooting information.",
   alternates: {
     canonical: "/terms",
   },
   openGraph: {
     title: "Terms of Service | Live Feed Reviews",
-    description: "Terms of Service for Live Feed Reviews - Review our independent directory terms and conditions.",
+    description: "Terms of Service for Live Feed Reviews - Review our terms and conditions for research guides and troubleshooting information.",
     url: "https://www.livefeedreviews.com/terms",
     siteName: "Live Feed Reviews",
     type: "website",
@@ -18,57 +19,84 @@ export const metadata: Metadata = {
 export default function TermsOfServicePage() {
   return (
     <div className="min-h-screen bg-slate-50 pb-16">
-      <div className="bg-slate-900 text-white pt-12 pb-12">
+      <div className="bg-slate-950 text-white pt-12 pb-12 border-b border-slate-800">
         <div className="max-w-4xl mx-auto px-6">
           <span className="text-xs font-semibold text-emerald-400 uppercase tracking-widest">Legal Notice</span>
           <h1 className="text-3xl sm:text-4xl font-extrabold text-white mt-2">Terms of Service</h1>
-          <p className="text-slate-300 mt-2 text-sm sm:text-base">
-            Last Updated: November 2026 &bull; Independent Consumer Hardware Directory
+          <p className="text-slate-400 mt-2 text-sm sm:text-base">
+            Effective Date: January 15, 2024 &bull; Last Updated: November 24, 2026
           </p>
         </div>
       </div>
 
       <div className="max-w-4xl mx-auto px-6 mt-10">
-        <div className="bg-white rounded-xl shadow-sm border border-slate-200 p-8 space-y-6 text-slate-700 leading-relaxed text-sm sm:text-base">
+        <div className="bg-white rounded-3xl shadow-sm border border-slate-200 p-8 md:p-12 space-y-8 text-slate-700 leading-relaxed text-sm sm:text-base">
           <section>
             <h2 className="text-xl font-bold text-slate-900 mb-2">1. Acceptance of Terms</h2>
             <p>
-              By accessing and using LiveFeedReviews (the &quot;Site&quot;), you accept and agree to be bound by the terms and provisions of this agreement. If you do not agree to abide by these terms, please do not use this site.
+              By accessing and using Live Feed Reviews (the &quot;Site&quot;), you accept and agree to be bound by these Terms of Service. If you do not agree to these terms, please do not use this site.
             </p>
           </section>
 
           <section>
-            <h2 className="text-xl font-bold text-slate-900 mb-2">2. Independent Directory Notice</h2>
+            <h2 className="text-xl font-bold text-slate-900 mb-2">2. General Information &amp; No Professional Advice</h2>
             <p>
-              LiveFeedReviews is an independent diagnostic, educational, and consumer information guide. We are not affiliated with, endorsed by, sponsored by, or associated with HP, Canon, Epson, Brother, or any other original equipment manufacturer (OEM). All trademarks, brand names, and model designations are the property of their respective owners and are used purely for nominative and identification purposes.
+              The content provided on Live Feed Reviews—including hardware reviews, cost-per-page estimates, setup walkthroughs, and error code troubleshooting steps—is provided strictly for general informational, educational, and research purposes.
+            </p>
+            <p className="mt-2 font-medium text-slate-900">
+              The information provided does NOT constitute certified electrical, professional engineering, or official manufacturer repair advice.
             </p>
           </section>
 
           <section>
-            <h2 className="text-xl font-bold text-slate-900 mb-2">3. Informational &amp; Diagnostic Content</h2>
+            <h2 className="text-xl font-bold text-slate-900 mb-2">3. DIY Troubleshooting at User&apos;s Risk &amp; No Guarantee of Results</h2>
             <p>
-              The troubleshooting tutorials, driver guides, error code tables, and technical walkthroughs provided on this site are for general diagnostic and informational purposes only. While we endeavor to keep the information accurate and up to date, we make no representations or warranties of any kind regarding completeness, accuracy, or suitability. Any reliance you place on such information is strictly at your own risk.
+              All DIY printer troubleshooting tutorials, reset sequences, spooler clearing routines, and mechanical unjamming steps are undertaken entirely at your own risk. We provide no guarantee that any suggested procedure will resolve your specific printer error, restore connectivity, or avoid hardware replacement.
+            </p>
+            <p className="mt-2">
+              If your device is under manufacturer warranty, we recommend contacting the authorized manufacturer service center before attempting self-repair or disassembly.
             </p>
           </section>
 
           <section>
-            <h2 className="text-xl font-bold text-slate-900 mb-2">4. Third-Party Links &amp; Live Chat Services</h2>
+            <h2 className="text-xl font-bold text-slate-900 mb-2">4. Affiliate Links &amp; Commercial Relationships</h2>
             <p>
-              Our website may connect to verified diagnostic portals and technical live chat assistance. LiveFeedReviews provides independent self-service and triage assistance. The inclusion of any links does not necessarily imply an affiliation with or endorsement of manufacturer support services.
+              Live Feed Reviews participates in affiliate marketing programs, including the Amazon Associates program. Some outbound product links are affiliate links, meaning we may earn a referral commission if you complete a purchase, at no additional cost to you. For full details, please review our <Link href="/affiliate-disclosure" className="text-blue-600 underline font-semibold">Affiliate Disclosure</Link>.
             </p>
           </section>
 
           <section>
-            <h2 className="text-xl font-bold text-slate-900 mb-2">5. Limitation of Liability</h2>
+            <h2 className="text-xl font-bold text-slate-900 mb-2">5. External Links &amp; Third-Party Services</h2>
             <p>
-              In no event will LiveFeedReviews or its owners be liable for any loss or damage including without limitation, indirect or consequential loss or damage, or any loss or damage whatsoever arising from loss of data or profits arising out of, or in connection with, the use of this website.
+              Our website may contain links to external third-party websites, retailer stores, diagnostic directories, or live chat providers. Live Feed Reviews does not operate, control, or endorse third-party platforms and assumes no responsibility for third-party content, terms, or privacy practices.
             </p>
           </section>
 
           <section>
-            <h2 className="text-xl font-bold text-slate-900 mb-2">6. Contact Information</h2>
+            <h2 className="text-xl font-bold text-slate-900 mb-2">6. Non-Affiliation &amp; Trademarks</h2>
             <p>
-              If you have any questions about these Terms of Service, please contact us via our contact page at <a href="/contact" className="text-emerald-600 underline font-semibold">livefeedreviews.com/contact</a>.
+              Live Feed Reviews is an independent publication. We are not affiliated with, endorsed by, or sponsored by Brother, Canon, Epson, HP, Amazon, Shopify, eBay, or any other trademark owner. All brand marks and product names are used solely for nominative product identification and comparison.
+            </p>
+          </section>
+
+          <section>
+            <h2 className="text-xl font-bold text-slate-900 mb-2">7. Limitation of Liability</h2>
+            <p>
+              To the fullest extent permitted by applicable law, Live Feed Reviews, its owners, contributors, and operators shall not be liable for any direct, indirect, incidental, consequential, special, or exemplary damages resulting from your use of this site, reliance on any troubleshooting content, or purchases made through external affiliate links.
+            </p>
+          </section>
+
+          <section>
+            <h2 className="text-xl font-bold text-slate-900 mb-2">8. Changes to Terms</h2>
+            <p>
+              We reserve the right to modify these Terms of Service at any time. Changes become effective immediately upon posting to this page with an updated &quot;Last Updated&quot; date.
+            </p>
+          </section>
+
+          <section className="pt-4 border-t border-slate-200">
+            <h2 className="text-xl font-bold text-slate-900 mb-2">9. Contact Us</h2>
+            <p>
+              For legal inquiries or questions regarding these terms, contact us through our <Link href="/contact" className="text-blue-600 underline font-semibold">Contact Page</Link>.
             </p>
           </section>
         </div>

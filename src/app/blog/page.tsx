@@ -88,25 +88,24 @@ export default function BlogHubPage() {
             <span>2026 Hardware Benchmarks & Review Laboratory</span>
           </div>
           <h1 className="text-3xl md:text-4xl font-extrabold text-slate-900 tracking-tight">
-            Printer Reviews & Comprehensive Buying Guides
+            Printer Reviews &amp; Comprehensive Buying Guides
           </h1>
           <p className="text-sm md:text-base text-slate-600 leading-relaxed">
-            We purchase every model at retail and measure true ISO/IEC 19752 page yields, ppm engine
-            velocities, and real toner operating expenses so you never overpay on printing.
+            We analyze manufacturer specifications, estimated cost-per-page running expenses, and user feedback so you never overpay on printing.
           </p>
         </div>
 
         {/* Highlight Stats Strip */}
         <div className="grid grid-cols-2 md:grid-cols-4 gap-4">
           <div className="bg-white p-4 rounded-xl border border-slate-200 shadow-xs text-center">
-            <div className="text-xs text-slate-500 font-mono uppercase">Lab Tested Units</div>
+            <div className="text-xs text-slate-500 font-mono uppercase">Researched Models</div>
             <div className="text-2xl font-bold text-slate-900 mt-1">45+ Models</div>
-            <div className="text-[11px] text-emerald-600 mt-0.5">100% Retail Purchased</div>
+            <div className="text-[11px] text-emerald-600 mt-0.5">Comprehensive Comparison</div>
           </div>
           <div className="bg-white p-4 rounded-xl border border-slate-200 shadow-xs text-center">
-            <div className="text-xs text-slate-500 font-mono uppercase">Toner Cost Testing</div>
-            <div className="text-2xl font-bold text-slate-900 mt-1">0.9¢ / Page</div>
-            <div className="text-[11px] text-slate-500 mt-0.5">Lowest Verified Mono Cost</div>
+            <div className="text-xs text-slate-500 font-mono uppercase">Estimated Running Cost</div>
+            <div className="text-2xl font-bold text-slate-900 mt-1">~0.9¢ / Page</div>
+            <div className="text-[11px] text-slate-500 mt-0.5">Estimated Mono Cost</div>
           </div>
           <div className="bg-white p-4 rounded-xl border border-slate-200 shadow-xs text-center">
             <div className="text-xs text-slate-500 font-mono uppercase">Editorial Integrity</div>
@@ -114,16 +113,16 @@ export default function BlogHubPage() {
             <div className="text-[11px] text-slate-500 mt-0.5">FTC Compliant Disclosure</div>
           </div>
           <div className="bg-white p-4 rounded-xl border border-slate-200 shadow-xs text-center">
-            <div className="text-xs text-slate-500 font-mono uppercase">Duplex Speeds Tested</div>
-            <div className="text-2xl font-bold text-slate-900 mt-1">60 PPM</div>
-            <div className="text-[11px] text-slate-500 mt-0.5">Single-Pass Dual CIS</div>
+            <div className="text-xs text-slate-500 font-mono uppercase">Rated Duplex Speeds</div>
+            <div className="text-2xl font-bold text-slate-900 mt-1">Up to 60 PPM</div>
+            <div className="text-[11px] text-slate-500 mt-0.5">Dual CIS Scanner Specs</div>
           </div>
         </div>
 
         {/* Featured / Articles Grid */}
         <div className="space-y-6">
           <div className="flex items-center justify-between border-b border-slate-200 pb-3">
-            <h2 className="text-lg font-bold text-slate-900">Latest In-Depth Guides & Lab Tests</h2>
+            <h2 className="text-lg font-bold text-slate-900">Latest In-Depth Guides &amp; Research</h2>
             <span className="text-xs text-slate-500 font-mono">{blogArticles.length} Published Articles</span>
           </div>
 
@@ -175,7 +174,7 @@ export default function BlogHubPage() {
                       <div className="p-3 bg-slate-50 rounded-xl border border-slate-100 space-y-1.5">
                         <div className="text-[11px] font-semibold text-slate-700 flex items-center gap-1">
                           <BarChart3 className="w-3.5 h-3.5 text-primary" />
-                          <span>Key Lab Benchmarks:</span>
+                          <span>Research Summary:</span>
                         </div>
                         <div className="grid grid-cols-2 gap-2 text-xs font-mono">
                           {article.isoBenchmarks.slice(0, 2).map((bench, bIdx) => (

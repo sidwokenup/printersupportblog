@@ -277,7 +277,7 @@ export default async function ComparisonDetailPage({ params }: Props) {
               </p>
             </div>
             <span className="text-xs font-mono font-semibold text-blue-600 bg-blue-50 px-2.5 py-1 rounded-lg border border-blue-100 hidden sm:inline-block">
-              ISO/IEC 19752 Standards
+              Estimated Running Costs
             </span>
           </div>
 

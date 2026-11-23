@@ -86,18 +86,18 @@ export default function Home() {
             >
               <motion.div variants={FADE_UP} className="inline-flex items-center gap-2 px-3 py-1.5 rounded-full bg-blue-100/80 text-blue-700 text-sm font-medium mb-6 w-fit border border-blue-200/50 shadow-sm">
                 <ShieldCheck className="h-4 w-4" />
-                <span>2026 Independent Hardware Benchmarks &amp; Buying Guides</span>
+                <span>Researched &amp; Ranked for 2026</span>
               </motion.div>
               
               <motion.h1 variants={FADE_UP} className="text-5xl md:text-6xl lg:text-[64px] font-extrabold tracking-tight text-slate-900 leading-[1.1] mb-6">
                 Independent reviews &amp; <br />
                 <span className="text-transparent bg-clip-text bg-gradient-to-r from-blue-600 to-blue-400">
-                  printer benchmarks.
+                  printer comparisons.
                 </span>
               </motion.h1>
               
               <motion.p variants={FADE_UP} className="text-lg md:text-xl text-slate-600 mb-6 leading-relaxed">
-                We purchase printers at retail and run ISO/IEC 19752 yield tests, engine speed benchmarks, and true toner operating cost calculations so you never overpay.
+                Independent research and comparison site for printer hardware and troubleshooting guides. We analyze manufacturer specifications, user experiences, and estimated running costs so you never overpay.
               </motion.p>
 
               <motion.div variants={FADE_UP} className="flex flex-wrap gap-3 mb-8">
@@ -201,13 +201,13 @@ export default function Home() {
             <div>
               <div className="inline-flex items-center gap-1.5 px-3 py-1 rounded-full bg-blue-100 text-blue-800 text-xs font-semibold mb-3">
                 <Sparkles className="w-3.5 h-3.5" />
-                <span>2026 Laboratory Tested &amp; Ranked</span>
+                <span>Researched &amp; Ranked for 2026</span>
               </div>
               <h2 className="text-3xl md:text-4xl font-extrabold text-slate-900 tracking-tight">
                 Featured Reviews &amp; In-Depth Buying Guides
               </h2>
               <p className="text-slate-600 mt-2 max-w-2xl text-sm md:text-base">
-                Independent retail testing: verified ISO/IEC 19752 cost-per-page, engine velocities, and 3-year total cost of ownership math.
+                Independent research: manufacturer yield analysis, duty cycles, and 3-year running cost estimates.
               </p>
             </div>
             <Link
@@ -236,36 +236,62 @@ export default function Home() {
                   <Link href={`/blog/${article.slug}`}>{article.title}</Link>
                 </h3>
 
-                <p className="text-xs text-slate-600 line-clamp-3 mb-4 leading-relaxed flex-1">
+                <p className="text-xs text-slate-600 line-clamp-2 mb-4 leading-relaxed">
                   {article.metaDescription}
                 </p>
 
-                {/* ISO Benchmarks Preview */}
+                {/* Research Summary Preview */}
                 <div className="bg-slate-50 rounded-xl p-3 border border-slate-100 mb-4 space-y-1.5 text-xs">
-                  <div className="font-semibold text-slate-700 text-[11px] uppercase tracking-wider">Lab Benchmarks:</div>
-                  {article.isoBenchmarks.slice(0, 2).map((bench, idx) => (
-                    <div key={idx} className="flex items-center justify-between text-slate-600 font-mono text-[11px]">
-                      <span>{bench.label}</span>
-                      <span className="font-bold text-slate-900">{bench.value}</span>
-                    </div>
-                  ))}
+                  <div className="font-semibold text-slate-700 text-[11px] uppercase tracking-wider">Research Summary:</div>
+                  <div className="flex items-center justify-between text-slate-600 text-[11px]">
+                    <span>Est. Cost-Per-Page:</span>
+                    <span className="font-bold text-slate-900">~0.9¢ - 3.8¢ (see Methodology)</span>
+                  </div>
+                  <div className="flex items-center justify-between text-slate-600 text-[11px]">
+                    <span>Engine Rating:</span>
+                    <span className="font-bold text-slate-900">{article.topPicks?.[0]?.rating || "Top Rated"}</span>
+                  </div>
                 </div>
 
-                {/* Top Pick */}
+                {/* Pros, Cons, Best For, Not Ideal For */}
                 {article.topPicks?.[0] && (
-                  <div className="text-xs text-slate-700 mb-4 flex items-center gap-1.5">
-                    <Award className="w-4 h-4 text-amber-500 shrink-0" />
-                    <span className="truncate">
-                      Top pick: <strong className="text-slate-900">{article.topPicks[0].name}</strong>
-                    </span>
+                  <div className="space-y-2 mb-4 text-xs border-t border-slate-100 pt-3">
+                    <div className="space-y-1">
+                      {article.topPicks[0].pros.slice(0, 2).map((pro, pIdx) => (
+                        <div key={pIdx} className="flex items-start gap-1.5 text-slate-700">
+                          <CheckCircle2 className="w-3.5 h-3.5 text-emerald-600 shrink-0 mt-0.5" />
+                          <span className="line-clamp-1">{pro}</span>
+                        </div>
+                      ))}
+                      {article.topPicks[0].cons.slice(0, 1).map((con, cIdx) => (
+                        <div key={cIdx} className="flex items-start gap-1.5 text-slate-600">
+                          <span className="text-rose-500 font-bold shrink-0">✕</span>
+                          <span className="line-clamp-1">{con}</span>
+                        </div>
+                      ))}
+                    </div>
+
+                    <div className="pt-1.5 space-y-1 text-[11px] text-slate-600">
+                      <div>
+                        <strong className="text-slate-800">Best for:</strong> {article.topPicks[0].bestFor}
+                      </div>
+                      <div>
+                        <strong className="text-slate-800">Not ideal for:</strong> Users needing {article.topPicks[0].cons[0]?.toLowerCase() || "unsupported features"}
+                      </div>
+                    </div>
                   </div>
                 )}
+
+                {/* Last Researched Date */}
+                <div className="text-[11px] text-slate-400 mb-3 font-medium">
+                  Last researched: November 2026
+                </div>
 
                 <Link
                   href={`/blog/${article.slug}`}
                   className="mt-auto inline-flex items-center justify-between text-xs font-semibold text-blue-600 hover:text-blue-700 pt-3 border-t border-slate-100 group/link"
                 >
-                  <span>Read Full Review</span>
+                  <span>Read Full Research Review</span>
                   <ArrowRight className="w-3.5 h-3.5 transition-transform group-hover/link:translate-x-1" />
                 </Link>
               </article>

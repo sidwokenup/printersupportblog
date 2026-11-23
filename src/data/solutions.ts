@@ -87,7 +87,7 @@ export const solutions: SolutionData[] = [
           ]
         }
       ],
-      "conclusion": "Following these diagnostic steps restores normal communication for over 90% of offline printers. If your printer continues dropping offline after router reboots, verify that your Wi-Fi router does not have 'AP Isolation' enabled, or check if the printer has a firmware update available on the manufacturer's official support site."
+      "conclusion": "These steps fix the most common causes of offline errors. If your printer continues dropping offline after router reboots, verify that your Wi-Fi router does not have 'AP Isolation' enabled, or check if the printer has a firmware update available on the manufacturer's official support site."
     },
     "oemLinks": [
       {
@@ -111,7 +111,7 @@ export const solutions: SolutionData[] = [
       {
         "name": "Brother HL-L2460DW Wireless Monochrome Laser",
         "link": "/printers",
-        "reason": "Dual-band 2.4/5GHz Wi-Fi with auto-reconnect and zero offline drops."
+        "reason": "Dual-band 2.4/5GHz Wi-Fi with auto-reconnect and designed to reduce offline drops."
       },
       {
         "name": "Epson EcoTank ET-2850 All-in-One SuperTank",
