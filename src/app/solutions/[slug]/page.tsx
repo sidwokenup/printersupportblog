@@ -377,7 +377,7 @@ export default async function SolutionPage({ params }: Props) {
                             Chat Now
                           </Link>
                           <span className="text-[10px] text-slate-400 text-center sm:text-right">
-                            Chat may be automated or live. [Free / Paid - Confirm Before Deploy]. No guarantee of fix. See <Link href="/terms" className="underline hover:text-white">Terms</Link>.
+                            Chat may be automated or live. Free. No guarantee of fix. See <Link href="/terms" className="underline hover:text-white">Terms</Link>.
                           </span>
                         </div>
                       </div>
@@ -448,7 +448,7 @@ export default async function SolutionPage({ params }: Props) {
                     Chat Now
                   </Link>
                   <span className="text-[10px] text-slate-400 text-center md:text-right max-w-xs">
-                    Chat may be automated or live. [Free / Paid - Confirm Before Deploy]. No guarantee of fix. See <Link href="/terms" className="underline hover:text-white">Terms</Link>.
+                    Chat may be automated or live. Free. No guarantee of fix. See <Link href="/terms" className="underline hover:text-white">Terms</Link>.
                   </span>
                 </div>
               </div>

@@ -164,9 +164,12 @@ export default function ContactPage() {
                   <Mail className="w-5 h-5 text-blue-400 shrink-0 mt-0.5" />
                   <div>
                     <strong className="block text-white text-xs uppercase font-semibold">Editorial Email</strong>
-                    <span className="font-mono text-amber-300 text-xs bg-slate-800 px-2 py-0.5 rounded border border-slate-700">
-                      [INSERT YOUR CONTACT EMAIL HERE]
-                    </span>
+                    <a
+                      href="mailto:contact@livefeedreviews.com"
+                      className="text-blue-300 hover:text-white transition-colors text-sm font-medium"
+                    >
+                      contact@livefeedreviews.com
+                    </a>
                   </div>
                 </div>
 
