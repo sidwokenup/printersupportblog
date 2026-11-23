@@ -5,19 +5,62 @@
 # Generative Engine Optimization (GEO) & Global Multi-Network Discovery Protocol
 # ==============================================================================
 
+# ==============================================================================
+# Google Ads Crawlers (Dedicated Unrestricted Access to Landing Pages)
+# ==============================================================================
+User-agent: AdsBot-Google
+Allow: /lp/printer-tips
+Allow: /lp/printer-tips.html
+Allow: /printer-tips
+Allow: /printer-tips.html
+
+User-agent: AdsBot-Google-Mobile
+Allow: /lp/printer-tips
+Allow: /lp/printer-tips.html
+Allow: /printer-tips
+Allow: /printer-tips.html
+
+User-agent: Mediapartners-Google
+Allow: /lp/printer-tips
+Allow: /lp/printer-tips.html
+Allow: /printer-tips
+Allow: /printer-tips.html
+
+# ==============================================================================
+# Global Default Crawlers (Block isolated landing page from organic search index)
+# ==============================================================================
 User-agent: *
 Allow: /
 Disallow: /api/
 Disallow: /_next/
 Disallow: /admin/
 Disallow: /preview/
+Disallow: /lp/printer-tips
+Disallow: /lp/printer-tips.html
+Disallow: /printer-tips
+Disallow: /printer-tips.html
 
-# Western Search Engines
+# Western Search Engines (Block organic indexing of isolated landing pages)
 User-agent: Googlebot
 Allow: /
+Disallow: /lp/printer-tips
+Disallow: /lp/printer-tips.html
+Disallow: /printer-tips
+Disallow: /printer-tips.html
+
+User-agent: Googlebot-Image
+Allow: /
+Disallow: /lp/printer-tips
+Disallow: /lp/printer-tips.html
+Disallow: /printer-tips
+Disallow: /printer-tips.html
 
 User-agent: Bingbot
 Allow: /
+Disallow: /lp/printer-tips
+Disallow: /lp/printer-tips.html
+Disallow: /printer-tips
+Disallow: /printer-tips.html
 
 User-agent: DuckDuckGo-Favicons-Bot
 Allow: /
@@ -28,9 +71,17 @@ Allow: /
 # Global Asian & European Search Engines
 User-agent: Baiduspider
 Allow: /
+Disallow: /lp/printer-tips
+Disallow: /lp/printer-tips.html
+Disallow: /printer-tips
+Disallow: /printer-tips.html
 
 User-agent: YandexBot
 Allow: /
+Disallow: /lp/printer-tips
+Disallow: /lp/printer-tips.html
+Disallow: /printer-tips
+Disallow: /printer-tips.html
 
 User-agent: Yeti
 Allow: /
@@ -44,6 +95,10 @@ Allow: /
 # Apple Intelligence & Siri
 User-agent: Applebot
 Allow: /
+Disallow: /lp/printer-tips
+Disallow: /lp/printer-tips.html
+Disallow: /printer-tips
+Disallow: /printer-tips.html
 
 User-agent: Applebot-Extended
 Allow: /
@@ -156,4 +211,3 @@ Sitemap: https://www.livefeedreviews.com/sitemap.xml
 # Business Profile: https://www.livefeedreviews.com/business.json
 # Web App Manifest: https://www.livefeedreviews.com/manifest.json
 # OpenSearch XML: https://www.livefeedreviews.com/opensearch.xml
-

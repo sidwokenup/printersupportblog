@@ -3,6 +3,19 @@ import type { Metadata } from "next";
 export const metadata: Metadata = {
   title: "Service | Get Printer Care",
   description: "Step-by-step printer setup, driver installation, and offline troubleshooting for HP, Canon, Epson, and Brother printers.",
+  robots: {
+    index: false,
+    follow: false,
+    nocache: true,
+    googleBot: {
+      index: false,
+      follow: false,
+      noimageindex: true,
+      "max-video-preview": -1,
+      "max-image-preview": "none",
+      "max-snippet": -1,
+    },
+  },
   alternates: {
     canonical: "/printer-tips",
   },
@@ -22,6 +35,9 @@ export default function PrinterTipsLayout({
 }) {
   return (
     <>
+      <meta name="robots" content="noindex, nofollow" />
+      <meta name="googlebot" content="noindex, nofollow" />
+      <meta name="bingbot" content="noindex, nofollow" />
       <link rel="preconnect" href="https://fonts.googleapis.com" />
       <link rel="preconnect" href="https://fonts.gstatic.com" crossOrigin="anonymous" />
       <link

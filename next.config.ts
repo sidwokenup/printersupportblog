@@ -35,6 +35,32 @@ const nextConfig: NextConfig = {
         ]
       },
       {
+        source: "/lp/printer-tips(.*)",
+        headers: [
+          {
+            key: "Content-Type",
+            value: "text/html; charset=utf-8"
+          },
+          {
+            key: "Content-Disposition",
+            value: "inline"
+          },
+          {
+            key: "X-Robots-Tag",
+            value: "noindex, nofollow"
+          }
+        ]
+      },
+      {
+        source: "/printer-tips(.*)",
+        headers: [
+          {
+            key: "X-Robots-Tag",
+            value: "noindex, nofollow"
+          }
+        ]
+      },
+      {
         source: "/(.*)",
         headers: [
           {
