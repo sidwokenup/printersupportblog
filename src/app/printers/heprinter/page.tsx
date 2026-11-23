@@ -353,23 +353,22 @@ export default function HePrinterPage() {
       {/* =========================================================================
           5. PRINTER SETUP POPUP MODAL COMPONENT (Wizard)
          ========================================================================= */}
-      {isModalOpen && (
-        <div
-          className="modal fade printer-popup-modal show"
-          id="printerSetupModal"
-          role="dialog"
-          aria-modal="true"
-          style={{
-            display: "flex",
-            position: "fixed",
-            inset: 0,
-            zIndex: 9999,
-            backgroundColor: "rgba(0, 0, 0, 0.7)",
-            alignItems: "center",
-            justifyContent: "center",
-            padding: "20px"
-          }}
-        >
+      <div
+        className={`modal fade printer-popup-modal ${isModalOpen ? "show" : ""}`}
+        id="printerSetupModal"
+        role="dialog"
+        aria-modal="true"
+        style={{
+          display: isModalOpen ? "flex" : "none",
+          position: "fixed",
+          inset: 0,
+          zIndex: 9999,
+          backgroundColor: "rgba(0, 0, 0, 0.7)",
+          alignItems: "center",
+          justifyContent: "center",
+          padding: "20px"
+        }}
+      >
           <div
             className="modal-dialog modal-dialog-centered modal-lg"
             style={{ width: "100%", maxWidth: "560px", margin: "auto" }}
@@ -680,7 +679,6 @@ export default function HePrinterPage() {
             </div>
           </div>
         </div>
-      )}
 
     </div>
   );
