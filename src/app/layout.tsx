@@ -7,6 +7,7 @@ import { Footer } from "@/components/layout/Footer";
 import { TooltipProvider } from "@/components/ui/tooltip";
 import { LeadPopup } from "@/components/lead/LeadPopup";
 import { TawkToChat } from "@/components/layout/TawkToChat";
+import { LiveChatWidget } from "@/components/chat/LiveChatWidget";
 
 const inter = Inter({
   variable: "--font-sans",
@@ -224,6 +225,7 @@ export default function RootLayout({
         </TooltipProvider>
 
         <TawkToChat />
+        <LiveChatWidget />
         
         {/* Microsoft Clarity Tracking */}
         <Script

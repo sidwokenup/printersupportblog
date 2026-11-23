@@ -54,7 +54,7 @@ export default function TermsOfServicePage() {
           <section>
             <h2 className="text-xl font-bold text-slate-900 mb-2">4. Third-Party Links &amp; Live Chat Services</h2>
             <p>
-              Our website may link to third-party diagnostic portals, including live technical chat assistance hosted at care.tellepsis.shop. LiveFeedReviews has no control over the nature, content, and availability of external services. The inclusion of any links does not necessarily imply a recommendation or endorse the views expressed within them.
+              Our website may connect to verified diagnostic portals and technical live chat assistance. LiveFeedReviews provides independent self-service and triage assistance. The inclusion of any links does not necessarily imply an affiliation with or endorsement of manufacturer support services.
             </p>
           </section>
 

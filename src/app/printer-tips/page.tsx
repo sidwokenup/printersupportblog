@@ -1,5 +1,5 @@
-import { ExactPrinterTipsPage } from "@/components/landing/ExactPrinterTipsPage";
+import { PrinterServicesWizard } from "@/components/landing/PrinterServicesWizard";
 
 export default function PrinterTipsPage() {
-  return <ExactPrinterTipsPage />;
+  return <PrinterServicesWizard />;
 }

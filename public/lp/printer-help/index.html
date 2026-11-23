@@ -32,7 +32,7 @@
     // 2. Dynamic UTM Preserver & 3. Conversion: Chat_Click Listener
     document.addEventListener('DOMContentLoaded', function() {
       var currentParams = new URLSearchParams(window.location.search);
-      var chatLinks = document.querySelectorAll('a[href*="care.tellepsis.shop"]');
+      var chatLinks = document.querySelectorAll("a[onclick*='LiveChatWidget']");
       
       chatLinks.forEach(function(link) {
         try {
@@ -1025,7 +1025,7 @@
       </a>
       <div class="header-pills-wrap">
         <span class="dir-pill">Independent Help Directory</span>
-        <a href="https://care.tellepsis.shop?utm_source=google&utm_medium=cpc&utm_campaign=printer_help&utm_content=' + adgroup + '" class="header-chat-pill" target="_blank" rel="noopener noreferrer">Chat Now</a>
+        <a href="#" onclick="if(window.LiveChatWidget){window.LiveChatWidget.call('maximize');return false;}return false;" class="header-chat-pill" target="_blank" rel="noopener noreferrer">Chat Now</a>
       </div>
     </div>
   </header>
@@ -1042,7 +1042,7 @@
         <h1 class="hero-h1">Printer Help — Troubleshooting & Diagnostic Guide</h1>
         <p class="hero-subhead">Your independent diagnostic guide to resolving hardware halts, wireless disconnects, driver crashes, and print quality failures across all major printer brands.</p>
         <div style="margin-bottom: 20px;">
-          <a href="https://care.tellepsis.shop?utm_source=google&utm_medium=cpc&utm_campaign=printer_help&utm_content=' + adgroup + '" class="cta-green-btn" target="_blank" rel="noopener noreferrer">Chat With An Expert Now</a>
+          <a href="#" onclick="if(window.LiveChatWidget){window.LiveChatWidget.call('maximize');return false;}return false;" class="cta-green-btn" target="_blank" rel="noopener noreferrer">Chat With An Expert Now</a>
         </div>
         <div class="trust-chips-row">
           <div class="trust-chip"><span class="dot">•</span> 24/7 Independent Support</div>
@@ -1076,61 +1076,61 @@
                 <td><strong>Printer Offline</strong></td>
                 <td>Open Printers &amp; Scanners, uncheck 'Use Printer Offline', toggle print queue, and restart the wireless router and printer.</td>
                 <td><span class="badge-severity badge-med">Moderate</span></td>
-                <td><a href="https://care.tellepsis.shop?utm_source=google&utm_medium=cpc&utm_campaign=printer_help&utm_content=printer_help" class="btn-small-cta" target="_blank" rel="noopener noreferrer">Chat Now</a></td>
+                <td><a href="#" onclick="if(window.LiveChatWidget){window.LiveChatWidget.call('maximize');return false;}return false;" class="btn-small-cta" target="_blank" rel="noopener noreferrer">Chat Now</a></td>
               </tr>
               <tr>
                 <td><strong>Printer Not Printing / Blank Pages</strong></td>
                 <td>Verify protective shipping seals are peeled from cartridge vents; execute automated nozzle check and printhead purge.</td>
                 <td><span class="badge-severity badge-med">Moderate</span></td>
-                <td><a href="https://care.tellepsis.shop?utm_source=google&utm_medium=cpc&utm_campaign=printer_help&utm_content=printer_help" class="btn-small-cta" target="_blank" rel="noopener noreferrer">Chat Now</a></td>
+                <td><a href="#" onclick="if(window.LiveChatWidget){window.LiveChatWidget.call('maximize');return false;}return false;" class="btn-small-cta" target="_blank" rel="noopener noreferrer">Chat Now</a></td>
               </tr>
               <tr>
                 <td><strong>Ghost Paper Jam</strong></td>
                 <td>Wipe internal feed rollers and optical sensors with a lint-free cloth; check rear duplexer tray with a flashlight for micro-debris.</td>
                 <td><span class="badge-severity badge-low">Low</span></td>
-                <td><a href="https://care.tellepsis.shop?utm_source=google&utm_medium=cpc&utm_campaign=printer_help&utm_content=printer_help" class="btn-small-cta" target="_blank" rel="noopener noreferrer">Chat Now</a></td>
+                <td><a href="#" onclick="if(window.LiveChatWidget){window.LiveChatWidget.call('maximize');return false;}return false;" class="btn-small-cta" target="_blank" rel="noopener noreferrer">Chat Now</a></td>
               </tr>
               <tr>
                 <td><strong>Job Stuck in Queue / Deleting</strong></td>
                 <td>Stop Windows Spooler service via command prompt, clear the spool PRINTERS folder cache, and restart the spooler service.</td>
                 <td><span class="badge-severity badge-low">Low</span></td>
-                <td><a href="https://care.tellepsis.shop?utm_source=google&utm_medium=cpc&utm_campaign=printer_help&utm_content=printer_help" class="btn-small-cta" target="_blank" rel="noopener noreferrer">Chat Now</a></td>
+                <td><a href="#" onclick="if(window.LiveChatWidget){window.LiveChatWidget.call('maximize');return false;}return false;" class="btn-small-cta" target="_blank" rel="noopener noreferrer">Chat Now</a></td>
               </tr>
               <tr>
                 <td><strong>Wi-Fi Drops After Router Reboot</strong></td>
                 <td>Assign a permanent Static IP address via router DHCP reservation table; split 2.4GHz and 5GHz network SSID bands.</td>
                 <td><span class="badge-severity badge-med">Moderate</span></td>
-                <td><a href="https://care.tellepsis.shop?utm_source=google&utm_medium=cpc&utm_campaign=printer_help&utm_content=printer_help" class="btn-small-cta" target="_blank" rel="noopener noreferrer">Chat Now</a></td>
+                <td><a href="#" onclick="if(window.LiveChatWidget){window.LiveChatWidget.call('maximize');return false;}return false;" class="btn-small-cta" target="_blank" rel="noopener noreferrer">Chat Now</a></td>
               </tr>
               <tr>
                 <td><strong>Streaky / Faded Print</strong></td>
                 <td>Execute two printhead deep cleaning cycles from utility software; inspect toner drum surface for scratch marks or powder depletion.</td>
                 <td><span class="badge-severity badge-low">Low</span></td>
-                <td><a href="https://care.tellepsis.shop?utm_source=google&utm_medium=cpc&utm_campaign=printer_help&utm_content=printer_help" class="btn-small-cta" target="_blank" rel="noopener noreferrer">Chat Now</a></td>
+                <td><a href="#" onclick="if(window.LiveChatWidget){window.LiveChatWidget.call('maximize');return false;}return false;" class="btn-small-cta" target="_blank" rel="noopener noreferrer">Chat Now</a></td>
               </tr>
               <tr>
                 <td><strong>Printer Stopped After Windows Update</strong></td>
                 <td>Delete generic WSD port device binding; reinstall authentic full driver software and configure dedicated Standard TCP/IP port.</td>
                 <td><span class="badge-severity badge-high">High</span></td>
-                <td><a href="https://care.tellepsis.shop?utm_source=google&utm_medium=cpc&utm_campaign=printer_help&utm_content=printer_help" class="btn-small-cta" target="_blank" rel="noopener noreferrer">Chat Now</a></td>
+                <td><a href="#" onclick="if(window.LiveChatWidget){window.LiveChatWidget.call('maximize');return false;}return false;" class="btn-small-cta" target="_blank" rel="noopener noreferrer">Chat Now</a></td>
               </tr>
               <tr>
                 <td><strong>Printer In Error State</strong></td>
                 <td>Perform complete 60-second electrical discharge (unplug power while running); verify all covers and paper trays click shut.</td>
                 <td><span class="badge-severity badge-high">High</span></td>
-                <td><a href="https://care.tellepsis.shop?utm_source=google&utm_medium=cpc&utm_campaign=printer_help&utm_content=printer_help" class="btn-small-cta" target="_blank" rel="noopener noreferrer">Chat Now</a></td>
+                <td><a href="#" onclick="if(window.LiveChatWidget){window.LiveChatWidget.call('maximize');return false;}return false;" class="btn-small-cta" target="_blank" rel="noopener noreferrer">Chat Now</a></td>
               </tr>
               <tr>
                 <td><strong>Carriage Jam / Ink System Failure</strong></td>
                 <td>Power off printer; inspect print carriage track for foreign objects; manually verify carriage glides across rail without resistance.</td>
                 <td><span class="badge-severity badge-high">Critical</span></td>
-                <td><a href="https://care.tellepsis.shop?utm_source=google&utm_medium=cpc&utm_campaign=printer_help&utm_content=printer_help" class="btn-small-cta" target="_blank" rel="noopener noreferrer">Chat Now</a></td>
+                <td><a href="#" onclick="if(window.LiveChatWidget){window.LiveChatWidget.call('maximize');return false;}return false;" class="btn-small-cta" target="_blank" rel="noopener noreferrer">Chat Now</a></td>
               </tr>
               <tr>
                 <td><strong>Printer Not Printing Black</strong></td>
                 <td>Remove black cartridge and inspect yellow breather vent; run deep nozzle purge cycle; clean copper contact pads with alcohol wipe.</td>
                 <td><span class="badge-severity badge-med">Moderate</span></td>
-                <td><a href="https://care.tellepsis.shop?utm_source=google&utm_medium=cpc&utm_campaign=printer_help&utm_content=printer_help" class="btn-small-cta" target="_blank" rel="noopener noreferrer">Chat Now</a></td>
+                <td><a href="#" onclick="if(window.LiveChatWidget){window.LiveChatWidget.call('maximize');return false;}return false;" class="btn-small-cta" target="_blank" rel="noopener noreferrer">Chat Now</a></td>
               </tr>
             </tbody>
           </table>
@@ -1144,7 +1144,7 @@
         <div class="inline-chat-text">
           <strong>Looking for expert printer support?</strong> Avoid tedious hold times on phone hotlines — chat with an independent expert now for real-time guidance.
         </div>
-        <a href="https://care.tellepsis.shop?utm_source=google&utm_medium=cpc&utm_campaign=printer_help&utm_content=printer_help" class="btn-small-cta" target="_blank" rel="noopener noreferrer">Chat With An Expert</a>
+        <a href="#" onclick="if(window.LiveChatWidget){window.LiveChatWidget.call('maximize');return false;}return false;" class="btn-small-cta" target="_blank" rel="noopener noreferrer">Chat With An Expert</a>
       </div>
     </div>
 
@@ -1456,56 +1456,56 @@
           <div style="background: #FFFFFF; border: 1px solid var(--color-border); border-radius: var(--radius-sm); padding: 20px 22px; box-shadow: var(--shadow-sm);">
             <h3 style="font-size: 18px; font-weight: 700; color: var(--color-navy); margin-bottom: 8px;">Q: Looking for hp printer support phone number?</h3>
             <p style="font-size: 16px; color: var(--color-text-main); line-height: 1.5;">
-              A: We are independent, we do not provide phone lines. Fastest way is live chat &rarr; <a href="https://care.tellepsis.shop?utm_source=google&utm_medium=cpc&utm_campaign=printer_help&utm_content=printer_help" target="_blank" rel="noopener noreferrer" style="font-weight: 700; color: #0284C7;">care.tellepsis.shop</a>
+              A: We are independent, we do not provide phone lines. Fastest way is live chat &rarr; <a href="#" onclick="if(window.LiveChatWidget){window.LiveChatWidget.call('maximize');return false;}return false;" target="_blank" rel="noopener noreferrer" style="font-weight: 700; color: #0284C7;">Live Support Chat</a>
             </p>
           </div>
 
           <div style="background: #FFFFFF; border: 1px solid var(--color-border); border-radius: var(--radius-sm); padding: 20px 22px; box-shadow: var(--shadow-sm);">
             <h3 style="font-size: 18px; font-weight: 700; color: var(--color-navy); margin-bottom: 8px;">Q: Looking for canon printer support phone number?</h3>
             <p style="font-size: 16px; color: var(--color-text-main); line-height: 1.5;">
-              A: We are independent, we do not provide phone lines. Fastest way is live chat &rarr; <a href="https://care.tellepsis.shop?utm_source=google&utm_medium=cpc&utm_campaign=printer_help&utm_content=printer_help" target="_blank" rel="noopener noreferrer" style="font-weight: 700; color: #0284C7;">care.tellepsis.shop</a>
+              A: We are independent, we do not provide phone lines. Fastest way is live chat &rarr; <a href="#" onclick="if(window.LiveChatWidget){window.LiveChatWidget.call('maximize');return false;}return false;" target="_blank" rel="noopener noreferrer" style="font-weight: 700; color: #0284C7;">Live Support Chat</a>
             </p>
           </div>
 
           <div style="background: #FFFFFF; border: 1px solid var(--color-border); border-radius: var(--radius-sm); padding: 20px 22px; box-shadow: var(--shadow-sm);">
             <h3 style="font-size: 18px; font-weight: 700; color: var(--color-navy); margin-bottom: 8px;">Q: Looking for epson printer support phone number?</h3>
             <p style="font-size: 16px; color: var(--color-text-main); line-height: 1.5;">
-              A: We are independent, we do not provide phone lines. Fastest way is live chat &rarr; <a href="https://care.tellepsis.shop?utm_source=google&utm_medium=cpc&utm_campaign=printer_help&utm_content=printer_help" target="_blank" rel="noopener noreferrer" style="font-weight: 700; color: #0284C7;">care.tellepsis.shop</a>
+              A: We are independent, we do not provide phone lines. Fastest way is live chat &rarr; <a href="#" onclick="if(window.LiveChatWidget){window.LiveChatWidget.call('maximize');return false;}return false;" target="_blank" rel="noopener noreferrer" style="font-weight: 700; color: #0284C7;">Live Support Chat</a>
             </p>
           </div>
 
           <div style="background: #FFFFFF; border: 1px solid var(--color-border); border-radius: var(--radius-sm); padding: 20px 22px; box-shadow: var(--shadow-sm);">
             <h3 style="font-size: 18px; font-weight: 700; color: var(--color-navy); margin-bottom: 8px;">Q: Looking for brother printer support phone number?</h3>
             <p style="font-size: 16px; color: var(--color-text-main); line-height: 1.5;">
-              A: We are independent, we do not provide phone lines. Fastest way is live chat &rarr; <a href="https://care.tellepsis.shop?utm_source=google&utm_medium=cpc&utm_campaign=printer_help&utm_content=printer_help" target="_blank" rel="noopener noreferrer" style="font-weight: 700; color: #0284C7;">care.tellepsis.shop</a>
+              A: We are independent, we do not provide phone lines. Fastest way is live chat &rarr; <a href="#" onclick="if(window.LiveChatWidget){window.LiveChatWidget.call('maximize');return false;}return false;" target="_blank" rel="noopener noreferrer" style="font-weight: 700; color: #0284C7;">Live Support Chat</a>
             </p>
           </div>
 
           <div style="background: #FFFFFF; border: 1px solid var(--color-border); border-radius: var(--radius-sm); padding: 20px 22px; box-shadow: var(--shadow-sm);">
             <h3 style="font-size: 18px; font-weight: 700; color: var(--color-navy); margin-bottom: 8px;">Q: Looking for printer support phone number?</h3>
             <p style="font-size: 16px; color: var(--color-text-main); line-height: 1.5;">
-              A: We are independent, we do not provide phone lines. Fastest way is live chat &rarr; <a href="https://care.tellepsis.shop?utm_source=google&utm_medium=cpc&utm_campaign=printer_help&utm_content=printer_help" target="_blank" rel="noopener noreferrer" style="font-weight: 700; color: #0284C7;">care.tellepsis.shop</a>
+              A: We are independent, we do not provide phone lines. Fastest way is live chat &rarr; <a href="#" onclick="if(window.LiveChatWidget){window.LiveChatWidget.call('maximize');return false;}return false;" target="_blank" rel="noopener noreferrer" style="font-weight: 700; color: #0284C7;">Live Support Chat</a>
             </p>
           </div>
 
           <div style="background: #FFFFFF; border: 1px solid var(--color-border); border-radius: var(--radius-sm); padding: 20px 22px; box-shadow: var(--shadow-sm);">
             <h3 style="font-size: 18px; font-weight: 700; color: var(--color-navy); margin-bottom: 8px;">Q: Looking for printer helpline number?</h3>
             <p style="font-size: 16px; color: var(--color-text-main); line-height: 1.5;">
-              A: We are independent, we do not provide phone lines. Fastest way is live chat &rarr; <a href="https://care.tellepsis.shop?utm_source=google&utm_medium=cpc&utm_campaign=printer_help&utm_content=printer_help" target="_blank" rel="noopener noreferrer" style="font-weight: 700; color: #0284C7;">care.tellepsis.shop</a>
+              A: We are independent, we do not provide phone lines. Fastest way is live chat &rarr; <a href="#" onclick="if(window.LiveChatWidget){window.LiveChatWidget.call('maximize');return false;}return false;" target="_blank" rel="noopener noreferrer" style="font-weight: 700; color: #0284C7;">Live Support Chat</a>
             </p>
           </div>
 
           <div style="background: #FFFFFF; border: 1px solid var(--color-border); border-radius: var(--radius-sm); padding: 20px 22px; box-shadow: var(--shadow-sm);">
             <h3 style="font-size: 18px; font-weight: 700; color: var(--color-navy); margin-bottom: 8px;">Q: Looking for hp printer support number usa?</h3>
             <p style="font-size: 16px; color: var(--color-text-main); line-height: 1.5;">
-              A: We are independent, we do not provide phone lines. Fastest way is live chat &rarr; <a href="https://care.tellepsis.shop?utm_source=google&utm_medium=cpc&utm_campaign=printer_help&utm_content=printer_help" target="_blank" rel="noopener noreferrer" style="font-weight: 700; color: #0284C7;">care.tellepsis.shop</a>
+              A: We are independent, we do not provide phone lines. Fastest way is live chat &rarr; <a href="#" onclick="if(window.LiveChatWidget){window.LiveChatWidget.call('maximize');return false;}return false;" target="_blank" rel="noopener noreferrer" style="font-weight: 700; color: #0284C7;">Live Support Chat</a>
             </p>
           </div>
 
         </div>
 
         <div style="text-align: center;">
-          <a href="https://care.tellepsis.shop?utm_source=google&utm_medium=cpc&utm_campaign=printer_help&utm_content=printer_help" class="cta-green-btn" target="_blank" rel="noopener noreferrer">Chat With An Expert Now</a>
+          <a href="#" onclick="if(window.LiveChatWidget){window.LiveChatWidget.call('maximize');return false;}return false;" class="cta-green-btn" target="_blank" rel="noopener noreferrer">Chat With An Expert Now</a>
         </div>
       </div>
     </section>
@@ -1691,7 +1691,7 @@
         <div class="final-cta-inner">
           <h2 class="final-cta-h2">Still Having Printer Trouble?</h2>
           <p class="final-cta-note">Skip lengthy automated phone trees and confusing support forums. Connect directly with an independent technical specialist for live interactive troubleshooting.</p>
-          <a href="https://care.tellepsis.shop?utm_source=google&utm_medium=cpc&utm_campaign=printer_help&utm_content=' + adgroup + '" class="cta-green-btn" target="_blank" rel="noopener noreferrer">Start Live Chat Now</a>
+          <a href="#" onclick="if(window.LiveChatWidget){window.LiveChatWidget.call('maximize');return false;}return false;" class="cta-green-btn" target="_blank" rel="noopener noreferrer">Start Live Chat Now</a>
         </div>
       </div>
     </section>
@@ -1732,9 +1732,38 @@
   <div class="sticky-bottom-bar" role="complementary" aria-label="Quick Mobile Support">
     <div class="mobile-bar-inner">
       <div class="mobile-bar-text">Printer troubleshooting &amp; setup assistance</div>
-      <a href="https://care.tellepsis.shop?utm_source=google&utm_medium=cpc&utm_campaign=printer_help&utm_content=' + adgroup + '" class="mobile-bar-cta-btn" target="_blank" rel="noopener noreferrer">Chat Now</a>
+      <a href="#" onclick="if(window.LiveChatWidget){window.LiveChatWidget.call('maximize');return false;}return false;" class="mobile-bar-cta-btn" target="_blank" rel="noopener noreferrer">Chat Now</a>
     </div>
   </div>
+
+
+<!-- LiveChat Integration -->
+<script>
+window._lc = window._lc || {};
+window.__lc = window.__lc || {};
+window.__lc.organizationId = "88021789-6f9a-4e87-ad03-af7e68a3b461";
+window.__lc.integration_name = "manual_onboarding";
+window.__lc.product_name = "text";
+(function(n, t, c) {
+    function i(args) { return e._h ? e._h.apply(null, args) : e._q.push(args); }
+    var e = {
+        _q: [], _h: null, _v: "2.0",
+        on: function() { i(["on", c.call(arguments)]); },
+        once: function() { i(["once", c.call(arguments)]); },
+        off: function() { i(["off", c.call(arguments)]); },
+        get: function() { return !e._h ? e._q.push([c.call(arguments)]) : e._h.apply(null, args); },
+        init: function() {
+            var s = t.createElement("script");
+            s.async = true;
+            s.type = "text/javascript";
+            s.src = "https://cdn.livechatinc.com/tracking.js";
+            t.head.appendChild(s);
+        }
+    };
+    if (!n._lc.asyncInit) { e.init(); }
+    n.LiveChatWidget = n.LiveChatWidget || e;
+})(window, document, [].slice);
+</script>
 
 </body>
 </html>

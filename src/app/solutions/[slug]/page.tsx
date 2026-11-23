@@ -371,9 +371,9 @@ export default async function SolutionPage({ params }: Props) {
                           <p className="text-xs text-slate-300 mt-0.5">Skip endless phone queues and connect directly with an independent printer specialist.</p>
                         </div>
                         <div className="flex items-center gap-2 shrink-0">
-                          <a href="https://care.tellepsis.shop" target="_blank" rel="noopener noreferrer" className="px-4 py-2 bg-emerald-500 hover:bg-emerald-400 text-slate-950 font-bold text-xs uppercase tracking-wider rounded-lg transition-colors">
+                          <Link href="/lp/printer-help" className="px-4 py-2 bg-emerald-500 hover:bg-emerald-400 text-slate-950 font-bold text-xs uppercase tracking-wider rounded-lg transition-colors">
                             Chat Now
-                          </a>
+                          </Link>
                           <Link href="/lp/printer-help" className="px-3 py-2 bg-slate-800 hover:bg-slate-700 text-slate-200 text-xs font-semibold rounded-lg transition-colors border border-slate-700">
                             Full Hub &rarr;
                           </Link>
@@ -437,14 +437,12 @@ export default async function SolutionPage({ params }: Props) {
                   </p>
                 </div>
                 <div className="flex flex-wrap items-center justify-center gap-3 shrink-0">
-                  <a 
-                    href="https://care.tellepsis.shop" 
-                    target="_blank" 
-                    rel="noopener noreferrer" 
+                  <Link 
+                    href="/lp/printer-help" 
                     className="px-5 py-2.5 bg-emerald-500 hover:bg-emerald-400 text-slate-950 font-bold text-xs uppercase tracking-wider rounded-xl transition-colors shadow-sm"
                   >
-                    Chat Now &rarr; care.tellepsis.shop
-                  </a>
+                    Start Live Chat ⚡
+                  </Link>
                   <Link 
                     href="/lp/printer-help" 
                     className="px-4 py-2.5 bg-slate-800 hover:bg-slate-700 text-white text-xs font-semibold rounded-xl transition-colors border border-slate-700"
