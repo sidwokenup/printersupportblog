@@ -1,0 +1,117 @@
+{
+  "version": "https://jsonfeed.org/version/1.1",
+  "title": "Live Feed Reviews",
+  "home_page_url": "https://www.livefeedreviews.com",
+  "feed_url": "https://www.livefeedreviews.com/feed.json",
+  "description": "Independent Consumer Printer Hardware Testing, ISO/IEC 19752 Yield Benchmarks, and DIY Diagnostic Troubleshooting Guides.",
+  "icon": "https://www.livefeedreviews.com/logo.png",
+  "favicon": "https://www.livefeedreviews.com/icon.png",
+  "authors": [
+    {
+      "name": "Live Feed Reviews Editorial Lab",
+      "url": "https://www.livefeedreviews.com"
+    }
+  ],
+  "items": [
+    {
+      "id": "https://www.livefeedreviews.com/solutions/printer-offline",
+      "url": "https://www.livefeedreviews.com/solutions/printer-offline",
+      "title": "How to Fix Printer Offline on Windows 11 & macOS: 7-Step DIY Diagnostic",
+      "summary": "Step-by-step DIY diagnostic to fix 'Printer Offline' status on Windows 11, Windows 10, and macOS. Resolve WSD port timeouts, assign static IP, and disable SNMP status.",
+      "date_published": "2026-11-19T00:00:00Z",
+      "tags": [
+        "Diagnostics"
+      ]
+    },
+    {
+      "id": "https://www.livefeedreviews.com/blog/best-laser-printer-2026-buyers-guide",
+      "url": "https://www.livefeedreviews.com/blog/best-laser-printer-2026-buyers-guide",
+      "title": "2026 Best Laser Printers Buyer's Guide | Expert Tested & Ranked",
+      "summary": "Empirical lab benchmarks of top monochrome and color laser printers. Evaluated on warm-up time, duplex print speed, and ISO/IEC 19752 continuous toner yield.",
+      "date_published": "2026-11-19T00:00:00Z",
+      "tags": [
+        "Hardware Reviews"
+      ]
+    },
+    {
+      "id": "https://www.livefeedreviews.com/solutions/printer-not-connecting-to-wifi",
+      "url": "https://www.livefeedreviews.com/solutions/printer-not-connecting-to-wifi",
+      "title": "Printer Not Connecting to Wi-Fi: Dual-Band 2.4GHz vs 5GHz Resolution",
+      "summary": "Diagnose and fix Wi-Fi connection failures caused by dual-band mesh routers, WPA3 incompatibility, and subnet masking issues.",
+      "date_published": "2026-11-18T00:00:00Z",
+      "tags": [
+        "Diagnostics"
+      ]
+    },
+    {
+      "id": "https://www.livefeedreviews.com/blog/laser-vs-inkjet-printer-cost-comparison",
+      "url": "https://www.livefeedreviews.com/blog/laser-vs-inkjet-printer-cost-comparison",
+      "title": "Laser vs Inkjet Printer Cost Comparison: 5-Year TCO Analysis",
+      "summary": "Comprehensive 5-year total cost of ownership model comparing laser toner cartridges, traditional inkjets, and refillable ink tank systems.",
+      "date_published": "2026-11-17T00:00:00Z",
+      "tags": [
+        "Cost Analysis"
+      ]
+    },
+    {
+      "id": "https://www.livefeedreviews.com/solutions/printer-job-stuck-in-queue",
+      "url": "https://www.livefeedreviews.com/solutions/printer-job-stuck-in-queue",
+      "title": "How to Force Clear Stuck Print Jobs: Command Line Spooler Recovery",
+      "summary": "Resolve print spooler deadlock and purge corrupt .SPL and .SHD files in Windows System32 without rebooting.",
+      "date_published": "2026-11-16T00:00:00Z",
+      "tags": [
+        "Diagnostics"
+      ]
+    },
+    {
+      "id": "https://www.livefeedreviews.com/blog/best-tank-printer-super-tank-comparison",
+      "url": "https://www.livefeedreviews.com/blog/best-tank-printer-super-tank-comparison",
+      "title": "Best SuperTank Printers: EcoTank vs MegaTank vs Smart Tank (2026)",
+      "summary": "Head-to-head bottle refill yield, spill-free valve testing, and printhead longevity under dry ambient conditions.",
+      "date_published": "2026-11-15T00:00:00Z",
+      "tags": [
+        "Hardware Reviews"
+      ]
+    },
+    {
+      "id": "https://www.livefeedreviews.com/solutions/printer-driver",
+      "url": "https://www.livefeedreviews.com/solutions/printer-driver",
+      "title": "Printer Driver Clean Purge and Installation Protocol (printui.exe)",
+      "summary": "Complete removal of corrupt driver store packages using printui.exe /s /t2 and clean installation of manufacturer WHQL drivers.",
+      "date_published": "2026-11-14T00:00:00Z",
+      "tags": [
+        "Diagnostics"
+      ]
+    },
+    {
+      "id": "https://www.livefeedreviews.com/blog/best-document-scanner-reviews-duplex",
+      "url": "https://www.livefeedreviews.com/blog/best-document-scanner-reviews-duplex",
+      "title": "Best Desktop Document Scanners: 50-Sheet Duplex & OCR Accuracy",
+      "summary": "Lab throughput benchmarks for high-speed document scanners with ultrasonic double-feed detection and searchable PDF workflows.",
+      "date_published": "2026-11-13T00:00:00Z",
+      "tags": [
+        "Hardware Reviews"
+      ]
+    },
+    {
+      "id": "https://www.livefeedreviews.com/solutions/printer-paper-jam",
+      "url": "https://www.livefeedreviews.com/solutions/printer-paper-jam",
+      "title": "Clear and Prevent Paper Jams: Roller Maintenance and Sensor Cleaning",
+      "summary": "Physical recovery protocol for pickup roller glazing, optical sensor dust accumulation, and accordion paper crinkle in fuser assemblies.",
+      "date_published": "2026-11-12T00:00:00Z",
+      "tags": [
+        "Diagnostics"
+      ]
+    },
+    {
+      "id": "https://www.livefeedreviews.com/blog/best-shipping-label-printer-ecommerce-reviews",
+      "url": "https://www.livefeedreviews.com/blog/best-shipping-label-printer-ecommerce-reviews",
+      "title": "Best 4x6 Thermal Shipping Label Printers for E-Commerce (2026)",
+      "summary": "Lab evaluation of 203 DPI vs 300 DPI direct thermal printers for high-speed shipping labels on Shopify, UPS, FedEx, and Amazon.",
+      "date_published": "2026-11-11T00:00:00Z",
+      "tags": [
+        "Hardware Reviews"
+      ]
+    }
+  ]
+}

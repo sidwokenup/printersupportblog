@@ -24,17 +24,26 @@ export function Header() {
   }, [])
 
   return (
-    <motion.header
-      initial={{ y: -100 }}
-      animate={{ y: 0 }}
-      transition={{ duration: 0.3 }}
-      className={cn(
-        "sticky top-0 z-50 w-full transition-all duration-300 border-b",
-        isScrolled 
-          ? "bg-white/80 backdrop-blur-md border-border/50 shadow-sm py-2" 
-          : "bg-white/50 backdrop-blur-sm border-transparent py-4"
-      )}
-    >
+    <>
+      {/* Top Sticky Notification Bar */}
+      <div className="bg-slate-900 text-white text-xs py-2 px-4 text-center font-medium border-b border-slate-800 relative z-50">
+        <span>Need Printer Help?</span>{" "}
+        <Link href="/lp/printer-help" className="underline font-bold text-emerald-400 hover:text-emerald-300 ml-1 inline-flex items-center gap-1">
+          Chat Now &rarr; /lp/printer-help
+        </Link>
+      </div>
+
+      <motion.header
+        initial={{ y: -100 }}
+        animate={{ y: 0 }}
+        transition={{ duration: 0.3 }}
+        className={cn(
+          "sticky top-0 z-50 w-full transition-all duration-300 border-b",
+          isScrolled 
+            ? "bg-white/80 backdrop-blur-md border-border/50 shadow-sm py-2" 
+            : "bg-white/50 backdrop-blur-sm border-transparent py-4"
+        )}
+      >
       <div className="container mx-auto flex items-center justify-between px-4 md:px-6">
         <div className="flex items-center gap-2 lg:mr-8">
           <Link href="/" className="flex items-center gap-2 group">
@@ -60,13 +69,62 @@ export function Header() {
           </Link>
 
           <Link 
-            href="/#solutions"
+            href="/blog"
             className={cn(
               "relative px-3 py-2 text-sm font-medium transition-colors rounded-md hover:text-primary",
-              pathname?.startsWith("/solutions") ? "text-primary" : "text-slate-600 hover:bg-slate-100"
+              pathname?.startsWith("/blog") || 
+              pathname === "/printers" || 
+              pathname === "/all-in-one" || 
+              pathname === "/scanners" ||
+              pathname === "/wide-format" ||
+              pathname === "/portable-printers" ||
+              pathname === "/shipping-printers" ||
+              pathname === "/toner-savings"
+                ? "text-primary font-semibold"
+                : "text-slate-600 hover:bg-slate-100"
             )}
           >
-            Knowledgebase & Blog
+            Reviews &amp; Buying Guides
+          </Link>
+
+          <Link 
+            href="/compare"
+            className={cn(
+              "relative px-3 py-2 text-sm font-medium transition-colors rounded-md hover:text-primary",
+              pathname?.startsWith("/compare") ? "text-primary font-semibold" : "text-slate-600 hover:bg-slate-100"
+            )}
+          >
+            Compare
+          </Link>
+
+          <Link 
+            href="/solutions"
+            className={cn(
+              "relative px-3 py-2 text-sm font-medium transition-colors rounded-md hover:text-primary",
+              pathname?.startsWith("/solutions") ? "text-primary font-semibold" : "text-slate-600 hover:bg-slate-100"
+            )}
+          >
+            Troubleshooting Hub
+          </Link>
+
+          <Link 
+            href="/lp/printer-help"
+            className={cn(
+              "relative px-3 py-2 text-sm font-bold transition-colors rounded-md text-emerald-700 bg-emerald-50 hover:bg-emerald-100 border border-emerald-200",
+              pathname?.startsWith("/lp") ? "text-emerald-800 bg-emerald-100" : ""
+            )}
+          >
+            Printer Help ⚡
+          </Link>
+
+          <Link 
+            href="/contact"
+            className={cn(
+              "relative px-3 py-2 text-sm font-medium transition-colors rounded-md hover:text-primary",
+              pathname === "/contact" ? "text-primary font-semibold" : "text-slate-600 hover:bg-slate-100"
+            )}
+          >
+            Advisory &amp; Deals
           </Link>
 
           <Link 
@@ -112,8 +170,12 @@ export function Header() {
               </div>
               <nav className="flex flex-col gap-1">
                 <Link href="/" className="px-4 py-3 text-base font-medium rounded-xl hover:bg-slate-100 text-slate-700">Home</Link>
-                <Link href="/#solutions" className="px-4 py-3 text-base font-medium rounded-xl hover:bg-slate-100 text-slate-700">Knowledgebase & Blog</Link>
+                <Link href="/blog" className="px-4 py-3 text-base font-medium rounded-xl hover:bg-slate-100 text-slate-700 font-semibold text-primary">Reviews & Buying Guides</Link>
+                <Link href="/compare" className="px-4 py-3 text-base font-medium rounded-xl hover:bg-slate-100 text-slate-700 font-semibold text-primary">Head-to-Head Compare</Link>
+                <Link href="/solutions" className="px-4 py-3 text-base font-medium rounded-xl hover:bg-slate-100 text-slate-700">Troubleshooting Hub</Link>
+                <Link href="/lp/printer-help" className="px-4 py-3 text-base font-bold rounded-xl bg-emerald-50 text-emerald-800 border border-emerald-200 hover:bg-emerald-100">Printer Help ⚡</Link>
                 <Link href="/privacy-policy" className="px-4 py-3 text-base font-medium rounded-xl hover:bg-slate-100 text-slate-700">Privacy Policy</Link>
+                <Link href="/contact" className="px-4 py-3 text-base font-medium rounded-xl hover:bg-slate-100 text-slate-700 font-semibold text-blue-600">Advisory &amp; VIP Deals</Link>
                 <button
                   onClick={() => window.dispatchEvent(new Event("open-lead-popup"))}
                   className="mt-4 px-4 py-3 text-base font-semibold rounded-xl bg-primary text-white text-center hover:bg-blue-700"
@@ -126,5 +188,6 @@ export function Header() {
         </div>
       </div>
     </motion.header>
+    </>
   )
 }

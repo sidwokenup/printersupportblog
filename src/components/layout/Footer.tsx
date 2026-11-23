@@ -41,7 +41,7 @@ export function Footer() {
         <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-12 lg:gap-8">
           
           {/* Brand & Description */}
-          <div className="lg:col-span-2 flex flex-col gap-6">
+          <div className="flex flex-col gap-6">
             <Link href="/" className="flex items-center gap-3 group w-fit">
               <div className="bg-primary/10 p-2.5 rounded-xl group-hover:bg-primary/20 transition-colors flex items-center justify-center">
                 <Image src="/logo.png" alt="Live Feed Reviews" width={48} height={48} className="object-contain" />
@@ -51,7 +51,7 @@ export function Footer() {
               </span>
             </Link>
             <p className="text-base text-slate-600 leading-relaxed max-w-sm">
-              The ultimate programmatic knowledge base for HP Printer support, troubleshooting, driver downloads, and error codes. We make fixing printers simple.
+              Independent laboratory benchmarks and buying guides for laser printers, inkjet all-in-ones, and high-speed document scanners. 100% retail-tested with zero manufacturer bias.
             </p>
             <div className="flex items-center gap-4 mt-2">
               <Link href="#" className="p-2 bg-slate-50 text-slate-500 hover:text-primary hover:bg-blue-50 rounded-full transition-all">
@@ -70,20 +70,86 @@ export function Footer() {
           </div>
 
           <div className="flex flex-col gap-4">
-            <h3 className="font-semibold text-slate-900 text-base">Legal & Support</h3>
-            <div className="flex flex-col gap-3 mt-2">
-              <button 
-                onClick={() => window.dispatchEvent(new Event("open-lead-popup"))}
-                className="text-slate-600 hover:text-primary transition-colors text-left"
-              >
-                Contact Support
-              </button>
+            <h3 className="font-semibold text-slate-900 text-base">Reviews &amp; Buying Guides</h3>
+            <div className="grid grid-cols-2 gap-x-4 gap-y-2 mt-2 text-sm">
+              <Link href="/blog" className="text-slate-600 hover:text-primary transition-colors">
+                All 2026 Reviews
+              </Link>
+              <Link href="/printers" className="text-slate-600 hover:text-primary transition-colors">
+                Wireless Laser Printers
+              </Link>
+              <Link href="/all-in-one" className="text-slate-600 hover:text-primary transition-colors">
+                All-in-One Inkjets
+              </Link>
+              <Link href="/scanners" className="text-slate-600 hover:text-primary transition-colors">
+                Duplex Scanners
+              </Link>
+              <Link href="/wide-format" className="text-slate-600 hover:text-primary transition-colors">
+                Wide-Format 11x17
+              </Link>
+              <Link href="/portable-printers" className="text-slate-600 hover:text-primary transition-colors">
+                Portable &amp; Mobile
+              </Link>
+              <Link href="/shipping-printers" className="text-slate-600 hover:text-primary transition-colors">
+                4x6 Shipping Printers
+              </Link>
+              <Link href="/toner-savings" className="text-slate-600 hover:text-primary transition-colors">
+                Toner Savings Math
+              </Link>
+              <Link href="/compare" className="text-blue-600 hover:text-primary transition-colors font-semibold">
+                Compare Engine ★
+              </Link>
+            </div>
+          </div>
+
+          <div className="flex flex-col gap-4">
+            <h3 className="font-semibold text-slate-900 text-base">Troubleshooting Hub</h3>
+            <div className="flex flex-col gap-2.5 mt-2 text-sm">
+              <Link href="/lp/printer-help" className="text-emerald-700 hover:text-emerald-800 transition-colors font-bold flex items-center gap-1">
+                <span>Printer Help Live Hub ⚡</span>
+              </Link>
+              <Link href="/solutions" className="text-slate-600 hover:text-primary transition-colors font-medium text-blue-600">
+                All 13 DIY Diagnostic Guides
+              </Link>
+              <Link href="/solutions/error-codes" className="text-blue-600 hover:text-primary transition-colors font-semibold">
+                Error Code Lookup (2,240 Codes)
+              </Link>
+              <Link href="/solutions/printer-offline" className="text-slate-600 hover:text-primary transition-colors">
+                Fix Printer Offline
+              </Link>
+              <Link href="/solutions/printer-paper-jam" className="text-slate-600 hover:text-primary transition-colors">
+                Clear Paper Jams
+              </Link>
+              <Link href="/solutions/printer-not-connecting-to-wifi" className="text-slate-600 hover:text-primary transition-colors">
+                Wi-Fi &amp; 2.4GHz Drops
+              </Link>
+              <Link href="/solutions/faded-streaky-print-quality" className="text-slate-600 hover:text-primary transition-colors">
+                Faded Prints &amp; Nozzles
+              </Link>
+            </div>
+          </div>
+
+          <div className="flex flex-col gap-4">
+            <h3 className="font-semibold text-slate-900 text-base">Advisory &amp; Support</h3>
+            <div className="flex flex-col gap-3 mt-2 text-sm">
+              <Link href="/contact" className="text-slate-600 hover:text-primary transition-colors font-semibold text-blue-600">
+                Request Priority Callback
+              </Link>
+              <Link href="/contact" className="text-slate-600 hover:text-primary transition-colors">
+                Join VIP Deals List
+              </Link>
+              <Link href="/privacy-policy" className="text-slate-600 hover:text-primary transition-colors">
+                Privacy Policy &amp; FTC Disclosure
+              </Link>
             </div>
           </div>
         </div>
 
-        <div className="mt-12 pt-8 border-t border-slate-200 flex flex-col md:flex-row justify-between items-center gap-4 text-sm text-slate-500">
+        <div className="mt-12 pt-8 border-t border-slate-200 flex flex-col md:flex-row justify-between items-center gap-4 text-xs text-slate-500">
           <p suppressHydrationWarning={true}>© {new Date().getFullYear()} Live Feed Reviews. All rights reserved.</p>
+          <p className="text-center md:text-right max-w-xl text-[11px] text-slate-400">
+            Independent Help Directory — Not affiliated with HP, Canon, Epson, Brother, or any manufacturer. LiveFeedReviews is an independent guide. Privacy / Terms.
+          </p>
         </div>
       </div>
     </footer>
