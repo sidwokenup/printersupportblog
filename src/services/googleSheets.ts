@@ -1,6 +1,6 @@
 import { google } from "googleapis";
 
-export async function appendToGoogleSheet(leadData: Record<string, any>) {
+export async function appendToGoogleSheet(leadData: Record<string, string | undefined>) {
   try {
     // Safely parse environment variables (in case they were pasted with quotes in Vercel)
     const clientEmail = process.env.GOOGLE_CLIENT_EMAIL?.replace(/^"|"$/g, '');
@@ -29,22 +29,22 @@ export async function appendToGoogleSheet(leadData: Record<string, any>) {
     // Dynamically fetch the first sheet's name so it doesn't break if the user renamed "Sheet1"
     const spreadsheet = await sheets.spreadsheets.get({ spreadsheetId });
     const firstSheetName = spreadsheet.data.sheets?.[0]?.properties?.title || "Sheet1";
-    const range = `${firstSheetName}!A:L`;
+    const range = `${firstSheetName}!A:J`;
 
     const values = [
       [
         new Date().toLocaleDateString(),
         new Date().toLocaleTimeString(),
-        leadData.fullName || "Valued Visitor",
+        leadData.printerSeries || "N/A",
+        leadData.issueFacing || "N/A",
+        leadData.operatingSystem || "N/A",
         leadData.phone,
         leadData.email || "N/A",
-        leadData.leadType || "callback",
-        leadData.printerSeries || leadData.interestCategory || "N/A",
-        leadData.issueFacing || "Callback / Deals Request",
-        leadData.preferredTime || "ASAP",
-        leadData.promotionalOptIn ? "Opted-In" : "Callback Only",
         leadData.pageUrl || "",
+        leadData.utmSource || leadData.source || "Organic",
+        leadData.utmCampaign || "",
         leadData.device || "Unknown",
+        "New",
       ],
     ];
 

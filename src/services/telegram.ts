@@ -43,25 +43,33 @@ export async function sendTelegramNotification(message: string) {
   await Promise.allSettled(sendPromises);
 }
 
-export function formatLeadMessage(lead: Record<string, any>) {
-  const isPromo = lead.leadType === "promotions";
-  const headerIcon = isPromo ? "🎁 <b>NEW PROMOTIONAL DEALS OPT-IN</b>" : "📞 <b>PRIORITY CALLBACK REQUEST</b>";
+export function formatLeadMessage(lead: Record<string, string | undefined>) {
+  return `🚨 <b>NEW LEAD RECEIVED</b>
 
-  return `${headerIcon}
+🖨️ <b>Printer Series:</b>
+${lead.printerSeries || 'N/A'}
 
-👤 <b>Name:</b> ${lead.fullName || 'Valued Visitor'}
-📞 <b>Phone:</b> <code>${lead.phone}</code>
-📧 <b>Email:</b> ${lead.email ? `<a href="mailto:${lead.email}">${lead.email}</a>` : 'Not provided'}
+⚠️ <b>Issue Facing:</b>
+${lead.issueFacing || 'N/A'}
 
-🎯 <b>Inquiry / Request:</b>
-${lead.issueFacing || (isPromo ? 'Wants promotional discounts and deal notifications' : 'Hardware buying advice & callback')}
+💻 <b>OS:</b>
+${lead.operatingSystem || 'N/A'}
 
-🖨️ <b>Category / Series:</b> ${lead.printerSeries || lead.interestCategory || 'All Printers'}
-⏰ <b>Preferred Callback Window:</b> ${lead.preferredTime || 'As soon as possible'}
-🔔 <b>Marketing & SMS Consent:</b> ${lead.promotionalOptIn ? '✅ Opted-in for SMS & Email Deals' : '❌ Callback only'}
+📞 <b>Phone:</b>
+${lead.phone}
 
-🌐 <b>Landing Page:</b> ${lead.pageUrl || 'Direct'}
-📱 <b>Device:</b> ${lead.device || 'Desktop'}
-🔍 <b>Source:</b> ${lead.source || 'Website'}
-🕒 <b>Time:</b> ${new Date().toLocaleString('en-US', { timeZone: 'America/New_York' })} EST`;
+📧 <b>Email:</b>
+${lead.email ? `<a href="mailto:${lead.email}">${lead.email}</a>` : 'N/A'}
+
+🌐 <b>Page:</b>
+${lead.pageUrl || 'Direct'}
+
+🕒 <b>Time:</b>
+${new Date().toLocaleString('en-US', { timeZone: 'America/New_York' })} (EST)
+
+📱 <b>Device:</b>
+${lead.device || 'Unknown'}
+
+🔍 <b>Source:</b>
+${lead.source || 'Organic'}`;
 }

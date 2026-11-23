@@ -24,12 +24,8 @@ import {
   MessageSquareWarning,
   WifiOff,
   Hourglass,
-  MoreHorizontal,
-  ArrowRight,
-  Sparkles,
-  Award
+  MoreHorizontal
 } from "lucide-react"
-import { blogArticles } from "@/data/blogs"
 
 const FADE_UP = {
   initial: { opacity: 0, y: 20 },
@@ -49,24 +45,6 @@ export default function Home() {
   return (
     <div className="flex flex-col min-h-screen bg-slate-50 overflow-hidden">
       
-      {/* Printer Help Hero Banner */}
-      <div className="bg-gradient-to-r from-blue-900 via-indigo-900 to-slate-900 text-white py-3 px-4 shadow-sm border-b border-blue-800">
-        <div className="container mx-auto flex flex-col sm:flex-row items-center justify-between gap-3 text-center sm:text-left">
-          <div className="flex items-center gap-2">
-            <span className="inline-flex items-center justify-center w-6 h-6 rounded-full bg-emerald-500 text-slate-900 font-extrabold text-xs">⚡</span>
-            <span className="font-bold text-sm md:text-base tracking-tight text-white">
-              Printer Not Printing? Offline? Paper Jam? Get Live Help Now
-            </span>
-          </div>
-          <Link
-            href="/lp/printer-help"
-            className="inline-flex items-center gap-1.5 px-4 py-1.5 rounded-full bg-emerald-500 hover:bg-emerald-400 text-slate-950 font-bold text-xs uppercase tracking-wider transition-colors shadow-sm shrink-0"
-          >
-            <span>Open Diagnostic Hub &rarr;</span>
-          </Link>
-        </div>
-      </div>
-
       {/* Premium Hero Section */}
       <section className="relative pt-8 pb-16 lg:pt-12 lg:pb-20 overflow-hidden">
         {/* Background Gradients */}
@@ -86,51 +64,29 @@ export default function Home() {
             >
               <motion.div variants={FADE_UP} className="inline-flex items-center gap-2 px-3 py-1.5 rounded-full bg-blue-100/80 text-blue-700 text-sm font-medium mb-6 w-fit border border-blue-200/50 shadow-sm">
                 <ShieldCheck className="h-4 w-4" />
-                <span>2026 Independent Hardware Benchmarks &amp; Buying Guides</span>
+                <span>The Ultimate HP Printer Blog & Support Guide</span>
               </motion.div>
               
               <motion.h1 variants={FADE_UP} className="text-5xl md:text-6xl lg:text-[64px] font-extrabold tracking-tight text-slate-900 leading-[1.1] mb-6">
-                Independent reviews &amp; <br />
+                Expert solutions for your <br />
                 <span className="text-transparent bg-clip-text bg-gradient-to-r from-blue-600 to-blue-400">
-                  printer benchmarks.
+                  HP Printer.
                 </span>
               </motion.h1>
               
-              <motion.p variants={FADE_UP} className="text-lg md:text-xl text-slate-600 mb-6 leading-relaxed">
-                We purchase printers at retail and run ISO/IEC 19752 yield tests, engine speed benchmarks, and true toner operating cost calculations so you never overpay.
+              <motion.p variants={FADE_UP} className="text-lg md:text-xl text-slate-600 mb-10 leading-relaxed">
+                Read our in-depth blog posts, troubleshooting guides, and expert advice to resolve your home printer issues instantly.
               </motion.p>
-
-              <motion.div variants={FADE_UP} className="flex flex-wrap gap-3 mb-8">
-                <Link
-                  href="/blog"
-                  className="px-5 py-2.5 rounded-xl bg-blue-600 hover:bg-blue-700 text-white font-semibold text-sm transition-all shadow-sm flex items-center gap-2"
-                >
-                  <span>Browse All 2026 Reviews</span>
-                  <ArrowRight className="w-4 h-4" />
-                </Link>
-                <Link
-                  href="/printers"
-                  className="px-5 py-2.5 rounded-xl bg-white hover:bg-slate-50 text-slate-900 border border-slate-200 font-semibold text-sm transition-all shadow-sm"
-                >
-                  Wireless Laser Printers
-                </Link>
-                <Link
-                  href="/scanners"
-                  className="px-5 py-2.5 rounded-xl bg-white hover:bg-slate-50 text-slate-900 border border-slate-200 font-semibold text-sm transition-all shadow-sm"
-                >
-                  Document Scanners
-                </Link>
-              </motion.div>
               
               <motion.div variants={FADE_UP} className="w-full max-w-xl relative z-20 mb-6">
                 <GlobalSearch size="lg" />
               </motion.div>
               
               <motion.div variants={FADE_UP} className="flex flex-wrap items-center gap-3 text-sm text-slate-500">
-                <span className="font-medium">Top Guides:</span>
-                <Link href="/blog/best-laser-printer-2026-buyers-guide" className="px-3 py-1 rounded-full bg-white border border-slate-200 hover:border-blue-300 hover:bg-blue-50 hover:text-blue-700 transition-all shadow-sm">Best Laser Printers</Link>
-                <Link href="/blog/laser-vs-inkjet-printer-cost-comparison" className="px-3 py-1 rounded-full bg-white border border-slate-200 hover:border-blue-300 hover:bg-blue-50 hover:text-blue-700 transition-all shadow-sm">Laser vs Inkjet TCO</Link>
-                <Link href="/blog/best-inkjet-printer-home-office" className="px-3 py-1 rounded-full bg-white border border-slate-200 hover:border-blue-300 hover:bg-blue-50 hover:text-blue-700 transition-all shadow-sm">Home Office Inkjets</Link>
+                <span className="font-medium">Popular:</span>
+                <Link href="/solutions/printer-offline" className="px-3 py-1 rounded-full bg-white border border-slate-200 hover:border-blue-300 hover:bg-blue-50 hover:text-blue-700 transition-all shadow-sm">Printer Offline</Link>
+                <Link href="/solutions/printer-not-printing" className="px-3 py-1 rounded-full bg-white border border-slate-200 hover:border-blue-300 hover:bg-blue-50 hover:text-blue-700 transition-all shadow-sm">Not Printing</Link>
+                <Link href="/solutions/printer-paper-jam" className="px-3 py-1 rounded-full bg-white border border-slate-200 hover:border-blue-300 hover:bg-blue-50 hover:text-blue-700 transition-all shadow-sm">Paper Jam</Link>
               </motion.div>
             </motion.div>
 
@@ -190,86 +146,6 @@ export default function Home() {
                 </div>
               </div>
             </motion.div>
-          </div>
-        </div>
-      </section>
-
-      {/* 2026 Hardware Reviews & Lab Tests Section */}
-      <section className="py-20 relative z-10 bg-slate-50 border-t border-slate-200">
-        <div className="container mx-auto px-4 md:px-6">
-          <div className="flex flex-col md:flex-row md:items-end justify-between gap-4 mb-12">
-            <div>
-              <div className="inline-flex items-center gap-1.5 px-3 py-1 rounded-full bg-blue-100 text-blue-800 text-xs font-semibold mb-3">
-                <Sparkles className="w-3.5 h-3.5" />
-                <span>2026 Laboratory Tested &amp; Ranked</span>
-              </div>
-              <h2 className="text-3xl md:text-4xl font-extrabold text-slate-900 tracking-tight">
-                Featured Reviews &amp; In-Depth Buying Guides
-              </h2>
-              <p className="text-slate-600 mt-2 max-w-2xl text-sm md:text-base">
-                Independent retail testing: verified ISO/IEC 19752 cost-per-page, engine velocities, and 3-year total cost of ownership math.
-              </p>
-            </div>
-            <Link
-              href="/blog"
-              className="inline-flex items-center gap-2 px-4 py-2 rounded-lg bg-white border border-slate-200 text-sm font-semibold text-slate-900 hover:bg-slate-100 transition-colors shadow-xs shrink-0 self-start md:self-auto"
-            >
-              <span>View All {blogArticles.length} Reviews</span>
-              <ArrowRight className="w-4 h-4 text-slate-600" />
-            </Link>
-          </div>
-
-          <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-6">
-            {blogArticles.map((article) => (
-              <article
-                key={article.slug}
-                className="bg-white rounded-2xl border border-slate-200 hover:border-blue-300 hover:shadow-lg transition-all duration-300 flex flex-col p-6 group"
-              >
-                <div className="flex items-center justify-between gap-2 mb-3">
-                  <span className="text-xs font-bold text-blue-700 bg-blue-50 px-2.5 py-1 rounded-full border border-blue-200">
-                    {article.category}
-                  </span>
-                  <span className="text-xs text-slate-400 font-mono">{article.readTime}</span>
-                </div>
-
-                <h3 className="text-lg font-bold text-slate-900 group-hover:text-blue-600 transition-colors line-clamp-2 mb-2 leading-snug">
-                  <Link href={`/blog/${article.slug}`}>{article.title}</Link>
-                </h3>
-
-                <p className="text-xs text-slate-600 line-clamp-3 mb-4 leading-relaxed flex-1">
-                  {article.metaDescription}
-                </p>
-
-                {/* ISO Benchmarks Preview */}
-                <div className="bg-slate-50 rounded-xl p-3 border border-slate-100 mb-4 space-y-1.5 text-xs">
-                  <div className="font-semibold text-slate-700 text-[11px] uppercase tracking-wider">Lab Benchmarks:</div>
-                  {article.isoBenchmarks.slice(0, 2).map((bench, idx) => (
-                    <div key={idx} className="flex items-center justify-between text-slate-600 font-mono text-[11px]">
-                      <span>{bench.label}</span>
-                      <span className="font-bold text-slate-900">{bench.value}</span>
-                    </div>
-                  ))}
-                </div>
-
-                {/* Top Pick */}
-                {article.topPicks?.[0] && (
-                  <div className="text-xs text-slate-700 mb-4 flex items-center gap-1.5">
-                    <Award className="w-4 h-4 text-amber-500 shrink-0" />
-                    <span className="truncate">
-                      Top pick: <strong className="text-slate-900">{article.topPicks[0].name}</strong>
-                    </span>
-                  </div>
-                )}
-
-                <Link
-                  href={`/blog/${article.slug}`}
-                  className="mt-auto inline-flex items-center justify-between text-xs font-semibold text-blue-600 hover:text-blue-700 pt-3 border-t border-slate-100 group/link"
-                >
-                  <span>Read Full Review</span>
-                  <ArrowRight className="w-3.5 h-3.5 transition-transform group-hover/link:translate-x-1" />
-                </Link>
-              </article>
-            ))}
           </div>
         </div>
       </section>
