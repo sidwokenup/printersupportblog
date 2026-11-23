@@ -2,6 +2,7 @@
 
 import Link from "next/link"
 import Image from "next/image"
+import { usePathname } from "next/navigation"
 
 // Simple SVG icons for social media since lucide-react doesn't have brand icons
 const FacebookIcon = ({ className }: { className?: string }) => (
@@ -32,6 +33,11 @@ const YoutubeIcon = ({ className }: { className?: string }) => (
 )
 
 export function Footer() {
+  const pathname = usePathname()
+  if (pathname === "/printer-tips" || pathname === "/printer-tips.html" || pathname === "/" || pathname?.startsWith("/lp")) {
+    return null
+  }
+
   return (
     <footer className="relative mt-12 bg-white border-t border-slate-200 overflow-hidden">
       {/* Premium Gradient Top Border */}

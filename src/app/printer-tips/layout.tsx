@@ -1,25 +1,25 @@
 import type { Metadata } from "next";
 
 export const metadata: Metadata = {
-  title: "Printer Setup & Configuration Guide (All Brands) | Live Feed Reviews",
-  description: "Independent step-by-step printer setup guide for HP, Brother, Canon, and Epson. Learn how to unpack, connect to Wi-Fi, install official drivers, and fix offline errors.",
+  title: "Printer Setup, Tips | LiveFeedReviews",
+  description: "Printer Setup, Tips - Step-by-step printer setup, driver installation, and offline troubleshooting.",
   alternates: {
     canonical: "/printer-tips",
   },
   openGraph: {
-    title: "Printer Setup & Configuration Guide | Live Feed Reviews",
-    description: "Step-by-step independent printer setup guide for HP, Brother, Canon, and Epson. Wi-Fi connection, official driver portals, and offline troubleshooting.",
+    title: "Printer Setup, Tips | LiveFeedReviews",
+    description: "Printer Setup, Tips - Step-by-step printer setup, driver installation, and offline troubleshooting.",
     url: "https://www.livefeedreviews.com/printer-tips",
-    siteName: "Live Feed Reviews",
+    siteName: "LiveFeedReviews",
     images: [
       {
-        url: "/printersetup.jpg",
+        url: "/images/starts.webp",
         width: 800,
         height: 600,
-        alt: "Printer Setup & Troubleshooting Guide",
+        alt: "Printer Setup, Tips",
       },
     ],
-    type: "article",
+    type: "website",
   },
 };
 

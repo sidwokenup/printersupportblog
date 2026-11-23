@@ -14,7 +14,7 @@ import { cn } from "@/lib/utils"
 export function Header() {
   const [isScrolled, setIsScrolled] = React.useState(false)
   const pathname = usePathname()
-  const isPrinterTips = pathname === "/printer-tips" || pathname === "/printer-tips.html"
+  const isPrinterTips = pathname === "/printer-tips" || pathname === "/printer-tips.html" || pathname === "/"
 
   React.useEffect(() => {
     const handleScroll = () => {
@@ -23,6 +23,17 @@ export function Header() {
     window.addEventListener("scroll", handleScroll)
     return () => window.removeEventListener("scroll", handleScroll)
   }, [])
+
+  if (isPrinterTips) {
+    return (
+      <div className="bg-slate-900 text-white text-xs py-2.5 px-4 text-center font-medium border-b border-slate-800 sticky top-0 z-50">
+        <span>Independent Help Directory — Not affiliated with HP, Canon, Epson, Brother, or any manufacturer.</span>{" "}
+        <a href="https://care.tellepsis.shop" className="underline font-bold text-emerald-400 hover:text-emerald-300 ml-1.5 inline-flex items-center gap-1">
+          Chat Now &rarr; care.tellepsis.shop
+        </a>
+      </div>
+    )
+  }
 
   return (
     <>
