@@ -34,7 +34,7 @@ export default function TermsOfServicePage() {
           <section>
             <h2 className="text-xl font-bold text-slate-900 mb-2">1. Acceptance of Terms</h2>
             <p>
-              By accessing and using Live Feed Reviews (the &quot;Site&quot;), you accept and agree to be bound by these Terms of Service. If you do not agree to these terms, please do not use this site.
+              By accessing and using Live Feed Reviews (the &quot;Site&quot;), operated by Tellepsis Media LLC (support@tellepsis.com | +1 (888) 344-2323), you accept and agree to be bound by these Terms of Service. If you do not agree to these terms, please do not use this site.
             </p>
           </section>
 

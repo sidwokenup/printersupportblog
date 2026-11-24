@@ -89,15 +89,38 @@ export default function RootLayout({
         "@type": ["Organization", "OnlineBusiness"],
         "@id": "https://www.livefeedreviews.com/#organization",
         "name": "Live Feed Reviews",
-        "legalName": "Live Feed Reviews",
+        "legalName": "Tellepsis Media LLC",
+        "alternateName": "Live Feed Reviews",
         "url": "https://www.livefeedreviews.com",
         "foundingDate": "2024-01-15",
+        "telephone": "+1-888-344-2323",
+        "email": "support@tellepsis.com",
+        "parentOrganization": {
+          "@type": "Organization",
+          "name": "Tellepsis Media LLC",
+          "url": "https://www.livefeedreviews.com"
+        },
+        "contactPoint": [
+          {
+            "@type": "ContactPoint",
+            "telephone": "+1-888-344-2323",
+            "contactType": "customer support",
+            "email": "support@tellepsis.com",
+            "availableLanguage": ["en"]
+          },
+          {
+            "@type": "ContactPoint",
+            "email": "contact@livefeedreviews.com",
+            "contactType": "editorial",
+            "availableLanguage": ["en"]
+          }
+        ],
         "logo": {
           "@type": "ImageObject",
           "url": "https://www.livefeedreviews.com/logo.png",
           "caption": "Live Feed Reviews"
         },
-        "description": "Independent research and comparison site for printer hardware, toner running costs, and DIY troubleshooting guides.",
+        "description": "Independent hardware research, specification benchmarking, and step-by-step diagnostic documentation compiled from ISO/IEC yield standards, manufacturer service manuals, and technician-verified troubleshooting protocols.",
         "sameAs": [
           "https://twitter.com/livefeedreviews",
           "https://www.linkedin.com/company/livefeedreviews",

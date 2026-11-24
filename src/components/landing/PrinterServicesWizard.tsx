@@ -657,14 +657,14 @@ export function PrinterServicesWizard() {
             <div className="error-panel" id="errorScreen">
               <div className="error-kicker">STEP 4 OF 4</div>
 
-              <strong>
-                <h2>
-                  Do not try to re-install or retry again as it can permanently damage the software of your printer.
-                </h2>
-              </strong>
-
               <div className="error-summary">
-                <strong>Your selected printer details</strong>
+                <h2 style={{ fontSize: "18px", fontWeight: "700", color: "#0F172A", marginBottom: "8px" }}>
+                  Setup Diagnostics Summary
+                </h2>
+                <p style={{ fontSize: "14px", color: "#475569", lineHeight: "1.5", marginBottom: "16px" }}>
+                  If standard automated setup does not complete, please verify your router Wi-Fi frequency band (2.4GHz), power cycle your printer, or consult our step-by-step DIY troubleshooting guides.
+                </p>
+                <strong>Your selected printer configuration:</strong>
                 <div>
                   Issue: <b id="errorIssue">{issue}</b>
                 </div>

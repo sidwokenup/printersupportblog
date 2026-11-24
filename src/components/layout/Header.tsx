@@ -29,7 +29,7 @@ export function Header() {
   if (isPrinterTips) {
     return (
       <div className="bg-slate-900 text-white text-xs py-2.5 px-4 text-center font-medium border-b border-slate-800 sticky top-0 z-50">
-        <span>Independent Help Directory — Not affiliated with HP, Canon, Epson, Brother, or any manufacturer.</span>{" "}
+        <span>Independent Consumer Hardware &amp; Troubleshooting Publication — Not affiliated with, endorsed by, or sponsored by HP, Canon, Epson, Brother, or any manufacturer.</span>{" "}
         <button
           type="button"
           onClick={() => openLiveChat()}
@@ -167,17 +167,7 @@ export function Header() {
                   pathname?.startsWith("/solutions") ? "text-primary font-semibold" : "text-slate-600 hover:bg-slate-100"
                 )}
               >
-                Troubleshooting Hub
-              </Link>
-
-              <Link 
-                href="/solutions"
-                className={cn(
-                  "relative px-3 py-2 text-sm font-bold transition-colors rounded-md text-emerald-700 bg-emerald-50 hover:bg-emerald-100 border border-emerald-200",
-                  pathname?.startsWith("/solutions") ? "text-emerald-800 bg-emerald-100" : ""
-                )}
-              >
-                Printer Solutions ⚡
+                Diagnostic Hub ⚡
               </Link>
 
               <Link 

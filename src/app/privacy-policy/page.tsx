@@ -38,7 +38,7 @@ export default function PrivacyPolicyPage() {
       <div className="container mx-auto px-4 md:px-6 pt-10">
         <div className="max-w-4xl mx-auto bg-white rounded-3xl border border-slate-200 shadow-sm p-8 md:p-12 text-slate-700 leading-relaxed space-y-6 text-sm sm:text-base">
           <p>
-            At <strong className="text-slate-900">Live Feed Reviews</strong>, accessible from https://www.livefeedreviews.com, the privacy of our visitors is of paramount importance. This Privacy Policy document details the types of information collected and recorded by Live Feed Reviews and how we use it.
+            At <strong className="text-slate-900">Live Feed Reviews</strong> (operated by <strong className="text-slate-900">Tellepsis Media LLC</strong>; support: <a href="mailto:support@tellepsis.com" className="text-blue-600 underline">support@tellepsis.com</a> | <a href="tel:+18883442323" className="text-blue-600 underline">+1 (888) 344-2323</a>), accessible from https://www.livefeedreviews.com, the privacy of our visitors is of paramount importance. This Privacy Policy document details the types of information collected and recorded by Live Feed Reviews and how we use it.
           </p>
           <p>
             If you have questions or require additional information about our Privacy Policy, please reach out via our <Link href="/contact" className="text-blue-600 underline font-semibold">Contact Page</Link>.

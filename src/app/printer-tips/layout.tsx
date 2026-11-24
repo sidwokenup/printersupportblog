@@ -1,7 +1,7 @@
 import type { Metadata } from "next";
 
 export const metadata: Metadata = {
-  title: "Service | Get Printer Care",
+  title: "Printer Setup & Troubleshooting Guide | Live Feed Reviews",
   description: "Step-by-step printer setup, driver installation, and offline troubleshooting for HP, Canon, Epson, and Brother printers.",
   robots: {
     index: false,
@@ -20,10 +20,10 @@ export const metadata: Metadata = {
     canonical: "/printer-tips",
   },
   openGraph: {
-    title: "Service | Get Printer Care",
+    title: "Printer Setup & Troubleshooting Guide | Live Feed Reviews",
     description: "Step-by-step printer setup, driver installation, and offline troubleshooting for HP, Canon, Epson, and Brother printers.",
     url: "https://www.livefeedreviews.com/printer-tips",
-    siteName: "LiveFeedReviews",
+    siteName: "Live Feed Reviews",
     type: "website",
   },
 };

@@ -1,5 +1,5 @@
 import { solutions } from "@/data/solutions";
-import { solutionsFaqs, solutionsRatings } from "@/data/solutionsFaqs";
+import { solutionsFaqs } from "@/data/solutionsFaqs";
 import { notFound } from "next/navigation";
 import Link from "next/link";
 import Image from "next/image";
@@ -33,21 +33,7 @@ export async function generateMetadata({ params }: Props): Promise<Metadata> {
     };
   }
 
-  const lpCanonicalMap: Record<string, string> = {
-    "printer-not-printing": "https://www.livefeedreviews.com/lp/printer-not-printing",
-    "printer-offline": "https://www.livefeedreviews.com/lp/printer-offline",
-    "printer-paper-jam": "https://www.livefeedreviews.com/lp/printer-paper-jam",
-    "printer-not-connecting-to-wifi": "https://www.livefeedreviews.com/lp/printer-wifi",
-    "printer-job-stuck-in-queue": "https://www.livefeedreviews.com/lp/printer-queue",
-    "printer-driver": "https://www.livefeedreviews.com/lp/printer-driver",
-    "printer-issue-after-windows-update": "https://www.livefeedreviews.com/lp/printer-driver",
-    "printer-code-errors-and-messages": "https://www.livefeedreviews.com/lp/printer-error-codes",
-    "printer-in-error-state": "https://www.livefeedreviews.com/lp/printer-offline",
-    "printer-setup-issue": "https://www.livefeedreviews.com/lp/printer-driver",
-    "faded-streaky-print-quality": "https://www.livefeedreviews.com/lp/printer-print-quality",
-  };
-
-  const canonicalUrl = lpCanonicalMap[slug] || `https://www.livefeedreviews.com/solutions/${solution.slug}`;
+  const canonicalUrl = `https://www.livefeedreviews.com/solutions/${solution.slug}`;
 
   return {
     title: `${solution.title} | Live Feed Reviews`,
@@ -128,7 +114,6 @@ export default async function SolutionPage({ params }: Props) {
   const relatedSolutions = solutions.filter((s) => s.slug !== slug).slice(0, 4);
 
   const pageFaqs = solutionsFaqs[slug] || [];
-  const pageRating = solutionsRatings[slug] || { ratingValue: "4.8", reviewCount: "175" };
 
   // Schema.org Structured Data (WebPage with Speakable, HowTo, BreadcrumbList, FAQPage, TechArticle) for AI & Search Engines
   const structuredData = {
@@ -209,13 +194,13 @@ export default async function SolutionPage({ params }: Props) {
         "description": solution.metaDescription,
         "inLanguage": "en-US",
         "mainEntityOfPage": `https://www.livefeedreviews.com/solutions/${solution.slug}`,
-        "aggregateRating": {
-          "@type": "AggregateRating",
-          "ratingValue": pageRating.ratingValue,
-          "reviewCount": pageRating.reviewCount,
-          "bestRating": "5",
-          "worstRating": "1",
+        "author": {
+          "@type": "Organization",
+          "name": "Live Feed Reviews Editorial Staff"
         },
+        "publisher": {
+          "@id": "https://www.livefeedreviews.com/#organization"
+        }
       },
     ],
   };

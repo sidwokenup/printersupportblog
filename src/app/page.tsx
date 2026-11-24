@@ -49,20 +49,20 @@ export default function Home() {
   return (
     <div className="flex flex-col min-h-screen bg-slate-50 overflow-hidden">
       
-      {/* Printer Help Hero Banner */}
-      <div className="bg-gradient-to-r from-blue-900 via-indigo-900 to-slate-900 text-white py-3 px-4 shadow-sm border-b border-blue-800">
+      {/* Editorial Diagnostic Hub Callout Banner */}
+      <div className="bg-slate-900 text-white py-3 px-4 shadow-sm border-b border-slate-800">
         <div className="container mx-auto flex flex-col sm:flex-row items-center justify-between gap-3 text-center sm:text-left">
           <div className="flex items-center gap-2">
-            <span className="inline-flex items-center justify-center w-6 h-6 rounded-full bg-emerald-500 text-slate-900 font-extrabold text-xs">⚡</span>
-            <span className="font-bold text-sm md:text-base tracking-tight text-white">
-              Printer Not Printing? Offline? Paper Jam? Get Live Help Now
+            <span className="inline-flex items-center justify-center w-6 h-6 rounded-full bg-blue-600 text-white font-extrabold text-xs">ℹ</span>
+            <span className="font-medium text-sm md:text-base tracking-tight text-slate-200">
+              2026 Diagnostic Hub: Step-by-step troubleshooting guides for offline printers, driver errors, and wireless setup
             </span>
           </div>
           <Link
             href="/solutions"
-            className="inline-flex items-center gap-1.5 px-4 py-1.5 rounded-full bg-emerald-500 hover:bg-emerald-400 text-slate-950 font-bold text-xs uppercase tracking-wider transition-colors shadow-sm shrink-0"
+            className="inline-flex items-center gap-1.5 px-4 py-1.5 rounded-full bg-blue-600 hover:bg-blue-500 text-white font-semibold text-xs tracking-wide transition-colors shadow-sm shrink-0"
           >
-            <span>Open Diagnostic Hub &rarr;</span>
+            <span>Explore Guides &rarr;</span>
           </Link>
         </div>
       </div>
@@ -164,8 +164,8 @@ export default function Home() {
                       <CheckCircle2 className="h-5 w-5" />
                     </div>
                     <div>
-                      <div className="text-xl font-bold text-slate-900">45+</div>
-                      <div className="text-xs font-medium text-slate-500">Retail-Tested Models</div>
+                      <div className="text-xl font-bold text-slate-900">10</div>
+                      <div className="text-xs font-medium text-slate-500">Buying Guides</div>
                     </div>
                   </motion.div>
 
@@ -179,8 +179,8 @@ export default function Home() {
                       <BookOpen className="h-5 w-5" />
                     </div>
                     <div>
-                      <div className="text-xl font-bold text-slate-900">140+</div>
-                      <div className="text-xs font-medium text-slate-500">Testing Hours</div>
+                      <div className="text-xl font-bold text-slate-900">2,240+</div>
+                      <div className="text-xs font-medium text-slate-500">Indexed Error Codes</div>
                     </div>
                   </motion.div>
                 </div>
@@ -374,10 +374,10 @@ export default function Home() {
         <div className="container mx-auto px-4 md:px-6 relative z-10">
           <div className="grid grid-cols-2 md:grid-cols-4 gap-8 md:gap-12 text-center">
             {[
-              { value: "45+", label: "Retail-Tested Printer Models" },
-              { value: "140+", label: "Hours of Lab Benchmarking" },
-              { value: "12", label: "Comprehensive DIY Diagnostic Guides" },
-              { value: "100%", label: "Retail-Purchased Units (Zero Sponsors)" },
+              { value: "10", label: "Comprehensive 2026 Buying Guides" },
+              { value: "13", label: "Step-by-Step Diagnostic Hubs" },
+              { value: "2,240+", label: "Indexed Printer Error Codes" },
+              { value: "4", label: "Major Printer Ecosystems Covered" },
             ].map((stat, i) => (
               <div key={i} className="flex flex-col gap-2">
                 <div className="text-4xl md:text-5xl lg:text-6xl font-extrabold text-transparent bg-clip-text bg-gradient-to-b from-white to-white/70">

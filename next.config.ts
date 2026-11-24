@@ -30,7 +30,7 @@ const nextConfig: NextConfig = {
           },
           {
             key: "X-Robots-Tag",
-            value: "index, follow"
+            value: "noindex, nofollow"
           }
         ]
       },

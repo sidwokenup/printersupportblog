@@ -163,12 +163,32 @@ export default function ContactPage() {
                 <div className="flex items-start gap-3">
                   <Mail className="w-5 h-5 text-blue-400 shrink-0 mt-0.5" />
                   <div>
-                    <strong className="block text-white text-xs uppercase font-semibold">Editorial Email</strong>
+                    <strong className="block text-white text-xs uppercase font-semibold">Editorial &amp; Corrections</strong>
                     <a
                       href="mailto:contact@livefeedreviews.com"
                       className="text-blue-300 hover:text-white transition-colors text-sm font-medium"
                     >
                       contact@livefeedreviews.com
+                    </a>
+                  </div>
+                </div>
+
+                <div className="flex items-start gap-3">
+                  <Mail className="w-5 h-5 text-blue-400 shrink-0 mt-0.5" />
+                  <div>
+                    <strong className="block text-white text-xs uppercase font-semibold">Corporate Operator Support</strong>
+                    <div className="text-sm font-medium text-white">Tellepsis Media LLC</div>
+                    <a
+                      href="mailto:support@tellepsis.com"
+                      className="text-blue-300 hover:text-white transition-colors text-xs font-medium block"
+                    >
+                      support@tellepsis.com
+                    </a>
+                    <a
+                      href="tel:+18883442323"
+                      className="text-emerald-400 hover:text-emerald-300 transition-colors text-xs font-semibold block mt-0.5"
+                    >
+                      +1 (888) 344-2323
                     </a>
                   </div>
                 </div>
@@ -183,7 +203,7 @@ export default function ContactPage() {
               </div>
 
               <div className="pt-4 border-t border-slate-800 text-[11px] text-slate-400 leading-relaxed">
-                <strong>Notice:</strong> Live Feed Reviews is an independent consumer technology publication. We do not provide phone support, repair warranty service, or represent printer manufacturers. For warranty claims, contact the device manufacturer directly.
+                <strong>Notice:</strong> Live Feed Reviews is an independent consumer technology publication operated by Tellepsis Media LLC. We do not provide phone support, repair warranty service, or represent printer manufacturers. For warranty claims, contact the device manufacturer directly.
               </div>
             </div>
 

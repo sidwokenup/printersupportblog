@@ -41,7 +41,10 @@ export default function AboutPage() {
           <section className="space-y-3">
             <h2 className="text-2xl font-bold text-slate-900">Who We Are</h2>
             <p>
-              <strong>Live Feed Reviews</strong> is an independent research and comparison site focusing on consumer and office printers, high-speed document scanners, and printing supplies. We synthesize complex manufacturer technical specifications, published reviews, and real-world owner experiences into straightforward, accessible buying guides and self-service diagnostic checklists.
+              <strong>Live Feed Reviews</strong> is an independent research and comparison publication operated by <strong>Tellepsis Media LLC</strong>. We focus on consumer and office printers, high-speed document scanners, and printing supplies. We synthesize complex manufacturer technical specifications, published reviews, and real-world owner experiences into straightforward, accessible buying guides and self-service diagnostic checklists.
+            </p>
+            <p className="text-xs text-slate-500 pt-1">
+              Corporate inquiries: <a href="mailto:support@tellepsis.com" className="text-blue-600 underline">support@tellepsis.com</a> | Telephone: <a href="tel:+18883442323" className="text-blue-600 underline">+1 (888) 344-2323</a>
             </p>
           </section>
 

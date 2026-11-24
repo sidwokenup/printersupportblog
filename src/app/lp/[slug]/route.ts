@@ -24,15 +24,12 @@ export async function GET(request: NextRequest, { params }: RouteProps) {
     return new NextResponse("Diagnostic Guide Not Found", { status: 404 });
   }
 
-  const isIsolatedLandingPage = cleanSlug === "printer-tips" || cleanSlug === "printer-solution" || cleanSlug === "printer-solutions" || cleanSlug === "printer-help";
-  const robotsTag = isIsolatedLandingPage ? "noindex, nofollow" : "index, follow";
-
   return new NextResponse(htmlContent, {
     status: 200,
     headers: {
       "Content-Type": "text/html; charset=utf-8",
       "Content-Disposition": "inline",
-      "X-Robots-Tag": robotsTag,
+      "X-Robots-Tag": "noindex, nofollow",
       "Cache-Control": "public, max-age=3600, s-maxage=86400, stale-while-revalidate=86400",
     },
   });

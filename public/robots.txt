@@ -9,34 +9,31 @@
 # Google Ads Crawlers (Dedicated Unrestricted Access to Landing Pages)
 # ==============================================================================
 User-agent: AdsBot-Google
-Allow: /lp/printer-help
-Allow: /lp/printer-help.html
+Allow: /lp/
+Allow: /lp/*
 Allow: /printer-help
 Allow: /printer-help.html
-Allow: /lp/printer-tips
-Allow: /lp/printer-tips.html
 Allow: /printer-tips
 Allow: /printer-tips.html
+Allow: /
 
 User-agent: AdsBot-Google-Mobile
-Allow: /lp/printer-help
-Allow: /lp/printer-help.html
+Allow: /lp/
+Allow: /lp/*
 Allow: /printer-help
 Allow: /printer-help.html
-Allow: /lp/printer-tips
-Allow: /lp/printer-tips.html
 Allow: /printer-tips
 Allow: /printer-tips.html
+Allow: /
 
 User-agent: Mediapartners-Google
-Allow: /lp/printer-help
-Allow: /lp/printer-help.html
+Allow: /lp/
+Allow: /lp/*
 Allow: /printer-help
 Allow: /printer-help.html
-Allow: /lp/printer-tips
-Allow: /lp/printer-tips.html
 Allow: /printer-tips
 Allow: /printer-tips.html
+Allow: /
 
 # ==============================================================================
 # Global Default Crawlers (Block isolated landing page from organic search index)
@@ -47,46 +44,38 @@ Disallow: /api/
 Disallow: /_next/
 Disallow: /admin/
 Disallow: /preview/
-Disallow: /lp/printer-help
-Disallow: /lp/printer-help.html
+Disallow: /lp/
+Disallow: /lp/*
 Disallow: /printer-help
 Disallow: /printer-help.html
-Disallow: /lp/printer-tips
-Disallow: /lp/printer-tips.html
 Disallow: /printer-tips
 Disallow: /printer-tips.html
 
 # Western Search Engines (Block organic indexing of isolated landing pages)
 User-agent: Googlebot
 Allow: /
-Disallow: /lp/printer-help
-Disallow: /lp/printer-help.html
+Disallow: /lp/
+Disallow: /lp/*
 Disallow: /printer-help
 Disallow: /printer-help.html
-Disallow: /lp/printer-tips
-Disallow: /lp/printer-tips.html
 Disallow: /printer-tips
 Disallow: /printer-tips.html
 
 User-agent: Googlebot-Image
 Allow: /
-Disallow: /lp/printer-help
-Disallow: /lp/printer-help.html
+Disallow: /lp/
+Disallow: /lp/*
 Disallow: /printer-help
 Disallow: /printer-help.html
-Disallow: /lp/printer-tips
-Disallow: /lp/printer-tips.html
 Disallow: /printer-tips
 Disallow: /printer-tips.html
 
 User-agent: Bingbot
 Allow: /
-Disallow: /lp/printer-help
-Disallow: /lp/printer-help.html
+Disallow: /lp/
+Disallow: /lp/*
 Disallow: /printer-help
 Disallow: /printer-help.html
-Disallow: /lp/printer-tips
-Disallow: /lp/printer-tips.html
 Disallow: /printer-tips
 Disallow: /printer-tips.html
 
@@ -99,23 +88,19 @@ Allow: /
 # Global Asian & European Search Engines
 User-agent: Baiduspider
 Allow: /
-Disallow: /lp/printer-help
-Disallow: /lp/printer-help.html
+Disallow: /lp/
+Disallow: /lp/*
 Disallow: /printer-help
 Disallow: /printer-help.html
-Disallow: /lp/printer-tips
-Disallow: /lp/printer-tips.html
 Disallow: /printer-tips
 Disallow: /printer-tips.html
 
 User-agent: YandexBot
 Allow: /
-Disallow: /lp/printer-help
-Disallow: /lp/printer-help.html
+Disallow: /lp/
+Disallow: /lp/*
 Disallow: /printer-help
 Disallow: /printer-help.html
-Disallow: /lp/printer-tips
-Disallow: /lp/printer-tips.html
 Disallow: /printer-tips
 Disallow: /printer-tips.html
 
@@ -131,12 +116,14 @@ Allow: /
 # Apple Intelligence & Siri
 User-agent: Applebot
 Allow: /
-Disallow: /lp/printer-help
-Disallow: /lp/printer-help.html
+Disallow: /lp/
+Disallow: /lp/*
 Disallow: /printer-help
 Disallow: /printer-help.html
-Disallow: /lp/printer-tips
-Disallow: /lp/printer-tips.html
+Disallow: /printer-tips
+Disallow: /printer-tips.html
+Disallow: /printer-help
+Disallow: /printer-help.html
 Disallow: /printer-tips
 Disallow: /printer-tips.html
 

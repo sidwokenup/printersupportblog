@@ -1,7 +1,7 @@
 # Live Feed Reviews
-> Independent Consumer Printer Hardware Testing, ISO/IEC 19752 Yield Benchmarks, and DIY Diagnostic Troubleshooting Guides.
+> Independent Consumer Hardware & Troubleshooting Publication — Not affiliated with, endorsed by, or sponsored by HP, Canon, Epson, Brother, or any manufacturer.
 
-Live Feed Reviews (https://www.livefeedreviews.com) is an independent hardware laboratory and technical publication. We publish empirical, reproducible lab reviews and verified self-service diagnostic protocols for laser printers, supertank inkjets, thermal shipping printers, and document scanners.
+Live Feed Reviews (https://www.livefeedreviews.com) is an independent consumer hardware research publication operated by Tellepsis Media LLC. We publish specification analysis, ISO/IEC yield comparisons, and verified self-service diagnostic protocols for laser printers, supertank inkjets, thermal shipping printers, and document scanners.
 
 - **Canonical URL**: https://www.livefeedreviews.com
 - **Sitemap**: https://www.livefeedreviews.com/sitemap.xml
@@ -57,13 +57,13 @@ Side-by-side empirical hardware showdowns, 3-year TCO calculations, and duplex A
 - [Rollo Wireless vs Munbyn RealWriter 941](https://www.livefeedreviews.com/compare/rollo-wireless-vs-munbyn-realwriter-941): Direct thermal 4x6 shipping label printer comparison for e-commerce.
 - [Epson WorkForce WF-7840 vs Brother MFC-J6940DW](https://www.livefeedreviews.com/compare/epson-workforce-wf-7840-vs-brother-mfc-j6940dw): 11x17 Tabloid wide-format blueprint and design evaluation.
 
-## Independent Hardware Buying Guides & Lab Benchmarks
-Verified reviews based on ISO/IEC 19752 continuous yield testing and cost-per-page (CPP) analysis:
+## Independent Hardware Buying Guides & Technical Research
+Verified reviews based on ISO/IEC 19752 continuous yield comparisons and cost-per-page (CPP) analysis:
 
-- [Best Wireless Laser Printers (2026)](https://www.livefeedreviews.com/blog/best-laser-printer-2026-buyers-guide): Comprehensive lab ranking of wireless monochrome and color laser printers. Tested on warm-up latency, duplex speed, and toner yield.
+- [Best Wireless Laser Printers (2026)](https://www.livefeedreviews.com/blog/best-laser-printer-2026-buyers-guide): Comprehensive comparative ranking of wireless monochrome and color laser printers. Evaluated on warm-up latency, duplex speed, and toner yield.
 - [Laser vs Inkjet Printer Cost Comparison](https://www.livefeedreviews.com/blog/laser-vs-inkjet-printer-cost-comparison): 5-year Total Cost of Ownership (TCO) breakdown comparing cartridge inkjet, ink tank, and laser toner across 500 to 5,000 monthly pages.
-- [Best Inkjet Printers for Home Office](https://www.livefeedreviews.com/blog/best-inkjet-printer-home-office): Lab tested photo accuracy, document speed, and borderless printing performance.
-- [Best Desktop Document Scanners](https://www.livefeedreviews.com/blog/best-document-scanner-reviews-duplex): 50-sheet ADF duplex throughput testing, ultrasonic double-feed detection, and OCR accuracy benchmarks.
+- [Best Inkjet Printers for Home Office](https://www.livefeedreviews.com/blog/best-inkjet-printer-home-office): Evaluated photo accuracy, document speed, and borderless printing performance.
+- [Best Desktop Document Scanners](https://www.livefeedreviews.com/blog/best-document-scanner-reviews-duplex): 50-sheet ADF duplex throughput comparison, ultrasonic double-feed detection, and OCR accuracy benchmarks.
 - [Toner Cartridge Buying Guide & Markup Analysis](https://www.livefeedreviews.com/blog/toner-cartridge-cost-saving-guide): OEM cartridge pricing versus high-yield XL and third-party microchipped supplies.
 - [Best 11x17 Wide-Format & Tabloid Printers](https://www.livefeedreviews.com/blog/best-wide-format-printer-tabloid-reviews): Engineering blueprint, architectural plan, and fine art printing evaluations.
 - [SuperTank Comparison: EcoTank vs MegaTank vs Smart Tank](https://www.livefeedreviews.com/blog/best-tank-printer-super-tank-comparison): Head-to-head bottle refill yield, spill-free valve testing, and printhead longevity under dry ambient conditions.

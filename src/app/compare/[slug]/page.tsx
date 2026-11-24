@@ -44,7 +44,7 @@ export async function generateMetadata({ params }: Props): Promise<Metadata> {
     title: `${showdown.title} | Live Feed Reviews`,
     description: showdown.metaDescription,
     alternates: {
-      canonical: `/compare/${showdown.slug}`,
+      canonical: `https://www.livefeedreviews.com/compare/${showdown.slug}`,
       languages: langMap,
     },
     openGraph: {
@@ -124,11 +124,20 @@ export default async function ComparisonDetailPage({ params }: Props) {
           "priceCurrency": "USD",
           "availability": "https://schema.org/InStock"
         },
-        "aggregateRating": {
-          "@type": "AggregateRating",
-          "ratingValue": showdown.scoreA.toString(),
-          "bestRating": "10",
-          "ratingCount": "48"
+        "review": {
+          "@type": "Review",
+          "author": {
+            "@type": "Person",
+            "name": "Marcus Vance",
+            "jobTitle": "Lead Hardware Research Analyst"
+          },
+          "reviewRating": {
+            "@type": "Rating",
+            "ratingValue": showdown.scoreA.toString(),
+            "bestRating": "10",
+            "worstRating": "1"
+          },
+          "reviewBody": showdown.verdictSummary
         }
       },
       {
@@ -145,11 +154,20 @@ export default async function ComparisonDetailPage({ params }: Props) {
           "priceCurrency": "USD",
           "availability": "https://schema.org/InStock"
         },
-        "aggregateRating": {
-          "@type": "AggregateRating",
-          "ratingValue": showdown.scoreB.toString(),
-          "bestRating": "10",
-          "ratingCount": "52"
+        "review": {
+          "@type": "Review",
+          "author": {
+            "@type": "Person",
+            "name": "Marcus Vance",
+            "jobTitle": "Lead Hardware Research Analyst"
+          },
+          "reviewRating": {
+            "@type": "Rating",
+            "ratingValue": showdown.scoreB.toString(),
+            "bestRating": "10",
+            "worstRating": "1"
+          },
+          "reviewBody": showdown.verdictSummary
         }
       },
       {
