@@ -55,14 +55,14 @@ export default function Home() {
           <div className="flex items-center gap-2">
             <span className="inline-flex items-center justify-center w-6 h-6 rounded-full bg-blue-600 text-white font-extrabold text-xs">ℹ</span>
             <span className="font-medium text-sm md:text-base tracking-tight text-slate-200">
-              2026 Diagnostic Hub: Step-by-step troubleshooting guides for offline printers, driver errors, and wireless setup
+              2026 Diagnostic Hub: Step-by-step troubleshooting guides for offline printers, driver errors, and wireless setup &rarr; Explore Diagnostic Hub
             </span>
           </div>
           <Link
             href="/solutions"
             className="inline-flex items-center gap-1.5 px-4 py-1.5 rounded-full bg-blue-600 hover:bg-blue-500 text-white font-semibold text-xs tracking-wide transition-colors shadow-sm shrink-0"
           >
-            <span>Explore Guides &rarr;</span>
+            <span>Explore Diagnostic Hub &rarr;</span>
           </Link>
         </div>
       </div>
@@ -97,7 +97,7 @@ export default function Home() {
               </motion.h1>
               
               <motion.p variants={FADE_UP} className="text-lg md:text-xl text-slate-600 mb-6 leading-relaxed">
-                Independent research and comparison site for printer hardware and troubleshooting guides. We analyze manufacturer specifications, user experiences, and estimated running costs so you never overpay.
+                Independent hardware research, specification benchmarking, and step-by-step diagnostic documentation compiled from ISO/IEC yield standards, manufacturer service manuals, and technician-verified troubleshooting protocols.
               </motion.p>
 
               <motion.div variants={FADE_UP} className="flex flex-wrap gap-3 mb-8">
@@ -165,7 +165,7 @@ export default function Home() {
                     </div>
                     <div>
                       <div className="text-xl font-bold text-slate-900">10</div>
-                      <div className="text-xs font-medium text-slate-500">Buying Guides</div>
+                      <div className="text-xs font-medium text-slate-500">2026 Buying Guides</div>
                     </div>
                   </motion.div>
 
@@ -180,7 +180,7 @@ export default function Home() {
                     </div>
                     <div>
                       <div className="text-xl font-bold text-slate-900">2,240+</div>
-                      <div className="text-xs font-medium text-slate-500">Indexed Error Codes</div>
+                      <div className="text-xs font-medium text-slate-500">Error Codes Indexed</div>
                     </div>
                   </motion.div>
                 </div>
@@ -374,10 +374,10 @@ export default function Home() {
         <div className="container mx-auto px-4 md:px-6 relative z-10">
           <div className="grid grid-cols-2 md:grid-cols-4 gap-8 md:gap-12 text-center">
             {[
-              { value: "10", label: "Comprehensive 2026 Buying Guides" },
-              { value: "13", label: "Step-by-Step Diagnostic Hubs" },
-              { value: "2,240+", label: "Indexed Printer Error Codes" },
-              { value: "4", label: "Major Printer Ecosystems Covered" },
+              { value: "10", label: "2026 Buying Guides" },
+              { value: "13", label: "DIY Diagnostic Hubs" },
+              { value: "2,240+", label: "Error Codes Indexed" },
+              { value: "4", label: "Major Printer Ecosystems" },
             ].map((stat, i) => (
               <div key={i} className="flex flex-col gap-2">
                 <div className="text-4xl md:text-5xl lg:text-6xl font-extrabold text-transparent bg-clip-text bg-gradient-to-b from-white to-white/70">

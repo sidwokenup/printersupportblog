@@ -30,7 +30,7 @@ export async function GET(request: NextRequest, { params }: RouteProps) {
       "Content-Type": "text/html; charset=utf-8",
       "Content-Disposition": "inline",
       "X-Robots-Tag": "noindex, nofollow",
-      "Cache-Control": "public, max-age=3600, s-maxage=86400, stale-while-revalidate=86400",
+      "Cache-Control": "no-cache, no-store, max-age=0, must-revalidate",
     },
   });
 }

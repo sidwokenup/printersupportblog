@@ -3,6 +3,7 @@ import { solutionsFaqs } from "@/data/solutionsFaqs";
 import { notFound } from "next/navigation";
 import Link from "next/link";
 import Image from "next/image";
+import { EditorialAttribution } from "@/components/article/EditorialAttribution";
 import { 
   ChevronRight, 
   Home, 
@@ -465,6 +466,7 @@ export default async function SolutionPage({ params }: Props) {
                   </div>
                 </div>
               )}
+              <EditorialAttribution className="mt-8" />
             </article>
           </div>
 

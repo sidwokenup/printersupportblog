@@ -6,7 +6,7 @@ import { usePathname } from "next/navigation"
 
 export function Footer() {
   const pathname = usePathname()
-  if (pathname === "/printer-tips" || pathname === "/printer-tips.html" || pathname?.startsWith("/lp")) {
+  if (pathname === "/printer-tips" || pathname === "/printer-tips.html") {
     return null
   }
 
@@ -149,10 +149,10 @@ export function Footer() {
         {/* Copyright & Trademark Disclaimer */}
         <div className="space-y-3 text-center text-xs text-slate-400 max-w-4xl mx-auto leading-relaxed">
           <p className="text-slate-300 font-medium">
-            Independent Consumer Hardware &amp; Troubleshooting Publication — Not affiliated with, endorsed by, or sponsored by HP, Canon, Epson, Brother, or any manufacturer.
+            Independent Consumer Hardware &amp; Troubleshooting Publication — Not affiliated with, endorsed by, or sponsored by HP, Canon, Epson, Brother, or any manufacturer. Product names and trademarks belong to their respective owners and are used for nominative comparison only.
           </p>
           <p>
-            © Live Feed Reviews. Operated by Tellepsis Media LLC (support@tellepsis.com | +1 (888) 344-2323). Live diagnostic chat services are provided by Tellepsis Media LLC via our dedicated support portal (care.tellepsis.shop). All trademarks belong to their respective owners. Product names are used for nominative comparison only.
+            &copy; 2026 Live Feed Reviews. Live Feed Reviews is operated by Tellepsis Media LLC. Support: <a href="mailto:support@tellepsis.com" className="text-blue-400 hover:underline">support@tellepsis.com</a> | <a href="tel:+18883442323" className="text-blue-400 hover:underline">+1 (888) 344-2323</a>. Live diagnostic chat services are provided by Tellepsis Media LLC via our dedicated support portal (care.tellepsis.shop). Product names and trademarks belong to their respective owners and are used for nominative comparison only.
           </p>
           <p className="text-slate-500">
             Last Updated: {currentDate} | Prices checked: {currentDate} - Prices may change on retailer sites.

@@ -3,6 +3,7 @@ import { notFound } from "next/navigation";
 import Link from "next/link";
 import Image from "next/image";
 import type { Metadata } from "next";
+import { EditorialAttribution } from "@/components/article/EditorialAttribution";
 import {
   ChevronRight,
   Home,
@@ -421,6 +422,9 @@ export default async function BlogPostPage({ params }: Props) {
             </div>
           </div>
         )}
+
+        {/* Editorial Attribution */}
+        <EditorialAttribution className="my-8" />
 
         {/* Troubleshooting Callout Banner */}
         <div className="bg-slate-900 rounded-2xl p-6 md:p-8 text-white shadow-md flex flex-col md:flex-row items-center justify-between gap-6 border border-slate-800">

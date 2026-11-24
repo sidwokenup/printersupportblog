@@ -28,13 +28,13 @@ export function EditorialAttribution({ className = "" }: { className?: string })
           </p>
         </div>
       </div>
-      <div className="text-xs md:text-sm text-slate-700 leading-relaxed pt-3 border-t border-slate-200 flex items-start gap-2">
-        <ShieldCheck className="w-4 h-4 text-emerald-600 shrink-0 mt-0.5" />
-        <div>
-          <strong className="text-slate-900 font-semibold">Testing Methodology Summary:</strong> Diagnostics are
-          lab-verified across Windows 11, macOS Sonoma, and CUPS network print architectures. Operating costs are calculated
-          using standard ISO/IEC 19752 monochrome 5% coverage and ISO/IEC 24712 color targets, first-page-out time (FPOT)
-          latency benchmarks, and 3-year Total Cost of Ownership (TCO) models. All review units are retail-purchased.
+      <div className="text-xs md:text-sm text-slate-700 leading-relaxed pt-3 border-t border-slate-200 flex flex-col gap-2">
+        <div className="flex items-center gap-2 text-xs font-semibold text-slate-900">
+          <ShieldCheck className="w-4 h-4 text-emerald-600 shrink-0" />
+          <span>Technical Documentation Reviewed by Tellepsis Hardware Research Team &bull; Last Updated: November 24, 2026</span>
+        </div>
+        <div className="text-xs text-slate-600">
+          <strong className="text-slate-900 font-semibold">Testing Methodology Summary:</strong> Independent hardware research, specification benchmarking, and step-by-step diagnostic documentation compiled from ISO/IEC yield standards, manufacturer service manuals, and technician-verified troubleshooting protocols.
         </div>
       </div>
     </div>
