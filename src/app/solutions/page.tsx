@@ -1,6 +1,7 @@
 import { solutions } from "@/data/solutions";
 import Link from "next/link";
 import Image from "next/image";
+import { EditorialAttribution } from "@/components/article/EditorialAttribution";
 import { 
   Wrench, 
   CheckCircle2, 
@@ -148,16 +149,19 @@ export default function SolutionsHubPage() {
               <strong>Independent Self-Help Resource:</strong> All guides are 100% free DIY procedures. LiveFeedReviews does not provide telephone support, remote access troubleshooting, or paid repair services.
             </span>
           </div>
+
+          {/* Attribution & Testing Methodology Summary */}
+          <EditorialAttribution className="my-6 max-w-3xl mx-auto" />
         </header>
 
-        {/* 24/7 Live Diagnostics Hub Banner */}
+        {/* Self-Service Troubleshooting Directory Banner */}
         <div className="bg-gradient-to-r from-slate-900 to-blue-950 rounded-2xl p-6 text-white flex flex-col md:flex-row items-center justify-between gap-4 shadow-md border border-slate-800">
           <div>
             <div className="text-emerald-400 text-xs font-bold uppercase tracking-wider mb-1">
-              Live Support &amp; Diagnostic Directory
+              Self-Service Troubleshooting Directory
             </div>
             <h3 className="text-xl font-extrabold text-white">
-              Complete Printer Diagnostic &amp; Chat Solutions Hub
+              Complete Printer Diagnostic &amp; Troubleshooting Hub
             </h3>
             <p className="text-slate-300 text-sm mt-1">
               Explore our full directory covering HP, Canon, Epson &amp; Brother error codes, offline states, and driver recovery.
@@ -167,7 +171,7 @@ export default function SolutionsHubPage() {
             href="#diagnostic-matrix"
             className="inline-flex items-center gap-2 bg-emerald-500 hover:bg-emerald-600 text-white font-bold text-sm px-6 py-3 rounded-xl transition-all shadow-md whitespace-nowrap"
           >
-            Open Printer Hub <ArrowRight className="w-4 h-4" />
+            Open Troubleshooting Hub <ArrowRight className="w-4 h-4" />
           </Link>
         </div>
 
@@ -396,70 +400,66 @@ export default function SolutionsHubPage() {
           </div>
         </section>
 
-        {/* Authorized OEM Warranty Directory */}
+        {/* Official Manufacturer Support Directory */}
         <section className="bg-white rounded-3xl p-8 md:p-12 border border-slate-200 shadow-sm space-y-6">
           <div className="flex items-center gap-2 text-blue-600">
             <BookOpen className="w-6 h-6" />
             <h2 className="text-2xl font-bold text-slate-900">
-              Official Manufacturer Warranty &amp; Driver Directory
+              Official Manufacturer Support Directory
             </h2>
           </div>
-          <p className="text-slate-600 text-sm max-w-2xl">
-            For hardware under active manufacturer warranty, firmware binary updates, or official warranty claims, access authorized equipment manufacturer portals directly:
+          <p className="text-slate-700 text-sm max-w-3xl font-semibold">
+            We do not provide manufacturer telephone warranty support - use the Official Manufacturer Support Directory for warranty claims.
           </p>
 
-          <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-4 gap-4">
-            <a
-              href="https://support.hp.com"
-              target="_blank"
-              rel="noopener noreferrer"
-              className="p-5 rounded-2xl bg-slate-50 border border-slate-200 hover:border-blue-300 hover:bg-blue-50/40 transition-all group"
-            >
-              <div className="font-bold text-slate-900 group-hover:text-blue-700 flex items-center justify-between">
-                <span>HP Customer Support</span>
-                <ExternalLink className="w-4 h-4 text-slate-400 group-hover:text-blue-600" />
-              </div>
-              <p className="text-xs text-slate-500 mt-2">Serial number warranty check and HP Print and Scan Doctor tool.</p>
-            </a>
-
-            <a
-              href="https://support.brother.com"
-              target="_blank"
-              rel="noopener noreferrer"
-              className="p-5 rounded-2xl bg-slate-50 border border-slate-200 hover:border-blue-300 hover:bg-blue-50/40 transition-all group"
-            >
-              <div className="font-bold text-slate-900 group-hover:text-blue-700 flex items-center justify-between">
-                <span>Brother Solutions Center</span>
-                <ExternalLink className="w-4 h-4 text-slate-400 group-hover:text-blue-600" />
-              </div>
-              <p className="text-xs text-slate-500 mt-2">Driver downloads, manuals, error code lookups, and firmware.</p>
-            </a>
-
-            <a
-              href="https://usa.canon.com/support"
-              target="_blank"
-              rel="noopener noreferrer"
-              className="p-5 rounded-2xl bg-slate-50 border border-slate-200 hover:border-blue-300 hover:bg-blue-50/40 transition-all group"
-            >
-              <div className="font-bold text-slate-900 group-hover:text-blue-700 flex items-center justify-between">
-                <span>Canon USA Support</span>
-                <ExternalLink className="w-4 h-4 text-slate-400 group-hover:text-blue-600" />
-              </div>
-              <p className="text-xs text-slate-500 mt-2">IJ Printer utility, imageCLASS laser guides, and service centers.</p>
-            </a>
-
-            <a
-              href="https://epson.com/support"
-              target="_blank"
-              rel="noopener noreferrer"
-              className="p-5 rounded-2xl bg-slate-50 border border-slate-200 hover:border-blue-300 hover:bg-blue-50/40 transition-all group"
-            >
-              <div className="font-bold text-slate-900 group-hover:text-blue-700 flex items-center justify-between">
-                <span>Epson Support Hub</span>
-                <ExternalLink className="w-4 h-4 text-slate-400 group-hover:text-blue-600" />
-              </div>
-              <p className="text-xs text-slate-500 mt-2">EcoTank nozzle recovery, software utilities, and parts finder.</p>
-            </a>
+          <div className="overflow-x-auto pt-2">
+            <table className="w-full text-left text-xs md:text-sm border-collapse bg-white rounded-2xl overflow-hidden border border-slate-200">
+              <thead>
+                <tr className="bg-slate-100 text-slate-900 font-semibold border-b border-slate-200 text-xs uppercase tracking-wider">
+                  <th className="py-3.5 px-4">Manufacturer</th>
+                  <th className="py-3.5 px-4">Official Portal</th>
+                  <th className="py-3.5 px-4">Scope of Official Support</th>
+                </tr>
+              </thead>
+              <tbody className="divide-y divide-slate-100">
+                <tr className="hover:bg-blue-50/30 transition-colors">
+                  <td className="py-3.5 px-4 font-bold text-slate-900">HP</td>
+                  <td className="py-3.5 px-4">
+                    <a href="https://support.hp.com" target="_blank" rel="noopener noreferrer" className="text-blue-600 hover:underline inline-flex items-center gap-1 font-semibold">
+                      support.hp.com <ExternalLink className="w-3.5 h-3.5 text-slate-400" />
+                    </a>
+                  </td>
+                  <td className="py-3.5 px-4 text-slate-600">Official drivers, firmware updates &amp; hardware warranty service.</td>
+                </tr>
+                <tr className="hover:bg-blue-50/30 transition-colors">
+                  <td className="py-3.5 px-4 font-bold text-slate-900">Canon</td>
+                  <td className="py-3.5 px-4">
+                    <a href="https://usa.canon.com/support" target="_blank" rel="noopener noreferrer" className="text-blue-600 hover:underline inline-flex items-center gap-1 font-semibold">
+                      usa.canon.com/support <ExternalLink className="w-3.5 h-3.5 text-slate-400" />
+                    </a>
+                  </td>
+                  <td className="py-3.5 px-4 text-slate-600">Official drivers, firmware updates &amp; hardware warranty service.</td>
+                </tr>
+                <tr className="hover:bg-blue-50/30 transition-colors">
+                  <td className="py-3.5 px-4 font-bold text-slate-900">Epson</td>
+                  <td className="py-3.5 px-4">
+                    <a href="https://epson.com/Support" target="_blank" rel="noopener noreferrer" className="text-blue-600 hover:underline inline-flex items-center gap-1 font-semibold">
+                      epson.com/Support <ExternalLink className="w-3.5 h-3.5 text-slate-400" />
+                    </a>
+                  </td>
+                  <td className="py-3.5 px-4 text-slate-600">Official drivers, firmware updates &amp; hardware warranty service.</td>
+                </tr>
+                <tr className="hover:bg-blue-50/30 transition-colors">
+                  <td className="py-3.5 px-4 font-bold text-slate-900">Brother</td>
+                  <td className="py-3.5 px-4">
+                    <a href="https://www.brother-usa.com/support" target="_blank" rel="noopener noreferrer" className="text-blue-600 hover:underline inline-flex items-center gap-1 font-semibold">
+                      brother-usa.com/support <ExternalLink className="w-3.5 h-3.5 text-slate-400" />
+                    </a>
+                  </td>
+                  <td className="py-3.5 px-4 text-slate-600">Official drivers, firmware updates &amp; hardware warranty service.</td>
+                </tr>
+              </tbody>
+            </table>
           </div>
         </section>
 

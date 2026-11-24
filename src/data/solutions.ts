@@ -822,7 +822,7 @@ export const solutions: SolutionData[] = [
       {
         "name": "See All 2026 Top Rated Printer Reviews",
         "link": "/printers",
-        "reason": "Independent lab benchmarks and ISO cost-per-page testing across 45 models."
+        "reason": "Independent hardware research and ISO cost-per-page specification testing across 45 models."
       },
       {
         "name": "High-Yield Toner Savings Comparison",

@@ -133,7 +133,7 @@ export const solutionsFaqs: Record<string, FAQItem[]> = {
     },
     {
       "question": "Why won't my printer respond when I press the physical 'Print' or 'Resume' button?",
-      "answer": "An unresponsive physical button indicates an internal firmware halt or an active paper sensor interlock failure. Unplug the AC power cord for 60 seconds to discharge logic board capacitors."
+      "answer": "An unresponsive physical button indicates an internal firmware halt or an active paper sensor interlock failure. Unplug the AC power cord to perform a complete electrical power discharge and reset logic board capacitors."
     },
     {
       "question": "Can low colored ink prevent black text documents from printing?",
@@ -377,7 +377,7 @@ export const solutionsFaqs: Record<string, FAQItem[]> = {
     },
     {
       "question": "What does Epson error 0x97 mean?",
-      "answer": "Epson error 0x97 indicates an internal motherboard or printhead circuit failure. Unplug the printer, remove all paper and ink, hold the power button for 60 seconds, and restart. Persistent 0x97 requires hardware service."
+      "answer": "Epson error 0x97 indicates an internal motherboard or printhead circuit failure. Unplug the printer, remove all paper and ink, perform a complete power discharge, and restart. Persistent 0x97 requires hardware service."
     },
     {
       "question": "What does Brother error 'Drum! Slide Green Tab' mean?",
@@ -397,7 +397,7 @@ export const solutionsFaqs: Record<string, FAQItem[]> = {
     },
     {
       "question": "How do I clear error codes that persist after fixing the physical issue?",
-      "answer": "Perform a hard factory reset: Turn on the printer, pull the power cord from the wall for 60 seconds, reconnect, and allow the startup diagnostic routine to re-evaluate all onboard sensors."
+      "answer": "Perform a power discharge reset: Turn on the printer, disconnect the power cord from the wall outlet to allow capacitors to discharge completely, reconnect directly, and allow the startup diagnostic routine to re-evaluate all onboard sensors."
     }
   ],
   "printer-in-error-state": [
@@ -439,7 +439,7 @@ export const solutionsFaqs: Record<string, FAQItem[]> = {
     },
     {
       "question": "What is the sequence for a full electrical power drain reset?",
-      "answer": "Turn on the printer. Unplug the AC cord from the back of the unit. Unplug from the wall. Wait 60 full seconds. Plug directly into the wall outlet (no surge protector) and reconnect the machine."
+      "answer": "Turn on the printer. Unplug the AC cord from the back of the unit. Unplug from the wall. Allow capacitors to fully discharge. Plug directly into the wall outlet (no surge protector) and reconnect the machine."
     }
   ],
   "printer-setup-issue": [

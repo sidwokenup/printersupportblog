@@ -1,6 +1,7 @@
 import { curatedErrorCodes, ErrorCodeDetail } from "@/data/curatedErrorCodes";
 import { notFound } from "next/navigation";
 import Link from "next/link";
+import { EditorialAttribution } from "@/components/article/EditorialAttribution";
 import { 
   ChevronRight, 
   Home, 
@@ -315,6 +316,9 @@ export default async function ErrorCodeDetailPage({ params }: Props) {
             {error.preventionTips}
           </p>
         </div>
+
+        {/* Technical Attribution & Testing Methodology */}
+        <EditorialAttribution className="my-6" />
 
         {/* Related Error Codes & Navigation */}
         <div className="bg-white p-6 md:p-8 rounded-3xl border border-slate-200 shadow-sm space-y-6">

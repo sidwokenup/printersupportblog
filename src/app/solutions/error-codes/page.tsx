@@ -1,6 +1,7 @@
 import { curatedErrorCodes, ErrorCodeDetail } from "@/data/curatedErrorCodes";
 import ErrorCodeSearchMatrix from "@/components/ErrorCodeSearchMatrix";
 import Link from "next/link";
+import { EditorialAttribution } from "@/components/article/EditorialAttribution";
 import { 
   AlertTriangle, 
   ChevronRight, 
@@ -159,6 +160,9 @@ export default function ErrorCodesHubPage() {
             </div>
           </div>
         </div>
+
+        {/* Technical Attribution & Testing Methodology */}
+        <EditorialAttribution className="my-6" />
 
         {/* Diagnostic Snapshot Box */}
         <div className="bg-white rounded-2xl p-6 border border-slate-200/80 shadow-xs grid md:grid-cols-3 gap-6">
