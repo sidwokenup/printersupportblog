@@ -487,7 +487,7 @@ export const solutionsFaqs: Record<string, FAQItem[]> = {
   "printer-troubleshooting": [
     {
       "question": "What is the universal 5-step diagnostic process for any printer problem?",
-      "answer": "1. Verify AC power and run a 60-second power drain reset. 2. Inspect the paper path and clean feed rollers. 3. Check ink/toner levels and purge clogged nozzles. 4. Verify network/USB connectivity and IP binding. 5. Clear the OS print spooler and update drivers."
+      "answer": "1. Verify AC power and run a complete power drain reset. 2. Inspect the paper path and clean feed rollers. 3. Check ink/toner levels and purge clogged nozzles. 4. Verify network/USB connectivity and IP binding. 5. Clear the OS print spooler and update drivers."
     },
     {
       "question": "How do I tell if a printer problem is hardware-related or computer-related?",

@@ -127,9 +127,8 @@ export default async function ComparisonDetailPage({ params }: Props) {
         "review": {
           "@type": "Review",
           "author": {
-            "@type": "Person",
-            "name": "Marcus Vance",
-            "jobTitle": "Lead Hardware Research Analyst"
+            "@type": "Organization",
+            "name": "Tellepsis Hardware Research Team"
           },
           "reviewRating": {
             "@type": "Rating",
@@ -157,9 +156,8 @@ export default async function ComparisonDetailPage({ params }: Props) {
         "review": {
           "@type": "Review",
           "author": {
-            "@type": "Person",
-            "name": "Marcus Vance",
-            "jobTitle": "Lead Hardware Research Analyst"
+            "@type": "Organization",
+            "name": "Tellepsis Hardware Research Team"
           },
           "reviewRating": {
             "@type": "Rating",

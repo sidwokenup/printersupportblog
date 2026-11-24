@@ -197,7 +197,7 @@ export default async function SolutionPage({ params }: Props) {
         "mainEntityOfPage": `https://www.livefeedreviews.com/solutions/${solution.slug}`,
         "author": {
           "@type": "Organization",
-          "name": "Live Feed Reviews Editorial Staff"
+          "name": "Tellepsis Hardware Research Team"
         },
         "publisher": {
           "@id": "https://www.livefeedreviews.com/#organization"
@@ -347,21 +347,21 @@ export default async function SolutionPage({ params }: Props) {
                       </p>
                     )}
 
-                    {/* Mid Diagnostic CTA Box */}
+                    {/* Mid Diagnostic Guidance Box */}
                     {index === 1 && (
                       <div className="my-6 p-5 rounded-2xl bg-slate-900 text-white flex flex-col md:flex-row items-center justify-between gap-4 shadow-sm border border-slate-800">
                         <div className="space-y-1 text-center md:text-left">
-                          <div className="font-bold text-sm md:text-base text-white">Still stuck? Get Independent Help</div>
+                          <div className="font-bold text-sm md:text-base text-white">Still stuck? See Official Support</div>
                           <p className="text-xs text-slate-300">
-                            Independent help directory. Not affiliated with Brother, Canon, Epson, HP, or any manufacturer. Not official manufacturer support.
+                            Still stuck? See the Official Manufacturer Support Directory below for warranty / driver help, or explore the full diagnostic library.
                           </p>
                         </div>
                         <div className="flex flex-col items-center sm:items-end gap-1.5 shrink-0">
-                          <Link href="#openLiveChat" className="px-5 py-2.5 bg-emerald-500 hover:bg-emerald-400 text-slate-950 font-bold text-xs uppercase tracking-wider rounded-xl transition-colors shadow-sm">
-                            Chat Now
-                          </Link>
+                          <a href="#oem-directory" className="px-5 py-2.5 bg-emerald-500 hover:bg-emerald-400 text-slate-950 font-bold text-xs uppercase tracking-wider rounded-xl transition-colors shadow-sm">
+                            View Official Directory &darr;
+                          </a>
                           <span className="text-[10px] text-slate-400 text-center sm:text-right">
-                            Chat may be automated or live. Free. No guarantee of fix. See <Link href="/terms" className="underline hover:text-white">Terms</Link>.
+                            We do not provide manufacturer telephone warranty support.
                           </span>
                         </div>
                       </div>
@@ -416,24 +416,53 @@ export default async function SolutionPage({ params }: Props) {
                 </div>
               )}
 
-              {/* End Solution CTA Box */}
+              {/* End Solution Official Support Guidance Box */}
               <div className="p-6 md:p-8 rounded-2xl bg-slate-900 text-white flex flex-col md:flex-row items-center justify-between gap-6 border border-slate-800 shadow-md">
                 <div className="space-y-1 text-center md:text-left">
-                  <h4 className="text-xl font-bold">Still stuck? Get Independent Help</h4>
+                  <h4 className="text-xl font-bold">Still stuck? See Official Support</h4>
                   <p className="text-slate-300 text-xs md:text-sm max-w-lg leading-relaxed">
-                    Independent help directory. Not affiliated with Brother, Canon, Epson, HP, or any manufacturer. Not official manufacturer support.
+                    Still stuck? See the Official Manufacturer Support Directory below for warranty / driver help, or explore the full diagnostic library.
                   </p>
                 </div>
                 <div className="flex flex-col items-center md:items-end gap-2 shrink-0">
-                  <Link 
-                    href="#openLiveChat" 
+                  <a 
+                    href="#oem-directory" 
                     className="px-6 py-2.5 bg-emerald-500 hover:bg-emerald-400 text-slate-950 font-bold text-xs uppercase tracking-wider rounded-xl transition-colors shadow-sm"
                   >
-                    Chat Now
-                  </Link>
+                    View Official Directory &darr;
+                  </a>
                   <span className="text-[10px] text-slate-400 text-center md:text-right max-w-xs">
-                    Chat may be automated or live. Free. No guarantee of fix. See <Link href="/terms" className="underline hover:text-white">Terms</Link>.
+                    We do not provide manufacturer telephone warranty support.
                   </span>
+                </div>
+              </div>
+
+              {/* In-Article Official OEM Support Directory */}
+              <div id="oem-directory" className="bg-slate-50 border border-slate-200 rounded-2xl p-6 md:p-8 space-y-4 scroll-mt-24">
+                <div className="flex items-center gap-2 text-blue-700">
+                  <ShieldCheck className="w-5 h-5 text-emerald-600" />
+                  <h3 className="font-bold text-slate-900 text-lg">Official Manufacturer Support Directory</h3>
+                </div>
+                <p className="text-xs md:text-sm text-slate-600 leading-relaxed">
+                  We do not provide manufacturer telephone warranty support. For official manufacturer warranty claims, certified driver packages, or factory recall service, connect directly with official vendor support channels via the Official Manufacturer Support Directory below:
+                </p>
+                <div className="grid grid-cols-1 sm:grid-cols-2 gap-3 pt-2">
+                  <a href="https://support.hp.com" target="_blank" rel="noopener noreferrer" className="flex items-center justify-between p-3.5 bg-white border border-slate-200 rounded-xl hover:border-blue-300 hover:bg-blue-50/30 transition-all text-xs font-bold text-slate-800 hover:text-blue-600">
+                    <span>HP Support (support.hp.com)</span>
+                    <ExternalLink className="w-3.5 h-3.5 text-slate-400" />
+                  </a>
+                  <a href="https://usa.canon.com/support" target="_blank" rel="noopener noreferrer" className="flex items-center justify-between p-3.5 bg-white border border-slate-200 rounded-xl hover:border-blue-300 hover:bg-blue-50/30 transition-all text-xs font-bold text-slate-800 hover:text-blue-600">
+                    <span>Canon Support (usa.canon.com/support)</span>
+                    <ExternalLink className="w-3.5 h-3.5 text-slate-400" />
+                  </a>
+                  <a href="https://epson.com/Support" target="_blank" rel="noopener noreferrer" className="flex items-center justify-between p-3.5 bg-white border border-slate-200 rounded-xl hover:border-blue-300 hover:bg-blue-50/30 transition-all text-xs font-bold text-slate-800 hover:text-blue-600">
+                    <span>Epson Support (epson.com/Support)</span>
+                    <ExternalLink className="w-3.5 h-3.5 text-slate-400" />
+                  </a>
+                  <a href="https://www.brother-usa.com/support" target="_blank" rel="noopener noreferrer" className="flex items-center justify-between p-3.5 bg-white border border-slate-200 rounded-xl hover:border-blue-300 hover:bg-blue-50/30 transition-all text-xs font-bold text-slate-800 hover:text-blue-600">
+                    <span>Brother Support (brother-usa.com/support)</span>
+                    <ExternalLink className="w-3.5 h-3.5 text-slate-400" />
+                  </a>
                 </div>
               </div>
 
@@ -474,21 +503,21 @@ export default async function SolutionPage({ params }: Props) {
           <aside className="lg:col-span-4 flex flex-col gap-6 sticky top-24">
             
             {/* Official OEM Support Directory Card */}
-            <div className="bg-white rounded-2xl p-6 border border-slate-200 shadow-sm space-y-4">
+            <div id="oem-directory-sidebar" className="bg-white rounded-2xl p-6 border border-slate-200 shadow-sm space-y-4">
               <div className="flex items-center gap-2 text-blue-600">
                 <BookOpen className="w-5 h-5" />
-                <h3 className="font-bold text-slate-900 text-base">Authorized OEM Support</h3>
+                <h3 className="font-bold text-slate-900 text-base">Official Manufacturer Support Directory</h3>
               </div>
               <p className="text-xs text-slate-600 leading-relaxed">
-                For in-warranty hardware replacements, genuine driver downloads, and factory repair claims, consult your manufacturer’s official support portals:
+                We do not provide manufacturer telephone warranty support. For official manufacturer warranty claims, certified driver packages, or factory recall service, connect directly with official vendor support channels via the Official Manufacturer Support Directory below:
               </p>
               <div className="space-y-2 pt-1">
-                {(solution.oemLinks || [
-                  { name: "HP Customer Support", url: "https://support.hp.com" },
-                  { name: "Brother Solutions Center", url: "https://support.brother.com" },
-                  { name: "Canon USA Consumer Support", url: "https://usa.canon.com/support" },
-                  { name: "Epson Official Support", url: "https://epson.com/support" }
-                ]).map((oem, idx) => (
+                {[
+                  { name: "HP Support (support.hp.com)", url: "https://support.hp.com" },
+                  { name: "Canon Support (usa.canon.com/support)", url: "https://usa.canon.com/support" },
+                  { name: "Epson Support (epson.com/Support)", url: "https://epson.com/Support" },
+                  { name: "Brother Support (brother-usa.com/support)", url: "https://www.brother-usa.com/support" }
+                ].map((oem, idx) => (
                   <a
                     key={idx}
                     href={oem.url}

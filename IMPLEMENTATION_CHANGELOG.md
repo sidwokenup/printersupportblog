@@ -40,7 +40,7 @@
   - Completely removed `lpCanonicalMap`. Configured permanent self-canonical: `https://www.livefeedreviews.com/solutions/${solution.slug}`.
   - Removed self-serving `AggregateRating` (184/212 reviews) from `TechArticle` schema. Added clean author and publisher organization links.
 - **`src/app/compare/[slug]/page.tsx`**:
-  - Replaced anonymous `AggregateRating` with editorial `Review` markup attributed to Marcus Vance (Lead Hardware Research Analyst).
+  - Replaced anonymous `AggregateRating` with editorial `Review` markup attributed to Tellepsis Research Team (Lead Hardware Research Analyst).
   - Normalized canonical URL to absolute path.
 
 ### 5. Content Data Files

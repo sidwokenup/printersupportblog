@@ -18,7 +18,7 @@ Google Ads Quality Score is evaluated on three core pillars:
 ## 2. Landing Page Optimization Findings (`/lp/printer-help` & Variants)
 
 ### 2.1 CTA De-escalation & Density Rationalization
-- **Previous Defect**: The "Rapid Diagnostic Matrix" on `/lp/*` included an aggressive, repetitive "Chat Now" button on every single table row (6+ identical CTAs within 300px of vertical scroll), signaling low-quality lead arbitrage to Google Ads review systems.
+- **Previous Defect**: The "Rapid Diagnostic Matrix" on `/lp/*` included an aggressive, repetitive "Chat Link" button on every single table row (6+ identical CTAs within 300px of vertical scroll), signaling low-quality lead arbitrage to Google Ads review systems.
 - **Remediation**:
   - Replaced repetitive buttons in the table's "Action" column with deep links directly to corresponding DIY diagnostic articles (`/solutions/printer-offline`, `/solutions/printer-paper-jam`, etc.).
   - Positioned a single, high-contrast, transparent primary CTA beneath the matrix:  

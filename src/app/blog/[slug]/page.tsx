@@ -427,22 +427,23 @@ export default async function BlogPostPage({ params }: Props) {
         <EditorialAttribution className="my-8" />
 
         {/* Troubleshooting Callout Banner */}
+        {/* Hardware Diagnostic & Support Guidance Box */}
         <div className="bg-slate-900 rounded-2xl p-6 md:p-8 text-white shadow-md flex flex-col md:flex-row items-center justify-between gap-6 border border-slate-800">
           <div className="space-y-1 text-center md:text-left">
-            <h3 className="text-lg md:text-xl font-bold">Still stuck? Get Independent Help</h3>
+            <h3 className="text-lg md:text-xl font-bold">Need Technical Hardware Guidance?</h3>
             <p className="text-slate-300 text-xs md:text-sm max-w-xl leading-relaxed">
-              Independent help directory. Not affiliated with Brother, Canon, Epson, HP, or any manufacturer. Not official manufacturer support.
+              Explore our full troubleshooting library for step-by-step diagnostic manuals, or consult official vendor channels via the Official Manufacturer Support Directory.
             </p>
           </div>
           <div className="flex flex-col items-center md:items-end gap-1.5 shrink-0">
             <Link
-              href="#openLiveChat"
+              href="/solutions"
               className="px-6 py-2.5 bg-emerald-500 hover:bg-emerald-400 text-slate-950 font-bold text-xs uppercase tracking-wider rounded-xl transition-all shadow-sm"
             >
-              Chat Now
+              Explore Diagnostic Hub
             </Link>
             <span className="text-[10px] text-slate-400 text-center md:text-right max-w-xs">
-              Chat may be automated or live. Free. No guarantee of fix. See <Link href="/terms" className="underline hover:text-white">Terms</Link>.
+              We do not provide manufacturer telephone warranty support.
             </span>
           </div>
         </div>

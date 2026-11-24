@@ -237,15 +237,10 @@ export default function Home() {
                 </p>
 
                 {/* Research Summary Preview */}
-                <div className="bg-slate-50 rounded-xl p-3 border border-slate-100 mb-4 space-y-1.5 text-xs">
-                  <div className="font-semibold text-slate-700 text-[11px] uppercase tracking-wider">Research Summary:</div>
+                <div className="bg-slate-50 rounded-xl p-3 border border-slate-100 mb-4 space-y-1 text-xs">
                   <div className="flex items-center justify-between text-slate-600 text-[11px]">
-                    <span>Est. Cost-Per-Page:</span>
-                    <span className="font-bold text-slate-900">~0.9¢ - 3.8¢ (see Methodology)</span>
-                  </div>
-                  <div className="flex items-center justify-between text-slate-600 text-[11px]">
-                    <span>Engine Rating:</span>
-                    <span className="font-bold text-slate-900">{article.topPicks?.[0]?.rating || "Top Rated"}</span>
+                    <span className="font-semibold text-slate-700 uppercase tracking-wider">Evaluation Focus:</span>
+                    <span className="font-bold text-slate-900">See Methodology</span>
                   </div>
                 </div>
 
@@ -272,7 +267,12 @@ export default function Home() {
                         <strong className="text-slate-800">Best for:</strong> {article.topPicks[0].bestFor}
                       </div>
                       <div>
-                        <strong className="text-slate-800">Not ideal for:</strong> Users needing {article.topPicks[0].cons[0]?.toLowerCase() || "unsupported features"}
+                        <strong className="text-slate-800">Not ideal for:</strong> {(() => {
+                          const rawCon = article.topPicks[0].cons[0] || "Commercial duty cycles";
+                          const prefixRegex = new RegExp("^[uU]sers\\s+[nN]eeding\\s*", "i");
+                          const clean = rawCon.replace(prefixRegex, "").trim();
+                          return clean.charAt(0).toUpperCase() + clean.slice(1);
+                        })()}
                       </div>
                     </div>
                   </div>

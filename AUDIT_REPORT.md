@@ -54,7 +54,7 @@ A comprehensive architectural, compliance, technical SEO, and conversion rate re
 - **Problem**: Hardcoded `AggregateRating` (fake 184-212 review counts) was injected into `TechArticle` schema without user review markup. Hardcoded product ratings (48/52 reviews) existed on comparison pages.
 - **Remedy**:
   - Removed self-serving `AggregateRating` from `TechArticle` schema on `/solutions/*`.
-  - Converted anonymous product ratings on `/compare/*` into editorial `Review` markup attributed to Marcus Vance (Lead Hardware Research Analyst).
+  - Converted anonymous product ratings on `/compare/*` into editorial `Review` markup attributed to Tellepsis Research Team (Lead Hardware Research Analyst).
 
 ### 5. Content Contradiction & Unsupported Laboratory Claims (P1)
 - **Problem**: Articles claimed "In our lab testing", "we benchmarked", and "15,000-page stress test results", directly contradicting the published Methodology and Privacy Policy disclosures.

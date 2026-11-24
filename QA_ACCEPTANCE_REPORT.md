@@ -71,5 +71,5 @@
 - **HowTo**: Schema on `/solutions/*` validated with steps, duration, and tool specifications.
 - **FAQPage**: Schema on `/solutions/*` validated with Question/Answer pairs.
 - **TechArticle**: Validated with author and publisher organization; self-serving `AggregateRating` confirmed removed.
-- **Product & Review**: Schema on `/compare/*` validated with Marcus Vance editorial Review and Rating; fake aggregate review counts confirmed removed.
+- **Product & Review**: Schema on `/compare/*` validated with Tellepsis Research Team editorial Review and Rating; fake aggregate review counts confirmed removed.
 - **Organization**: Global schema in `src/app/layout.tsx` declared with `Tellepsis Media LLC`, official support contact points, and unified description.

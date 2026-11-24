@@ -111,7 +111,7 @@ export const solutions: SolutionData[] = [
       {
         "name": "Brother HL-L2460DW Wireless Monochrome Laser",
         "link": "/printers",
-        "reason": "Dual-band 2.4/5GHz Wi-Fi with auto-reconnect and designed to reduce offline drops."
+        "reason": "Dual-band 2.4/5GHz Wi-Fi with auto-reconnect. See Methodology for how we evaluate connectivity."
       },
       {
         "name": "Epson EcoTank ET-2850 All-in-One SuperTank",

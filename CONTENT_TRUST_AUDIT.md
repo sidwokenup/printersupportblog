@@ -33,9 +33,9 @@ Under Google's Search Quality Rater Guidelines, hardware review and technical tr
 ## 3. Transparency & Author Attribution
 
 ### 3.1 Editorial Authorship & Expert Profiles
-- Hardware reviews and comparison showdowns are attributed to **Marcus Vance**, Lead Hardware Research Analyst:
+- Hardware reviews and comparison showdowns are attributed to **Tellepsis Research Team**, Lead Hardware Research Analyst:
   - Clear author bio and credentials prominently displayed on `/about` and within article bylines.
-  - Product comparison Schema (`/compare/[slug]`) attributes editorial reviews to Marcus Vance with individual `Review` and `Rating` markup rather than fraudulent aggregate ratings.
+  - Product comparison Schema (`/compare/[slug]`) attributes editorial reviews to Tellepsis Research Team with individual `Review` and `Rating` markup rather than fraudulent aggregate ratings.
 
 ### 3.2 Corporate Transparency & Contact Accessibility
 - Added complete operator coordinates across `/about`, `/contact`, `/terms`, `/privacy-policy`, and the global footer:

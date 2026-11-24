@@ -165,7 +165,7 @@ export function LeadPopup() {
 
               <p className="text-slate-300 text-xs md:text-sm mt-1.5 leading-relaxed max-w-lg">
                 {activeTab === "callback" 
-                  ? "Connect with an independent printer specialist for hardware recommendations, TCO calculations, or business quotes."
+                  ? "Connect with our editorial research team for hardware recommendations, TCO calculations, or buying guidance."
                   : "Receive instant SMS notifications on manufacturer price drops, exclusive rebate codes, and holiday deals."}
               </p>
 

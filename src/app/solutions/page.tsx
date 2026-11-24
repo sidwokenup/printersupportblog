@@ -184,7 +184,7 @@ export default function SolutionsHubPage() {
               </h2>
             </div>
             <p className="text-sm text-slate-500 max-w-md">
-              Identify your hardware symptom below for the immediate 60-second fix or access the full technical guide.
+              Identify your hardware symptom below for immediate DIY resolution steps or access the full technical guide.
             </p>
           </div>
 

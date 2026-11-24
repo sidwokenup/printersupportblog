@@ -34,7 +34,7 @@ const diagnosticMatrix = [
   { symptom: "Wi-Fi Drops After Router Reboot", fix: "Assign a permanent Static IP address via router DHCP reservation table; split 2.4GHz and 5GHz network SSID bands.", severity: "Moderate", slug: "printer-not-connecting-to-wifi" },
   { symptom: "Streaky / Faded Print", fix: "Execute two printhead deep cleaning cycles from utility software; inspect toner drum surface for scratch marks or powder depletion.", severity: "Low", slug: "faded-streaky-print-quality" },
   { symptom: "Printer Stopped After Windows Update", fix: "Delete generic WSD port device binding; reinstall authentic full driver software and configure dedicated Standard TCP/IP port.", severity: "High", slug: "printer-issue-after-windows-update" },
-  { symptom: "Printer In Error State", fix: "Perform complete 60-second electrical discharge (unplug power while running); verify all covers and paper trays click shut.", severity: "High", slug: "printer-in-error-state" },
+  { symptom: "Printer In Error State", fix: "Perform complete electrical power discharge (unplug power while running); verify all covers and paper trays click shut.", severity: "High", slug: "printer-in-error-state" },
   { symptom: "Carriage Jam / Ink System Failure", fix: "Power off printer; inspect print carriage track for foreign objects; manually verify carriage glides across rail without resistance.", severity: "Critical", slug: "printer-hardware-replacement-guide" },
   { symptom: "Printer Not Printing Black", fix: "Remove black cartridge and inspect yellow breather vent; run deep nozzle purge cycle; clean copper contact pads with alcohol wipe.", severity: "Moderate", slug: "printer-not-printing" },
 ];
@@ -83,9 +83,8 @@ export default function PrinterHelpLandingPage() {
     "headline": "Printer Troubleshooting & Diagnostic Hub — Step-by-Step Repair Guides",
     "description": "Independent technical documentation to resolve offline states, print spooler hangs, wireless dropouts, and hardware error codes across HP, Canon, Epson, and Brother printers.",
     "author": {
-      "@type": "Person",
-      "name": "Marcus Vance",
-      "jobTitle": "Lead Hardware Research Analyst"
+      "@type": "Organization",
+      "name": "Tellepsis Hardware Research Team"
     },
     "publisher": {
       "@type": "Organization",
@@ -299,7 +298,7 @@ export default function PrinterHelpLandingPage() {
               Official Manufacturer Support Directory
             </h2>
             <p className="text-sm text-slate-600 max-w-2xl mx-auto">
-              We do not provide telephone support. For official manufacturer warranty claims, certified driver packages, or factory recall service, connect directly with official vendor support channels:
+              We do not provide manufacturer telephone warranty support. For official manufacturer warranty claims, certified driver packages, or factory recall service, connect directly with official vendor support channels via the Official Manufacturer Support Directory below:
             </p>
           </div>
 

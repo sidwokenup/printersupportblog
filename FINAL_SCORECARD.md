@@ -49,7 +49,7 @@ xychart-beta
 ### Pillar 4: RSA Landing Page Experience & Quality Score Alignment
 - **Score**: **9.2 / 10** (Baseline: 5.4 / 10)
 - **Key Verifications**:
-  - De-escalated CTA density: replaced repetitive "Chat Now" in table with deep links to `/solutions/*`.
+  - De-escalated CTA density: replaced repetitive "Chat Link" in table with deep links to `/solutions/*`.
   - Replaced alarmist homepage red alert with authoritative editorial navigation.
   - Replaced broken `0+` JS counters with verified static numbers.
   - 100% keyword match between RSA ad copy and landing page headings/body text.
@@ -59,7 +59,7 @@ xychart-beta
 - **Key Verifications**:
   - Removed unsupported lab testing claims ("in our lab", "5,000 label stress test", "15,000-page stress test") to match published Methodology.
   - Cleaned self-serving `AggregateRating` from `TechArticle` schema.
-  - Converted anonymous product ratings to editorial reviews by Marcus Vance.
+  - Converted anonymous product ratings to editorial reviews by Tellepsis Research Team.
   - Operating entity Tellepsis Media LLC declared across all templates and legal pages.
 
 ---

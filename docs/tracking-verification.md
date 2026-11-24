@@ -11,7 +11,7 @@ Every landing page on `https://www.livefeedreviews.com/lp/*` contains the unifie
 
 ### The 3 Conversions Tracked:
 1. **`Chat_Click` (Primary Action)**:
-   - **Trigger**: Fired instantly whenever a user clicks any "Launch Interactive Troubleshooter", "Chat Now", or interactive diagnostic CTA on any landing page.
+   - **Trigger**: Fired instantly whenever a user clicks any "Launch Interactive Troubleshooter", "Chat Link", or interactive diagnostic CTA on any landing page.
    - **Destination**: Triggers the embedded on-domain interactive diagnostic modal / widget directly on `https://www.livefeedreviews.com` (100% on-domain; zero external redirects).
    - **Tag Event**: `gtag('event', 'Chat_Click', { 'event_category': 'Conversion', 'send_to': 'AW-11488920150/Chat_Click' })`.
 
