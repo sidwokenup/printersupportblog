@@ -10,6 +10,12 @@ export async function GET(request: NextRequest, { params }: RouteProps) {
   const { slug } = await params;
   
   const cleanSlug = slug.replace(/\.html$/, "");
+
+  // Permanent redirect to canonical Next.js App Router page for printer-help
+  if (cleanSlug === "printer-help") {
+    return NextResponse.redirect(new URL("/lp/printer-help", request.url), 308);
+  }
+  
   const publicLpDir = path.join(process.cwd(), "public", "lp");
   
   const filePath = path.join(publicLpDir, `${cleanSlug}.html`);

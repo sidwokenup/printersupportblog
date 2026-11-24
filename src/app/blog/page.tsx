@@ -216,11 +216,12 @@ export default function BlogHubPage() {
               <ShieldCheck className="w-6 h-6" />
             </div>
             <div>
-              <h3 className="text-sm font-bold text-slate-900">100% Independent Editorial Testing Policy</h3>
+              <h3 className="text-sm font-bold text-slate-900">Independent Hardware Research & Editorial Standards</h3>
               <p className="text-xs text-slate-600 mt-0.5 max-w-2xl leading-relaxed">
-                Live Feed Reviews purchases all test printers and scanners at full retail price through public
-                channels. We accept no paid product placements, zero free manufacturer review units, and maintain
-                strict separation between our review editorial board and retail affiliate partnerships.
+                Independent hardware research, specification benchmarking, and step-by-step diagnostic documentation
+                compiled from ISO/IEC yield standards, manufacturer service manuals, and technician-verified troubleshooting
+                protocols. We accept no paid product placements, zero free manufacturer review units, and maintain
+                strict separation between our editorial research and retail affiliate partnerships.
               </p>
             </div>
           </div>
