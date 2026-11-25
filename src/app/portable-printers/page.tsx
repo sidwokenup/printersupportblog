@@ -19,7 +19,7 @@ import {
 export const metadata: Metadata = {
   title: "Best Portable & Mobile Wireless Printers (2026) | Live Feed Reviews",
   description:
-    "Looking for the best portable mobile printer? Read our laboratory benchmarks on battery life, travel weight, and USB-C charging across Canon, Epson, and HP.",
+    "Looking for the best portable mobile printer? Read our research evaluations on battery life, travel weight, and USB-C charging across Canon, Epson, and HP.",
   alternates: {
     canonical: "/portable-printers",
       languages: {
@@ -39,7 +39,7 @@ export const metadata: Metadata = {
   openGraph: {
     title: "Best Portable & Mobile Wireless Printers (2026) | Live Feed Reviews",
     description:
-      "Looking for the best portable mobile printer? Read our laboratory benchmarks on battery life, travel weight, and USB-C charging across Canon, Epson, and HP.",
+      "Looking for the best portable mobile printer? Read our research evaluations on battery life, travel weight, and USB-C charging across Canon, Epson, and HP.",
     url: "https://www.livefeedreviews.com/portable-printers",
     siteName: "Live Feed Reviews",
     type: "website",
@@ -106,7 +106,7 @@ export default function PortablePrintersLandingPage() {
           </div>
         </div>
 
-        {/* Lab ISO Benchmarks Strip */}
+        {/* Specification Benchmarks Strip */}
         <div className="grid grid-cols-2 md:grid-cols-4 gap-4">
           {portableArticle.isoBenchmarks.map((bench, bIdx) => (
             <div key={bIdx} className="bg-white p-4 rounded-xl border border-slate-200 shadow-xs text-center">
@@ -120,7 +120,7 @@ export default function PortablePrintersLandingPage() {
         {/* Top-Rated Scored Picks */}
         <div className="space-y-4">
           <div className="flex items-center justify-between">
-            <h2 className="text-xl font-bold text-slate-900">Lab-Tested &amp; Ranked Mobile Printers</h2>
+            <h2 className="text-xl font-bold text-slate-900">Top-Rated Mobile Printers (2026 Research)</h2>
             <Link href={`/blog/${portableArticle.slug}`} className="text-xs text-primary font-semibold hover:underline">
               Read 1,950-Word In-Depth Guide &rarr;
             </Link>

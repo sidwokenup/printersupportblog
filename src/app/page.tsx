@@ -97,7 +97,7 @@ export default function Home() {
               </motion.h1>
               
               <motion.p variants={FADE_UP} className="text-lg md:text-xl text-slate-600 mb-6 leading-relaxed">
-                Independent hardware research, specification benchmarking, and step-by-step diagnostic documentation compiled from ISO/IEC yield standards, manufacturer service manuals, and technician-verified troubleshooting protocols.
+                Independent hardware research, ISO/IEC yield analysis, and total cost of ownership calculations derived from manufacturer specifications and verified benchmarks so you never overpay.
               </motion.p>
 
               <motion.div variants={FADE_UP} className="flex flex-wrap gap-3 mb-8">
@@ -132,6 +132,22 @@ export default function Home() {
                 <Link href="/blog/laser-vs-inkjet-printer-cost-comparison" className="px-3 py-1 rounded-full bg-white border border-slate-200 hover:border-blue-300 hover:bg-blue-50 hover:text-blue-700 transition-all shadow-sm">Laser vs Inkjet TCO</Link>
                 <Link href="/blog/best-inkjet-printer-home-office" className="px-3 py-1 rounded-full bg-white border border-slate-200 hover:border-blue-300 hover:bg-blue-50 hover:text-blue-700 transition-all shadow-sm">Home Office Inkjets</Link>
               </motion.div>
+
+              {/* Upper Stat Bar (Static SSR Metrics) */}
+              <motion.div variants={FADE_UP} className="grid grid-cols-3 gap-4 pt-6 border-t border-slate-200/80 mt-6 max-w-xl">
+                <div>
+                  <div className="text-2xl md:text-3xl font-extrabold text-slate-900 tracking-tight">24/7</div>
+                  <div className="text-xs text-slate-500 font-medium mt-0.5">Independent Diagnostic Hub</div>
+                </div>
+                <div>
+                  <div className="text-2xl md:text-3xl font-extrabold text-slate-900 tracking-tight">13</div>
+                  <div className="text-xs text-slate-500 font-medium mt-0.5">DIY Troubleshooting Guides</div>
+                </div>
+                <div>
+                  <div className="text-2xl md:text-3xl font-extrabold text-slate-900 tracking-tight">2,240</div>
+                  <div className="text-xs text-slate-500 font-medium mt-0.5">Error Codes Indexed</div>
+                </div>
+              </motion.div>
             </motion.div>
 
             {/* Right Visuals */}
@@ -164,8 +180,8 @@ export default function Home() {
                       <CheckCircle2 className="h-5 w-5" />
                     </div>
                     <div>
-                      <div className="text-xl font-bold text-slate-900">10</div>
-                      <div className="text-xs font-medium text-slate-500">2026 Buying Guides</div>
+                      <div className="text-xl font-bold text-slate-900">13</div>
+                      <div className="text-xs font-medium text-slate-500">DIY Troubleshooting Guides</div>
                     </div>
                   </motion.div>
 
@@ -179,7 +195,7 @@ export default function Home() {
                       <BookOpen className="h-5 w-5" />
                     </div>
                     <div>
-                      <div className="text-xl font-bold text-slate-900">2,240+</div>
+                      <div className="text-xl font-bold text-slate-900">2,240</div>
                       <div className="text-xs font-medium text-slate-500">Error Codes Indexed</div>
                     </div>
                   </motion.div>
@@ -190,9 +206,20 @@ export default function Home() {
         </div>
       </section>
 
-      {/* 2026 Hardware Reviews & Lab Tests Section */}
+      {/* 2026 Hardware Reviews Section */}
       <section className="py-20 relative z-10 bg-slate-50 border-t border-slate-200">
         <div className="container mx-auto px-4 md:px-6">
+          {/* FTC Affiliate Disclosure Box */}
+          <div className="bg-amber-50/80 border border-amber-200/80 rounded-xl p-4 mb-8 text-xs sm:text-sm text-slate-800 flex items-start gap-3">
+            <ShieldCheck className="w-5 h-5 text-amber-700 shrink-0 mt-0.5" />
+            <div>
+              <strong>Affiliate Disclosure:</strong> As an Amazon Associate and affiliate partner, we may earn a commission if you buy through links on this page, at no extra cost to you. We are not affiliated with Brother, Canon, Epson, HP, or Amazon.{" "}
+              <Link href="/affiliate-disclosure" className="underline font-semibold text-slate-950 hover:text-amber-900 inline">
+                Learn more
+              </Link>
+            </div>
+          </div>
+
           <div className="flex flex-col md:flex-row md:items-end justify-between gap-4 mb-12">
             <div>
               <div className="inline-flex items-center gap-1.5 px-3 py-1 rounded-full bg-blue-100 text-blue-800 text-xs font-semibold mb-3">
@@ -203,7 +230,7 @@ export default function Home() {
                 Featured Reviews &amp; In-Depth Buying Guides
               </h2>
               <p className="text-slate-600 mt-2 max-w-2xl text-sm md:text-base">
-                Independent research: manufacturer yield analysis, duty cycles, and 3-year running cost estimates.
+                Independent specification analysis: estimated ISO/IEC 19752 cost-per-page, rated engine velocities, and 3-year total cost of ownership math.
               </p>
             </div>
             <Link
@@ -374,10 +401,10 @@ export default function Home() {
         <div className="container mx-auto px-4 md:px-6 relative z-10">
           <div className="grid grid-cols-2 md:grid-cols-4 gap-8 md:gap-12 text-center">
             {[
-              { value: "10", label: "2026 Buying Guides" },
-              { value: "13", label: "DIY Diagnostic Hubs" },
-              { value: "2,240+", label: "Error Codes Indexed" },
-              { value: "4", label: "Major Printer Ecosystems" },
+              { value: "10", label: "In-Depth Buying Guides" },
+              { value: "13", label: "DIY Diagnostic Guides" },
+              { value: "2,240", label: "Error Codes Indexed" },
+              { value: "4", label: "Major Printer Brands Covered" },
             ].map((stat, i) => (
               <div key={i} className="flex flex-col gap-2">
                 <div className="text-4xl md:text-5xl lg:text-6xl font-extrabold text-transparent bg-clip-text bg-gradient-to-b from-white to-white/70">
@@ -386,6 +413,9 @@ export default function Home() {
                 <div className="text-blue-200 font-medium text-sm md:text-base">{stat.label}</div>
               </div>
             ))}
+          </div>
+          <div className="text-center pt-8 text-xs text-slate-400 font-medium">
+            Independent specification research with zero manufacturer bias.
           </div>
         </div>
       </section>

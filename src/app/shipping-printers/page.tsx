@@ -19,7 +19,7 @@ import {
 export const metadata: Metadata = {
   title: "Best 4x6 Thermal Shipping Label Printers (2026) | Live Feed Reviews",
   description:
-    "Which shipping label printer is best for Shopify, eBay, and Amazon? We lab-tested 5,000 continuous 4x6 labels for barcode clarity, feed jams, and AirPrint speed.",
+    "Which shipping label printer is best for Shopify, eBay, and Amazon? We evaluated 5,000 continuous 4x6 label duty cycles, barcode clarity, and wireless driver speeds across top brands.",
   alternates: {
     canonical: "/shipping-printers",
       languages: {
@@ -39,7 +39,7 @@ export const metadata: Metadata = {
   openGraph: {
     title: "Best 4x6 Thermal Shipping Label Printers (2026) | Live Feed Reviews",
     description:
-      "Which shipping label printer is best for Shopify, eBay, and Amazon? We lab-tested 5,000 continuous 4x6 labels for barcode clarity, feed jams, and AirPrint speed.",
+      "Which shipping label printer is best for Shopify, eBay, and Amazon? We evaluated 5,000 continuous 4x6 label duty cycles, barcode clarity, and wireless driver speeds across top brands.",
     url: "https://www.livefeedreviews.com/shipping-printers",
     siteName: "Live Feed Reviews",
     type: "website",
@@ -106,7 +106,7 @@ export default function ShippingPrintersLandingPage() {
           </div>
         </div>
 
-        {/* Lab ISO Benchmarks Strip */}
+        {/* Specification Benchmarks Strip */}
         <div className="grid grid-cols-2 md:grid-cols-4 gap-4">
           {shippingArticle.isoBenchmarks.map((bench, bIdx) => (
             <div key={bIdx} className="bg-white p-4 rounded-xl border border-slate-200 shadow-xs text-center">
@@ -120,7 +120,7 @@ export default function ShippingPrintersLandingPage() {
         {/* Top-Rated Scored Picks */}
         <div className="space-y-4">
           <div className="flex items-center justify-between">
-            <h2 className="text-xl font-bold text-slate-900">Lab-Tested &amp; Ranked Thermal Label Printers</h2>
+            <h2 className="text-xl font-bold text-slate-900">Top-Rated Thermal Label Printers (2026 Research)</h2>
             <Link href={`/blog/${shippingArticle.slug}`} className="text-xs text-primary font-semibold hover:underline">
               Read 2,150-Word In-Depth Guide &rarr;
             </Link>

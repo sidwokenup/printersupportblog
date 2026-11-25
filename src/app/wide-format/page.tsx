@@ -93,7 +93,7 @@ export default function WideFormatLandingPage() {
           </h1>
           <p className="text-sm md:text-base text-slate-600 leading-relaxed max-w-3xl">
             For architectural blueprints, financial spreadsheets, and gallery-grade art prints, standard letter printers fall short.
-            Our laboratory tested tabloid paper transport, spectrophotometer Adobe RGB gamut coverage, and long-term ink costs.
+            Our research evaluated tabloid paper transport, Adobe RGB gamut specifications, and long-term estimated ink costs.
           </p>
 
           <div className="flex flex-wrap gap-2 pt-2">
@@ -105,7 +105,7 @@ export default function WideFormatLandingPage() {
           </div>
         </div>
 
-        {/* Lab ISO Benchmarks Strip */}
+        {/* Specification Benchmarks Strip */}
         <div className="grid grid-cols-2 md:grid-cols-4 gap-4">
           {wideArticle.isoBenchmarks.map((bench, bIdx) => (
             <div key={bIdx} className="bg-white p-4 rounded-xl border border-slate-200 shadow-xs text-center">
@@ -119,7 +119,7 @@ export default function WideFormatLandingPage() {
         {/* Top-Rated Scored Picks */}
         <div className="space-y-4">
           <div className="flex items-center justify-between">
-            <h2 className="text-xl font-bold text-slate-900">Lab-Tested &amp; Ranked Wide-Format Models</h2>
+            <h2 className="text-xl font-bold text-slate-900">Top-Rated Wide-Format Models (2026 Research)</h2>
             <Link href={`/blog/${wideArticle.slug}`} className="text-xs text-primary font-semibold hover:underline">
               Read 2,350-Word In-Depth Guide &rarr;
             </Link>

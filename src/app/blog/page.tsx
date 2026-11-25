@@ -19,7 +19,7 @@ import { EditorialAttribution } from "@/components/article/EditorialAttribution"
 export const metadata: Metadata = {
   title: "Printer Reviews & Hardware Buying Guides (2026) | Live Feed Reviews",
   description:
-    "Independent lab benchmarks, ISO cost-per-page testing, and expert buying guides for laser printers, all-in-one inkjets, and document scanners.",
+    "Independent specification research, ISO cost-per-page estimates, and expert buying guides for laser printers, all-in-one inkjets, and document scanners.",
   alternates: {
     canonical: "/blog",
       languages: {
@@ -39,7 +39,7 @@ export const metadata: Metadata = {
   openGraph: {
     title: "Printer Reviews & Hardware Buying Guides (2026) | Live Feed Reviews",
     description:
-      "Independent lab benchmarks, ISO cost-per-page testing, and expert buying guides for laser printers, all-in-one inkjets, and document scanners.",
+      "Independent specification research, ISO cost-per-page estimates, and expert buying guides for laser printers, all-in-one inkjets, and document scanners.",
     url: "https://www.livefeedreviews.com/blog",
     siteName: "Live Feed Reviews",
     images: [{ url: "/logo.png", width: 800, height: 600, alt: "Live Feed Reviews" }],
@@ -56,7 +56,7 @@ export default function BlogHubPage() {
         "@id": "https://www.livefeedreviews.com/blog#webpage",
         "url": "https://www.livefeedreviews.com/blog",
         "name": "Printer Reviews & Comprehensive Buying Guides (2026)",
-        "description": "Independent lab benchmarks and ISO cost-per-page evaluations for top printers and scanners.",
+        "description": "Independent specification research and ISO cost-per-page evaluations for top printers and scanners.",
         "isPartOf": {
           "@id": "https://www.livefeedreviews.com/#website"
         }
@@ -85,7 +85,7 @@ export default function BlogHubPage() {
         <div className="text-center space-y-3 max-w-3xl mx-auto">
           <div className="inline-flex items-center gap-1.5 px-3 py-1 bg-primary/10 text-primary rounded-full text-xs font-semibold">
             <Sparkles className="w-3.5 h-3.5" />
-            <span>2026 Hardware Benchmarks & Review Laboratory</span>
+            <span>2026 Hardware Research & Specification Benchmarks</span>
           </div>
           <h1 className="text-3xl md:text-4xl font-extrabold text-slate-900 tracking-tight">
             Printer Reviews &amp; Comprehensive Buying Guides

@@ -34,6 +34,9 @@ export function Footer() {
             <p className="text-sm text-slate-400 leading-relaxed max-w-sm">
               Independent hardware research, specification benchmarking, and step-by-step diagnostic documentation compiled from ISO/IEC yield standards, manufacturer service manuals, and technician-verified troubleshooting protocols.
             </p>
+            <p className="text-xs text-emerald-400 font-semibold tracking-wide">
+              Independent specification research with zero manufacturer bias.
+            </p>
             <p className="text-xs text-slate-400 leading-relaxed border-t border-slate-800/80 pt-3">
               <strong className="text-slate-300">Live Feed Reviews is operated by Tellepsis Media LLC.</strong><br />
               Support: <a href="mailto:support@tellepsis.com" className="text-blue-400 hover:underline">support@tellepsis.com</a> | <a href="tel:+18883442323" className="text-blue-400 hover:underline">+1 (888) 344-2323</a>

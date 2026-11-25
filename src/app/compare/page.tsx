@@ -19,8 +19,8 @@ import type { Metadata } from "next";
 const REGIONS = ["en-US", "en-GB", "en-CA", "en-AU", "en-IN", "en-IE", "en-SG", "en-NZ", "en-ZA", "en-PH", "x-default"];
 
 export const metadata: Metadata = {
-  title: "Printer Comparison Engine: Lab-Tested Head-to-Head Showdowns (2026) | Live Feed Reviews",
-  description: "Compare top printers head-to-head. Empirical 3-year TCO calculations, ISO cost-per-page benchmarks, duplex ADF scanning tests, and verified lab verdicts.",
+  title: "Printer Comparison Engine: Head-to-Head Research Showdowns (2026) | Live Feed Reviews",
+  description: "Compare top printers head-to-head. Empirical 3-year TCO calculations, ISO cost-per-page benchmarks, duplex ADF scanning specifications, and verified research verdicts.",
   alternates: {
     canonical: "/compare",
     languages: Object.fromEntries(
@@ -28,7 +28,7 @@ export const metadata: Metadata = {
     ),
   },
   openGraph: {
-    title: "Printer Comparison Engine: Head-to-Head Lab Showdowns (2026)",
+    title: "Printer Comparison Engine: Head-to-Head Research Showdowns (2026)",
     description: "Side-by-side printer hardware evaluations, 3-year operating cost comparisons, and independent buying advice.",
     url: "https://www.livefeedreviews.com/compare",
     images: [{ url: "/logo.png", width: 800, height: 600, alt: "Live Feed Reviews" }],
@@ -253,7 +253,7 @@ export default function CompareHubPage() {
 
                   {/* Savings Callout */}
                   <p className="text-xs text-slate-600 leading-relaxed bg-blue-50/40 p-3 rounded-xl border border-blue-100">
-                    <span className="font-bold text-slate-900">Lab Key Finding:</span> {showdown.tcoSavingsNote}
+                    <span className="font-bold text-slate-900">Research Key Finding:</span> {showdown.tcoSavingsNote}
                   </p>
                 </div>
 
@@ -266,7 +266,7 @@ export default function CompareHubPage() {
                     href={`/compare/${showdown.slug}`}
                     className="inline-flex items-center gap-1.5 px-4 py-2 rounded-xl bg-blue-600 hover:bg-blue-700 text-white font-bold text-xs transition-colors shadow-xs"
                   >
-                    Read Full Lab Showdown <ArrowRight className="w-3.5 h-3.5" />
+                    Read Full Research Showdown <ArrowRight className="w-3.5 h-3.5" />
                   </Link>
                 </div>
               </div>

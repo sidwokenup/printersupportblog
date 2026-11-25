@@ -306,7 +306,7 @@ export default function TonerSavingsCalculator() {
               href="/blog/laser-vs-inkjet-printer-cost-comparison"
               className="text-blue-300 hover:text-white font-semibold flex items-center gap-1"
             >
-              Read Lab Methodology &rarr;
+              Read Research Methodology &rarr;
             </Link>
           </div>
         </div>

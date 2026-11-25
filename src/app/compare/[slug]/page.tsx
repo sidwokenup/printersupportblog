@@ -254,7 +254,7 @@ export default async function ComparisonDetailPage({ params }: Props) {
             <div className="space-y-2 max-w-2xl">
               <div className="inline-flex items-center gap-2 px-3 py-1 rounded-full bg-emerald-500/20 border border-emerald-400/30 text-emerald-300 text-xs font-bold uppercase tracking-wider">
                 <Trophy className="w-4 h-4 text-emerald-400" />
-                Declared Lab Winner
+                Declared Research Winner
               </div>
               <h2 className="text-2xl md:text-3xl font-extrabold text-white">
                 {showdown.winner}
@@ -286,7 +286,7 @@ export default async function ComparisonDetailPage({ params }: Props) {
           <div className="p-6 md:p-8 border-b border-slate-100 flex items-center justify-between">
             <div className="space-y-1">
               <h2 className="text-xl font-bold text-slate-900">
-                Full Technical Specifications &amp; Lab Metrics
+                Full Technical Specifications &amp; Research Metrics
               </h2>
               <p className="text-xs text-slate-500">
                 Direct benchmark comparison across physical hardware and 36-month consumables.

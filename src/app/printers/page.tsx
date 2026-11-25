@@ -104,7 +104,7 @@ export default function PrintersLandingPage() {
         {/* Top Scored Laser Picks */}
         <div className="space-y-4">
           <div className="flex items-center justify-between">
-            <h2 className="text-xl font-bold text-slate-900">Top-Rated Laser Printers in our Lab</h2>
+            <h2 className="text-xl font-bold text-slate-900">Top-Rated Laser Printers (2026 Research)</h2>
             <Link href={`/blog/${laserArticle.slug}`} className="text-xs text-primary font-semibold hover:underline">
               Read 2,450-Word In-Depth Guide &rarr;
             </Link>

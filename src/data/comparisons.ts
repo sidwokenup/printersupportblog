@@ -35,7 +35,7 @@ export const comparisonShowdowns: ComparisonShowdown[] = [
   {
     slug: "hp-officejet-pro-9015e-vs-epson-ecotank-et-3850",
     title: "HP OfficeJet Pro 9015e vs Epson EcoTank ET-3850 (2026 Head-to-Head Research Showdown)",
-    metaDescription: "Head-to-head lab comparison: HP OfficeJet Pro 9015e cartridge inkjet vs Epson EcoTank ET-3850 refillable tank. 3-year TCO, print speed, and photo quality tested.",
+    metaDescription: "Head-to-head research comparison: HP OfficeJet Pro 9015e cartridge inkjet vs Epson EcoTank ET-3850 refillable tank. 3-year TCO, print speed, and photo quality evaluated.",
     category: "Supertank vs Inkjet",
     modelA: {
       name: "HP OfficeJet Pro 9015e",

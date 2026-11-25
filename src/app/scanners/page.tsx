@@ -16,7 +16,7 @@ import {
 export const metadata: Metadata = {
   title: "Best Desktop Document Scanners 2026 | Duplex Sheetfed Reviews | Live Feed Reviews",
   description:
-    "Digitize contracts and receipts at up to 60 pages per minute. Lab test ratings for ultrasonic double-feed prevention and searchable OCR accuracy.",
+    "Digitize contracts and receipts at up to 60 pages per minute. Specification ratings for ultrasonic double-feed prevention and searchable OCR accuracy.",
   alternates: {
     canonical: "/scanners",
       languages: {
@@ -36,7 +36,7 @@ export const metadata: Metadata = {
   openGraph: {
     title: "Best Desktop Document Scanners 2026 | Duplex Sheetfed Reviews",
     description:
-      "Digitize contracts and receipts at up to 60 pages per minute. Lab test ratings for ultrasonic double-feed prevention and searchable OCR accuracy.",
+      "Digitize contracts and receipts at up to 60 pages per minute. Specification ratings for ultrasonic double-feed prevention and searchable OCR accuracy.",
     url: "https://www.livefeedreviews.com/scanners",
     siteName: "Live Feed Reviews",
     type: "website",

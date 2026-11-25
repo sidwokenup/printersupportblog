@@ -122,7 +122,7 @@ export default async function BlogPostPage({ params }: Props) {
         "description": article.metaDescription,
         "author": {
           "@type": "Organization",
-          "name": "Live Feed Reviews Editorial Lab",
+          "name": "Tellepsis Hardware Research Team",
           "url": "https://www.livefeedreviews.com",
         },
         "publisher": {
