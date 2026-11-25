@@ -155,7 +155,7 @@ export function Footer() {
             Independent Consumer Hardware &amp; Troubleshooting Publication — Not affiliated with, endorsed by, or sponsored by HP, Canon, Epson, Brother, or any manufacturer. Product names and trademarks belong to their respective owners and are used for nominative comparison only.
           </p>
           <p>
-            &copy; 2026 Live Feed Reviews. Live Feed Reviews is operated by Tellepsis Media LLC. Support: <a href="mailto:support@tellepsis.com" className="text-blue-400 hover:underline">support@tellepsis.com</a> | <a href="tel:+18883442323" className="text-blue-400 hover:underline">+1 (888) 344-2323</a>. Live diagnostic chat services are provided by Tellepsis Media LLC via our dedicated support portal (care.tellepsis.shop). We do not provide manufacturer telephone warranty support - use the Official Manufacturer Support Directory for warranty claims. Product names and trademarks belong to their respective owners and are used for nominative comparison only.
+            &copy; 2026 Live Feed Reviews. Live Feed Reviews is operated by Tellepsis Media LLC. Support: <a href="mailto:support@tellepsis.com" className="text-blue-400 hover:underline">support@tellepsis.com</a> | <a href="tel:+18883442323" className="text-blue-400 hover:underline">+1 (888) 344-2323</a>. We do not provide manufacturer telephone warranty support - use the Official Manufacturer Support Directory for warranty claims. Product names and trademarks belong to their respective owners and are used for nominative comparison only.
           </p>
           <p className="text-slate-500">
             Last Updated: {currentDate} | Prices checked: {currentDate} - Prices may change on retailer sites.

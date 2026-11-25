@@ -11,7 +11,6 @@ import { Sheet, SheetContent, SheetTrigger, SheetTitle } from "@/components/ui/s
 import { GlobalSearch } from "@/components/search/GlobalSearch"
 import { cn } from "@/lib/utils"
 
-import { openLiveChat } from "@/components/chat/LiveChatWidget"
 
 export function Header() {
   const [isScrolled, setIsScrolled] = React.useState(false)
@@ -29,14 +28,7 @@ export function Header() {
   if (isPrinterTips) {
     return (
       <div className="bg-slate-900 text-white text-xs py-2.5 px-4 text-center font-medium border-b border-slate-800 sticky top-0 z-50">
-        <span>Independent Consumer Hardware &amp; Troubleshooting Publication — Not affiliated with, endorsed by, or sponsored by HP, Canon, Epson, Brother, or any manufacturer.</span>{" "}
-        <button
-          type="button"
-          onClick={() => openLiveChat()}
-          className="underline font-bold text-emerald-400 hover:text-emerald-300 ml-1.5 inline-flex items-center gap-1 cursor-pointer bg-transparent border-none p-0"
-        >
-          Start Live Chat ⚡
-        </button>
+        <span>Independent Consumer Hardware &amp; Troubleshooting Publication — Not affiliated with HP, Canon, Epson, Brother, or any manufacturer.</span>
       </div>
     )
   }
@@ -113,10 +105,10 @@ export function Header() {
               </Link>
 
               <Link
-                href="#openLiveChat"
+                href="/solutions"
                 className="relative ml-2 px-4 py-2 text-sm font-semibold transition-colors rounded-full bg-emerald-600 text-white hover:bg-emerald-700 shadow-sm"
               >
-                Live Chat
+                Diagnostic Hub
               </Link>
             </>
           ) : (
@@ -233,10 +225,10 @@ export function Header() {
                     <Link href="/solutions" className="px-4 py-3 text-base font-bold rounded-xl bg-emerald-50 text-emerald-800 border border-emerald-200 hover:bg-emerald-100">Solutions Hub ⚡</Link>
                     <Link href="/contact" className="px-4 py-3 text-base font-medium rounded-xl hover:bg-slate-100 text-slate-700">Contact</Link>
                     <Link
-                      href="#openLiveChat"
+                      href="/solutions"
                       className="mt-4 px-4 py-3 text-base font-semibold rounded-xl bg-emerald-600 text-white text-center hover:bg-emerald-700"
                     >
-                      Start Live Chat
+                      Diagnostic Hub
                     </Link>
                   </>
                 ) : (

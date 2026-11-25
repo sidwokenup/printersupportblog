@@ -408,8 +408,8 @@ export default function SolutionsHubPage() {
               Official Manufacturer Support Directory
             </h2>
           </div>
-          <p className="text-slate-700 text-sm max-w-3xl font-semibold">
-            We do not provide manufacturer telephone warranty support - use the Official Manufacturer Support Directory for warranty claims.
+          <p className="text-slate-700 text-sm max-w-3xl leading-relaxed">
+            Live Feed Reviews is an independent editorial publication operated by Tellepsis Media LLC. We provide free self-service DIY troubleshooting documentation only and do not offer live telephone or remote technical support. For factory warranty service or official OEM assistance, use the verified manufacturer portals above.
           </p>
 
           <div className="overflow-x-auto pt-2">
@@ -425,7 +425,7 @@ export default function SolutionsHubPage() {
                 <tr className="hover:bg-blue-50/30 transition-colors">
                   <td className="py-3.5 px-4 font-bold text-slate-900">HP</td>
                   <td className="py-3.5 px-4">
-                    <a href="https://support.hp.com" target="_blank" rel="noopener noreferrer" className="text-blue-600 hover:underline inline-flex items-center gap-1 font-semibold">
+                    <a href="https://support.hp.com" target="_blank" rel="nofollow noopener noreferrer" className="text-blue-600 hover:underline inline-flex items-center gap-1 font-semibold">
                       support.hp.com <ExternalLink className="w-3.5 h-3.5 text-slate-400" />
                     </a>
                   </td>
@@ -434,7 +434,7 @@ export default function SolutionsHubPage() {
                 <tr className="hover:bg-blue-50/30 transition-colors">
                   <td className="py-3.5 px-4 font-bold text-slate-900">Canon</td>
                   <td className="py-3.5 px-4">
-                    <a href="https://usa.canon.com/support" target="_blank" rel="noopener noreferrer" className="text-blue-600 hover:underline inline-flex items-center gap-1 font-semibold">
+                    <a href="https://www.usa.canon.com/support" target="_blank" rel="nofollow noopener noreferrer" className="text-blue-600 hover:underline inline-flex items-center gap-1 font-semibold">
                       usa.canon.com/support <ExternalLink className="w-3.5 h-3.5 text-slate-400" />
                     </a>
                   </td>
@@ -443,7 +443,7 @@ export default function SolutionsHubPage() {
                 <tr className="hover:bg-blue-50/30 transition-colors">
                   <td className="py-3.5 px-4 font-bold text-slate-900">Epson</td>
                   <td className="py-3.5 px-4">
-                    <a href="https://epson.com/Support" target="_blank" rel="noopener noreferrer" className="text-blue-600 hover:underline inline-flex items-center gap-1 font-semibold">
+                    <a href="https://epson.com/Support" target="_blank" rel="nofollow noopener noreferrer" className="text-blue-600 hover:underline inline-flex items-center gap-1 font-semibold">
                       epson.com/Support <ExternalLink className="w-3.5 h-3.5 text-slate-400" />
                     </a>
                   </td>
@@ -452,7 +452,7 @@ export default function SolutionsHubPage() {
                 <tr className="hover:bg-blue-50/30 transition-colors">
                   <td className="py-3.5 px-4 font-bold text-slate-900">Brother</td>
                   <td className="py-3.5 px-4">
-                    <a href="https://www.brother-usa.com/support" target="_blank" rel="noopener noreferrer" className="text-blue-600 hover:underline inline-flex items-center gap-1 font-semibold">
+                    <a href="https://www.brother-usa.com/support" target="_blank" rel="nofollow noopener noreferrer" className="text-blue-600 hover:underline inline-flex items-center gap-1 font-semibold">
                       brother-usa.com/support <ExternalLink className="w-3.5 h-3.5 text-slate-400" />
                     </a>
                   </td>

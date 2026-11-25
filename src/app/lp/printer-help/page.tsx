@@ -298,7 +298,7 @@ export default function PrinterHelpLandingPage() {
               Official Manufacturer Support Directory
             </h2>
             <p className="text-sm text-slate-600 max-w-2xl mx-auto">
-              We do not provide manufacturer telephone warranty support. For official manufacturer warranty claims, certified driver packages, or factory recall service, connect directly with official vendor support channels via the Official Manufacturer Support Directory below:
+              Live Feed Reviews is an independent editorial publication operated by Tellepsis Media LLC. We provide free self-service DIY troubleshooting documentation only and do not offer live telephone or remote technical support. For factory warranty service or official OEM assistance, use the verified manufacturer portals above:
             </p>
           </div>
 
@@ -314,22 +314,22 @@ export default function PrinterHelpLandingPage() {
               <tbody className="divide-y divide-slate-100">
                 <tr>
                   <td className="py-3 px-4 font-bold">HP (Hewlett-Packard)</td>
-                  <td className="py-3 px-4"><a href="https://support.hp.com" target="_blank" rel="noopener noreferrer" className="text-blue-600 font-bold hover:underline inline-flex items-center gap-1">support.hp.com <ExternalLink className="w-3 h-3" /></a></td>
+                  <td className="py-3 px-4"><a href="https://support.hp.com" target="_blank" rel="nofollow noopener noreferrer" className="text-blue-600 font-bold hover:underline inline-flex items-center gap-1">support.hp.com <ExternalLink className="w-3 h-3" /></a></td>
                   <td className="py-3 px-4 text-slate-600">Official HP Smart setup, WHQL drivers, firmware updates &amp; hardware warranty service.</td>
                 </tr>
                 <tr>
                   <td className="py-3 px-4 font-bold">Canon</td>
-                  <td className="py-3 px-4"><a href="https://usa.canon.com/support" target="_blank" rel="noopener noreferrer" className="text-blue-600 font-bold hover:underline inline-flex items-center gap-1">usa.canon.com/support <ExternalLink className="w-3 h-3" /></a></td>
+                  <td className="py-3 px-4"><a href="https://www.usa.canon.com/support" target="_blank" rel="nofollow noopener noreferrer" className="text-blue-600 font-bold hover:underline inline-flex items-center gap-1">usa.canon.com/support <ExternalLink className="w-3 h-3" /></a></td>
                   <td className="py-3 px-4 text-slate-600">Official PIXMA, imageCLASS &amp; MAXIFY drivers, software utilities &amp; warranty claims.</td>
                 </tr>
                 <tr>
                   <td className="py-3 px-4 font-bold">Epson</td>
-                  <td className="py-3 px-4"><a href="https://epson.com/Support" target="_blank" rel="noopener noreferrer" className="text-blue-600 font-bold hover:underline inline-flex items-center gap-1">epson.com/Support <ExternalLink className="w-3 h-3" /></a></td>
+                  <td className="py-3 px-4"><a href="https://epson.com/Support" target="_blank" rel="nofollow noopener noreferrer" className="text-blue-600 font-bold hover:underline inline-flex items-center gap-1">epson.com/Support <ExternalLink className="w-3 h-3" /></a></td>
                   <td className="py-3 px-4 text-slate-600">Official EcoTank &amp; WorkForce driver packages, ink pad service &amp; product registration.</td>
                 </tr>
                 <tr>
                   <td className="py-3 px-4 font-bold">Brother</td>
-                  <td className="py-3 px-4"><a href="https://www.brother-usa.com/support" target="_blank" rel="noopener noreferrer" className="text-blue-600 font-bold hover:underline inline-flex items-center gap-1">brother-usa.com/support <ExternalLink className="w-3 h-3" /></a></td>
+                  <td className="py-3 px-4"><a href="https://www.brother-usa.com/support" target="_blank" rel="nofollow noopener noreferrer" className="text-blue-600 font-bold hover:underline inline-flex items-center gap-1">brother-usa.com/support <ExternalLink className="w-3 h-3" /></a></td>
                   <td className="py-3 px-4 text-slate-600">Official Brother iPrint&amp;Scan utility, drum reset guides &amp; customer care warranty.</td>
                 </tr>
               </tbody>

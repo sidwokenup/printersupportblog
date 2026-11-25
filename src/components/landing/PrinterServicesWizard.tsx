@@ -2,7 +2,6 @@
 
 import React, { useState, useEffect, useRef } from "react";
 import "@/app/printer-tips/services-wizard.css";
-import { openLiveChat } from "@/components/chat/LiveChatWidget";
 
 interface BrandConfig {
   logo: string;
@@ -379,23 +378,11 @@ export function PrinterServicesWizard() {
                   <a href="#" id="brandHomeLink" onClick={(e) => { e.preventDefault(); goToStep(1); }}>
                     Home
                   </a>
-                  <a
-                    href="#openLiveChat"
-                    onClick={(e) => {
-                      e.preventDefault();
-                      openLiveChat();
-                    }}
-                  >
-                    Support
+                  <a href="/solutions">
+                    Support Guides
                   </a>
-                  <a
-                    href="#openLiveChat"
-                    onClick={(e) => {
-                      e.preventDefault();
-                      openLiveChat();
-                    }}
-                  >
-                    Contact
+                  <a href="/contact">
+                    Contact Desk
                   </a>
                 </nav>
               </div>
@@ -686,18 +673,16 @@ export function PrinterServicesWizard() {
               <p>Your selected printer details are included below.</p>
 
               <div className="support-actions">
-                <button
-                  type="button"
-                  id="openLiveChat"
+                <a
+                  href="/solutions"
                   className="support-link primary"
-                  onClick={() => openLiveChat()}
                 >
                   <span>
-                    <strong>Live Chat</strong>
+                    <strong>Diagnostic Hub</strong>
                     <br />
-                    Chat with a specialist now.
+                    Browse DIY troubleshooting guides.
                   </span>
-                </button>
+                </a>
 
                 <button
                   type="button"

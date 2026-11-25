@@ -804,17 +804,5 @@ button,input{font:inherit}
     .brand-progress-item{font-size:11px}
 }
 
-#openLiveChat {
-    width: 100%;
-    font-family: inherit;
-    cursor: pointer;
-    border: 1px solid #0875df;
-    outline: none;
-}
-
-#openLiveChat:hover {
-    background: #075eb6;
-    border-color: #075eb6;
-}
 
 

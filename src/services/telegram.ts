@@ -45,7 +45,7 @@ export async function sendTelegramNotification(message: string) {
 
 export function formatLeadMessage(lead: Record<string, any>) {
   const isPromo = lead.leadType === "promotions";
-  const headerIcon = isPromo ? "🎁 <b>NEW PROMOTIONAL DEALS OPT-IN</b>" : "📞 <b>PRIORITY CALLBACK REQUEST</b>";
+  const headerIcon = isPromo ? "🎁 <b>NEW PROMOTIONAL DEALS OPT-IN</b>" : "📬 <b>EDITORIAL INQUIRY</b>";
 
   return `${headerIcon}
 

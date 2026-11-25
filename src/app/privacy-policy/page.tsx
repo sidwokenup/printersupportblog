@@ -57,9 +57,6 @@ export default function PrivacyPolicyPage() {
             <p>
               At <strong className="text-slate-900">Live Feed Reviews</strong> (operated by <strong className="text-slate-900">Tellepsis Media LLC</strong>; Support: <a href="mailto:support@tellepsis.com" className="text-blue-600 underline">support@tellepsis.com</a> | <a href="tel:+18883442323" className="text-blue-600 underline">+1 (888) 344-2323</a>), accessible from https://www.livefeedreviews.com, the privacy of our visitors is of paramount importance. This Privacy Policy details the types of information collected and recorded by Live Feed Reviews and how we use it.
             </p>
-            <p>
-              Live Feed Reviews is operated by Tellepsis Media LLC. Support: <a href="mailto:support@tellepsis.com" className="text-blue-600 underline">support@tellepsis.com</a> | <a href="tel:+18883442323" className="text-blue-600 underline">+1 (888) 344-2323</a>. Live diagnostic chat services are provided by Tellepsis Media LLC via our dedicated support portal (care.tellepsis.shop).
-            </p>
             <div className="bg-amber-50/80 border border-amber-200 rounded-xl p-4 text-xs md:text-sm text-slate-800">
               <strong>Affiliate Disclosure:</strong> As an Amazon Associate and affiliate partner, we may earn a commission if you buy through links on this page, at no extra cost to you. We are not affiliated with Brother, Canon, Epson, HP, or Amazon.
             </div>
@@ -103,7 +100,7 @@ export default function PrivacyPolicyPage() {
           </h2>
           <ul className="list-disc pl-6 space-y-2 marker:text-blue-500">
             <li>To operate and maintain our website, technical buying guides, and DIY troubleshooting manuals.</li>
-            <li>To provide general diagnostic documentation and Tellepsis Media LLC chat support via care.tellepsis.shop. We do not provide manufacturer telephone warranty support.</li>
+            <li>To provide free self-service DIY troubleshooting documentation and hardware research guides. We do not provide manufacturer telephone warranty support.</li>
             <li>To notify users of updates or structural changes across our research publications and technical documentation.</li>
             <li>To analyze traffic patterns, search queries, and guide engagement to enhance technical documentation accuracy.</li>
             <li>To monitor infrastructure health, detect and prevent fraud or spam submissions, and protect site security.</li>
@@ -122,7 +119,7 @@ export default function PrivacyPolicyPage() {
             4. Third-Party Services, Analytics &amp; Advertising
           </h2>
           <p>
-            We work with trusted third-party service providers to facilitate our Service, analyze usage, and support website operations. These third parties include Amazon Associates, Google Analytics, Google Ads, and Tellepsis Media LLC chat portal (care.tellepsis.shop).
+            We work with trusted third-party service providers to facilitate our Service, analyze usage, and support website operations. These third parties include Amazon Associates, Google Analytics, and Google Ads.
           </p>
           <div className="space-y-3 pt-2">
             <div>
@@ -133,9 +130,6 @@ export default function PrivacyPolicyPage() {
             </div>
             <div>
               <strong className="text-slate-900">Amazon Associates &amp; Affiliate Click Tracking:</strong> When you click outbound retailer links, affiliate tracking cookies may be set by affiliate networks (including Amazon Associates) to attribute qualifying purchases. These cookies do not collect personal identifying information like credit card numbers or passwords.
-            </div>
-            <div>
-              <strong className="text-slate-900">Dedicated Support Portal (care.tellepsis.shop):</strong> Live diagnostic chat services are provided by Tellepsis Media LLC via our dedicated support portal (care.tellepsis.shop). Chat logs and technical diagnostic sessions are handled securely by Tellepsis Media LLC.
             </div>
           </div>
 
@@ -168,13 +162,12 @@ export default function PrivacyPolicyPage() {
             8. Contact Us &amp; Corporate Identification
           </h2>
           <p>
-            Contact Tellepsis Media LLC at <a href="mailto:support@tellepsis.com" className="text-blue-600 underline font-semibold">support@tellepsis.com</a> | <a href="tel:+18883442323" className="text-blue-600 underline font-semibold">+1 (888) 344-2323</a>. Live diagnostic chat services are provided by Tellepsis Media LLC via care.tellepsis.shop.
+            Contact Tellepsis Media LLC at <a href="mailto:support@tellepsis.com" className="text-blue-600 underline font-semibold">support@tellepsis.com</a> | <a href="tel:+18883442323" className="text-blue-600 underline font-semibold">+1 (888) 344-2323</a>.
           </p>
           <ul className="list-disc pl-6 space-y-2 marker:text-blue-500 pt-1">
             <li><strong>Operating Entity:</strong> Live Feed Reviews is operated by Tellepsis Media LLC.</li>
             <li><strong>Support Email:</strong> <a href="mailto:support@tellepsis.com" className="text-blue-600 underline font-semibold">support@tellepsis.com</a></li>
             <li><strong>Telephone:</strong> <a href="tel:+18883442323" className="text-blue-600 underline font-semibold">+1 (888) 344-2323</a></li>
-            <li><strong>Chat Support Portal:</strong> Live diagnostic chat services are provided by Tellepsis Media LLC via our dedicated support portal (care.tellepsis.shop).</li>
           </ul>
 
           {/* In-Page Unified Footer */}
@@ -184,7 +177,7 @@ export default function PrivacyPolicyPage() {
               Corporate Compliance &amp; Trademark Disclosures
             </div>
             <p className="text-slate-700">
-              &copy; 2026 Live Feed Reviews. Live Feed Reviews is operated by Tellepsis Media LLC. Support: <a href="mailto:support@tellepsis.com" className="text-blue-600 underline">support@tellepsis.com</a> | <a href="tel:+18883442323" className="text-blue-600 underline">+1 (888) 344-2323</a>. Live diagnostic chat services are provided by Tellepsis Media LLC via our dedicated support portal (care.tellepsis.shop). We do not provide manufacturer telephone warranty support - use the Official Manufacturer Support Directory for warranty claims. Product names and trademarks belong to their respective owners and are used for nominative comparison only.
+              &copy; 2026 Live Feed Reviews. Live Feed Reviews is operated by Tellepsis Media LLC. Support: <a href="mailto:support@tellepsis.com" className="text-blue-600 underline">support@tellepsis.com</a> | <a href="tel:+18883442323" className="text-blue-600 underline">+1 (888) 344-2323</a>. We do not provide manufacturer telephone warranty support - use the Official Manufacturer Support Directory for warranty claims. Product names and trademarks belong to their respective owners and are used for nominative comparison only.
             </p>
             <p className="text-slate-400">
               Last Updated: November 24, 2026

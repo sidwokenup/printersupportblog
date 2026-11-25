@@ -446,8 +446,8 @@ export default async function SolutionPage({ params }: Props) {
                   <ShieldCheck className="w-5 h-5 text-emerald-600" />
                   <h3 className="font-bold text-slate-900 text-lg">Official Manufacturer Support Directory</h3>
                 </div>
-                <p className="text-xs md:text-sm text-slate-700 leading-relaxed font-semibold">
-                  We do not provide manufacturer telephone warranty support - use the Official Manufacturer Support Directory for warranty claims.
+                <p className="text-xs md:text-sm text-slate-700 leading-relaxed">
+                  Live Feed Reviews is an independent editorial publication operated by Tellepsis Media LLC. We provide free self-service DIY troubleshooting documentation only and do not offer live telephone or remote technical support. For factory warranty service or official OEM assistance, use the verified manufacturer portals above.
                 </p>
                 <div className="overflow-x-auto pt-2">
                   <table className="w-full text-left text-xs md:text-sm border-collapse bg-white rounded-xl overflow-hidden border border-slate-200">
@@ -462,7 +462,7 @@ export default async function SolutionPage({ params }: Props) {
                       <tr className="hover:bg-blue-50/30 transition-colors">
                         <td className="py-3.5 px-4 font-bold text-slate-900">HP</td>
                         <td className="py-3.5 px-4">
-                          <a href="https://support.hp.com" target="_blank" rel="noopener noreferrer" className="text-blue-600 hover:underline inline-flex items-center gap-1 font-semibold">
+                          <a href="https://support.hp.com" target="_blank" rel="nofollow noopener noreferrer" className="text-blue-600 hover:underline inline-flex items-center gap-1 font-semibold">
                             support.hp.com <ExternalLink className="w-3 h-3 text-slate-400" />
                           </a>
                         </td>
@@ -471,7 +471,7 @@ export default async function SolutionPage({ params }: Props) {
                       <tr className="hover:bg-blue-50/30 transition-colors">
                         <td className="py-3.5 px-4 font-bold text-slate-900">Canon</td>
                         <td className="py-3.5 px-4">
-                          <a href="https://usa.canon.com/support" target="_blank" rel="noopener noreferrer" className="text-blue-600 hover:underline inline-flex items-center gap-1 font-semibold">
+                          <a href="https://www.usa.canon.com/support" target="_blank" rel="nofollow noopener noreferrer" className="text-blue-600 hover:underline inline-flex items-center gap-1 font-semibold">
                             usa.canon.com/support <ExternalLink className="w-3 h-3 text-slate-400" />
                           </a>
                         </td>
@@ -480,7 +480,7 @@ export default async function SolutionPage({ params }: Props) {
                       <tr className="hover:bg-blue-50/30 transition-colors">
                         <td className="py-3.5 px-4 font-bold text-slate-900">Epson</td>
                         <td className="py-3.5 px-4">
-                          <a href="https://epson.com/Support" target="_blank" rel="noopener noreferrer" className="text-blue-600 hover:underline inline-flex items-center gap-1 font-semibold">
+                          <a href="https://epson.com/Support" target="_blank" rel="nofollow noopener noreferrer" className="text-blue-600 hover:underline inline-flex items-center gap-1 font-semibold">
                             epson.com/Support <ExternalLink className="w-3 h-3 text-slate-400" />
                           </a>
                         </td>
@@ -489,7 +489,7 @@ export default async function SolutionPage({ params }: Props) {
                       <tr className="hover:bg-blue-50/30 transition-colors">
                         <td className="py-3.5 px-4 font-bold text-slate-900">Brother</td>
                         <td className="py-3.5 px-4">
-                          <a href="https://www.brother-usa.com/support" target="_blank" rel="noopener noreferrer" className="text-blue-600 hover:underline inline-flex items-center gap-1 font-semibold">
+                          <a href="https://www.brother-usa.com/support" target="_blank" rel="nofollow noopener noreferrer" className="text-blue-600 hover:underline inline-flex items-center gap-1 font-semibold">
                             brother-usa.com/support <ExternalLink className="w-3 h-3 text-slate-400" />
                           </a>
                         </td>
@@ -542,21 +542,21 @@ export default async function SolutionPage({ params }: Props) {
                 <BookOpen className="w-5 h-5" />
                 <h3 className="font-bold text-slate-900 text-base">Official Manufacturer Support Directory</h3>
               </div>
-              <p className="text-xs text-slate-600 leading-relaxed font-medium">
-                We do not provide manufacturer telephone warranty support - use the Official Manufacturer Support Directory for warranty claims.
+              <p className="text-xs text-slate-600 leading-relaxed">
+                Live Feed Reviews is an independent editorial publication operated by Tellepsis Media LLC. We provide free self-service DIY troubleshooting documentation only and do not offer live telephone or remote technical support. For factory warranty service or official OEM assistance, use the verified manufacturer portals below:
               </p>
               <div className="space-y-2 pt-1">
                 {[
-                  { name: "HP Support (support.hp.com)", url: "https://support.hp.com" },
-                  { name: "Canon Support (usa.canon.com/support)", url: "https://usa.canon.com/support" },
-                  { name: "Epson Support (epson.com/Support)", url: "https://epson.com/Support" },
-                  { name: "Brother Support (brother-usa.com/support)", url: "https://www.brother-usa.com/support" }
+                  { name: "HP Official Support", url: "https://support.hp.com" },
+                  { name: "Canon Official Support", url: "https://www.usa.canon.com/support" },
+                  { name: "Epson Official Support", url: "https://epson.com/Support" },
+                  { name: "Brother Official Support", url: "https://www.brother-usa.com/support" }
                 ].map((oem, idx) => (
                   <a
                     key={idx}
                     href={oem.url}
                     target="_blank"
-                    rel="noopener noreferrer"
+                    rel="nofollow noopener noreferrer"
                     className="flex items-center justify-between p-3 rounded-xl bg-slate-50 border border-slate-100 hover:border-blue-200 hover:bg-blue-50/50 transition-all text-xs font-semibold text-slate-700 hover:text-blue-700 group"
                   >
                     <span>{oem.name}</span>
